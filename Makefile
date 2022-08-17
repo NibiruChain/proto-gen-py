@@ -1,2 +1,3 @@
 proto-gen:
-	./scripts/protocgen.sh
+	./scripts/proto-gen-py.sh
+

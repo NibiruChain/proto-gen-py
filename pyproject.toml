@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nibiru-proto"
-version = "0.13.0-alpha.2"
+version = "0.0.0"
 description = ""
 authors = [
     "Nibiru Chain <dev@nibiru.fi>"

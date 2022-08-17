@@ -1,0 +1,1 @@
+# nibiru_proto/proto/cosmos/base/tendermint/v1beta1

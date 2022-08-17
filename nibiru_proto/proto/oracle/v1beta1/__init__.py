@@ -1,0 +1,1 @@
+# nibiru_proto/proto/oracle/v1beta1

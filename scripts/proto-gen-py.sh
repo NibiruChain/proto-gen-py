@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # pip install mypy-protobuf grpcio-tools
 
-set -eo pipefail
+set -e pipefail
 
 protoc_gen_gocosmos() {
   if ! grep "github.com/gogo/protobuf => github.com/regen-network/protobuf" go.mod &>/dev/null; then
@@ -64,4 +64,9 @@ done; \
 
 printf "import os\nimport sys\n\nsys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))" > $PKG_PROTO_SUBDIR/__init__.py
 
-echo "Complete - successfully generated Python types from proto"
+echo "Complete - generated Python types from proto"
+# cleanup
+rm -rf $PKG_PATH/home
+
+poetry run python scripts/init-py.py
+echo "Complete - converted types directories into packages"

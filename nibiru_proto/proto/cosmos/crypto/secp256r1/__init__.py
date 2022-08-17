@@ -1,0 +1,1 @@
+# nibiru_proto/proto/cosmos/crypto/secp256r1
