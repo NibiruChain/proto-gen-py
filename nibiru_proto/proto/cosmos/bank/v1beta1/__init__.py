@@ -1,1 +1,0 @@
-# nibiru_proto/proto/cosmos/bank/v1beta1

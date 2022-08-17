@@ -1,1 +1,0 @@
-# nibiru_proto/proto/cosmos/base/store/v1beta1

@@ -1,1 +1,0 @@
-# nibiru_proto/proto/cosmos/staking/v1beta1

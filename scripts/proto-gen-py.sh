@@ -68,5 +68,5 @@ echo "Complete - generated Python types from proto"
 # cleanup
 rm -rf $PKG_PATH/home
 
-poetry run python scripts/init-py.py
-echo "Complete - converted types directories into packages"
+# poetry run python scripts/init-py.py
+# echo "Complete - converted types directories into packages"
