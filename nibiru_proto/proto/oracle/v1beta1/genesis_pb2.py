@@ -17,14 +17,13 @@ from oracle.v1beta1 import oracle_pb2 as oracle_dot_v1beta1_dot_oracle__pb2
 from cosmos.base.v1beta1 import coin_pb2 as cosmos_dot_base_dot_v1beta1_dot_coin__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1coracle/v1beta1/genesis.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\x1a\x1boracle/v1beta1/oracle.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xad\x04\n\x0cGenesisState\x12\x33\n\x06params\x18\x01 \x01(\x0b\x32\x1d.nibiru.oracle.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\x12I\n\x12\x66\x65\x65\x64\x65r_delegations\x18\x02 \x03(\x0b\x32\'.nibiru.oracle.v1beta1.FeederDelegationB\x04\xc8\xde\x1f\x00\x12\\\n\x0e\x65xchange_rates\x18\x03 \x03(\x0b\x32(.nibiru.oracle.v1beta1.ExchangeRateTupleB\x1a\xaa\xdf\x1f\x12\x45xchangeRateTuples\xc8\xde\x1f\x00\x12?\n\rmiss_counters\x18\x04 \x03(\x0b\x32\".nibiru.oracle.v1beta1.MissCounterB\x04\xc8\xde\x1f\x00\x12\x63\n aggregate_exchange_rate_prevotes\x18\x05 \x03(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\x12]\n\x1d\x61ggregate_exchange_rate_votes\x18\x06 \x03(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\x12:\n\x0btobin_taxes\x18\x07 \x03(\x0b\x32\x1f.nibiru.oracle.v1beta1.TobinTaxB\x04\xc8\xde\x1f\x00\"E\n\x10\x46\x65\x65\x64\x65rDelegation\x12\x16\n\x0e\x66\x65\x65\x64\x65r_address\x18\x01 \x01(\t\x12\x19\n\x11validator_address\x18\x02 \x01(\t\">\n\x0bMissCounter\x12\x19\n\x11validator_address\x18\x01 \x01(\t\x12\x14\n\x0cmiss_counter\x18\x02 \x01(\x04\"[\n\x08TobinTax\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x41\n\ttobin_tax\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x42.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1coracle/v1beta1/genesis.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\x1a\x1boracle/v1beta1/oracle.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xa3\x04\n\x0cGenesisState\x12\x33\n\x06params\x18\x01 \x01(\x0b\x32\x1d.nibiru.oracle.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\x12I\n\x12\x66\x65\x65\x64\x65r_delegations\x18\x02 \x03(\x0b\x32\'.nibiru.oracle.v1beta1.FeederDelegationB\x04\xc8\xde\x1f\x00\x12\\\n\x0e\x65xchange_rates\x18\x03 \x03(\x0b\x32(.nibiru.oracle.v1beta1.ExchangeRateTupleB\x1a\xaa\xdf\x1f\x12\x45xchangeRateTuples\xc8\xde\x1f\x00\x12?\n\rmiss_counters\x18\x04 \x03(\x0b\x32\".nibiru.oracle.v1beta1.MissCounterB\x04\xc8\xde\x1f\x00\x12\x63\n aggregate_exchange_rate_prevotes\x18\x05 \x03(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\x12]\n\x1d\x61ggregate_exchange_rate_votes\x18\x06 \x03(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\x12\x30\n\x05pairs\x18\x07 \x03(\x0b\x32\x1b.nibiru.oracle.v1beta1.PairB\x04\xc8\xde\x1f\x00\"E\n\x10\x46\x65\x65\x64\x65rDelegation\x12\x16\n\x0e\x66\x65\x65\x64\x65r_address\x18\x01 \x01(\t\x12\x19\n\x11validator_address\x18\x02 \x01(\t\">\n\x0bMissCounter\x12\x19\n\x11validator_address\x18\x01 \x01(\t\x12\x14\n\x0cmiss_counter\x18\x02 \x01(\x04\x42.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
 
 
 
 _GENESISSTATE = DESCRIPTOR.message_types_by_name['GenesisState']
 _FEEDERDELEGATION = DESCRIPTOR.message_types_by_name['FeederDelegation']
 _MISSCOUNTER = DESCRIPTOR.message_types_by_name['MissCounter']
-_TOBINTAX = DESCRIPTOR.message_types_by_name['TobinTax']
 GenesisState = _reflection.GeneratedProtocolMessageType('GenesisState', (_message.Message,), {
   'DESCRIPTOR' : _GENESISSTATE,
   '__module__' : 'oracle.v1beta1.genesis_pb2'
@@ -46,13 +45,6 @@ MissCounter = _reflection.GeneratedProtocolMessageType('MissCounter', (_message.
   })
 _sym_db.RegisterMessage(MissCounter)
 
-TobinTax = _reflection.GeneratedProtocolMessageType('TobinTax', (_message.Message,), {
-  'DESCRIPTOR' : _TOBINTAX,
-  '__module__' : 'oracle.v1beta1.genesis_pb2'
-  # @@protoc_insertion_point(class_scope:nibiru.oracle.v1beta1.TobinTax)
-  })
-_sym_db.RegisterMessage(TobinTax)
-
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -69,16 +61,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GENESISSTATE.fields_by_name['aggregate_exchange_rate_prevotes']._serialized_options = b'\310\336\037\000'
   _GENESISSTATE.fields_by_name['aggregate_exchange_rate_votes']._options = None
   _GENESISSTATE.fields_by_name['aggregate_exchange_rate_votes']._serialized_options = b'\310\336\037\000'
-  _GENESISSTATE.fields_by_name['tobin_taxes']._options = None
-  _GENESISSTATE.fields_by_name['tobin_taxes']._serialized_options = b'\310\336\037\000'
-  _TOBINTAX.fields_by_name['tobin_tax']._options = None
-  _TOBINTAX.fields_by_name['tobin_tax']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _GENESISSTATE.fields_by_name['pairs']._options = None
+  _GENESISSTATE.fields_by_name['pairs']._serialized_options = b'\310\336\037\000'
   _GENESISSTATE._serialized_start=139
-  _GENESISSTATE._serialized_end=696
-  _FEEDERDELEGATION._serialized_start=698
-  _FEEDERDELEGATION._serialized_end=767
-  _MISSCOUNTER._serialized_start=769
-  _MISSCOUNTER._serialized_end=831
-  _TOBINTAX._serialized_start=833
-  _TOBINTAX._serialized_end=924
+  _GENESISSTATE._serialized_end=686
+  _FEEDERDELEGATION._serialized_start=688
+  _FEEDERDELEGATION._serialized_end=757
+  _MISSCOUNTER._serialized_start=759
+  _MISSCOUNTER._serialized_end=821
 # @@protoc_insertion_point(module_scope)

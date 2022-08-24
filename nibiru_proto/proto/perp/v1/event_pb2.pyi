@@ -63,13 +63,17 @@ class PositionChangedEvent(google.protobuf.message.Message):
 
     @property
     def bad_debt(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
-        """Amount of bad debt cleared by the PerpEF during the change. Bad debt is negative net margin past the liquidation point of a position."""
+        """Amount of bad debt cleared by the PerpEF during the change. 
+        Bad debt is negative net margin past the liquidation point of a position.
+        """
         pass
     liquidation_penalty: typing.Text
     """amt of margin (y) lost due to liquidation"""
 
     spot_price: typing.Text
-    """vPrice defined as yRes / xRes for a vpool, where yRes is the quote reserves and xRes is the base reserves."""
+    """Spot price, synonymous with mark price in this context, is the quotient of 
+    the quote reserves and base reserves
+    """
 
     funding_payment: typing.Text
     """A funding payment made or received by the trader on the current position. 

@@ -141,9 +141,8 @@ global___Pool = Pool
 
 class PoolPrices(google.protobuf.message.Message):
     """PoolPrices is a simple structure that displays a snapshot of the mark and index
-    prices for an asset.
-    NOTE: The fields of PoolPrices should be pointers (nullable) so that we can 
-    tell whether a field (e.g. the index price) is missing.
+    prices for an asset. Empty strings for the indexPrice or twapMark fields 
+    indicate that the price is currently unavailable.
     """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     PAIR_FIELD_NUMBER: builtins.int

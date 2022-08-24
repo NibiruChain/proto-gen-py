@@ -188,14 +188,21 @@ class CurrentPriceResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     PAIR_ID_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
+    TWAP_FIELD_NUMBER: builtins.int
     pair_id: typing.Text
     price: typing.Text
+    """most current price of the trading pair"""
+
+    twap: typing.Text
+    """twap of the trading pair"""
+
     def __init__(self,
         *,
         pair_id: typing.Text = ...,
         price: typing.Text = ...,
+        twap: typing.Text = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id","price",b"price"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id","price",b"price","twap",b"twap"]) -> None: ...
 global___CurrentPriceResponse = CurrentPriceResponse
 
 class Market(google.protobuf.message.Message):
