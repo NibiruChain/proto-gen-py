@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nibiru-proto"
-version = "0.13.2"
-description = ""
+version = "0.13.3"
+description = "Types generated from the Nibiru protocol buffers."
 authors = [
     "Nibiru Chain <dev@nibiru.fi>"
 ]
