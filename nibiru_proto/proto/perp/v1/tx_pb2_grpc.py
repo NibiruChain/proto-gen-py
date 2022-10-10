@@ -30,6 +30,11 @@ class MsgStub(object):
                 request_serializer=perp_dot_v1_dot_tx__pb2.MsgLiquidate.SerializeToString,
                 response_deserializer=perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.FromString,
                 )
+        self.MultiLiquidate = channel.unary_unary(
+                '/nibiru.perp.v1.Msg/MultiLiquidate',
+                request_serializer=perp_dot_v1_dot_tx__pb2.MsgMultiLiquidate.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_tx__pb2.MsgMultiLiquidateResponse.FromString,
+                )
         self.OpenPosition = channel.unary_unary(
                 '/nibiru.perp.v1.Msg/OpenPosition',
                 request_serializer=perp_dot_v1_dot_tx__pb2.MsgOpenPosition.SerializeToString,
@@ -66,6 +71,12 @@ class MsgServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MultiLiquidate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def OpenPosition(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -95,6 +106,11 @@ def add_MsgServicer_to_server(servicer, server):
                     servicer.Liquidate,
                     request_deserializer=perp_dot_v1_dot_tx__pb2.MsgLiquidate.FromString,
                     response_serializer=perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.SerializeToString,
+            ),
+            'MultiLiquidate': grpc.unary_unary_rpc_method_handler(
+                    servicer.MultiLiquidate,
+                    request_deserializer=perp_dot_v1_dot_tx__pb2.MsgMultiLiquidate.FromString,
+                    response_serializer=perp_dot_v1_dot_tx__pb2.MsgMultiLiquidateResponse.SerializeToString,
             ),
             'OpenPosition': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenPosition,
@@ -165,6 +181,23 @@ class Msg(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Msg/Liquidate',
             perp_dot_v1_dot_tx__pb2.MsgLiquidate.SerializeToString,
             perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def MultiLiquidate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Msg/MultiLiquidate',
+            perp_dot_v1_dot_tx__pb2.MsgMultiLiquidate.SerializeToString,
+            perp_dot_v1_dot_tx__pb2.MsgMultiLiquidateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

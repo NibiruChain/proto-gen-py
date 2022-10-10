@@ -14,9 +14,17 @@ class QueryStub:
         perp.v1.query_pb2.QueryParamsResponse]
     """Parameters queries the parameters of the x/perp module."""
 
-    QueryTraderPosition: grpc.UnaryUnaryMultiCallable[
-        perp.v1.query_pb2.QueryTraderPositionRequest,
-        perp.v1.query_pb2.QueryTraderPositionResponse]
+    QueryPosition: grpc.UnaryUnaryMultiCallable[
+        perp.v1.query_pb2.QueryPositionRequest,
+        perp.v1.query_pb2.QueryPositionResponse]
+
+    QueryPositions: grpc.UnaryUnaryMultiCallable[
+        perp.v1.query_pb2.QueryPositionsRequest,
+        perp.v1.query_pb2.QueryPositionsResponse]
+
+    FundingRates: grpc.UnaryUnaryMultiCallable[
+        perp.v1.query_pb2.QueryFundingRatesRequest,
+        perp.v1.query_pb2.QueryFundingRatesResponse]
 
 
 class QueryServicer(metaclass=abc.ABCMeta):
@@ -30,10 +38,22 @@ class QueryServicer(metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
-    def QueryTraderPosition(self,
-        request: perp.v1.query_pb2.QueryTraderPositionRequest,
+    def QueryPosition(self,
+        request: perp.v1.query_pb2.QueryPositionRequest,
         context: grpc.ServicerContext,
-    ) -> perp.v1.query_pb2.QueryTraderPositionResponse: ...
+    ) -> perp.v1.query_pb2.QueryPositionResponse: ...
+
+    @abc.abstractmethod
+    def QueryPositions(self,
+        request: perp.v1.query_pb2.QueryPositionsRequest,
+        context: grpc.ServicerContext,
+    ) -> perp.v1.query_pb2.QueryPositionsResponse: ...
+
+    @abc.abstractmethod
+    def FundingRates(self,
+        request: perp.v1.query_pb2.QueryFundingRatesRequest,
+        context: grpc.ServicerContext,
+    ) -> perp.v1.query_pb2.QueryFundingRatesResponse: ...
 
 
 def add_QueryServicer_to_server(servicer: QueryServicer, server: grpc.Server) -> None: ...

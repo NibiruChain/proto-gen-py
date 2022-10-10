@@ -13,10 +13,10 @@ _sym_db = _symbol_database.Default()
 
 
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
-from pricefeed import params_pb2 as pricefeed_dot_params__pb2
+from pricefeed import state_pb2 as pricefeed_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17pricefeed/genesis.proto\x12\x13nibiru.pricefeed.v1\x1a\x14gogoproto/gogo.proto\x1a\x16pricefeed/params.proto\"\xa9\x01\n\x0cGenesisState\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.nibiru.pricefeed.v1.ParamsB\x04\xc8\xde\x1f\x00\x12M\n\rposted_prices\x18\x02 \x03(\x0b\x32 .nibiru.pricefeed.v1.PostedPriceB\x14\xaa\xdf\x1f\x0cPostedPrices\xc8\xde\x1f\x00\x12\x17\n\x0fgenesis_oracles\x18\x03 \x03(\tB1Z/github.com/NibiruChain/nibiru/x/pricefeed/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17pricefeed/genesis.proto\x12\x13nibiru.pricefeed.v1\x1a\x14gogoproto/gogo.proto\x1a\x15pricefeed/state.proto\"\xa9\x01\n\x0cGenesisState\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.nibiru.pricefeed.v1.ParamsB\x04\xc8\xde\x1f\x00\x12M\n\rposted_prices\x18\x02 \x03(\x0b\x32 .nibiru.pricefeed.v1.PostedPriceB\x14\xaa\xdf\x1f\x0cPostedPrices\xc8\xde\x1f\x00\x12\x17\n\x0fgenesis_oracles\x18\x03 \x03(\tB1Z/github.com/NibiruChain/nibiru/x/pricefeed/typesb\x06proto3')
 
 
 
@@ -36,6 +36,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GENESISSTATE.fields_by_name['params']._serialized_options = b'\310\336\037\000'
   _GENESISSTATE.fields_by_name['posted_prices']._options = None
   _GENESISSTATE.fields_by_name['posted_prices']._serialized_options = b'\252\337\037\014PostedPrices\310\336\037\000'
-  _GENESISSTATE._serialized_start=95
-  _GENESISSTATE._serialized_end=264
+  _GENESISSTATE._serialized_start=94
+  _GENESISSTATE._serialized_end=263
 # @@protoc_insertion_point(module_scope)

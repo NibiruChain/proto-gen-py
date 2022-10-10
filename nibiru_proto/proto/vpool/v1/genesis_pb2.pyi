@@ -8,8 +8,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import typing_extensions
-import vpool.v1.params_pb2
-import vpool.v1.vpool_pb2
+import vpool.v1.state_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -17,16 +16,15 @@ class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the vpool module's genesis state."""
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     VPOOLS_FIELD_NUMBER: builtins.int
-    PARAMS_FIELD_NUMBER: builtins.int
+    SNAPSHOTS_FIELD_NUMBER: builtins.int
     @property
-    def vpools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.vpool_pb2.Pool]: ...
+    def vpools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.VPool]: ...
     @property
-    def params(self) -> vpool.v1.params_pb2.Params: ...
+    def snapshots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.ReserveSnapshot]: ...
     def __init__(self,
         *,
-        vpools: typing.Optional[typing.Iterable[vpool.v1.vpool_pb2.Pool]] = ...,
-        params: typing.Optional[vpool.v1.params_pb2.Params] = ...,
+        vpools: typing.Optional[typing.Iterable[vpool.v1.state_pb2.VPool]] = ...,
+        snapshots: typing.Optional[typing.Iterable[vpool.v1.state_pb2.ReserveSnapshot]] = ...,
         ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["params",b"params","vpools",b"vpools"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["snapshots",b"snapshots","vpools",b"vpools"]) -> None: ...
 global___GenesisState = GenesisState

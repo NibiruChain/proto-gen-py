@@ -62,7 +62,7 @@ class SwapBaseForQuoteEvent(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["base_amount",b"base_amount","pair",b"pair","quote_amount",b"quote_amount"]) -> None: ...
 global___SwapBaseForQuoteEvent = SwapBaseForQuoteEvent
 
-class MarkPriceChanged(google.protobuf.message.Message):
+class MarkPriceChangedEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     PAIR_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
@@ -79,4 +79,4 @@ class MarkPriceChanged(google.protobuf.message.Message):
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["timestamp",b"timestamp"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair","price",b"price","timestamp",b"timestamp"]) -> None: ...
-global___MarkPriceChanged = MarkPriceChanged
+global___MarkPriceChangedEvent = MarkPriceChangedEvent

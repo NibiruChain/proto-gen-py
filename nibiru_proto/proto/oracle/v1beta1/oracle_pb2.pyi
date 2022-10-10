@@ -3,6 +3,7 @@
 isort:skip_file
 """
 import builtins
+import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -17,7 +18,6 @@ class Params(google.protobuf.message.Message):
     VOTE_PERIOD_FIELD_NUMBER: builtins.int
     VOTE_THRESHOLD_FIELD_NUMBER: builtins.int
     REWARD_BAND_FIELD_NUMBER: builtins.int
-    REWARD_DISTRIBUTION_WINDOW_FIELD_NUMBER: builtins.int
     WHITELIST_FIELD_NUMBER: builtins.int
     SLASH_FRACTION_FIELD_NUMBER: builtins.int
     SLASH_WINDOW_FIELD_NUMBER: builtins.int
@@ -25,7 +25,6 @@ class Params(google.protobuf.message.Message):
     vote_period: builtins.int
     vote_threshold: typing.Text
     reward_band: typing.Text
-    reward_distribution_window: builtins.int
     @property
     def whitelist(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Pair]: ...
     slash_fraction: typing.Text
@@ -36,13 +35,12 @@ class Params(google.protobuf.message.Message):
         vote_period: builtins.int = ...,
         vote_threshold: typing.Text = ...,
         reward_band: typing.Text = ...,
-        reward_distribution_window: builtins.int = ...,
         whitelist: typing.Optional[typing.Iterable[global___Pair]] = ...,
         slash_fraction: typing.Text = ...,
         slash_window: builtins.int = ...,
         min_valid_per_window: typing.Text = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window",b"min_valid_per_window","reward_band",b"reward_band","reward_distribution_window",b"reward_distribution_window","slash_fraction",b"slash_fraction","slash_window",b"slash_window","vote_period",b"vote_period","vote_threshold",b"vote_threshold","whitelist",b"whitelist"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window",b"min_valid_per_window","reward_band",b"reward_band","slash_fraction",b"slash_fraction","slash_window",b"slash_window","vote_period",b"vote_period","vote_threshold",b"vote_threshold","whitelist",b"whitelist"]) -> None: ...
 global___Params = Params
 
 class Pair(google.protobuf.message.Message):
@@ -110,3 +108,35 @@ class ExchangeRateTuple(google.protobuf.message.Message):
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["exchange_rate",b"exchange_rate","pair",b"pair"]) -> None: ...
 global___ExchangeRateTuple = ExchangeRateTuple
+
+class PairReward(google.protobuf.message.Message):
+    """PairReward defines a credit object towards validators
+    which provide prices faithfully for different pairs.
+    """
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    VOTE_PERIODS_FIELD_NUMBER: builtins.int
+    COINS_FIELD_NUMBER: builtins.int
+    pair: typing.Text
+    """pair defines the pair for which we incentivize validator to provide prices for."""
+
+    id: builtins.int
+    """id uniquely identifies the rewards instance of the pair"""
+
+    vote_periods: builtins.int
+    """vote_periods defines the vote periods left in which rewards will be distributed."""
+
+    @property
+    def coins(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]:
+        """coins defines the amount of coins to distribute in a single vote period."""
+        pass
+    def __init__(self,
+        *,
+        pair: typing.Text = ...,
+        id: builtins.int = ...,
+        vote_periods: builtins.int = ...,
+        coins: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.Coin]] = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["coins",b"coins","id",b"id","pair",b"pair","vote_periods",b"vote_periods"]) -> None: ...
+global___PairReward = PairReward

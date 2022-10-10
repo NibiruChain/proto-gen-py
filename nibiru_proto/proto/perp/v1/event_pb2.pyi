@@ -28,7 +28,7 @@ class PositionChangedEvent(google.protobuf.message.Message):
     UNREALIZED_PNL_AFTER_FIELD_NUMBER: builtins.int
     BAD_DEBT_FIELD_NUMBER: builtins.int
     LIQUIDATION_PENALTY_FIELD_NUMBER: builtins.int
-    SPOT_PRICE_FIELD_NUMBER: builtins.int
+    MARK_PRICE_FIELD_NUMBER: builtins.int
     FUNDING_PAYMENT_FIELD_NUMBER: builtins.int
     BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
     BLOCK_TIME_MS_FIELD_NUMBER: builtins.int
@@ -70,8 +70,8 @@ class PositionChangedEvent(google.protobuf.message.Message):
     liquidation_penalty: typing.Text
     """amt of margin (y) lost due to liquidation"""
 
-    spot_price: typing.Text
-    """Spot price, synonymous with mark price in this context, is the quotient of 
+    mark_price: typing.Text
+    """Mark price, synonymous with mark price in this context, is the quotient of
     the quote reserves and base reserves
     """
 
@@ -102,13 +102,13 @@ class PositionChangedEvent(google.protobuf.message.Message):
         unrealized_pnl_after: typing.Text = ...,
         bad_debt: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
         liquidation_penalty: typing.Text = ...,
-        spot_price: typing.Text = ...,
+        mark_price: typing.Text = ...,
         funding_payment: typing.Text = ...,
         block_height: builtins.int = ...,
         block_time_ms: builtins.int = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["bad_debt",b"bad_debt","margin",b"margin","transaction_fee",b"transaction_fee"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bad_debt",b"bad_debt","block_height",b"block_height","block_time_ms",b"block_time_ms","exchanged_position_size",b"exchanged_position_size","funding_payment",b"funding_payment","liquidation_penalty",b"liquidation_penalty","margin",b"margin","pair",b"pair","position_notional",b"position_notional","position_size",b"position_size","realized_pnl",b"realized_pnl","spot_price",b"spot_price","trader_address",b"trader_address","transaction_fee",b"transaction_fee","unrealized_pnl_after",b"unrealized_pnl_after"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bad_debt",b"bad_debt","block_height",b"block_height","block_time_ms",b"block_time_ms","exchanged_position_size",b"exchanged_position_size","funding_payment",b"funding_payment","liquidation_penalty",b"liquidation_penalty","margin",b"margin","mark_price",b"mark_price","pair",b"pair","position_notional",b"position_notional","position_size",b"position_size","realized_pnl",b"realized_pnl","trader_address",b"trader_address","transaction_fee",b"transaction_fee","unrealized_pnl_after",b"unrealized_pnl_after"]) -> None: ...
 global___PositionChangedEvent = PositionChangedEvent
 
 class PositionLiquidatedEvent(google.protobuf.message.Message):
@@ -232,7 +232,8 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
     MARK_PRICE_FIELD_NUMBER: builtins.int
     INDEX_PRICE_FIELD_NUMBER: builtins.int
     LATEST_FUNDING_RATE_FIELD_NUMBER: builtins.int
-    CUMULATIVE_FUNDING_RATE_FIELD_NUMBER: builtins.int
+    LATEST_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
+    CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
     BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
     BLOCK_TIME_MS_FIELD_NUMBER: builtins.int
     pair: typing.Text
@@ -247,10 +248,13 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
     latest_funding_rate: typing.Text
     """The latest funding rate."""
 
-    cumulative_funding_rate: typing.Text
-    """The latest cumulative funding rate.
-    The funding rate a position will pay is the difference between this value
-    and the latest cumulative funding rate on the position.
+    latest_premium_fraction: typing.Text
+    """The latest premium fraction just calculated."""
+
+    cumulative_premium_fraction: typing.Text
+    """The latest cumulative premium fraction.
+    The funding payment a position will pay is the difference between this value
+    and the latest cumulative premium fraction on the position, multiplied by the position size.
     """
 
     block_height: builtins.int
@@ -265,9 +269,10 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
         mark_price: typing.Text = ...,
         index_price: typing.Text = ...,
         latest_funding_rate: typing.Text = ...,
-        cumulative_funding_rate: typing.Text = ...,
+        latest_premium_fraction: typing.Text = ...,
+        cumulative_premium_fraction: typing.Text = ...,
         block_height: builtins.int = ...,
         block_time_ms: builtins.int = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["block_height",b"block_height","block_time_ms",b"block_time_ms","cumulative_funding_rate",b"cumulative_funding_rate","index_price",b"index_price","latest_funding_rate",b"latest_funding_rate","mark_price",b"mark_price","pair",b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["block_height",b"block_height","block_time_ms",b"block_time_ms","cumulative_premium_fraction",b"cumulative_premium_fraction","index_price",b"index_price","latest_funding_rate",b"latest_funding_rate","latest_premium_fraction",b"latest_premium_fraction","mark_price",b"mark_price","pair",b"pair"]) -> None: ...
 global___FundingRateChangedEvent = FundingRateChangedEvent

@@ -6,7 +6,7 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import pricefeed.params_pb2
+import pricefeed.state_pb2
 import typing
 import typing_extensions
 
@@ -19,17 +19,17 @@ class GenesisState(google.protobuf.message.Message):
     POSTED_PRICES_FIELD_NUMBER: builtins.int
     GENESIS_ORACLES_FIELD_NUMBER: builtins.int
     @property
-    def params(self) -> pricefeed.params_pb2.Params:
+    def params(self) -> pricefeed.state_pb2.Params:
         """params defines all the paramaters of the module."""
         pass
     @property
-    def posted_prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[pricefeed.params_pb2.PostedPrice]: ...
+    def posted_prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[pricefeed.state_pb2.PostedPrice]: ...
     @property
     def genesis_oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
     def __init__(self,
         *,
-        params: typing.Optional[pricefeed.params_pb2.Params] = ...,
-        posted_prices: typing.Optional[typing.Iterable[pricefeed.params_pb2.PostedPrice]] = ...,
+        params: typing.Optional[pricefeed.state_pb2.Params] = ...,
+        posted_prices: typing.Optional[typing.Iterable[pricefeed.state_pb2.PostedPrice]] = ...,
         genesis_oracles: typing.Optional[typing.Iterable[typing.Text]] = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...

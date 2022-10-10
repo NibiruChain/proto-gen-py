@@ -22,6 +22,7 @@ class GenesisState(google.protobuf.message.Message):
     AGGREGATE_EXCHANGE_RATE_PREVOTES_FIELD_NUMBER: builtins.int
     AGGREGATE_EXCHANGE_RATE_VOTES_FIELD_NUMBER: builtins.int
     PAIRS_FIELD_NUMBER: builtins.int
+    PAIR_REWARDS_FIELD_NUMBER: builtins.int
     @property
     def params(self) -> oracle.v1beta1.oracle_pb2.Params: ...
     @property
@@ -36,6 +37,8 @@ class GenesisState(google.protobuf.message.Message):
     def aggregate_exchange_rate_votes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]: ...
     @property
     def pairs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.Pair]: ...
+    @property
+    def pair_rewards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.PairReward]: ...
     def __init__(self,
         *,
         params: typing.Optional[oracle.v1beta1.oracle_pb2.Params] = ...,
@@ -45,9 +48,10 @@ class GenesisState(google.protobuf.message.Message):
         aggregate_exchange_rate_prevotes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote]] = ...,
         aggregate_exchange_rate_votes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]] = ...,
         pairs: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.Pair]] = ...,
+        pair_rewards: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.PairReward]] = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes",b"aggregate_exchange_rate_prevotes","aggregate_exchange_rate_votes",b"aggregate_exchange_rate_votes","exchange_rates",b"exchange_rates","feeder_delegations",b"feeder_delegations","miss_counters",b"miss_counters","pairs",b"pairs","params",b"params"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes",b"aggregate_exchange_rate_prevotes","aggregate_exchange_rate_votes",b"aggregate_exchange_rate_votes","exchange_rates",b"exchange_rates","feeder_delegations",b"feeder_delegations","miss_counters",b"miss_counters","pair_rewards",b"pair_rewards","pairs",b"pairs","params",b"params"]) -> None: ...
 global___GenesisState = GenesisState
 
 class FeederDelegation(google.protobuf.message.Message):

@@ -4,7 +4,6 @@ isort:skip_file
 """
 import builtins
 import common.common_pb2
-import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
@@ -96,6 +95,7 @@ class Params(google.protobuf.message.Message):
     PARTIAL_LIQUIDATION_RATIO_FIELD_NUMBER: builtins.int
     FUNDING_RATE_INTERVAL_FIELD_NUMBER: builtins.int
     TWAP_LOOKBACK_WINDOW_FIELD_NUMBER: builtins.int
+    WHITELISTED_LIQUIDATORS_FIELD_NUMBER: builtins.int
     stopped: builtins.bool
     """stopped identifies if the perp exchange is stopped or not"""
 
@@ -106,13 +106,15 @@ class Params(google.protobuf.message.Message):
     """EcosystemFundFeeRatio is the ratio transferred to the PerpEF."""
 
     liquidation_fee_ratio: typing.Text
-    """LiquidationFeeRatio is the percentage of liquidated position that will be given
-    to out as a reward. Half of the liquidation fee is given to the liquidator,
-    and the other half is given to the ecosystem fund.
+    """LiquidationFeeRatio is the percentage of liquidated position that will be
+    given to out as a reward. Half of the liquidation fee is given to the
+    liquidator, and the other half is given to the ecosystem fund.
     """
 
     partial_liquidation_ratio: typing.Text
-    """PartialLiquidationRatio is the share we try to liquidate if the margin is higher than liquidation fee"""
+    """PartialLiquidationRatio is the share we try to liquidate if the margin is
+    higher than liquidation fee
+    """
 
     funding_rate_interval: typing.Text
     """specifies the interval on which the funding rate is updated"""
@@ -120,6 +122,12 @@ class Params(google.protobuf.message.Message):
     @property
     def twap_lookback_window(self) -> google.protobuf.duration_pb2.Duration:
         """amount of time to look back for TWAP calculations"""
+        pass
+    @property
+    def whitelisted_liquidators(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+        """whitelisted_liquidators defines the list of addresses
+        which are allowed to liquidate a position.
+        """
         pass
     def __init__(self,
         *,
@@ -130,52 +138,11 @@ class Params(google.protobuf.message.Message):
         partial_liquidation_ratio: typing.Text = ...,
         funding_rate_interval: typing.Text = ...,
         twap_lookback_window: typing.Optional[google.protobuf.duration_pb2.Duration] = ...,
+        whitelisted_liquidators: typing.Optional[typing.Iterable[typing.Text]] = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["twap_lookback_window",b"twap_lookback_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ecosystem_fund_fee_ratio",b"ecosystem_fund_fee_ratio","fee_pool_fee_ratio",b"fee_pool_fee_ratio","funding_rate_interval",b"funding_rate_interval","liquidation_fee_ratio",b"liquidation_fee_ratio","partial_liquidation_ratio",b"partial_liquidation_ratio","stopped",b"stopped","twap_lookback_window",b"twap_lookback_window"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ecosystem_fund_fee_ratio",b"ecosystem_fund_fee_ratio","fee_pool_fee_ratio",b"fee_pool_fee_ratio","funding_rate_interval",b"funding_rate_interval","liquidation_fee_ratio",b"liquidation_fee_ratio","partial_liquidation_ratio",b"partial_liquidation_ratio","stopped",b"stopped","twap_lookback_window",b"twap_lookback_window","whitelisted_liquidators",b"whitelisted_liquidators"]) -> None: ...
 global___Params = Params
-
-class GenesisState(google.protobuf.message.Message):
-    """GenesisState defines the perp module's genesis state."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    PARAMS_FIELD_NUMBER: builtins.int
-    VAULT_BALANCE_FIELD_NUMBER: builtins.int
-    PERP_EF_BALANCE_FIELD_NUMBER: builtins.int
-    FEE_POOL_BALANCE_FIELD_NUMBER: builtins.int
-    PAIR_METADATA_FIELD_NUMBER: builtins.int
-    POSITIONS_FIELD_NUMBER: builtins.int
-    PREPAID_BAD_DEBTS_FIELD_NUMBER: builtins.int
-    WHITELISTED_ADDRESSES_FIELD_NUMBER: builtins.int
-    @property
-    def params(self) -> global___Params: ...
-    @property
-    def vault_balance(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
-    @property
-    def perp_ef_balance(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
-    @property
-    def fee_pool_balance(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
-    @property
-    def pair_metadata(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PairMetadata]: ...
-    @property
-    def positions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Position]: ...
-    @property
-    def prepaid_bad_debts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PrepaidBadDebt]: ...
-    @property
-    def whitelisted_addresses(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
-    def __init__(self,
-        *,
-        params: typing.Optional[global___Params] = ...,
-        vault_balance: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.Coin]] = ...,
-        perp_ef_balance: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.Coin]] = ...,
-        fee_pool_balance: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.Coin]] = ...,
-        pair_metadata: typing.Optional[typing.Iterable[global___PairMetadata]] = ...,
-        positions: typing.Optional[typing.Iterable[global___Position]] = ...,
-        prepaid_bad_debts: typing.Optional[typing.Iterable[global___PrepaidBadDebt]] = ...,
-        whitelisted_addresses: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fee_pool_balance",b"fee_pool_balance","pair_metadata",b"pair_metadata","params",b"params","perp_ef_balance",b"perp_ef_balance","positions",b"positions","prepaid_bad_debts",b"prepaid_bad_debts","vault_balance",b"vault_balance","whitelisted_addresses",b"whitelisted_addresses"]) -> None: ...
-global___GenesisState = GenesisState
 
 class Position(google.protobuf.message.Message):
     """Position identifies and records information on a user's position on one of
@@ -187,7 +154,7 @@ class Position(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     MARGIN_FIELD_NUMBER: builtins.int
     OPEN_NOTIONAL_FIELD_NUMBER: builtins.int
-    LAST_UPDATE_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
+    LATEST_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
     BLOCK_NUMBER_FIELD_NUMBER: builtins.int
     trader_address: typing.Text
     """address identifies the address owner of this position"""
@@ -209,14 +176,13 @@ class Position(google.protobuf.message.Message):
     Used to calculate PnL.
     """
 
-    last_update_cumulative_premium_fraction: typing.Text
-    """The last cumulative funding payment this position has applied.
+    latest_cumulative_premium_fraction: typing.Text
+    """The most recent cumulative premium fraction this position has.
     Used to calculate the next funding payment.
-    int
     """
 
     block_number: builtins.int
-    """BlockNumber is the last block number when this position changed."""
+    """BlockNumber is the last block number when this position was updated."""
 
     def __init__(self,
         *,
@@ -225,12 +191,49 @@ class Position(google.protobuf.message.Message):
         size: typing.Text = ...,
         margin: typing.Text = ...,
         open_notional: typing.Text = ...,
-        last_update_cumulative_premium_fraction: typing.Text = ...,
+        latest_cumulative_premium_fraction: typing.Text = ...,
         block_number: builtins.int = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["block_number",b"block_number","last_update_cumulative_premium_fraction",b"last_update_cumulative_premium_fraction","margin",b"margin","open_notional",b"open_notional","pair",b"pair","size",b"size","trader_address",b"trader_address"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["block_number",b"block_number","latest_cumulative_premium_fraction",b"latest_cumulative_premium_fraction","margin",b"margin","open_notional",b"open_notional","pair",b"pair","size",b"size","trader_address",b"trader_address"]) -> None: ...
 global___Position = Position
+
+class PairMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_FIELD_NUMBER: builtins.int
+    CUMULATIVE_PREMIUM_FRACTIONS_FIELD_NUMBER: builtins.int
+    @property
+    def pair(self) -> common.common_pb2.AssetPair: ...
+    @property
+    def cumulative_premium_fractions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+        """The historical list of cumulative premium fractions for a given pair.
+        Calculated once per epoch.
+        A premium fraction is the difference between mark and index, divided by the number of payments per day.
+        (mark - index) / # payments in a day
+        """
+        pass
+    def __init__(self,
+        *,
+        pair: typing.Optional[common.common_pb2.AssetPair] = ...,
+        cumulative_premium_fractions: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cumulative_premium_fractions",b"cumulative_premium_fractions","pair",b"pair"]) -> None: ...
+global___PairMetadata = PairMetadata
+
+class PrepaidBadDebt(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    DENOM_FIELD_NUMBER: builtins.int
+    AMOUNT_FIELD_NUMBER: builtins.int
+    denom: typing.Text
+    amount: typing.Text
+    def __init__(self,
+        *,
+        denom: typing.Text = ...,
+        amount: typing.Text = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","denom",b"denom"]) -> None: ...
+global___PrepaidBadDebt = PrepaidBadDebt
 
 class PositionResp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -261,7 +264,9 @@ class PositionResp(google.protobuf.message.Message):
     """The funding payment applied on this position change."""
 
     realized_pnl: typing.Text
-    """The amount of PnL realized on this position changed, measured in quote units."""
+    """The amount of PnL realized on this position changed, measured in quote
+    units.
+    """
 
     unrealized_pnl_after: typing.Text
     """The unrealized PnL in the position after the position change."""
@@ -272,7 +277,9 @@ class PositionResp(google.protobuf.message.Message):
     """
 
     position_notional: typing.Text
-    """The position's notional value after the position change, measured in quote units."""
+    """The position's notional value after the position change, measured in quote
+    units.
+    """
 
     def __init__(self,
         *,
@@ -324,34 +331,3 @@ class LiquidateResp(google.protobuf.message.Message):
     def HasField(self, field_name: typing_extensions.Literal["position_resp",b"position_resp"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["bad_debt",b"bad_debt","fee_to_liquidator",b"fee_to_liquidator","fee_to_perp_ecosystem_fund",b"fee_to_perp_ecosystem_fund","liquidator",b"liquidator","position_resp",b"position_resp"]) -> None: ...
 global___LiquidateResp = LiquidateResp
-
-class PairMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    PAIR_FIELD_NUMBER: builtins.int
-    CUMULATIVE_PREMIUM_FRACTIONS_FIELD_NUMBER: builtins.int
-    @property
-    def pair(self) -> common.common_pb2.AssetPair: ...
-    @property
-    def cumulative_premium_fractions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
-    def __init__(self,
-        *,
-        pair: typing.Optional[common.common_pb2.AssetPair] = ...,
-        cumulative_premium_fractions: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cumulative_premium_fractions",b"cumulative_premium_fractions","pair",b"pair"]) -> None: ...
-global___PairMetadata = PairMetadata
-
-class PrepaidBadDebt(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    DENOM_FIELD_NUMBER: builtins.int
-    AMOUNT_FIELD_NUMBER: builtins.int
-    denom: typing.Text
-    amount: typing.Text
-    def __init__(self,
-        *,
-        denom: typing.Text = ...,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","denom",b"denom"]) -> None: ...
-global___PrepaidBadDebt = PrepaidBadDebt

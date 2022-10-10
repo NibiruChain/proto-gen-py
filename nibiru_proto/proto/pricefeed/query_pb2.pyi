@@ -7,7 +7,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
-import pricefeed.params_pb2
+import pricefeed.state_pb2
 import typing
 import typing_extensions
 
@@ -29,10 +29,10 @@ class QueryParamsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     PARAMS_FIELD_NUMBER: builtins.int
     @property
-    def params(self) -> pricefeed.params_pb2.Params: ...
+    def params(self) -> pricefeed.state_pb2.Params: ...
     def __init__(self,
         *,
-        params: typing.Optional[pricefeed.params_pb2.Params] = ...,
+        params: typing.Optional[pricefeed.state_pb2.Params] = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["params",b"params"]) -> None: ...
