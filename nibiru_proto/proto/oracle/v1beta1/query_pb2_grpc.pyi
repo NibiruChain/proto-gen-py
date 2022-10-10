@@ -19,16 +19,6 @@ class QueryStub:
         oracle.v1beta1.query_pb2.QueryExchangeRatesResponse]
     """ExchangeRates returns exchange rates of all pairs"""
 
-    TobinTax: grpc.UnaryUnaryMultiCallable[
-        oracle.v1beta1.query_pb2.QueryTobinTaxRequest,
-        oracle.v1beta1.query_pb2.QueryTobinTaxResponse]
-    """TobinTax returns tobin tax of a pair"""
-
-    TobinTaxes: grpc.UnaryUnaryMultiCallable[
-        oracle.v1beta1.query_pb2.QueryTobinTaxesRequest,
-        oracle.v1beta1.query_pb2.QueryTobinTaxesResponse]
-    """TobinTaxes returns tobin taxes of all pairs"""
-
     Actives: grpc.UnaryUnaryMultiCallable[
         oracle.v1beta1.query_pb2.QueryActivesRequest,
         oracle.v1beta1.query_pb2.QueryActivesResponse]
@@ -91,22 +81,6 @@ class QueryServicer(metaclass=abc.ABCMeta):
         context: grpc.ServicerContext,
     ) -> oracle.v1beta1.query_pb2.QueryExchangeRatesResponse:
         """ExchangeRates returns exchange rates of all pairs"""
-        pass
-
-    @abc.abstractmethod
-    def TobinTax(self,
-        request: oracle.v1beta1.query_pb2.QueryTobinTaxRequest,
-        context: grpc.ServicerContext,
-    ) -> oracle.v1beta1.query_pb2.QueryTobinTaxResponse:
-        """TobinTax returns tobin tax of a pair"""
-        pass
-
-    @abc.abstractmethod
-    def TobinTaxes(self,
-        request: oracle.v1beta1.query_pb2.QueryTobinTaxesRequest,
-        context: grpc.ServicerContext,
-    ) -> oracle.v1beta1.query_pb2.QueryTobinTaxesResponse:
-        """TobinTaxes returns tobin taxes of all pairs"""
         pass
 
     @abc.abstractmethod

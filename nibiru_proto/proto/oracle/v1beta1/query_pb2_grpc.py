@@ -25,16 +25,6 @@ class QueryStub(object):
                 request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesRequest.SerializeToString,
                 response_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesResponse.FromString,
                 )
-        self.TobinTax = channel.unary_unary(
-                '/nibiru.oracle.v1beta1.Query/TobinTax',
-                request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxRequest.SerializeToString,
-                response_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxResponse.FromString,
-                )
-        self.TobinTaxes = channel.unary_unary(
-                '/nibiru.oracle.v1beta1.Query/TobinTaxes',
-                request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesRequest.SerializeToString,
-                response_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesResponse.FromString,
-                )
         self.Actives = channel.unary_unary(
                 '/nibiru.oracle.v1beta1.Query/Actives',
                 request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryActivesRequest.SerializeToString,
@@ -95,20 +85,6 @@ class QueryServicer(object):
 
     def ExchangeRates(self, request, context):
         """ExchangeRates returns exchange rates of all pairs
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def TobinTax(self, request, context):
-        """TobinTax returns tobin tax of a pair
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def TobinTaxes(self, request, context):
-        """TobinTaxes returns tobin taxes of all pairs
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -189,16 +165,6 @@ def add_QueryServicer_to_server(servicer, server):
                     servicer.ExchangeRates,
                     request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesRequest.FromString,
                     response_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesResponse.SerializeToString,
-            ),
-            'TobinTax': grpc.unary_unary_rpc_method_handler(
-                    servicer.TobinTax,
-                    request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxRequest.FromString,
-                    response_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxResponse.SerializeToString,
-            ),
-            'TobinTaxes': grpc.unary_unary_rpc_method_handler(
-                    servicer.TobinTaxes,
-                    request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesRequest.FromString,
-                    response_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesResponse.SerializeToString,
             ),
             'Actives': grpc.unary_unary_rpc_method_handler(
                     servicer.Actives,
@@ -287,40 +253,6 @@ class Query(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.oracle.v1beta1.Query/ExchangeRates',
             oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesRequest.SerializeToString,
             oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def TobinTax(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.oracle.v1beta1.Query/TobinTax',
-            oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxRequest.SerializeToString,
-            oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def TobinTaxes(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.oracle.v1beta1.Query/TobinTaxes',
-            oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesRequest.SerializeToString,
-            oracle_dot_v1beta1_dot_query__pb2.QueryTobinTaxesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

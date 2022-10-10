@@ -66,60 +66,6 @@ class QueryExchangeRatesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["exchange_rates",b"exchange_rates"]) -> None: ...
 global___QueryExchangeRatesResponse = QueryExchangeRatesResponse
 
-class QueryTobinTaxRequest(google.protobuf.message.Message):
-    """QueryTobinTaxRequest is the request type for the Query/TobinTax RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    PAIR_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    """pair defines the asset to query for."""
-
-    def __init__(self,
-        *,
-        pair: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> None: ...
-global___QueryTobinTaxRequest = QueryTobinTaxRequest
-
-class QueryTobinTaxResponse(google.protobuf.message.Message):
-    """QueryTobinTaxResponse is response type for the
-    Query/TobinTax RPC method.
-    """
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    TOBIN_TAX_FIELD_NUMBER: builtins.int
-    tobin_tax: typing.Text
-    """tobin_taxe defines the tobin tax of a pair"""
-
-    def __init__(self,
-        *,
-        tobin_tax: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["tobin_tax",b"tobin_tax"]) -> None: ...
-global___QueryTobinTaxResponse = QueryTobinTaxResponse
-
-class QueryTobinTaxesRequest(google.protobuf.message.Message):
-    """QueryTobinTaxesRequest is the request type for the Query/TobinTaxes RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
-global___QueryTobinTaxesRequest = QueryTobinTaxesRequest
-
-class QueryTobinTaxesResponse(google.protobuf.message.Message):
-    """QueryTobinTaxesResponse is response type for the
-    Query/TobinTaxes RPC method.
-    """
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    TOBIN_TAXES_FIELD_NUMBER: builtins.int
-    @property
-    def tobin_taxes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.Pair]:
-        """tobin_taxes defines a list of the tobin tax of all whitelisted pairs"""
-        pass
-    def __init__(self,
-        *,
-        tobin_taxes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.Pair]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["tobin_taxes",b"tobin_taxes"]) -> None: ...
-global___QueryTobinTaxesResponse = QueryTobinTaxesResponse
-
 class QueryActivesRequest(google.protobuf.message.Message):
     """QueryActivesRequest is the request type for the Query/Actives RPC method."""
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

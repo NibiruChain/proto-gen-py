@@ -49,21 +49,18 @@ class Pair(google.protobuf.message.Message):
     """Pair is the object that holds configuration of each pair."""
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     NAME_FIELD_NUMBER: builtins.int
-    TOBIN_TAX_FIELD_NUMBER: builtins.int
     name: typing.Text
-    tobin_tax: typing.Text
     def __init__(self,
         *,
         name: typing.Text = ...,
-        tobin_tax: typing.Text = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["name",b"name","tobin_tax",b"tobin_tax"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["name",b"name"]) -> None: ...
 global___Pair = Pair
 
 class AggregateExchangeRatePrevote(google.protobuf.message.Message):
     """struct for aggregate prevoting on the ExchangeRateVote.
     The purpose of aggregate prevote is to hide vote exchange rates with hash
-    which is formatted as hex string in SHA256("{salt}:({pair},{exchange_rate})|...,({pair},{exchange_rate}):{voter}")
+    which is formatted as hex string in SHA256("{salt}:({pair},{exchange_rate})|...|({pair},{exchange_rate}):{voter}")
     """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     HASH_FIELD_NUMBER: builtins.int

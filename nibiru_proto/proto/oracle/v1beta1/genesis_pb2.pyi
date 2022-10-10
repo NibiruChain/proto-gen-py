@@ -21,7 +21,7 @@ class GenesisState(google.protobuf.message.Message):
     MISS_COUNTERS_FIELD_NUMBER: builtins.int
     AGGREGATE_EXCHANGE_RATE_PREVOTES_FIELD_NUMBER: builtins.int
     AGGREGATE_EXCHANGE_RATE_VOTES_FIELD_NUMBER: builtins.int
-    TOBIN_TAXES_FIELD_NUMBER: builtins.int
+    PAIRS_FIELD_NUMBER: builtins.int
     @property
     def params(self) -> oracle.v1beta1.oracle_pb2.Params: ...
     @property
@@ -35,7 +35,7 @@ class GenesisState(google.protobuf.message.Message):
     @property
     def aggregate_exchange_rate_votes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]: ...
     @property
-    def tobin_taxes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TobinTax]: ...
+    def pairs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.Pair]: ...
     def __init__(self,
         *,
         params: typing.Optional[oracle.v1beta1.oracle_pb2.Params] = ...,
@@ -44,10 +44,10 @@ class GenesisState(google.protobuf.message.Message):
         miss_counters: typing.Optional[typing.Iterable[global___MissCounter]] = ...,
         aggregate_exchange_rate_prevotes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote]] = ...,
         aggregate_exchange_rate_votes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]] = ...,
-        tobin_taxes: typing.Optional[typing.Iterable[global___TobinTax]] = ...,
+        pairs: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.Pair]] = ...,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes",b"aggregate_exchange_rate_prevotes","aggregate_exchange_rate_votes",b"aggregate_exchange_rate_votes","exchange_rates",b"exchange_rates","feeder_delegations",b"feeder_delegations","miss_counters",b"miss_counters","params",b"params","tobin_taxes",b"tobin_taxes"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes",b"aggregate_exchange_rate_prevotes","aggregate_exchange_rate_votes",b"aggregate_exchange_rate_votes","exchange_rates",b"exchange_rates","feeder_delegations",b"feeder_delegations","miss_counters",b"miss_counters","pairs",b"pairs","params",b"params"]) -> None: ...
 global___GenesisState = GenesisState
 
 class FeederDelegation(google.protobuf.message.Message):
@@ -84,20 +84,3 @@ class MissCounter(google.protobuf.message.Message):
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["miss_counter",b"miss_counter","validator_address",b"validator_address"]) -> None: ...
 global___MissCounter = MissCounter
-
-class TobinTax(google.protobuf.message.Message):
-    """TobinTax defines a pair and tobin_tax pair used in
-    oracle module's genesis state
-    """
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    PAIR_FIELD_NUMBER: builtins.int
-    TOBIN_TAX_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    tobin_tax: typing.Text
-    def __init__(self,
-        *,
-        pair: typing.Text = ...,
-        tobin_tax: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair","tobin_tax",b"tobin_tax"]) -> None: ...
-global___TobinTax = TobinTax
