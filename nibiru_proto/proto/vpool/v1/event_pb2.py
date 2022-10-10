@@ -18,14 +18,14 @@ from cosmos_proto import cosmos_pb2 as cosmos__proto_dot_cosmos__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14vpool/v1/event.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\x1a\x19\x63osmos_proto/cosmos.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb6\x01\n\x19ReserveSnapshotSavedEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x45\n\rquote_reserve\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0c\x62\x61se_reserve\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\xb0\x01\n\x15SwapQuoteForBaseEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x44\n\x0cquote_amount\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x43\n\x0b\x62\x61se_amount\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\xb0\x01\n\x15SwapBaseForQuoteEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x44\n\x0cquote_amount\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x43\n\x0b\x62\x61se_amount\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\x98\x01\n\x10MarkPriceChanged\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12=\n\x05price\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x37\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\x90\xdf\x1f\x01\xc8\xde\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14vpool/v1/event.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\x1a\x19\x63osmos_proto/cosmos.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb6\x01\n\x19ReserveSnapshotSavedEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x45\n\rquote_reserve\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0c\x62\x61se_reserve\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\xb0\x01\n\x15SwapQuoteForBaseEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x44\n\x0cquote_amount\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x43\n\x0b\x62\x61se_amount\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\xb0\x01\n\x15SwapBaseForQuoteEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x44\n\x0cquote_amount\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x43\n\x0b\x62\x61se_amount\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\x9d\x01\n\x15MarkPriceChangedEvent\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12=\n\x05price\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x37\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\x90\xdf\x1f\x01\xc8\xde\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
 
 
 
 _RESERVESNAPSHOTSAVEDEVENT = DESCRIPTOR.message_types_by_name['ReserveSnapshotSavedEvent']
 _SWAPQUOTEFORBASEEVENT = DESCRIPTOR.message_types_by_name['SwapQuoteForBaseEvent']
 _SWAPBASEFORQUOTEEVENT = DESCRIPTOR.message_types_by_name['SwapBaseForQuoteEvent']
-_MARKPRICECHANGED = DESCRIPTOR.message_types_by_name['MarkPriceChanged']
+_MARKPRICECHANGEDEVENT = DESCRIPTOR.message_types_by_name['MarkPriceChangedEvent']
 ReserveSnapshotSavedEvent = _reflection.GeneratedProtocolMessageType('ReserveSnapshotSavedEvent', (_message.Message,), {
   'DESCRIPTOR' : _RESERVESNAPSHOTSAVEDEVENT,
   '__module__' : 'vpool.v1.event_pb2'
@@ -47,12 +47,12 @@ SwapBaseForQuoteEvent = _reflection.GeneratedProtocolMessageType('SwapBaseForQuo
   })
 _sym_db.RegisterMessage(SwapBaseForQuoteEvent)
 
-MarkPriceChanged = _reflection.GeneratedProtocolMessageType('MarkPriceChanged', (_message.Message,), {
-  'DESCRIPTOR' : _MARKPRICECHANGED,
+MarkPriceChangedEvent = _reflection.GeneratedProtocolMessageType('MarkPriceChangedEvent', (_message.Message,), {
+  'DESCRIPTOR' : _MARKPRICECHANGEDEVENT,
   '__module__' : 'vpool.v1.event_pb2'
-  # @@protoc_insertion_point(class_scope:nibiru.vpool.v1.MarkPriceChanged)
+  # @@protoc_insertion_point(class_scope:nibiru.vpool.v1.MarkPriceChangedEvent)
   })
-_sym_db.RegisterMessage(MarkPriceChanged)
+_sym_db.RegisterMessage(MarkPriceChangedEvent)
 
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -70,16 +70,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SWAPBASEFORQUOTEEVENT.fields_by_name['quote_amount']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _SWAPBASEFORQUOTEEVENT.fields_by_name['base_amount']._options = None
   _SWAPBASEFORQUOTEEVENT.fields_by_name['base_amount']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _MARKPRICECHANGED.fields_by_name['price']._options = None
-  _MARKPRICECHANGED.fields_by_name['price']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _MARKPRICECHANGED.fields_by_name['timestamp']._options = None
-  _MARKPRICECHANGED.fields_by_name['timestamp']._serialized_options = b'\220\337\037\001\310\336\037\000'
+  _MARKPRICECHANGEDEVENT.fields_by_name['price']._options = None
+  _MARKPRICECHANGEDEVENT.fields_by_name['price']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _MARKPRICECHANGEDEVENT.fields_by_name['timestamp']._options = None
+  _MARKPRICECHANGEDEVENT.fields_by_name['timestamp']._serialized_options = b'\220\337\037\001\310\336\037\000'
   _RESERVESNAPSHOTSAVEDEVENT._serialized_start=156
   _RESERVESNAPSHOTSAVEDEVENT._serialized_end=338
   _SWAPQUOTEFORBASEEVENT._serialized_start=341
   _SWAPQUOTEFORBASEEVENT._serialized_end=517
   _SWAPBASEFORQUOTEEVENT._serialized_start=520
   _SWAPBASEFORQUOTEEVENT._serialized_end=696
-  _MARKPRICECHANGED._serialized_start=699
-  _MARKPRICECHANGED._serialized_end=851
+  _MARKPRICECHANGEDEVENT._serialized_start=699
+  _MARKPRICECHANGEDEVENT._serialized_end=856
 # @@protoc_insertion_point(module_scope)

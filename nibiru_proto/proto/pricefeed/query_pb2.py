@@ -15,10 +15,10 @@ _sym_db = _symbol_database.Default()
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from pricefeed import params_pb2 as pricefeed_dot_params__pb2
+from pricefeed import state_pb2 as pricefeed_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15pricefeed/query.proto\x12\x13nibiru.pricefeed.v1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16pricefeed/params.proto\"\x14\n\x12QueryParamsRequest\"N\n\x13QueryParamsResponse\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.nibiru.pricefeed.v1.ParamsB\x04\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"*\n\x11QueryPriceRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"Z\n\x12QueryPriceResponse\x12>\n\x05price\x18\x01 \x01(\x0b\x32).nibiru.pricefeed.v1.CurrentPriceResponseB\x04\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"\x14\n\x12QueryPricesRequest\"u\n\x13QueryPricesResponse\x12X\n\x06prices\x18\x01 \x03(\x0b\x32).nibiru.pricefeed.v1.CurrentPriceResponseB\x1d\xaa\xdf\x1f\x15\x43urrentPriceResponses\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\".\n\x15QueryRawPricesRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"z\n\x16QueryRawPricesResponse\x12Z\n\nraw_prices\x18\x01 \x03(\x0b\x32(.nibiru.pricefeed.v1.PostedPriceResponseB\x1c\xaa\xdf\x1f\x14PostedPriceResponses\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\",\n\x13QueryOraclesRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"-\n\x14QueryOraclesResponse\x12\x0f\n\x07oracles\x18\x01 \x03(\t:\x04\x88\xa0\x1f\x00\"\x15\n\x13QueryMarketsRequest\"[\n\x14QueryMarketsResponse\x12=\n\x07markets\x18\x01 \x03(\x0b\x32\x1b.nibiru.pricefeed.v1.MarketB\x0f\xaa\xdf\x1f\x07Markets\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"\xbf\x01\n\x13PostedPriceResponse\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12\x16\n\x0eoracle_address\x18\x02 \x01(\t\x12=\n\x05price\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x34\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\x90\xdf\x1f\x01\xc8\xde\x1f\x00\"\xb0\x01\n\x14\x43urrentPriceResponse\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12=\n\x05price\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12<\n\x04twap\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"F\n\x06Market\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12\x0f\n\x07oracles\x18\x02 \x03(\t\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\x32\x84\x07\n\x05Query\x12\x8a\x01\n\x0bQueryParams\x12\'.nibiru.pricefeed.v1.QueryParamsRequest\x1a(.nibiru.pricefeed.v1.QueryParamsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /nibiru/pricefeed/v1beta1/params\x12\x91\x01\n\nQueryPrice\x12&.nibiru.pricefeed.v1.QueryPriceRequest\x1a\'.nibiru.pricefeed.v1.QueryPriceResponse\"2\x82\xd3\xe4\x93\x02,\x12*/nibiru/pricefeed/v1beta1/prices/{pair_id}\x12\x8a\x01\n\x0bQueryPrices\x12\'.nibiru.pricefeed.v1.QueryPricesRequest\x1a(.nibiru.pricefeed.v1.QueryPricesResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /nibiru/pricefeed/v1beta1/prices\x12\xa0\x01\n\x0eQueryRawPrices\x12*.nibiru.pricefeed.v1.QueryRawPricesRequest\x1a+.nibiru.pricefeed.v1.QueryRawPricesResponse\"5\x82\xd3\xe4\x93\x02/\x12-/nibiru/pricefeed/v1beta1/rawprices/{pair_id}\x12\x98\x01\n\x0cQueryOracles\x12(.nibiru.pricefeed.v1.QueryOraclesRequest\x1a).nibiru.pricefeed.v1.QueryOraclesResponse\"3\x82\xd3\xe4\x93\x02-\x12+/nibiru/pricefeed/v1beta1/oracles/{pair_id}\x12\x8e\x01\n\x0cQueryMarkets\x12(.nibiru.pricefeed.v1.QueryMarketsRequest\x1a).nibiru.pricefeed.v1.QueryMarketsResponse\")\x82\xd3\xe4\x93\x02#\x12!/nibiru/pricefeed/v1beta1/marketsB9Z/github.com/NibiruChain/nibiru/x/pricefeed/types\xa8\xe2\x1e\x01\xe0\xe1\x1e\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15pricefeed/query.proto\x12\x13nibiru.pricefeed.v1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15pricefeed/state.proto\"\x14\n\x12QueryParamsRequest\"N\n\x13QueryParamsResponse\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.nibiru.pricefeed.v1.ParamsB\x04\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"*\n\x11QueryPriceRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"Z\n\x12QueryPriceResponse\x12>\n\x05price\x18\x01 \x01(\x0b\x32).nibiru.pricefeed.v1.CurrentPriceResponseB\x04\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"\x14\n\x12QueryPricesRequest\"u\n\x13QueryPricesResponse\x12X\n\x06prices\x18\x01 \x03(\x0b\x32).nibiru.pricefeed.v1.CurrentPriceResponseB\x1d\xaa\xdf\x1f\x15\x43urrentPriceResponses\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\".\n\x15QueryRawPricesRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"z\n\x16QueryRawPricesResponse\x12Z\n\nraw_prices\x18\x01 \x03(\x0b\x32(.nibiru.pricefeed.v1.PostedPriceResponseB\x1c\xaa\xdf\x1f\x14PostedPriceResponses\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\",\n\x13QueryOraclesRequest\x12\x0f\n\x07pair_id\x18\x01 \x01(\t:\x04\x88\xa0\x1f\x00\"-\n\x14QueryOraclesResponse\x12\x0f\n\x07oracles\x18\x01 \x03(\t:\x04\x88\xa0\x1f\x00\"\x15\n\x13QueryMarketsRequest\"[\n\x14QueryMarketsResponse\x12=\n\x07markets\x18\x01 \x03(\x0b\x32\x1b.nibiru.pricefeed.v1.MarketB\x0f\xaa\xdf\x1f\x07Markets\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\"\xbf\x01\n\x13PostedPriceResponse\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12\x16\n\x0eoracle_address\x18\x02 \x01(\t\x12=\n\x05price\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x34\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\x90\xdf\x1f\x01\xc8\xde\x1f\x00\"\xb0\x01\n\x14\x43urrentPriceResponse\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12=\n\x05price\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12<\n\x04twap\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"F\n\x06Market\x12\x1b\n\x07pair_id\x18\x01 \x01(\tB\n\xe2\xde\x1f\x06PairID\x12\x0f\n\x07oracles\x18\x02 \x03(\t\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\x32\x84\x07\n\x05Query\x12\x8a\x01\n\x0bQueryParams\x12\'.nibiru.pricefeed.v1.QueryParamsRequest\x1a(.nibiru.pricefeed.v1.QueryParamsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /nibiru/pricefeed/v1beta1/params\x12\x91\x01\n\nQueryPrice\x12&.nibiru.pricefeed.v1.QueryPriceRequest\x1a\'.nibiru.pricefeed.v1.QueryPriceResponse\"2\x82\xd3\xe4\x93\x02,\x12*/nibiru/pricefeed/v1beta1/prices/{pair_id}\x12\x8a\x01\n\x0bQueryPrices\x12\'.nibiru.pricefeed.v1.QueryPricesRequest\x1a(.nibiru.pricefeed.v1.QueryPricesResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /nibiru/pricefeed/v1beta1/prices\x12\xa0\x01\n\x0eQueryRawPrices\x12*.nibiru.pricefeed.v1.QueryRawPricesRequest\x1a+.nibiru.pricefeed.v1.QueryRawPricesResponse\"5\x82\xd3\xe4\x93\x02/\x12-/nibiru/pricefeed/v1beta1/rawprices/{pair_id}\x12\x98\x01\n\x0cQueryOracles\x12(.nibiru.pricefeed.v1.QueryOraclesRequest\x1a).nibiru.pricefeed.v1.QueryOraclesResponse\"3\x82\xd3\xe4\x93\x02-\x12+/nibiru/pricefeed/v1beta1/oracles/{pair_id}\x12\x8e\x01\n\x0cQueryMarkets\x12(.nibiru.pricefeed.v1.QueryMarketsRequest\x1a).nibiru.pricefeed.v1.QueryMarketsResponse\")\x82\xd3\xe4\x93\x02#\x12!/nibiru/pricefeed/v1beta1/marketsB9Z/github.com/NibiruChain/nibiru/x/pricefeed/types\xa8\xe2\x1e\x01\xe0\xe1\x1e\x01\x62\x06proto3')
 
 
 
@@ -201,36 +201,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QUERY.methods_by_name['QueryOracles']._serialized_options = b'\202\323\344\223\002-\022+/nibiru/pricefeed/v1beta1/oracles/{pair_id}'
   _QUERY.methods_by_name['QueryMarkets']._options = None
   _QUERY.methods_by_name['QueryMarkets']._serialized_options = b'\202\323\344\223\002#\022!/nibiru/pricefeed/v1beta1/markets'
-  _QUERYPARAMSREQUEST._serialized_start=155
-  _QUERYPARAMSREQUEST._serialized_end=175
-  _QUERYPARAMSRESPONSE._serialized_start=177
-  _QUERYPARAMSRESPONSE._serialized_end=255
-  _QUERYPRICEREQUEST._serialized_start=257
-  _QUERYPRICEREQUEST._serialized_end=299
-  _QUERYPRICERESPONSE._serialized_start=301
-  _QUERYPRICERESPONSE._serialized_end=391
-  _QUERYPRICESREQUEST._serialized_start=393
-  _QUERYPRICESREQUEST._serialized_end=413
-  _QUERYPRICESRESPONSE._serialized_start=415
-  _QUERYPRICESRESPONSE._serialized_end=532
-  _QUERYRAWPRICESREQUEST._serialized_start=534
-  _QUERYRAWPRICESREQUEST._serialized_end=580
-  _QUERYRAWPRICESRESPONSE._serialized_start=582
-  _QUERYRAWPRICESRESPONSE._serialized_end=704
-  _QUERYORACLESREQUEST._serialized_start=706
-  _QUERYORACLESREQUEST._serialized_end=750
-  _QUERYORACLESRESPONSE._serialized_start=752
-  _QUERYORACLESRESPONSE._serialized_end=797
-  _QUERYMARKETSREQUEST._serialized_start=799
-  _QUERYMARKETSREQUEST._serialized_end=820
-  _QUERYMARKETSRESPONSE._serialized_start=822
-  _QUERYMARKETSRESPONSE._serialized_end=913
-  _POSTEDPRICERESPONSE._serialized_start=916
-  _POSTEDPRICERESPONSE._serialized_end=1107
-  _CURRENTPRICERESPONSE._serialized_start=1110
-  _CURRENTPRICERESPONSE._serialized_end=1286
-  _MARKET._serialized_start=1288
-  _MARKET._serialized_end=1358
-  _QUERY._serialized_start=1361
-  _QUERY._serialized_end=2261
+  _QUERYPARAMSREQUEST._serialized_start=154
+  _QUERYPARAMSREQUEST._serialized_end=174
+  _QUERYPARAMSRESPONSE._serialized_start=176
+  _QUERYPARAMSRESPONSE._serialized_end=254
+  _QUERYPRICEREQUEST._serialized_start=256
+  _QUERYPRICEREQUEST._serialized_end=298
+  _QUERYPRICERESPONSE._serialized_start=300
+  _QUERYPRICERESPONSE._serialized_end=390
+  _QUERYPRICESREQUEST._serialized_start=392
+  _QUERYPRICESREQUEST._serialized_end=412
+  _QUERYPRICESRESPONSE._serialized_start=414
+  _QUERYPRICESRESPONSE._serialized_end=531
+  _QUERYRAWPRICESREQUEST._serialized_start=533
+  _QUERYRAWPRICESREQUEST._serialized_end=579
+  _QUERYRAWPRICESRESPONSE._serialized_start=581
+  _QUERYRAWPRICESRESPONSE._serialized_end=703
+  _QUERYORACLESREQUEST._serialized_start=705
+  _QUERYORACLESREQUEST._serialized_end=749
+  _QUERYORACLESRESPONSE._serialized_start=751
+  _QUERYORACLESRESPONSE._serialized_end=796
+  _QUERYMARKETSREQUEST._serialized_start=798
+  _QUERYMARKETSREQUEST._serialized_end=819
+  _QUERYMARKETSRESPONSE._serialized_start=821
+  _QUERYMARKETSRESPONSE._serialized_end=912
+  _POSTEDPRICERESPONSE._serialized_start=915
+  _POSTEDPRICERESPONSE._serialized_end=1106
+  _CURRENTPRICERESPONSE._serialized_start=1109
+  _CURRENTPRICERESPONSE._serialized_end=1285
+  _MARKET._serialized_start=1287
+  _MARKET._serialized_end=1357
+  _QUERY._serialized_start=1360
+  _QUERY._serialized_end=2260
 # @@protoc_insertion_point(module_scope)

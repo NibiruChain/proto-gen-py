@@ -8,7 +8,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import typing_extensions
-import vpool.v1.vpool_pb2
+import vpool.v1.state_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -60,13 +60,13 @@ class QueryAllPoolsResponse(google.protobuf.message.Message):
     POOLS_FIELD_NUMBER: builtins.int
     PRICES_FIELD_NUMBER: builtins.int
     @property
-    def pools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.vpool_pb2.Pool]: ...
+    def pools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.VPool]: ...
     @property
-    def prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.vpool_pb2.PoolPrices]: ...
+    def prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.PoolPrices]: ...
     def __init__(self,
         *,
-        pools: typing.Optional[typing.Iterable[vpool.v1.vpool_pb2.Pool]] = ...,
-        prices: typing.Optional[typing.Iterable[vpool.v1.vpool_pb2.PoolPrices]] = ...,
+        pools: typing.Optional[typing.Iterable[vpool.v1.state_pb2.VPool]] = ...,
+        prices: typing.Optional[typing.Iterable[vpool.v1.state_pb2.PoolPrices]] = ...,
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["pools",b"pools","prices",b"prices"]) -> None: ...
 global___QueryAllPoolsResponse = QueryAllPoolsResponse
@@ -80,14 +80,14 @@ class QueryBaseAssetPriceRequest(google.protobuf.message.Message):
     DIRECTION_FIELD_NUMBER: builtins.int
     BASE_ASSET_AMOUNT_FIELD_NUMBER: builtins.int
     pair: typing.Text
-    direction: vpool.v1.vpool_pb2.Direction.ValueType
+    direction: vpool.v1.state_pb2.Direction.ValueType
     base_asset_amount: typing.Text
     """base asset is the crypto asset, e.g. BTC or ETH"""
 
     def __init__(self,
         *,
         pair: typing.Text = ...,
-        direction: vpool.v1.vpool_pb2.Direction.ValueType = ...,
+        direction: vpool.v1.state_pb2.Direction.ValueType = ...,
         base_asset_amount: typing.Text = ...,
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["base_asset_amount",b"base_asset_amount","direction",b"direction","pair",b"pair"]) -> None: ...

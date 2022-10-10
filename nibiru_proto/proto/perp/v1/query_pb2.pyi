@@ -4,6 +4,7 @@ isort:skip_file
 """
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import perp.v1.state_pb2
 import typing
@@ -37,11 +38,35 @@ class QueryParamsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["params",b"params"]) -> None: ...
 global___QueryParamsResponse = QueryParamsResponse
 
-class QueryTraderPositionRequest(google.protobuf.message.Message):
-    """---------------------------------------- TraderPosition
+class QueryPositionsRequest(google.protobuf.message.Message):
+    """---------------------------------------- Positions"""
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    TRADER_FIELD_NUMBER: builtins.int
+    trader: typing.Text
+    def __init__(self,
+        *,
+        trader: typing.Text = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["trader",b"trader"]) -> None: ...
+global___QueryPositionsRequest = QueryPositionsRequest
 
-    QueryTraderPositionRequest is the request type for the position of the 
-    x/perp module account.
+class QueryPositionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    POSITIONS_FIELD_NUMBER: builtins.int
+    @property
+    def positions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___QueryPositionResponse]: ...
+    def __init__(self,
+        *,
+        positions: typing.Optional[typing.Iterable[global___QueryPositionResponse]] = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["positions",b"positions"]) -> None: ...
+global___QueryPositionsResponse = QueryPositionsResponse
+
+class QueryPositionRequest(google.protobuf.message.Message):
+    """---------------------------------------- Position
+
+    QueryPositionRequest is the request type for the position of the x/perp
+    module account.
     """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     TOKEN_PAIR_FIELD_NUMBER: builtins.int
@@ -54,9 +79,9 @@ class QueryTraderPositionRequest(google.protobuf.message.Message):
         trader: typing.Text = ...,
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["token_pair",b"token_pair","trader",b"trader"]) -> None: ...
-global___QueryTraderPositionRequest = QueryTraderPositionRequest
+global___QueryPositionRequest = QueryPositionRequest
 
-class QueryTraderPositionResponse(google.protobuf.message.Message):
+class QueryPositionResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     POSITION_FIELD_NUMBER: builtins.int
     POSITION_NOTIONAL_FIELD_NUMBER: builtins.int
@@ -69,20 +94,23 @@ class QueryTraderPositionResponse(google.protobuf.message.Message):
         """The position as it exists in the blockchain state"""
         pass
     position_notional: typing.Text
-    """The position's current notional value, if it were to be entirely closed (in margin units)."""
+    """The position's current notional value, if it were to be entirely closed (in
+    margin units).
+    """
 
     unrealized_pnl: typing.Text
     """The position's unrealized PnL."""
 
     margin_ratio_mark: typing.Text
     """margin ratio of the position based on the mark price, mark TWAP. The higher
-    value of the possible margin ratios (TWAP and instantaneous) is taken to be 
-    'marginRatioMark'. Calculated from margin, unrealized PnL, and position notional.
+    value of the possible margin ratios (TWAP and instantaneous) is taken to be
+    'marginRatioMark'. Calculated from margin, unrealized PnL, and position
+    notional.
     """
 
     margin_ratio_index: typing.Text
-    """margin ratio of the position based on the index price. Calculated from margin, 
-    unrealized PnL, and position notional.
+    """margin ratio of the position based on the index price. Calculated from
+    margin, unrealized PnL, and position notional.
     """
 
     block_number: builtins.int
@@ -99,4 +127,36 @@ class QueryTraderPositionResponse(google.protobuf.message.Message):
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["position",b"position"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["block_number",b"block_number","margin_ratio_index",b"margin_ratio_index","margin_ratio_mark",b"margin_ratio_mark","position",b"position","position_notional",b"position_notional","unrealized_pnl",b"unrealized_pnl"]) -> None: ...
-global___QueryTraderPositionResponse = QueryTraderPositionResponse
+global___QueryPositionResponse = QueryPositionResponse
+
+class QueryFundingRatesRequest(google.protobuf.message.Message):
+    """---------------------------------------- FundingPayments
+
+    """
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_FIELD_NUMBER: builtins.int
+    pair: typing.Text
+    """the pair to query for"""
+
+    def __init__(self,
+        *,
+        pair: typing.Text = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> None: ...
+global___QueryFundingRatesRequest = QueryFundingRatesRequest
+
+class QueryFundingRatesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    CUMULATIVE_FUNDING_RATES_FIELD_NUMBER: builtins.int
+    @property
+    def cumulative_funding_rates(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+        """a historical list of cumulative funding rates, with the most recent one
+        last
+        """
+        pass
+    def __init__(self,
+        *,
+        cumulative_funding_rates: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cumulative_funding_rates",b"cumulative_funding_rates"]) -> None: ...
+global___QueryFundingRatesResponse = QueryFundingRatesResponse

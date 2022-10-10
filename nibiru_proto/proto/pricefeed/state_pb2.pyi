@@ -21,7 +21,7 @@ class Params(google.protobuf.message.Message):
     TWAP_LOOKBACK_WINDOW_FIELD_NUMBER: builtins.int
     @property
     def pairs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[common.common_pb2.AssetPair]:
-        """Pairs is the list of valid trading pairs for the module. 
+        """Pairs is the list of valid trading pairs for the module.
         Add new trading pairs
         """
         pass
@@ -38,8 +38,32 @@ class Params(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["pairs",b"pairs","twap_lookback_window",b"twap_lookback_window"]) -> None: ...
 global___Params = Params
 
+class PriceSnapshot(google.protobuf.message.Message):
+    """a snapshot of the pricefeed oracle's median price at a given point in time"""
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_ID_FIELD_NUMBER: builtins.int
+    PRICE_FIELD_NUMBER: builtins.int
+    TIMESTAMP_MS_FIELD_NUMBER: builtins.int
+    pair_id: typing.Text
+    """the token pair"""
+
+    price: typing.Text
+    """the median prices of all oracles"""
+
+    timestamp_ms: builtins.int
+    """milliseconds since unix epoch"""
+
+    def __init__(self,
+        *,
+        pair_id: typing.Text = ...,
+        price: typing.Text = ...,
+        timestamp_ms: builtins.int = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id","price",b"price","timestamp_ms",b"timestamp_ms"]) -> None: ...
+global___PriceSnapshot = PriceSnapshot
+
 class OraclesMarshaler(google.protobuf.message.Message):
-    """OraclesMarshaler is a codec.ProtoMarshaler for an oracles array in the 
+    """OraclesMarshaler is a codec.ProtoMarshaler for an oracles array in the
     OraclesState sdk.KVStore.
     """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -54,7 +78,7 @@ class OraclesMarshaler(google.protobuf.message.Message):
 global___OraclesMarshaler = OraclesMarshaler
 
 class ActivePairMarshaler(google.protobuf.message.Message):
-    """ActivePairMarshaler is a codec.ProtoMarshaler for the "IsActive" status of  
+    """ActivePairMarshaler is a codec.ProtoMarshaler for the "IsActive" status of
     a pair in the ActivePairState sdk.KVStore.
     """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

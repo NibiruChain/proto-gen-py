@@ -3,7 +3,7 @@
 isort:skip_file
 """
 import builtins
-import epochs.genesis_pb2
+import epochs.state_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -22,10 +22,10 @@ class QueryEpochsInfoResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     EPOCHS_FIELD_NUMBER: builtins.int
     @property
-    def epochs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[epochs.genesis_pb2.EpochInfo]: ...
+    def epochs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[epochs.state_pb2.EpochInfo]: ...
     def __init__(self,
         *,
-        epochs: typing.Optional[typing.Iterable[epochs.genesis_pb2.EpochInfo]] = ...,
+        epochs: typing.Optional[typing.Iterable[epochs.state_pb2.EpochInfo]] = ...,
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["epochs",b"epochs"]) -> None: ...
 global___QueryEpochsInfoResponse = QueryEpochsInfoResponse

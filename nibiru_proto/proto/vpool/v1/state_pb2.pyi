@@ -61,32 +61,7 @@ BASE_ASSET_SWAP: TwapCalcOption.ValueType  # 3
 global___TwapCalcOption = TwapCalcOption
 
 
-class ReserveSnapshot(google.protobuf.message.Message):
-    """a snapshot of the vpool's reserves at a given point in time"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
-    QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
-    TIMESTAMP_MS_FIELD_NUMBER: builtins.int
-    BLOCK_NUMBER_FIELD_NUMBER: builtins.int
-    base_asset_reserve: typing.Text
-    quote_asset_reserve: typing.Text
-    """quote asset is usually the margin asset, e.g. NUSD"""
-
-    timestamp_ms: builtins.int
-    """milliseconds since unix epoch"""
-
-    block_number: builtins.int
-    def __init__(self,
-        *,
-        base_asset_reserve: typing.Text = ...,
-        quote_asset_reserve: typing.Text = ...,
-        timestamp_ms: builtins.int = ...,
-        block_number: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve",b"base_asset_reserve","block_number",b"block_number","quote_asset_reserve",b"quote_asset_reserve","timestamp_ms",b"timestamp_ms"]) -> None: ...
-global___ReserveSnapshot = ReserveSnapshot
-
-class Pool(google.protobuf.message.Message):
+class VPool(google.protobuf.message.Message):
     """A virtual pool used only for price discovery of perpetual futures contracts.
     No real liquidity exists in this pool.
     """
@@ -137,7 +112,55 @@ class Pool(google.protobuf.message.Message):
         ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve",b"base_asset_reserve","fluctuation_limit_ratio",b"fluctuation_limit_ratio","maintenance_margin_ratio",b"maintenance_margin_ratio","max_leverage",b"max_leverage","max_oracle_spread_ratio",b"max_oracle_spread_ratio","pair",b"pair","quote_asset_reserve",b"quote_asset_reserve","trade_limit_ratio",b"trade_limit_ratio"]) -> None: ...
-global___Pool = Pool
+global___VPool = VPool
+
+class CurrentTWAP(google.protobuf.message.Message):
+    """CurrentTWAP states defines the numerator and denominator for the TWAP calculation"""
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_ID_FIELD_NUMBER: builtins.int
+    NUMERATOR_FIELD_NUMBER: builtins.int
+    DENOMINATOR_FIELD_NUMBER: builtins.int
+    PRICE_FIELD_NUMBER: builtins.int
+    pair_id: typing.Text
+    numerator: typing.Text
+    denominator: typing.Text
+    price: typing.Text
+    def __init__(self,
+        *,
+        pair_id: typing.Text = ...,
+        numerator: typing.Text = ...,
+        denominator: typing.Text = ...,
+        price: typing.Text = ...,
+        ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["denominator",b"denominator","numerator",b"numerator","pair_id",b"pair_id","price",b"price"]) -> None: ...
+global___CurrentTWAP = CurrentTWAP
+
+class ReserveSnapshot(google.protobuf.message.Message):
+    """a snapshot of the vpool's reserves at a given point in time"""
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    PAIR_FIELD_NUMBER: builtins.int
+    BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
+    QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
+    TIMESTAMP_MS_FIELD_NUMBER: builtins.int
+    @property
+    def pair(self) -> common.common_pb2.AssetPair: ...
+    base_asset_reserve: typing.Text
+    quote_asset_reserve: typing.Text
+    """quote asset is usually the margin asset, e.g. NUSD"""
+
+    timestamp_ms: builtins.int
+    """milliseconds since unix epoch"""
+
+    def __init__(self,
+        *,
+        pair: typing.Optional[common.common_pb2.AssetPair] = ...,
+        base_asset_reserve: typing.Text = ...,
+        quote_asset_reserve: typing.Text = ...,
+        timestamp_ms: builtins.int = ...,
+        ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve",b"base_asset_reserve","pair",b"pair","quote_asset_reserve",b"quote_asset_reserve","timestamp_ms",b"timestamp_ms"]) -> None: ...
+global___ReserveSnapshot = ReserveSnapshot
 
 class PoolPrices(google.protobuf.message.Message):
     """PoolPrices is a simple structure that displays a snapshot of the mark and index

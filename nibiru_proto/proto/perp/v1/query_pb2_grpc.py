@@ -20,10 +20,20 @@ class QueryStub(object):
                 request_serializer=perp_dot_v1_dot_query__pb2.QueryParamsRequest.SerializeToString,
                 response_deserializer=perp_dot_v1_dot_query__pb2.QueryParamsResponse.FromString,
                 )
-        self.QueryTraderPosition = channel.unary_unary(
-                '/nibiru.perp.v1.Query/QueryTraderPosition',
-                request_serializer=perp_dot_v1_dot_query__pb2.QueryTraderPositionRequest.SerializeToString,
-                response_deserializer=perp_dot_v1_dot_query__pb2.QueryTraderPositionResponse.FromString,
+        self.QueryPosition = channel.unary_unary(
+                '/nibiru.perp.v1.Query/QueryPosition',
+                request_serializer=perp_dot_v1_dot_query__pb2.QueryPositionRequest.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionResponse.FromString,
+                )
+        self.QueryPositions = channel.unary_unary(
+                '/nibiru.perp.v1.Query/QueryPositions',
+                request_serializer=perp_dot_v1_dot_query__pb2.QueryPositionsRequest.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionsResponse.FromString,
+                )
+        self.FundingRates = channel.unary_unary(
+                '/nibiru.perp.v1.Query/FundingRates',
+                request_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
                 )
 
 
@@ -38,7 +48,19 @@ class QueryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def QueryTraderPosition(self, request, context):
+    def QueryPosition(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def QueryPositions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FundingRates(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -52,10 +74,20 @@ def add_QueryServicer_to_server(servicer, server):
                     request_deserializer=perp_dot_v1_dot_query__pb2.QueryParamsRequest.FromString,
                     response_serializer=perp_dot_v1_dot_query__pb2.QueryParamsResponse.SerializeToString,
             ),
-            'QueryTraderPosition': grpc.unary_unary_rpc_method_handler(
-                    servicer.QueryTraderPosition,
-                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryTraderPositionRequest.FromString,
-                    response_serializer=perp_dot_v1_dot_query__pb2.QueryTraderPositionResponse.SerializeToString,
+            'QueryPosition': grpc.unary_unary_rpc_method_handler(
+                    servicer.QueryPosition,
+                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionRequest.FromString,
+                    response_serializer=perp_dot_v1_dot_query__pb2.QueryPositionResponse.SerializeToString,
+            ),
+            'QueryPositions': grpc.unary_unary_rpc_method_handler(
+                    servicer.QueryPositions,
+                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionsRequest.FromString,
+                    response_serializer=perp_dot_v1_dot_query__pb2.QueryPositionsResponse.SerializeToString,
+            ),
+            'FundingRates': grpc.unary_unary_rpc_method_handler(
+                    servicer.FundingRates,
+                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.FromString,
+                    response_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,7 +118,7 @@ class Query(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def QueryTraderPosition(request,
+    def QueryPosition(request,
             target,
             options=(),
             channel_credentials=None,
@@ -96,8 +128,42 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/QueryTraderPosition',
-            perp_dot_v1_dot_query__pb2.QueryTraderPositionRequest.SerializeToString,
-            perp_dot_v1_dot_query__pb2.QueryTraderPositionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/QueryPosition',
+            perp_dot_v1_dot_query__pb2.QueryPositionRequest.SerializeToString,
+            perp_dot_v1_dot_query__pb2.QueryPositionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def QueryPositions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/QueryPositions',
+            perp_dot_v1_dot_query__pb2.QueryPositionsRequest.SerializeToString,
+            perp_dot_v1_dot_query__pb2.QueryPositionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FundingRates(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/FundingRates',
+            perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
+            perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

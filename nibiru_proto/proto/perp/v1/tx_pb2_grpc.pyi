@@ -24,6 +24,10 @@ class MsgStub:
     liquidate an existing position.
     """
 
+    MultiLiquidate: grpc.UnaryUnaryMultiCallable[
+        perp.v1.tx_pb2.MsgMultiLiquidate,
+        perp.v1.tx_pb2.MsgMultiLiquidateResponse]
+
     OpenPosition: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgOpenPosition,
         perp.v1.tx_pb2.MsgOpenPositionResponse]
@@ -56,6 +60,12 @@ class MsgServicer(metaclass=abc.ABCMeta):
         liquidate an existing position.
         """
         pass
+
+    @abc.abstractmethod
+    def MultiLiquidate(self,
+        request: perp.v1.tx_pb2.MsgMultiLiquidate,
+        context: grpc.ServicerContext,
+    ) -> perp.v1.tx_pb2.MsgMultiLiquidateResponse: ...
 
     @abc.abstractmethod
     def OpenPosition(self,

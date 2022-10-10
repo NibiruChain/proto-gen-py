@@ -17,14 +17,18 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from perp.v1 import state_pb2 as perp_dot_v1_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13perp/v1/query.proto\x12\x0enibiru.perp.v1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x13perp/v1/state.proto\"\x14\n\x12QueryParamsRequest\"C\n\x13QueryParamsResponse\x12,\n\x06params\x18\x01 \x01(\x0b\x32\x16.nibiru.perp.v1.ParamsB\x04\xc8\xde\x1f\x00\"@\n\x1aQueryTraderPositionRequest\x12\x12\n\ntoken_pair\x18\x01 \x01(\t\x12\x0e\n\x06trader\x18\x02 \x01(\t\"\x89\x03\n\x1bQueryTraderPositionResponse\x12*\n\x08position\x18\x01 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\x12I\n\x11position_notional\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x46\n\x0eunrealized_pnl\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12I\n\x11margin_ratio_mark\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12J\n\x12margin_ratio_index\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x14\n\x0c\x62lock_number\x18\x07 \x01(\x03\x32\x8e\x02\n\x05Query\x12n\n\x06Params\x12\".nibiru.perp.v1.QueryParamsRequest\x1a#.nibiru.perp.v1.QueryParamsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/nibiru/perp/params\x12\x94\x01\n\x13QueryTraderPosition\x12*.nibiru.perp.v1.QueryTraderPositionRequest\x1a+.nibiru.perp.v1.QueryTraderPositionResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/nibiru/perp/trader_positionB,Z*github.com/NibiruChain/nibiru/x/perp/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13perp/v1/query.proto\x12\x0enibiru.perp.v1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x13perp/v1/state.proto\"\x14\n\x12QueryParamsRequest\"C\n\x13QueryParamsResponse\x12,\n\x06params\x18\x01 \x01(\x0b\x32\x16.nibiru.perp.v1.ParamsB\x04\xc8\xde\x1f\x00\"\'\n\x15QueryPositionsRequest\x12\x0e\n\x06trader\x18\x01 \x01(\t\"R\n\x16QueryPositionsResponse\x12\x38\n\tpositions\x18\x01 \x03(\x0b\x32%.nibiru.perp.v1.QueryPositionResponse\":\n\x14QueryPositionRequest\x12\x12\n\ntoken_pair\x18\x01 \x01(\t\x12\x0e\n\x06trader\x18\x02 \x01(\t\"\x83\x03\n\x15QueryPositionResponse\x12*\n\x08position\x18\x01 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\x12I\n\x11position_notional\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x46\n\x0eunrealized_pnl\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12I\n\x11margin_ratio_mark\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12J\n\x12margin_ratio_index\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x14\n\x0c\x62lock_number\x18\x07 \x01(\x03\"(\n\x18QueryFundingRatesRequest\x12\x0c\n\x04pair\x18\x01 \x01(\t\"m\n\x19QueryFundingRatesResponse\x12P\n\x18\x63umulative_funding_rates\x18\x01 \x03(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x32\xff\x03\n\x05Query\x12n\n\x06Params\x12\".nibiru.perp.v1.QueryParamsRequest\x1a#.nibiru.perp.v1.QueryParamsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/nibiru/perp/params\x12{\n\rQueryPosition\x12$.nibiru.perp.v1.QueryPositionRequest\x1a%.nibiru.perp.v1.QueryPositionResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/nibiru/perp/position\x12\x7f\n\x0eQueryPositions\x12%.nibiru.perp.v1.QueryPositionsRequest\x1a&.nibiru.perp.v1.QueryPositionsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/nibiru/perp/positions\x12\x87\x01\n\x0c\x46undingRates\x12(.nibiru.perp.v1.QueryFundingRatesRequest\x1a).nibiru.perp.v1.QueryFundingRatesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/nibiru/perp/funding_ratesB,Z*github.com/NibiruChain/nibiru/x/perp/typesb\x06proto3')
 
 
 
 _QUERYPARAMSREQUEST = DESCRIPTOR.message_types_by_name['QueryParamsRequest']
 _QUERYPARAMSRESPONSE = DESCRIPTOR.message_types_by_name['QueryParamsResponse']
-_QUERYTRADERPOSITIONREQUEST = DESCRIPTOR.message_types_by_name['QueryTraderPositionRequest']
-_QUERYTRADERPOSITIONRESPONSE = DESCRIPTOR.message_types_by_name['QueryTraderPositionResponse']
+_QUERYPOSITIONSREQUEST = DESCRIPTOR.message_types_by_name['QueryPositionsRequest']
+_QUERYPOSITIONSRESPONSE = DESCRIPTOR.message_types_by_name['QueryPositionsResponse']
+_QUERYPOSITIONREQUEST = DESCRIPTOR.message_types_by_name['QueryPositionRequest']
+_QUERYPOSITIONRESPONSE = DESCRIPTOR.message_types_by_name['QueryPositionResponse']
+_QUERYFUNDINGRATESREQUEST = DESCRIPTOR.message_types_by_name['QueryFundingRatesRequest']
+_QUERYFUNDINGRATESRESPONSE = DESCRIPTOR.message_types_by_name['QueryFundingRatesResponse']
 QueryParamsRequest = _reflection.GeneratedProtocolMessageType('QueryParamsRequest', (_message.Message,), {
   'DESCRIPTOR' : _QUERYPARAMSREQUEST,
   '__module__' : 'perp.v1.query_pb2'
@@ -39,19 +43,47 @@ QueryParamsResponse = _reflection.GeneratedProtocolMessageType('QueryParamsRespo
   })
 _sym_db.RegisterMessage(QueryParamsResponse)
 
-QueryTraderPositionRequest = _reflection.GeneratedProtocolMessageType('QueryTraderPositionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _QUERYTRADERPOSITIONREQUEST,
+QueryPositionsRequest = _reflection.GeneratedProtocolMessageType('QueryPositionsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPOSITIONSREQUEST,
   '__module__' : 'perp.v1.query_pb2'
-  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryTraderPositionRequest)
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryPositionsRequest)
   })
-_sym_db.RegisterMessage(QueryTraderPositionRequest)
+_sym_db.RegisterMessage(QueryPositionsRequest)
 
-QueryTraderPositionResponse = _reflection.GeneratedProtocolMessageType('QueryTraderPositionResponse', (_message.Message,), {
-  'DESCRIPTOR' : _QUERYTRADERPOSITIONRESPONSE,
+QueryPositionsResponse = _reflection.GeneratedProtocolMessageType('QueryPositionsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPOSITIONSRESPONSE,
   '__module__' : 'perp.v1.query_pb2'
-  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryTraderPositionResponse)
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryPositionsResponse)
   })
-_sym_db.RegisterMessage(QueryTraderPositionResponse)
+_sym_db.RegisterMessage(QueryPositionsResponse)
+
+QueryPositionRequest = _reflection.GeneratedProtocolMessageType('QueryPositionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPOSITIONREQUEST,
+  '__module__' : 'perp.v1.query_pb2'
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryPositionRequest)
+  })
+_sym_db.RegisterMessage(QueryPositionRequest)
+
+QueryPositionResponse = _reflection.GeneratedProtocolMessageType('QueryPositionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPOSITIONRESPONSE,
+  '__module__' : 'perp.v1.query_pb2'
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryPositionResponse)
+  })
+_sym_db.RegisterMessage(QueryPositionResponse)
+
+QueryFundingRatesRequest = _reflection.GeneratedProtocolMessageType('QueryFundingRatesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYFUNDINGRATESREQUEST,
+  '__module__' : 'perp.v1.query_pb2'
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryFundingRatesRequest)
+  })
+_sym_db.RegisterMessage(QueryFundingRatesRequest)
+
+QueryFundingRatesResponse = _reflection.GeneratedProtocolMessageType('QueryFundingRatesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYFUNDINGRATESRESPONSE,
+  '__module__' : 'perp.v1.query_pb2'
+  # @@protoc_insertion_point(class_scope:nibiru.perp.v1.QueryFundingRatesResponse)
+  })
+_sym_db.RegisterMessage(QueryFundingRatesResponse)
 
 _QUERY = DESCRIPTOR.services_by_name['Query']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -60,26 +92,40 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z*github.com/NibiruChain/nibiru/x/perp/types'
   _QUERYPARAMSRESPONSE.fields_by_name['params']._options = None
   _QUERYPARAMSRESPONSE.fields_by_name['params']._serialized_options = b'\310\336\037\000'
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['position_notional']._options = None
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['position_notional']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['unrealized_pnl']._options = None
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['unrealized_pnl']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['margin_ratio_mark']._options = None
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['margin_ratio_mark']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['margin_ratio_index']._options = None
-  _QUERYTRADERPOSITIONRESPONSE.fields_by_name['margin_ratio_index']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _QUERYPOSITIONRESPONSE.fields_by_name['position_notional']._options = None
+  _QUERYPOSITIONRESPONSE.fields_by_name['position_notional']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _QUERYPOSITIONRESPONSE.fields_by_name['unrealized_pnl']._options = None
+  _QUERYPOSITIONRESPONSE.fields_by_name['unrealized_pnl']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _QUERYPOSITIONRESPONSE.fields_by_name['margin_ratio_mark']._options = None
+  _QUERYPOSITIONRESPONSE.fields_by_name['margin_ratio_mark']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _QUERYPOSITIONRESPONSE.fields_by_name['margin_ratio_index']._options = None
+  _QUERYPOSITIONRESPONSE.fields_by_name['margin_ratio_index']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
+  _QUERYFUNDINGRATESRESPONSE.fields_by_name['cumulative_funding_rates']._options = None
+  _QUERYFUNDINGRATESRESPONSE.fields_by_name['cumulative_funding_rates']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _QUERY.methods_by_name['Params']._options = None
   _QUERY.methods_by_name['Params']._serialized_options = b'\202\323\344\223\002\025\022\023/nibiru/perp/params'
-  _QUERY.methods_by_name['QueryTraderPosition']._options = None
-  _QUERY.methods_by_name['QueryTraderPosition']._serialized_options = b'\202\323\344\223\002\036\022\034/nibiru/perp/trader_position'
+  _QUERY.methods_by_name['QueryPosition']._options = None
+  _QUERY.methods_by_name['QueryPosition']._serialized_options = b'\202\323\344\223\002\027\022\025/nibiru/perp/position'
+  _QUERY.methods_by_name['QueryPositions']._options = None
+  _QUERY.methods_by_name['QueryPositions']._serialized_options = b'\202\323\344\223\002\030\022\026/nibiru/perp/positions'
+  _QUERY.methods_by_name['FundingRates']._options = None
+  _QUERY.methods_by_name['FundingRates']._serialized_options = b'\202\323\344\223\002\034\022\032/nibiru/perp/funding_rates'
   _QUERYPARAMSREQUEST._serialized_start=112
   _QUERYPARAMSREQUEST._serialized_end=132
   _QUERYPARAMSRESPONSE._serialized_start=134
   _QUERYPARAMSRESPONSE._serialized_end=201
-  _QUERYTRADERPOSITIONREQUEST._serialized_start=203
-  _QUERYTRADERPOSITIONREQUEST._serialized_end=267
-  _QUERYTRADERPOSITIONRESPONSE._serialized_start=270
-  _QUERYTRADERPOSITIONRESPONSE._serialized_end=663
-  _QUERY._serialized_start=666
-  _QUERY._serialized_end=936
+  _QUERYPOSITIONSREQUEST._serialized_start=203
+  _QUERYPOSITIONSREQUEST._serialized_end=242
+  _QUERYPOSITIONSRESPONSE._serialized_start=244
+  _QUERYPOSITIONSRESPONSE._serialized_end=326
+  _QUERYPOSITIONREQUEST._serialized_start=328
+  _QUERYPOSITIONREQUEST._serialized_end=386
+  _QUERYPOSITIONRESPONSE._serialized_start=389
+  _QUERYPOSITIONRESPONSE._serialized_end=776
+  _QUERYFUNDINGRATESREQUEST._serialized_start=778
+  _QUERYFUNDINGRATESREQUEST._serialized_end=818
+  _QUERYFUNDINGRATESRESPONSE._serialized_start=820
+  _QUERYFUNDINGRATESRESPONSE._serialized_end=929
+  _QUERY._serialized_start=932
+  _QUERY._serialized_end=1443
 # @@protoc_insertion_point(module_scope)
