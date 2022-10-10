@@ -18,7 +18,13 @@ protoc_gen_gocosmos() {
 PKG_PATH="nibiru_proto"
 PKG_PROTO_SUBDIR="$PKG_PATH/proto"
 
+# TODO add PKG_PATH as dir if it doesn't exist.
 echo > $PKG_PATH/__init__.py
+
+# TODO copy protos from ../nibiru
+rm -rf proto
+cp -r ../nibiru/proto proto
+# TODO clone nibiru when it's public to get the tag
 
 echo "Refreshing proto files"
 if [ $(basename $(pwd)) = sdk-proto-gen ]
@@ -35,6 +41,8 @@ echo "current dir: $(pwd)"
 cd ../nibiru;
 protoc_gen_gocosmos
 cosmos_sdk_dir=$(go list -f '{{ .Dir }}' -m github.com/cosmos/cosmos-sdk)
+
+
 
 echo "grab all of the proto directories"
 echo "current dir: $(pwd)"
