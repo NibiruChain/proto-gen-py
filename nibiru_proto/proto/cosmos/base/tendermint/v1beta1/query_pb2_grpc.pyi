@@ -8,87 +8,83 @@ import grpc
 
 class ServiceStub:
     """Service defines the gRPC querier service for tendermint queries."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     GetNodeInfo: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetNodeInfoRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetNodeInfoResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetNodeInfoResponse,
+    ]
     """GetNodeInfo queries the current node info."""
-
     GetSyncing: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetSyncingRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetSyncingResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetSyncingResponse,
+    ]
     """GetSyncing queries node syncing."""
-
     GetLatestBlock: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetLatestBlockRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetLatestBlockResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetLatestBlockResponse,
+    ]
     """GetLatestBlock returns the latest block."""
-
     GetBlockByHeight: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetBlockByHeightRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetBlockByHeightResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetBlockByHeightResponse,
+    ]
     """GetBlockByHeight queries block for given height."""
-
     GetLatestValidatorSet: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetLatestValidatorSetRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetLatestValidatorSetResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetLatestValidatorSetResponse,
+    ]
     """GetLatestValidatorSet queries latest validator-set."""
-
     GetValidatorSetByHeight: grpc.UnaryUnaryMultiCallable[
         cosmos.base.tendermint.v1beta1.query_pb2.GetValidatorSetByHeightRequest,
-        cosmos.base.tendermint.v1beta1.query_pb2.GetValidatorSetByHeightResponse]
+        cosmos.base.tendermint.v1beta1.query_pb2.GetValidatorSetByHeightResponse,
+    ]
     """GetValidatorSetByHeight queries validator-set at a given height."""
-
 
 class ServiceServicer(metaclass=abc.ABCMeta):
     """Service defines the gRPC querier service for tendermint queries."""
+
     @abc.abstractmethod
-    def GetNodeInfo(self,
+    def GetNodeInfo(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetNodeInfoRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetNodeInfoResponse:
         """GetNodeInfo queries the current node info."""
-        pass
-
     @abc.abstractmethod
-    def GetSyncing(self,
+    def GetSyncing(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetSyncingRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetSyncingResponse:
         """GetSyncing queries node syncing."""
-        pass
-
     @abc.abstractmethod
-    def GetLatestBlock(self,
+    def GetLatestBlock(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetLatestBlockRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetLatestBlockResponse:
         """GetLatestBlock returns the latest block."""
-        pass
-
     @abc.abstractmethod
-    def GetBlockByHeight(self,
+    def GetBlockByHeight(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetBlockByHeightRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetBlockByHeightResponse:
         """GetBlockByHeight queries block for given height."""
-        pass
-
     @abc.abstractmethod
-    def GetLatestValidatorSet(self,
+    def GetLatestValidatorSet(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetLatestValidatorSetRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetLatestValidatorSetResponse:
         """GetLatestValidatorSet queries latest validator-set."""
-        pass
-
     @abc.abstractmethod
-    def GetValidatorSetByHeight(self,
+    def GetValidatorSetByHeight(
+        self,
         request: cosmos.base.tendermint.v1beta1.query_pb2.GetValidatorSetByHeightRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.base.tendermint.v1beta1.query_pb2.GetValidatorSetByHeightResponse:
         """GetValidatorSetByHeight queries validator-set at a given height."""
-        pass
-
 
 def add_ServiceServicer_to_server(servicer: ServiceServicer, server: grpc.Server) -> None: ...

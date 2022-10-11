@@ -8,51 +8,52 @@ import grpc
 
 class MsgStub:
     """Msg defines the bank Msg service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     SubmitProposal: grpc.UnaryUnaryMultiCallable[
         cosmos.gov.v1beta1.tx_pb2.MsgSubmitProposal,
-        cosmos.gov.v1beta1.tx_pb2.MsgSubmitProposalResponse]
+        cosmos.gov.v1beta1.tx_pb2.MsgSubmitProposalResponse,
+    ]
     """SubmitProposal defines a method to create new proposal given a content."""
-
     Vote: grpc.UnaryUnaryMultiCallable[
         cosmos.gov.v1beta1.tx_pb2.MsgVote,
-        cosmos.gov.v1beta1.tx_pb2.MsgVoteResponse]
+        cosmos.gov.v1beta1.tx_pb2.MsgVoteResponse,
+    ]
     """Vote defines a method to add a vote on a specific proposal."""
-
     VoteWeighted: grpc.UnaryUnaryMultiCallable[
         cosmos.gov.v1beta1.tx_pb2.MsgVoteWeighted,
-        cosmos.gov.v1beta1.tx_pb2.MsgVoteWeightedResponse]
+        cosmos.gov.v1beta1.tx_pb2.MsgVoteWeightedResponse,
+    ]
     """VoteWeighted defines a method to add a weighted vote on a specific proposal.
 
     Since: cosmos-sdk 0.43
     """
-
     Deposit: grpc.UnaryUnaryMultiCallable[
         cosmos.gov.v1beta1.tx_pb2.MsgDeposit,
-        cosmos.gov.v1beta1.tx_pb2.MsgDepositResponse]
+        cosmos.gov.v1beta1.tx_pb2.MsgDepositResponse,
+    ]
     """Deposit defines a method to add deposit on a specific proposal."""
-
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the bank Msg service."""
+
     @abc.abstractmethod
-    def SubmitProposal(self,
+    def SubmitProposal(
+        self,
         request: cosmos.gov.v1beta1.tx_pb2.MsgSubmitProposal,
         context: grpc.ServicerContext,
     ) -> cosmos.gov.v1beta1.tx_pb2.MsgSubmitProposalResponse:
         """SubmitProposal defines a method to create new proposal given a content."""
-        pass
-
     @abc.abstractmethod
-    def Vote(self,
+    def Vote(
+        self,
         request: cosmos.gov.v1beta1.tx_pb2.MsgVote,
         context: grpc.ServicerContext,
     ) -> cosmos.gov.v1beta1.tx_pb2.MsgVoteResponse:
         """Vote defines a method to add a vote on a specific proposal."""
-        pass
-
     @abc.abstractmethod
-    def VoteWeighted(self,
+    def VoteWeighted(
+        self,
         request: cosmos.gov.v1beta1.tx_pb2.MsgVoteWeighted,
         context: grpc.ServicerContext,
     ) -> cosmos.gov.v1beta1.tx_pb2.MsgVoteWeightedResponse:
@@ -60,15 +61,12 @@ class MsgServicer(metaclass=abc.ABCMeta):
 
         Since: cosmos-sdk 0.43
         """
-        pass
-
     @abc.abstractmethod
-    def Deposit(self,
+    def Deposit(
+        self,
         request: cosmos.gov.v1beta1.tx_pb2.MsgDeposit,
         context: grpc.ServicerContext,
     ) -> cosmos.gov.v1beta1.tx_pb2.MsgDepositResponse:
         """Deposit defines a method to add deposit on a specific proposal."""
-        pass
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...

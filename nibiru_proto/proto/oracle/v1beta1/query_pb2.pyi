@@ -3,310 +3,387 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import oracle.v1beta1.oracle_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class QueryExchangeRateRequest(google.protobuf.message.Message):
     """QueryExchangeRateRequest is the request type for the Query/ExchangeRate RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    PAIR_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    """pair defines the pair to query for."""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAIR_FIELD_NUMBER: builtins.int
+    pair: builtins.str
+    """pair defines the pair to query for."""
+    def __init__(
+        self,
         *,
-        pair: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair"]) -> None: ...
+        pair: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> None: ...
+
 global___QueryExchangeRateRequest = QueryExchangeRateRequest
 
 class QueryExchangeRateResponse(google.protobuf.message.Message):
     """QueryExchangeRateResponse is response type for the
     Query/ExchangeRate RPC method.
     """
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    EXCHANGE_RATE_FIELD_NUMBER: builtins.int
-    exchange_rate: typing.Text
-    """exchange_rate defines the exchange rate of assets voted by validators"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXCHANGE_RATE_FIELD_NUMBER: builtins.int
+    exchange_rate: builtins.str
+    """exchange_rate defines the exchange rate of assets voted by validators"""
+    def __init__(
+        self,
         *,
-        exchange_rate: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exchange_rate",b"exchange_rate"]) -> None: ...
+        exchange_rate: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exchange_rate", b"exchange_rate"]) -> None: ...
+
 global___QueryExchangeRateResponse = QueryExchangeRateResponse
 
 class QueryExchangeRatesRequest(google.protobuf.message.Message):
     """QueryExchangeRatesRequest is the request type for the Query/ExchangeRates RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryExchangeRatesRequest = QueryExchangeRatesRequest
 
 class QueryExchangeRatesResponse(google.protobuf.message.Message):
     """QueryExchangeRatesResponse is response type for the
     Query/ExchangeRates RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EXCHANGE_RATES_FIELD_NUMBER: builtins.int
     @property
     def exchange_rates(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.ExchangeRateTuple]:
         """exchange_rates defines a list of the exchange rate for all whitelisted pairs."""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        exchange_rates: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.ExchangeRateTuple]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exchange_rates",b"exchange_rates"]) -> None: ...
+        exchange_rates: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.ExchangeRateTuple] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exchange_rates", b"exchange_rates"]) -> None: ...
+
 global___QueryExchangeRatesResponse = QueryExchangeRatesResponse
 
 class QueryActivesRequest(google.protobuf.message.Message):
     """QueryActivesRequest is the request type for the Query/Actives RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryActivesRequest = QueryActivesRequest
 
 class QueryActivesResponse(google.protobuf.message.Message):
     """QueryActivesResponse is response type for the
     Query/Actives RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ACTIVES_FIELD_NUMBER: builtins.int
     @property
-    def actives(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def actives(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """actives defines a list of the pair which oracle prices agreed upon."""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        actives: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["actives",b"actives"]) -> None: ...
+        actives: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["actives", b"actives"]) -> None: ...
+
 global___QueryActivesResponse = QueryActivesResponse
 
 class QueryVoteTargetsRequest(google.protobuf.message.Message):
     """QueryVoteTargetsRequest is the request type for the Query/VoteTargets RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryVoteTargetsRequest = QueryVoteTargetsRequest
 
 class QueryVoteTargetsResponse(google.protobuf.message.Message):
     """QueryVoteTargetsResponse is response type for the
     Query/VoteTargets RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VOTE_TARGETS_FIELD_NUMBER: builtins.int
     @property
-    def vote_targets(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def vote_targets(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """vote_targets defines a list of the pairs in which everyone
         should vote in the current vote period.
         """
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        vote_targets: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["vote_targets",b"vote_targets"]) -> None: ...
+        vote_targets: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["vote_targets", b"vote_targets"]) -> None: ...
+
 global___QueryVoteTargetsResponse = QueryVoteTargetsResponse
 
 class QueryFeederDelegationRequest(google.protobuf.message.Message):
     """QueryFeederDelegationRequest is the request type for the Query/FeederDelegation RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
-    validator_addr: typing.Text
-    """validator defines the validator address to query for."""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
+    validator_addr: builtins.str
+    """validator defines the validator address to query for."""
+    def __init__(
+        self,
         *,
-        validator_addr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["validator_addr",b"validator_addr"]) -> None: ...
+        validator_addr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["validator_addr", b"validator_addr"]) -> None: ...
+
 global___QueryFeederDelegationRequest = QueryFeederDelegationRequest
 
 class QueryFeederDelegationResponse(google.protobuf.message.Message):
     """QueryFeederDelegationResponse is response type for the
     Query/FeederDelegation RPC method.
     """
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    FEEDER_ADDR_FIELD_NUMBER: builtins.int
-    feeder_addr: typing.Text
-    """feeder_addr defines the feeder delegation of a validator"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEEDER_ADDR_FIELD_NUMBER: builtins.int
+    feeder_addr: builtins.str
+    """feeder_addr defines the feeder delegation of a validator"""
+    def __init__(
+        self,
         *,
-        feeder_addr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["feeder_addr",b"feeder_addr"]) -> None: ...
+        feeder_addr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["feeder_addr", b"feeder_addr"]) -> None: ...
+
 global___QueryFeederDelegationResponse = QueryFeederDelegationResponse
 
 class QueryMissCounterRequest(google.protobuf.message.Message):
     """QueryMissCounterRequest is the request type for the Query/MissCounter RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
-    validator_addr: typing.Text
-    """validator defines the validator address to query for."""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
+    validator_addr: builtins.str
+    """validator defines the validator address to query for."""
+    def __init__(
+        self,
         *,
-        validator_addr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["validator_addr",b"validator_addr"]) -> None: ...
+        validator_addr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["validator_addr", b"validator_addr"]) -> None: ...
+
 global___QueryMissCounterRequest = QueryMissCounterRequest
 
 class QueryMissCounterResponse(google.protobuf.message.Message):
     """QueryMissCounterResponse is response type for the
     Query/MissCounter RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MISS_COUNTER_FIELD_NUMBER: builtins.int
     miss_counter: builtins.int
     """miss_counter defines the oracle miss counter of a validator"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         miss_counter: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["miss_counter",b"miss_counter"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["miss_counter", b"miss_counter"]) -> None: ...
+
 global___QueryMissCounterResponse = QueryMissCounterResponse
 
 class QueryAggregatePrevoteRequest(google.protobuf.message.Message):
     """QueryAggregatePrevoteRequest is the request type for the Query/AggregatePrevote RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
-    validator_addr: typing.Text
-    """validator defines the validator address to query for."""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
+    validator_addr: builtins.str
+    """validator defines the validator address to query for."""
+    def __init__(
+        self,
         *,
-        validator_addr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["validator_addr",b"validator_addr"]) -> None: ...
+        validator_addr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["validator_addr", b"validator_addr"]) -> None: ...
+
 global___QueryAggregatePrevoteRequest = QueryAggregatePrevoteRequest
 
 class QueryAggregatePrevoteResponse(google.protobuf.message.Message):
     """QueryAggregatePrevoteResponse is response type for the
     Query/AggregatePrevote RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AGGREGATE_PREVOTE_FIELD_NUMBER: builtins.int
     @property
     def aggregate_prevote(self) -> oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote:
         """aggregate_prevote defines oracle aggregate prevote submitted by a validator in the current vote period"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        aggregate_prevote: typing.Optional[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["aggregate_prevote",b"aggregate_prevote"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_prevote",b"aggregate_prevote"]) -> None: ...
+        aggregate_prevote: oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["aggregate_prevote", b"aggregate_prevote"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_prevote", b"aggregate_prevote"]) -> None: ...
+
 global___QueryAggregatePrevoteResponse = QueryAggregatePrevoteResponse
 
 class QueryAggregatePrevotesRequest(google.protobuf.message.Message):
     """QueryAggregatePrevotesRequest is the request type for the Query/AggregatePrevotes RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryAggregatePrevotesRequest = QueryAggregatePrevotesRequest
 
 class QueryAggregatePrevotesResponse(google.protobuf.message.Message):
     """QueryAggregatePrevotesResponse is response type for the
     Query/AggregatePrevotes RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AGGREGATE_PREVOTES_FIELD_NUMBER: builtins.int
     @property
     def aggregate_prevotes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote]:
         """aggregate_prevotes defines all oracle aggregate prevotes submitted in the current vote period"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        aggregate_prevotes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_prevotes",b"aggregate_prevotes"]) -> None: ...
+        aggregate_prevotes: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_prevotes", b"aggregate_prevotes"]) -> None: ...
+
 global___QueryAggregatePrevotesResponse = QueryAggregatePrevotesResponse
 
 class QueryAggregateVoteRequest(google.protobuf.message.Message):
     """QueryAggregateVoteRequest is the request type for the Query/AggregateVote RPC method."""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
-    validator_addr: typing.Text
-    """validator defines the validator address to query for."""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALIDATOR_ADDR_FIELD_NUMBER: builtins.int
+    validator_addr: builtins.str
+    """validator defines the validator address to query for."""
+    def __init__(
+        self,
         *,
-        validator_addr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["validator_addr",b"validator_addr"]) -> None: ...
+        validator_addr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["validator_addr", b"validator_addr"]) -> None: ...
+
 global___QueryAggregateVoteRequest = QueryAggregateVoteRequest
 
 class QueryAggregateVoteResponse(google.protobuf.message.Message):
     """QueryAggregateVoteResponse is response type for the
     Query/AggregateVote RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AGGREGATE_VOTE_FIELD_NUMBER: builtins.int
     @property
     def aggregate_vote(self) -> oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote:
         """aggregate_vote defines oracle aggregate vote submitted by a validator in the current vote period"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        aggregate_vote: typing.Optional[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["aggregate_vote",b"aggregate_vote"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_vote",b"aggregate_vote"]) -> None: ...
+        aggregate_vote: oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["aggregate_vote", b"aggregate_vote"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_vote", b"aggregate_vote"]) -> None: ...
+
 global___QueryAggregateVoteResponse = QueryAggregateVoteResponse
 
 class QueryAggregateVotesRequest(google.protobuf.message.Message):
     """QueryAggregateVotesRequest is the request type for the Query/AggregateVotes RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryAggregateVotesRequest = QueryAggregateVotesRequest
 
 class QueryAggregateVotesResponse(google.protobuf.message.Message):
     """QueryAggregateVotesResponse is response type for the
     Query/AggregateVotes RPC method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AGGREGATE_VOTES_FIELD_NUMBER: builtins.int
     @property
     def aggregate_votes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]:
         """aggregate_votes defines all oracle aggregate votes submitted in the current vote period"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        aggregate_votes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_votes",b"aggregate_votes"]) -> None: ...
+        aggregate_votes: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_votes", b"aggregate_votes"]) -> None: ...
+
 global___QueryAggregateVotesResponse = QueryAggregateVotesResponse
 
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryParamsRequest = QueryParamsRequest
 
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PARAMS_FIELD_NUMBER: builtins.int
     @property
     def params(self) -> oracle.v1beta1.oracle_pb2.Params:
         """params defines the parameters of the module."""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        params: typing.Optional[oracle.v1beta1.oracle_pb2.Params] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["params",b"params"]) -> None: ...
+        params: oracle.v1beta1.oracle_pb2.Params | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["params", b"params"]) -> None: ...
+
 global___QueryParamsResponse = QueryParamsResponse

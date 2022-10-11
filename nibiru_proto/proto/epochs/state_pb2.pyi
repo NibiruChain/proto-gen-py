@@ -7,13 +7,18 @@ import google.protobuf.descriptor
 import google.protobuf.duration_pb2
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class EpochInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     IDENTIFIER_FIELD_NUMBER: builtins.int
     START_TIME_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
@@ -21,40 +26,35 @@ class EpochInfo(google.protobuf.message.Message):
     CURRENT_EPOCH_START_TIME_FIELD_NUMBER: builtins.int
     EPOCH_COUNTING_STARTED_FIELD_NUMBER: builtins.int
     CURRENT_EPOCH_START_HEIGHT_FIELD_NUMBER: builtins.int
-    identifier: typing.Text
+    identifier: builtins.str
     """A string identifier for the epoch. e.g. "15min" or "1hour" """
-
     @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """When the epoch repetitino should start."""
-        pass
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """How long each epoch lasts for."""
-        pass
     current_epoch: builtins.int
     """The current epoch number, starting from 1."""
-
     @property
     def current_epoch_start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The start timestamp of the current epoch."""
-        pass
     epoch_counting_started: builtins.bool
     """Whether or not this epoch has started. Set to true if current blocktime >= start_time."""
-
     current_epoch_start_height: builtins.int
     """The block height at which the current epoch started at."""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        identifier: typing.Text = ...,
-        start_time: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
-        duration: typing.Optional[google.protobuf.duration_pb2.Duration] = ...,
+        identifier: builtins.str = ...,
+        start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        duration: google.protobuf.duration_pb2.Duration | None = ...,
         current_epoch: builtins.int = ...,
-        current_epoch_start_time: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
+        current_epoch_start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         epoch_counting_started: builtins.bool = ...,
         current_epoch_start_height: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["current_epoch_start_time",b"current_epoch_start_time","duration",b"duration","start_time",b"start_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["current_epoch",b"current_epoch","current_epoch_start_height",b"current_epoch_start_height","current_epoch_start_time",b"current_epoch_start_time","duration",b"duration","epoch_counting_started",b"epoch_counting_started","identifier",b"identifier","start_time",b"start_time"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["current_epoch_start_time", b"current_epoch_start_time", "duration", b"duration", "start_time", b"start_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["current_epoch", b"current_epoch", "current_epoch_start_height", b"current_epoch_start_height", "current_epoch_start_time", b"current_epoch_start_time", "duration", b"duration", "epoch_counting_started", b"epoch_counting_started", "identifier", b"identifier", "start_time", b"start_time"]) -> None: ...
+
 global___EpochInfo = EpochInfo

@@ -3,12 +3,17 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.any_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -17,16 +22,20 @@ class LegacyAminoPubKey(google.protobuf.message.Message):
     which nests multiple public keys and a threshold,
     it uses legacy amino address rules.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     THRESHOLD_FIELD_NUMBER: builtins.int
     PUBLIC_KEYS_FIELD_NUMBER: builtins.int
     threshold: builtins.int
     @property
     def public_keys(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[google.protobuf.any_pb2.Any]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         threshold: builtins.int = ...,
-        public_keys: typing.Optional[typing.Iterable[google.protobuf.any_pb2.Any]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["public_keys",b"public_keys","threshold",b"threshold"]) -> None: ...
+        public_keys: collections.abc.Iterable[google.protobuf.any_pb2.Any] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["public_keys", b"public_keys", "threshold", b"threshold"]) -> None: ...
+
 global___LegacyAminoPubKey = LegacyAminoPubKey

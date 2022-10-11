@@ -3,24 +3,33 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import epochs.state_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the epochs module's genesis state."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EPOCHS_FIELD_NUMBER: builtins.int
     @property
     def epochs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[epochs.state_pb2.EpochInfo]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        epochs: typing.Optional[typing.Iterable[epochs.state_pb2.EpochInfo]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["epochs",b"epochs"]) -> None: ...
+        epochs: collections.abc.Iterable[epochs.state_pb2.EpochInfo] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["epochs", b"epochs"]) -> None: ...
+
 global___GenesisState = GenesisState

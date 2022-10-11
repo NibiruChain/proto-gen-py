@@ -5,8 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -16,17 +20,21 @@ class Coin(google.protobuf.message.Message):
     NOTE: The amount field is an Int which implements the custom method
     signatures required by gogoproto.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     DENOM_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
-    denom: typing.Text
-    amount: typing.Text
-    def __init__(self,
+    denom: builtins.str
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        denom: typing.Text = ...,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","denom",b"denom"]) -> None: ...
+        denom: builtins.str = ...,
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount", "denom", b"denom"]) -> None: ...
+
 global___Coin = Coin
 
 class DecCoin(google.protobuf.message.Message):
@@ -35,39 +43,51 @@ class DecCoin(google.protobuf.message.Message):
     NOTE: The amount field is an Dec which implements the custom method
     signatures required by gogoproto.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     DENOM_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
-    denom: typing.Text
-    amount: typing.Text
-    def __init__(self,
+    denom: builtins.str
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        denom: typing.Text = ...,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","denom",b"denom"]) -> None: ...
+        denom: builtins.str = ...,
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount", "denom", b"denom"]) -> None: ...
+
 global___DecCoin = DecCoin
 
 class IntProto(google.protobuf.message.Message):
     """IntProto defines a Protobuf wrapper around an Int object."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     INT_FIELD_NUMBER: builtins.int
-    int: typing.Text
-    def __init__(self,
+    int: builtins.str
+    def __init__(
+        self,
         *,
-        int: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["int",b"int"]) -> None: ...
+        int: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["int", b"int"]) -> None: ...
+
 global___IntProto = IntProto
 
 class DecProto(google.protobuf.message.Message):
     """DecProto defines a Protobuf wrapper around a Dec object."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     DEC_FIELD_NUMBER: builtins.int
-    dec: typing.Text
-    def __init__(self,
+    dec: builtins.str
+    def __init__(
+        self,
         *,
-        dec: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["dec",b"dec"]) -> None: ...
+        dec: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["dec", b"dec"]) -> None: ...
+
 global___DecProto = DecProto

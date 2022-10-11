@@ -8,26 +8,27 @@ import grpc
 
 class MsgStub:
     """Msg defines the bank Msg service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     CreateVestingAccount: grpc.UnaryUnaryMultiCallable[
         cosmos.vesting.v1beta1.tx_pb2.MsgCreateVestingAccount,
-        cosmos.vesting.v1beta1.tx_pb2.MsgCreateVestingAccountResponse]
+        cosmos.vesting.v1beta1.tx_pb2.MsgCreateVestingAccountResponse,
+    ]
     """CreateVestingAccount defines a method that enables creating a vesting
     account.
     """
 
-
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the bank Msg service."""
+
     @abc.abstractmethod
-    def CreateVestingAccount(self,
+    def CreateVestingAccount(
+        self,
         request: cosmos.vesting.v1beta1.tx_pb2.MsgCreateVestingAccount,
         context: grpc.ServicerContext,
     ) -> cosmos.vesting.v1beta1.tx_pb2.MsgCreateVestingAccountResponse:
         """CreateVestingAccount defines a method that enables creating a vesting
         account.
         """
-        pass
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...

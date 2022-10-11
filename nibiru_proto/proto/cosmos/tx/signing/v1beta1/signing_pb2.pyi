@@ -3,43 +3,46 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import cosmos.crypto.multisig.v1beta1.multisig_pb2
 import google.protobuf.any_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
-import typing_extensions
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _SignMode:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _SignModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignMode.ValueType], builtins.type):
+
+class _SignModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignMode.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     SIGN_MODE_UNSPECIFIED: _SignMode.ValueType  # 0
     """SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
     rejected
     """
-
     SIGN_MODE_DIRECT: _SignMode.ValueType  # 1
     """SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is
     verified with raw bytes from Tx
     """
-
     SIGN_MODE_TEXTUAL: _SignMode.ValueType  # 2
     """SIGN_MODE_TEXTUAL is a future signing mode that will verify some
     human-readable textual representation on top of the binary representation
     from SIGN_MODE_DIRECT
     """
-
     SIGN_MODE_LEGACY_AMINO_JSON: _SignMode.ValueType  # 127
     """SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
     Amino JSON and will be removed in the future
     """
-
     SIGN_MODE_EIP_191: _SignMode.ValueType  # 191
     """SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
     SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
@@ -55,29 +58,24 @@ class _SignModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
 
 class SignMode(_SignMode, metaclass=_SignModeEnumTypeWrapper):
     """SignMode represents a signing mode with its own security guarantees."""
-    pass
 
 SIGN_MODE_UNSPECIFIED: SignMode.ValueType  # 0
 """SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
 rejected
 """
-
 SIGN_MODE_DIRECT: SignMode.ValueType  # 1
 """SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is
 verified with raw bytes from Tx
 """
-
 SIGN_MODE_TEXTUAL: SignMode.ValueType  # 2
 """SIGN_MODE_TEXTUAL is a future signing mode that will verify some
 human-readable textual representation on top of the binary representation
 from SIGN_MODE_DIRECT
 """
-
 SIGN_MODE_LEGACY_AMINO_JSON: SignMode.ValueType  # 127
 """SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
 Amino JSON and will be removed in the future
 """
-
 SIGN_MODE_EIP_191: SignMode.ValueType  # 191
 """SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
 SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
@@ -90,23 +88,24 @@ EIP-191 in the future.
 
 Since: cosmos-sdk 0.45.2
 """
-
 global___SignMode = SignMode
-
 
 class SignatureDescriptors(google.protobuf.message.Message):
     """SignatureDescriptors wraps multiple SignatureDescriptor's."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     SIGNATURES_FIELD_NUMBER: builtins.int
     @property
     def signatures(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SignatureDescriptor]:
         """signatures are the signature descriptors"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        signatures: typing.Optional[typing.Iterable[global___SignatureDescriptor]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["signatures",b"signatures"]) -> None: ...
+        signatures: collections.abc.Iterable[global___SignatureDescriptor] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["signatures", b"signatures"]) -> None: ...
+
 global___SignatureDescriptors = SignatureDescriptors
 
 class SignatureDescriptor(google.protobuf.message.Message):
@@ -115,67 +114,72 @@ class SignatureDescriptor(google.protobuf.message.Message):
     signature itself. It is primarily used for coordinating signatures between
     clients.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     class Data(google.protobuf.message.Message):
         """Data represents signature data"""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         class Single(google.protobuf.message.Message):
             """Single is the signature data for a single signer"""
+
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
             MODE_FIELD_NUMBER: builtins.int
             SIGNATURE_FIELD_NUMBER: builtins.int
             mode: global___SignMode.ValueType
             """mode is the signing mode of the single signer"""
-
             signature: builtins.bytes
             """signature is the raw signature bytes"""
-
-            def __init__(self,
+            def __init__(
+                self,
                 *,
                 mode: global___SignMode.ValueType = ...,
                 signature: builtins.bytes = ...,
-                ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["mode",b"mode","signature",b"signature"]) -> None: ...
+            ) -> None: ...
+            def ClearField(self, field_name: typing_extensions.Literal["mode", b"mode", "signature", b"signature"]) -> None: ...
 
         class Multi(google.protobuf.message.Message):
             """Multi is the signature data for a multisig public key"""
+
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
             BITARRAY_FIELD_NUMBER: builtins.int
             SIGNATURES_FIELD_NUMBER: builtins.int
             @property
             def bitarray(self) -> cosmos.crypto.multisig.v1beta1.multisig_pb2.CompactBitArray:
                 """bitarray specifies which keys within the multisig are signing"""
-                pass
             @property
             def signatures(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SignatureDescriptor.Data]:
                 """signatures is the signatures of the multi-signature"""
-                pass
-            def __init__(self,
+            def __init__(
+                self,
                 *,
-                bitarray: typing.Optional[cosmos.crypto.multisig.v1beta1.multisig_pb2.CompactBitArray] = ...,
-                signatures: typing.Optional[typing.Iterable[global___SignatureDescriptor.Data]] = ...,
-                ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["bitarray",b"bitarray"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["bitarray",b"bitarray","signatures",b"signatures"]) -> None: ...
+                bitarray: cosmos.crypto.multisig.v1beta1.multisig_pb2.CompactBitArray | None = ...,
+                signatures: collections.abc.Iterable[global___SignatureDescriptor.Data] | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing_extensions.Literal["bitarray", b"bitarray"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing_extensions.Literal["bitarray", b"bitarray", "signatures", b"signatures"]) -> None: ...
 
         SINGLE_FIELD_NUMBER: builtins.int
         MULTI_FIELD_NUMBER: builtins.int
         @property
         def single(self) -> global___SignatureDescriptor.Data.Single:
             """single represents a single signer"""
-            pass
         @property
         def multi(self) -> global___SignatureDescriptor.Data.Multi:
             """multi represents a multisig signer"""
-            pass
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            single: typing.Optional[global___SignatureDescriptor.Data.Single] = ...,
-            multi: typing.Optional[global___SignatureDescriptor.Data.Multi] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["multi",b"multi","single",b"single","sum",b"sum"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["multi",b"multi","single",b"single","sum",b"sum"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing_extensions.Literal["sum",b"sum"]) -> typing.Optional[typing_extensions.Literal["single","multi"]]: ...
+            single: global___SignatureDescriptor.Data.Single | None = ...,
+            multi: global___SignatureDescriptor.Data.Multi | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["multi", b"multi", "single", b"single", "sum", b"sum"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["multi", b"multi", "single", b"single", "sum", b"sum"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing_extensions.Literal["sum", b"sum"]) -> typing_extensions.Literal["single", "multi"] | None: ...
 
     PUBLIC_KEY_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
@@ -183,7 +187,6 @@ class SignatureDescriptor(google.protobuf.message.Message):
     @property
     def public_key(self) -> google.protobuf.any_pb2.Any:
         """public_key is the public key of the signer"""
-        pass
     @property
     def data(self) -> global___SignatureDescriptor.Data: ...
     sequence: builtins.int
@@ -191,13 +194,14 @@ class SignatureDescriptor(google.protobuf.message.Message):
     number of committed transactions signed by a given address. It is used to prevent
     replay attacks.
     """
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        public_key: typing.Optional[google.protobuf.any_pb2.Any] = ...,
-        data: typing.Optional[global___SignatureDescriptor.Data] = ...,
+        public_key: google.protobuf.any_pb2.Any | None = ...,
+        data: global___SignatureDescriptor.Data | None = ...,
         sequence: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["data",b"data","public_key",b"public_key"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["data",b"data","public_key",b"public_key","sequence",b"sequence"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["data", b"data", "public_key", b"public_key"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data", "public_key", b"public_key", "sequence", b"sequence"]) -> None: ...
+
 global___SignatureDescriptor = SignatureDescriptor

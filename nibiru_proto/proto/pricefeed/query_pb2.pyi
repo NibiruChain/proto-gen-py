@@ -3,13 +3,18 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import pricefeed.state_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -17,209 +22,266 @@ class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest defines the request type for querying x/pricefeed
     parameters.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryParamsRequest = QueryParamsRequest
 
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse defines the response type for querying x/pricefeed
     parameters.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PARAMS_FIELD_NUMBER: builtins.int
     @property
     def params(self) -> pricefeed.state_pb2.Params: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        params: typing.Optional[pricefeed.state_pb2.Params] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["params",b"params"]) -> None: ...
+        params: pricefeed.state_pb2.Params | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["params", b"params"]) -> None: ...
+
 global___QueryParamsResponse = QueryParamsResponse
 
 class QueryPriceRequest(google.protobuf.message.Message):
     """QueryPriceRequest is the request type for the Query/PriceRequest RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    def __init__(self,
+    pair_id: builtins.str
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id"]) -> None: ...
+        pair_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id", b"pair_id"]) -> None: ...
+
 global___QueryPriceRequest = QueryPriceRequest
 
 class QueryPriceResponse(google.protobuf.message.Message):
     """QueryPriceResponse is the response type for the Query/Prices RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PRICE_FIELD_NUMBER: builtins.int
     @property
     def price(self) -> global___CurrentPriceResponse: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        price: typing.Optional[global___CurrentPriceResponse] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["price",b"price"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["price",b"price"]) -> None: ...
+        price: global___CurrentPriceResponse | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["price", b"price"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["price", b"price"]) -> None: ...
+
 global___QueryPriceResponse = QueryPriceResponse
 
 class QueryPricesRequest(google.protobuf.message.Message):
     """QueryPricesRequest is the request type for the Query/Prices RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryPricesRequest = QueryPricesRequest
 
 class QueryPricesResponse(google.protobuf.message.Message):
     """QueryPricesResponse is the response type for the Query/Prices RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PRICES_FIELD_NUMBER: builtins.int
     @property
     def prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CurrentPriceResponse]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        prices: typing.Optional[typing.Iterable[global___CurrentPriceResponse]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["prices",b"prices"]) -> None: ...
+        prices: collections.abc.Iterable[global___CurrentPriceResponse] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["prices", b"prices"]) -> None: ...
+
 global___QueryPricesResponse = QueryPricesResponse
 
 class QueryRawPricesRequest(google.protobuf.message.Message):
     """QueryRawPricesRequest is the request type for the Query/RawPrices RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    def __init__(self,
+    pair_id: builtins.str
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id"]) -> None: ...
+        pair_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id", b"pair_id"]) -> None: ...
+
 global___QueryRawPricesRequest = QueryRawPricesRequest
 
 class QueryRawPricesResponse(google.protobuf.message.Message):
     """QueryRawPricesResponse is the response type for the Query/RawPrices RPC
     method.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     RAW_PRICES_FIELD_NUMBER: builtins.int
     @property
     def raw_prices(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PostedPriceResponse]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        raw_prices: typing.Optional[typing.Iterable[global___PostedPriceResponse]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["raw_prices",b"raw_prices"]) -> None: ...
+        raw_prices: collections.abc.Iterable[global___PostedPriceResponse] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["raw_prices", b"raw_prices"]) -> None: ...
+
 global___QueryRawPricesResponse = QueryRawPricesResponse
 
 class QueryOraclesRequest(google.protobuf.message.Message):
     """QueryOraclesRequest is the request type for the Query/Oracles RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    def __init__(self,
+    pair_id: builtins.str
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id"]) -> None: ...
+        pair_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id", b"pair_id"]) -> None: ...
+
 global___QueryOraclesRequest = QueryOraclesRequest
 
 class QueryOraclesResponse(google.protobuf.message.Message):
     """QueryOraclesResponse is the response type for the Query/Oracles RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ORACLES_FIELD_NUMBER: builtins.int
     @property
-    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of oracle addresses"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        oracles: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["oracles",b"oracles"]) -> None: ...
+        oracles: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["oracles", b"oracles"]) -> None: ...
+
 global___QueryOraclesResponse = QueryOraclesResponse
 
 class QueryMarketsRequest(google.protobuf.message.Message):
     """QueryMarketsRequest is the request type for the Query/Pairs RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryMarketsRequest = QueryMarketsRequest
 
 class QueryMarketsResponse(google.protobuf.message.Message):
     """QueryMarketsResponse is the response type for the Query/Pairs RPC method."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MARKETS_FIELD_NUMBER: builtins.int
     @property
     def markets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Market]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        markets: typing.Optional[typing.Iterable[global___Market]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["markets",b"markets"]) -> None: ...
+        markets: collections.abc.Iterable[global___Market] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["markets", b"markets"]) -> None: ...
+
 global___QueryMarketsResponse = QueryMarketsResponse
 
 class PostedPriceResponse(google.protobuf.message.Message):
     """PostedPriceResponse defines a price for 'PairID' posted by a specific oracle."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
     ORACLE_ADDRESS_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
     EXPIRY_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    oracle_address: typing.Text
-    price: typing.Text
+    pair_id: builtins.str
+    oracle_address: builtins.str
+    price: builtins.str
     @property
     def expiry(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        oracle_address: typing.Text = ...,
-        price: typing.Text = ...,
-        expiry: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["expiry",b"expiry"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["expiry",b"expiry","oracle_address",b"oracle_address","pair_id",b"pair_id","price",b"price"]) -> None: ...
+        pair_id: builtins.str = ...,
+        oracle_address: builtins.str = ...,
+        price: builtins.str = ...,
+        expiry: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["expiry", b"expiry"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["expiry", b"expiry", "oracle_address", b"oracle_address", "pair_id", b"pair_id", "price", b"price"]) -> None: ...
+
 global___PostedPriceResponse = PostedPriceResponse
 
 class CurrentPriceResponse(google.protobuf.message.Message):
     """CurrentPriceResponse defines a current price for a particular 'PairID' in the pricefeed
     module.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
     TWAP_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    price: typing.Text
+    pair_id: builtins.str
+    price: builtins.str
     """most current price of the trading pair"""
-
-    twap: typing.Text
+    twap: builtins.str
     """twap of the trading pair"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        price: typing.Text = ...,
-        twap: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id","price",b"price","twap",b"twap"]) -> None: ...
+        pair_id: builtins.str = ...,
+        price: builtins.str = ...,
+        twap: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id", b"pair_id", "price", b"price", "twap", b"twap"]) -> None: ...
+
 global___CurrentPriceResponse = CurrentPriceResponse
 
 class Market(google.protobuf.message.Message):
     """Market defines an asset in the pricefeed."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
     ORACLES_FIELD_NUMBER: builtins.int
     ACTIVE_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
+    pair_id: builtins.str
     @property
-    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
+    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     active: builtins.bool
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        oracles: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        pair_id: builtins.str = ...,
+        oracles: collections.abc.Iterable[builtins.str] | None = ...,
         active: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["active",b"active","oracles",b"oracles","pair_id",b"pair_id"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["active", b"active", "oracles", b"oracles", "pair_id", b"pair_id"]) -> None: ...
+
 global___Market = Market

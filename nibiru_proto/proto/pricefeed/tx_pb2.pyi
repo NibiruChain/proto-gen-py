@@ -6,84 +6,98 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class MsgPostPrice(google.protobuf.message.Message):
     """MsgPostPrice represents a method for creating a new post price"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ORACLE_FIELD_NUMBER: builtins.int
     TOKEN0_FIELD_NUMBER: builtins.int
     TOKEN1_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
     EXPIRY_FIELD_NUMBER: builtins.int
-    oracle: typing.Text
+    oracle: builtins.str
     """From: address of oracle"""
-
-    token0: typing.Text
+    token0: builtins.str
     """Token0: denominator unit of the price, a.k.a. quote asset"""
-
-    token1: typing.Text
+    token1: builtins.str
     """Token1: numerator unit of price, a.k.a. base asset"""
-
-    price: typing.Text
+    price: builtins.str
     """Price: Price of the trading pair in units of token1 / token0."""
-
     @property
     def expiry(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        oracle: typing.Text = ...,
-        token0: typing.Text = ...,
-        token1: typing.Text = ...,
-        price: typing.Text = ...,
-        expiry: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["expiry",b"expiry"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["expiry",b"expiry","oracle",b"oracle","price",b"price","token0",b"token0","token1",b"token1"]) -> None: ...
+        oracle: builtins.str = ...,
+        token0: builtins.str = ...,
+        token1: builtins.str = ...,
+        price: builtins.str = ...,
+        expiry: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["expiry", b"expiry"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["expiry", b"expiry", "oracle", b"oracle", "price", b"price", "token0", b"token0", "token1", b"token1"]) -> None: ...
+
 global___MsgPostPrice = MsgPostPrice
 
 class MsgPostPriceResponse(google.protobuf.message.Message):
     """MsgPostPriceResponse defines the Msg/PostPrice response type."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___MsgPostPriceResponse = MsgPostPriceResponse
 
 class EventOracleUpdatePrice(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
     ORACLE_FIELD_NUMBER: builtins.int
     PAIR_PRICE_FIELD_NUMBER: builtins.int
     EXPIRY_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    oracle: typing.Text
-    pair_price: typing.Text
+    pair_id: builtins.str
+    oracle: builtins.str
+    pair_price: builtins.str
     @property
     def expiry(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        oracle: typing.Text = ...,
-        pair_price: typing.Text = ...,
-        expiry: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["expiry",b"expiry"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["expiry",b"expiry","oracle",b"oracle","pair_id",b"pair_id","pair_price",b"pair_price"]) -> None: ...
+        pair_id: builtins.str = ...,
+        oracle: builtins.str = ...,
+        pair_price: builtins.str = ...,
+        expiry: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["expiry", b"expiry"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["expiry", b"expiry", "oracle", b"oracle", "pair_id", b"pair_id", "pair_price", b"pair_price"]) -> None: ...
+
 global___EventOracleUpdatePrice = EventOracleUpdatePrice
 
 class EventPairPriceUpdated(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_ID_FIELD_NUMBER: builtins.int
     PAIR_PRICE_FIELD_NUMBER: builtins.int
-    pair_id: typing.Text
-    pair_price: typing.Text
-    def __init__(self,
+    pair_id: builtins.str
+    pair_price: builtins.str
+    def __init__(
+        self,
         *,
-        pair_id: typing.Text = ...,
-        pair_price: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_id",b"pair_id","pair_price",b"pair_price"]) -> None: ...
+        pair_id: builtins.str = ...,
+        pair_price: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_id", b"pair_id", "pair_price", b"pair_price"]) -> None: ...
+
 global___EventPairPriceUpdated = EventPairPriceUpdated

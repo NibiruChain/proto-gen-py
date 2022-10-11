@@ -3,17 +3,23 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import sys
 import tendermint.crypto.keys_pb2
-import typing
-import typing_extensions
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ValidatorSet(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VALIDATORS_FIELD_NUMBER: builtins.int
     PROPOSER_FIELD_NUMBER: builtins.int
     TOTAL_VOTING_POWER_FIELD_NUMBER: builtins.int
@@ -22,18 +28,21 @@ class ValidatorSet(google.protobuf.message.Message):
     @property
     def proposer(self) -> global___Validator: ...
     total_voting_power: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        validators: typing.Optional[typing.Iterable[global___Validator]] = ...,
-        proposer: typing.Optional[global___Validator] = ...,
+        validators: collections.abc.Iterable[global___Validator] | None = ...,
+        proposer: global___Validator | None = ...,
         total_voting_power: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["proposer",b"proposer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["proposer",b"proposer","total_voting_power",b"total_voting_power","validators",b"validators"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["proposer", b"proposer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["proposer", b"proposer", "total_voting_power", b"total_voting_power", "validators", b"validators"]) -> None: ...
+
 global___ValidatorSet = ValidatorSet
 
 class Validator(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ADDRESS_FIELD_NUMBER: builtins.int
     PUB_KEY_FIELD_NUMBER: builtins.int
     VOTING_POWER_FIELD_NUMBER: builtins.int
@@ -43,29 +52,34 @@ class Validator(google.protobuf.message.Message):
     def pub_key(self) -> tendermint.crypto.keys_pb2.PublicKey: ...
     voting_power: builtins.int
     proposer_priority: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
         address: builtins.bytes = ...,
-        pub_key: typing.Optional[tendermint.crypto.keys_pb2.PublicKey] = ...,
+        pub_key: tendermint.crypto.keys_pb2.PublicKey | None = ...,
         voting_power: builtins.int = ...,
         proposer_priority: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pub_key",b"pub_key"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["address",b"address","proposer_priority",b"proposer_priority","pub_key",b"pub_key","voting_power",b"voting_power"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["pub_key", b"pub_key"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "proposer_priority", b"proposer_priority", "pub_key", b"pub_key", "voting_power", b"voting_power"]) -> None: ...
+
 global___Validator = Validator
 
 class SimpleValidator(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PUB_KEY_FIELD_NUMBER: builtins.int
     VOTING_POWER_FIELD_NUMBER: builtins.int
     @property
     def pub_key(self) -> tendermint.crypto.keys_pb2.PublicKey: ...
     voting_power: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pub_key: typing.Optional[tendermint.crypto.keys_pb2.PublicKey] = ...,
+        pub_key: tendermint.crypto.keys_pb2.PublicKey | None = ...,
         voting_power: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pub_key",b"pub_key"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pub_key",b"pub_key","voting_power",b"voting_power"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["pub_key", b"pub_key"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pub_key", b"pub_key", "voting_power", b"voting_power"]) -> None: ...
+
 global___SimpleValidator = SimpleValidator

@@ -3,34 +3,43 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Params(google.protobuf.message.Message):
     """Params defines the set of params for the distribution module."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     COMMUNITY_TAX_FIELD_NUMBER: builtins.int
     BASE_PROPOSER_REWARD_FIELD_NUMBER: builtins.int
     BONUS_PROPOSER_REWARD_FIELD_NUMBER: builtins.int
     WITHDRAW_ADDR_ENABLED_FIELD_NUMBER: builtins.int
-    community_tax: typing.Text
-    base_proposer_reward: typing.Text
-    bonus_proposer_reward: typing.Text
+    community_tax: builtins.str
+    base_proposer_reward: builtins.str
+    bonus_proposer_reward: builtins.str
     withdraw_addr_enabled: builtins.bool
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        community_tax: typing.Text = ...,
-        base_proposer_reward: typing.Text = ...,
-        bonus_proposer_reward: typing.Text = ...,
+        community_tax: builtins.str = ...,
+        base_proposer_reward: builtins.str = ...,
+        bonus_proposer_reward: builtins.str = ...,
         withdraw_addr_enabled: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_proposer_reward",b"base_proposer_reward","bonus_proposer_reward",b"bonus_proposer_reward","community_tax",b"community_tax","withdraw_addr_enabled",b"withdraw_addr_enabled"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_proposer_reward", b"base_proposer_reward", "bonus_proposer_reward", b"bonus_proposer_reward", "community_tax", b"community_tax", "withdraw_addr_enabled", b"withdraw_addr_enabled"]) -> None: ...
+
 global___Params = Params
 
 class ValidatorHistoricalRewards(google.protobuf.message.Message):
@@ -47,18 +56,22 @@ class ValidatorHistoricalRewards(google.protobuf.message.Message):
      read that record)
      + one per validator for the zeroeth period, set on initialization
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CUMULATIVE_REWARD_RATIO_FIELD_NUMBER: builtins.int
     REFERENCE_COUNT_FIELD_NUMBER: builtins.int
     @property
     def cumulative_reward_ratio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
     reference_count: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        cumulative_reward_ratio: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
+        cumulative_reward_ratio: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
         reference_count: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cumulative_reward_ratio",b"cumulative_reward_ratio","reference_count",b"reference_count"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cumulative_reward_ratio", b"cumulative_reward_ratio", "reference_count", b"reference_count"]) -> None: ...
+
 global___ValidatorHistoricalRewards = ValidatorHistoricalRewards
 
 class ValidatorCurrentRewards(google.protobuf.message.Message):
@@ -66,48 +79,60 @@ class ValidatorCurrentRewards(google.protobuf.message.Message):
     period for a validator kept as a running counter and incremented
     each block as long as the validator's tokens remain constant.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     REWARDS_FIELD_NUMBER: builtins.int
     PERIOD_FIELD_NUMBER: builtins.int
     @property
     def rewards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
     period: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        rewards: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
+        rewards: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
         period: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["period",b"period","rewards",b"rewards"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["period", b"period", "rewards", b"rewards"]) -> None: ...
+
 global___ValidatorCurrentRewards = ValidatorCurrentRewards
 
 class ValidatorAccumulatedCommission(google.protobuf.message.Message):
     """ValidatorAccumulatedCommission represents accumulated commission
     for a validator kept as a running counter, can be withdrawn at any time.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     COMMISSION_FIELD_NUMBER: builtins.int
     @property
     def commission(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        commission: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["commission",b"commission"]) -> None: ...
+        commission: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["commission", b"commission"]) -> None: ...
+
 global___ValidatorAccumulatedCommission = ValidatorAccumulatedCommission
 
 class ValidatorOutstandingRewards(google.protobuf.message.Message):
     """ValidatorOutstandingRewards represents outstanding (un-withdrawn) rewards
     for a validator inexpensive to track, allows simple sanity checks.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     REWARDS_FIELD_NUMBER: builtins.int
     @property
     def rewards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        rewards: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["rewards",b"rewards"]) -> None: ...
+        rewards: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["rewards", b"rewards"]) -> None: ...
+
 global___ValidatorOutstandingRewards = ValidatorOutstandingRewards
 
 class ValidatorSlashEvent(google.protobuf.message.Message):
@@ -116,43 +141,55 @@ class ValidatorSlashEvent(google.protobuf.message.Message):
     This is needed to calculate appropriate amount of staking tokens
     for delegations which are withdrawn after a slash has occurred.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VALIDATOR_PERIOD_FIELD_NUMBER: builtins.int
     FRACTION_FIELD_NUMBER: builtins.int
     validator_period: builtins.int
-    fraction: typing.Text
-    def __init__(self,
+    fraction: builtins.str
+    def __init__(
+        self,
         *,
         validator_period: builtins.int = ...,
-        fraction: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fraction",b"fraction","validator_period",b"validator_period"]) -> None: ...
+        fraction: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fraction", b"fraction", "validator_period", b"validator_period"]) -> None: ...
+
 global___ValidatorSlashEvent = ValidatorSlashEvent
 
 class ValidatorSlashEvents(google.protobuf.message.Message):
     """ValidatorSlashEvents is a collection of ValidatorSlashEvent messages."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VALIDATOR_SLASH_EVENTS_FIELD_NUMBER: builtins.int
     @property
     def validator_slash_events(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ValidatorSlashEvent]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        validator_slash_events: typing.Optional[typing.Iterable[global___ValidatorSlashEvent]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["validator_slash_events",b"validator_slash_events"]) -> None: ...
+        validator_slash_events: collections.abc.Iterable[global___ValidatorSlashEvent] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["validator_slash_events", b"validator_slash_events"]) -> None: ...
+
 global___ValidatorSlashEvents = ValidatorSlashEvents
 
 class FeePool(google.protobuf.message.Message):
     """FeePool is the global fee pool for distribution."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     COMMUNITY_POOL_FIELD_NUMBER: builtins.int
     @property
     def community_pool(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        community_pool: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["community_pool",b"community_pool"]) -> None: ...
+        community_pool: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["community_pool", b"community_pool"]) -> None: ...
+
 global___FeePool = FeePool
 
 class CommunityPoolSpendProposal(google.protobuf.message.Message):
@@ -160,24 +197,28 @@ class CommunityPoolSpendProposal(google.protobuf.message.Message):
     together with how many coins are proposed to be spent, and to which
     recipient account.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     RECIPIENT_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
-    title: typing.Text
-    description: typing.Text
-    recipient: typing.Text
+    title: builtins.str
+    description: builtins.str
+    recipient: builtins.str
     @property
     def amount(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        description: typing.Text = ...,
-        recipient: typing.Text = ...,
-        amount: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.Coin]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","description",b"description","recipient",b"recipient","title",b"title"]) -> None: ...
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        recipient: builtins.str = ...,
+        amount: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount", "description", b"description", "recipient", b"recipient", "title", b"title"]) -> None: ...
+
 global___CommunityPoolSpendProposal = CommunityPoolSpendProposal
 
 class DelegatorStartingInfo(google.protobuf.message.Message):
@@ -188,62 +229,74 @@ class DelegatorStartingInfo(google.protobuf.message.Message):
     the delegators within the validator may be left with less than a full token,
     thus sdk.Dec is used.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PREVIOUS_PERIOD_FIELD_NUMBER: builtins.int
     STAKE_FIELD_NUMBER: builtins.int
     HEIGHT_FIELD_NUMBER: builtins.int
     previous_period: builtins.int
-    stake: typing.Text
+    stake: builtins.str
     height: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
         previous_period: builtins.int = ...,
-        stake: typing.Text = ...,
+        stake: builtins.str = ...,
         height: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["height",b"height","previous_period",b"previous_period","stake",b"stake"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["height", b"height", "previous_period", b"previous_period", "stake", b"stake"]) -> None: ...
+
 global___DelegatorStartingInfo = DelegatorStartingInfo
 
 class DelegationDelegatorReward(google.protobuf.message.Message):
     """DelegationDelegatorReward represents the properties
     of a delegator's delegation reward.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VALIDATOR_ADDRESS_FIELD_NUMBER: builtins.int
     REWARD_FIELD_NUMBER: builtins.int
-    validator_address: typing.Text
+    validator_address: builtins.str
     @property
     def reward(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.DecCoin]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        validator_address: typing.Text = ...,
-        reward: typing.Optional[typing.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["reward",b"reward","validator_address",b"validator_address"]) -> None: ...
+        validator_address: builtins.str = ...,
+        reward: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.DecCoin] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["reward", b"reward", "validator_address", b"validator_address"]) -> None: ...
+
 global___DelegationDelegatorReward = DelegationDelegatorReward
 
 class CommunityPoolSpendProposalWithDeposit(google.protobuf.message.Message):
     """CommunityPoolSpendProposalWithDeposit defines a CommunityPoolSpendProposal
     with a deposit
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     RECIPIENT_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
     DEPOSIT_FIELD_NUMBER: builtins.int
-    title: typing.Text
-    description: typing.Text
-    recipient: typing.Text
-    amount: typing.Text
-    deposit: typing.Text
-    def __init__(self,
+    title: builtins.str
+    description: builtins.str
+    recipient: builtins.str
+    amount: builtins.str
+    deposit: builtins.str
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        description: typing.Text = ...,
-        recipient: typing.Text = ...,
-        amount: typing.Text = ...,
-        deposit: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount","deposit",b"deposit","description",b"description","recipient",b"recipient","title",b"title"]) -> None: ...
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        recipient: builtins.str = ...,
+        amount: builtins.str = ...,
+        deposit: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount", "deposit", b"deposit", "description", b"description", "recipient", b"recipient", "title", b"title"]) -> None: ...
+
 global___CommunityPoolSpendProposalWithDeposit = CommunityPoolSpendProposalWithDeposit

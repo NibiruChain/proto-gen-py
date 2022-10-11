@@ -3,28 +3,37 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
 import vpool.v1.state_pb2
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the vpool module's genesis state."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VPOOLS_FIELD_NUMBER: builtins.int
     SNAPSHOTS_FIELD_NUMBER: builtins.int
     @property
     def vpools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.VPool]: ...
     @property
     def snapshots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.ReserveSnapshot]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        vpools: typing.Optional[typing.Iterable[vpool.v1.state_pb2.VPool]] = ...,
-        snapshots: typing.Optional[typing.Iterable[vpool.v1.state_pb2.ReserveSnapshot]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["snapshots",b"snapshots","vpools",b"vpools"]) -> None: ...
+        vpools: collections.abc.Iterable[vpool.v1.state_pb2.VPool] | None = ...,
+        snapshots: collections.abc.Iterable[vpool.v1.state_pb2.ReserveSnapshot] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["snapshots", b"snapshots", "vpools", b"vpools"]) -> None: ...
+
 global___GenesisState = GenesisState

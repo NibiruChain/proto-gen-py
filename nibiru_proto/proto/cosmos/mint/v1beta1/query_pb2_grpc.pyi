@@ -8,48 +8,47 @@ import grpc
 
 class QueryStub:
     """Query provides defines the gRPC querier service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     Params: grpc.UnaryUnaryMultiCallable[
         cosmos.mint.v1beta1.query_pb2.QueryParamsRequest,
-        cosmos.mint.v1beta1.query_pb2.QueryParamsResponse]
+        cosmos.mint.v1beta1.query_pb2.QueryParamsResponse,
+    ]
     """Params returns the total set of minting parameters."""
-
     Inflation: grpc.UnaryUnaryMultiCallable[
         cosmos.mint.v1beta1.query_pb2.QueryInflationRequest,
-        cosmos.mint.v1beta1.query_pb2.QueryInflationResponse]
+        cosmos.mint.v1beta1.query_pb2.QueryInflationResponse,
+    ]
     """Inflation returns the current minting inflation value."""
-
     AnnualProvisions: grpc.UnaryUnaryMultiCallable[
         cosmos.mint.v1beta1.query_pb2.QueryAnnualProvisionsRequest,
-        cosmos.mint.v1beta1.query_pb2.QueryAnnualProvisionsResponse]
+        cosmos.mint.v1beta1.query_pb2.QueryAnnualProvisionsResponse,
+    ]
     """AnnualProvisions current minting annual provisions value."""
-
 
 class QueryServicer(metaclass=abc.ABCMeta):
     """Query provides defines the gRPC querier service."""
+
     @abc.abstractmethod
-    def Params(self,
+    def Params(
+        self,
         request: cosmos.mint.v1beta1.query_pb2.QueryParamsRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.mint.v1beta1.query_pb2.QueryParamsResponse:
         """Params returns the total set of minting parameters."""
-        pass
-
     @abc.abstractmethod
-    def Inflation(self,
+    def Inflation(
+        self,
         request: cosmos.mint.v1beta1.query_pb2.QueryInflationRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.mint.v1beta1.query_pb2.QueryInflationResponse:
         """Inflation returns the current minting inflation value."""
-        pass
-
     @abc.abstractmethod
-    def AnnualProvisions(self,
+    def AnnualProvisions(
+        self,
         request: cosmos.mint.v1beta1.query_pb2.QueryAnnualProvisionsRequest,
         context: grpc.ServicerContext,
     ) -> cosmos.mint.v1beta1.query_pb2.QueryAnnualProvisionsResponse:
         """AnnualProvisions current minting annual provisions value."""
-        pass
-
 
 def add_QueryServicer_to_server(servicer: QueryServicer, server: grpc.Server) -> None: ...

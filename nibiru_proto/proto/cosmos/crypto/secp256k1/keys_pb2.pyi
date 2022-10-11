@@ -5,7 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -16,24 +21,32 @@ class PubKey(google.protobuf.message.Message):
     the x-coordinate. Otherwise the first byte is a 0x03.
     This prefix is followed with the x-coordinate.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     key: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key"]) -> None: ...
+
 global___PubKey = PubKey
 
 class PrivKey(google.protobuf.message.Message):
     """PrivKey defines a secp256k1 private key."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     key: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key"]) -> None: ...
+
 global___PrivKey = PrivKey

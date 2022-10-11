@@ -3,18 +3,25 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import oracle.v1beta1.oracle_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the oracle module's genesis state."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PARAMS_FIELD_NUMBER: builtins.int
     FEEDER_DELEGATIONS_FIELD_NUMBER: builtins.int
     EXCHANGE_RATES_FIELD_NUMBER: builtins.int
@@ -39,19 +46,21 @@ class GenesisState(google.protobuf.message.Message):
     def pairs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.Pair]: ...
     @property
     def pair_rewards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[oracle.v1beta1.oracle_pb2.PairReward]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        params: typing.Optional[oracle.v1beta1.oracle_pb2.Params] = ...,
-        feeder_delegations: typing.Optional[typing.Iterable[global___FeederDelegation]] = ...,
-        exchange_rates: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.ExchangeRateTuple]] = ...,
-        miss_counters: typing.Optional[typing.Iterable[global___MissCounter]] = ...,
-        aggregate_exchange_rate_prevotes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote]] = ...,
-        aggregate_exchange_rate_votes: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote]] = ...,
-        pairs: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.Pair]] = ...,
-        pair_rewards: typing.Optional[typing.Iterable[oracle.v1beta1.oracle_pb2.PairReward]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes",b"aggregate_exchange_rate_prevotes","aggregate_exchange_rate_votes",b"aggregate_exchange_rate_votes","exchange_rates",b"exchange_rates","feeder_delegations",b"feeder_delegations","miss_counters",b"miss_counters","pair_rewards",b"pair_rewards","pairs",b"pairs","params",b"params"]) -> None: ...
+        params: oracle.v1beta1.oracle_pb2.Params | None = ...,
+        feeder_delegations: collections.abc.Iterable[global___FeederDelegation] | None = ...,
+        exchange_rates: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.ExchangeRateTuple] | None = ...,
+        miss_counters: collections.abc.Iterable[global___MissCounter] | None = ...,
+        aggregate_exchange_rate_prevotes: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRatePrevote] | None = ...,
+        aggregate_exchange_rate_votes: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.AggregateExchangeRateVote] | None = ...,
+        pairs: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.Pair] | None = ...,
+        pair_rewards: collections.abc.Iterable[oracle.v1beta1.oracle_pb2.PairReward] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aggregate_exchange_rate_prevotes", b"aggregate_exchange_rate_prevotes", "aggregate_exchange_rate_votes", b"aggregate_exchange_rate_votes", "exchange_rates", b"exchange_rates", "feeder_delegations", b"feeder_delegations", "miss_counters", b"miss_counters", "pair_rewards", b"pair_rewards", "pairs", b"pairs", "params", b"params"]) -> None: ...
+
 global___GenesisState = GenesisState
 
 class FeederDelegation(google.protobuf.message.Message):
@@ -59,32 +68,40 @@ class FeederDelegation(google.protobuf.message.Message):
     delegated to. By default this struct is only used at genesis to feed in
     default feeder addresses.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FEEDER_ADDRESS_FIELD_NUMBER: builtins.int
     VALIDATOR_ADDRESS_FIELD_NUMBER: builtins.int
-    feeder_address: typing.Text
-    validator_address: typing.Text
-    def __init__(self,
+    feeder_address: builtins.str
+    validator_address: builtins.str
+    def __init__(
+        self,
         *,
-        feeder_address: typing.Text = ...,
-        validator_address: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["feeder_address",b"feeder_address","validator_address",b"validator_address"]) -> None: ...
+        feeder_address: builtins.str = ...,
+        validator_address: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["feeder_address", b"feeder_address", "validator_address", b"validator_address"]) -> None: ...
+
 global___FeederDelegation = FeederDelegation
 
 class MissCounter(google.protobuf.message.Message):
     """MissCounter defines an miss counter and validator address pair used in
     oracle module's genesis state
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VALIDATOR_ADDRESS_FIELD_NUMBER: builtins.int
     MISS_COUNTER_FIELD_NUMBER: builtins.int
-    validator_address: typing.Text
+    validator_address: builtins.str
     miss_counter: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        validator_address: typing.Text = ...,
+        validator_address: builtins.str = ...,
         miss_counter: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["miss_counter",b"miss_counter","validator_address",b"validator_address"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["miss_counter", b"miss_counter", "validator_address", b"validator_address"]) -> None: ...
+
 global___MissCounter = MissCounter

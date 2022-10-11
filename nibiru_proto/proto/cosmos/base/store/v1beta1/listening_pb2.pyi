@@ -5,8 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -17,25 +21,27 @@ class StoreKVPair(google.protobuf.message.Message):
 
     Since: cosmos-sdk 0.43
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     STORE_KEY_FIELD_NUMBER: builtins.int
     DELETE_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
-    store_key: typing.Text
+    store_key: builtins.str
     """the store key for the KVStore this pair originates from"""
-
     delete: builtins.bool
     """true indicates a delete operation, false indicates a set operation"""
-
     key: builtins.bytes
     value: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        store_key: typing.Text = ...,
+        store_key: builtins.str = ...,
         delete: builtins.bool = ...,
         key: builtins.bytes = ...,
         value: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["delete",b"delete","key",b"key","store_key",b"store_key","value",b"value"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["delete", b"delete", "key", b"key", "store_key", b"store_key", "value", b"value"]) -> None: ...
+
 global___StoreKVPair = StoreKVPair

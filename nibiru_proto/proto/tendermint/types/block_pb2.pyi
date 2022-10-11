@@ -5,15 +5,20 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
+import sys
 import tendermint.types.evidence_pb2
 import tendermint.types.types_pb2
-import typing
-import typing_extensions
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Block(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HEADER_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
     EVIDENCE_FIELD_NUMBER: builtins.int
@@ -26,13 +31,15 @@ class Block(google.protobuf.message.Message):
     def evidence(self) -> tendermint.types.evidence_pb2.EvidenceList: ...
     @property
     def last_commit(self) -> tendermint.types.types_pb2.Commit: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        header: typing.Optional[tendermint.types.types_pb2.Header] = ...,
-        data: typing.Optional[tendermint.types.types_pb2.Data] = ...,
-        evidence: typing.Optional[tendermint.types.evidence_pb2.EvidenceList] = ...,
-        last_commit: typing.Optional[tendermint.types.types_pb2.Commit] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["data",b"data","evidence",b"evidence","header",b"header","last_commit",b"last_commit"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["data",b"data","evidence",b"evidence","header",b"header","last_commit",b"last_commit"]) -> None: ...
+        header: tendermint.types.types_pb2.Header | None = ...,
+        data: tendermint.types.types_pb2.Data | None = ...,
+        evidence: tendermint.types.evidence_pb2.EvidenceList | None = ...,
+        last_commit: tendermint.types.types_pb2.Commit | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["data", b"data", "evidence", b"evidence", "header", b"header", "last_commit", b"last_commit"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data", "evidence", b"evidence", "header", b"header", "last_commit", b"last_commit"]) -> None: ...
+
 global___Block = Block

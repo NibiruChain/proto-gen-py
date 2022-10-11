@@ -8,76 +8,77 @@ import perp.v1.tx_pb2
 
 class MsgStub:
     """Msg defines the x/perp Msg service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     RemoveMargin: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgRemoveMargin,
-        perp.v1.tx_pb2.MsgRemoveMarginResponse]
-
+        perp.v1.tx_pb2.MsgRemoveMarginResponse,
+    ]
     AddMargin: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgAddMargin,
-        perp.v1.tx_pb2.MsgAddMarginResponse]
-
+        perp.v1.tx_pb2.MsgAddMarginResponse,
+    ]
     Liquidate: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgLiquidate,
-        perp.v1.tx_pb2.MsgLiquidateResponse]
+        perp.v1.tx_pb2.MsgLiquidateResponse,
+    ]
     """Liquidate is a transaction that allows the caller to fully or partially 
     liquidate an existing position.
     """
-
     MultiLiquidate: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgMultiLiquidate,
-        perp.v1.tx_pb2.MsgMultiLiquidateResponse]
-
+        perp.v1.tx_pb2.MsgMultiLiquidateResponse,
+    ]
     OpenPosition: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgOpenPosition,
-        perp.v1.tx_pb2.MsgOpenPositionResponse]
-
+        perp.v1.tx_pb2.MsgOpenPositionResponse,
+    ]
     ClosePosition: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgClosePosition,
-        perp.v1.tx_pb2.MsgClosePositionResponse]
-
+        perp.v1.tx_pb2.MsgClosePositionResponse,
+    ]
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the x/perp Msg service."""
+
     @abc.abstractmethod
-    def RemoveMargin(self,
+    def RemoveMargin(
+        self,
         request: perp.v1.tx_pb2.MsgRemoveMargin,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgRemoveMarginResponse: ...
-
     @abc.abstractmethod
-    def AddMargin(self,
+    def AddMargin(
+        self,
         request: perp.v1.tx_pb2.MsgAddMargin,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgAddMarginResponse: ...
-
     @abc.abstractmethod
-    def Liquidate(self,
+    def Liquidate(
+        self,
         request: perp.v1.tx_pb2.MsgLiquidate,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgLiquidateResponse:
         """Liquidate is a transaction that allows the caller to fully or partially 
         liquidate an existing position.
         """
-        pass
-
     @abc.abstractmethod
-    def MultiLiquidate(self,
+    def MultiLiquidate(
+        self,
         request: perp.v1.tx_pb2.MsgMultiLiquidate,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgMultiLiquidateResponse: ...
-
     @abc.abstractmethod
-    def OpenPosition(self,
+    def OpenPosition(
+        self,
         request: perp.v1.tx_pb2.MsgOpenPosition,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgOpenPositionResponse: ...
-
     @abc.abstractmethod
-    def ClosePosition(self,
+    def ClosePosition(
+        self,
         request: perp.v1.tx_pb2.MsgClosePosition,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgClosePositionResponse: ...
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...
