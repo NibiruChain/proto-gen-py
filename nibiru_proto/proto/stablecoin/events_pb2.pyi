@@ -6,114 +6,139 @@ import builtins
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class EventTransfer(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     COIN_FIELD_NUMBER: builtins.int
     FROM_FIELD_NUMBER: builtins.int
     TO_FIELD_NUMBER: builtins.int
     @property
     def coin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
-    to: typing.Text
-    def __init__(self,
+    to: builtins.str
+    def __init__(
+        self,
         *,
-        coin: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        to: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["coin",b"coin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["coin",b"coin","from",b"from","to",b"to"]) -> None: ...
+        coin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        to: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["coin", b"coin"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["coin", b"coin", "from", b"from", "to", b"to"]) -> None: ...
+
 global___EventTransfer = EventTransfer
 
 class EventMintStable(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AMOUNT_FIELD_NUMBER: builtins.int
-    amount: typing.Text
-    def __init__(self,
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount"]) -> None: ...
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount"]) -> None: ...
+
 global___EventMintStable = EventMintStable
 
 class EventBurnStable(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AMOUNT_FIELD_NUMBER: builtins.int
-    amount: typing.Text
-    def __init__(self,
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount"]) -> None: ...
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount"]) -> None: ...
+
 global___EventBurnStable = EventBurnStable
 
 class EventMintNIBI(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AMOUNT_FIELD_NUMBER: builtins.int
-    amount: typing.Text
-    def __init__(self,
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount"]) -> None: ...
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount"]) -> None: ...
+
 global___EventMintNIBI = EventMintNIBI
 
 class EventBurnNIBI(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AMOUNT_FIELD_NUMBER: builtins.int
-    amount: typing.Text
-    def __init__(self,
+    amount: builtins.str
+    def __init__(
+        self,
         *,
-        amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["amount",b"amount"]) -> None: ...
+        amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount"]) -> None: ...
+
 global___EventBurnNIBI = EventBurnNIBI
 
 class EventRecollateralize(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CALLER_FIELD_NUMBER: builtins.int
     IN_COIN_FIELD_NUMBER: builtins.int
     OUT_COIN_FIELD_NUMBER: builtins.int
     COLL_RATIO_FIELD_NUMBER: builtins.int
-    caller: typing.Text
+    caller: builtins.str
     @property
     def in_coin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     @property
     def out_coin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
-    coll_ratio: typing.Text
-    def __init__(self,
+    coll_ratio: builtins.str
+    def __init__(
+        self,
         *,
-        caller: typing.Text = ...,
-        in_coin: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        out_coin: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        coll_ratio: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["in_coin",b"in_coin","out_coin",b"out_coin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["caller",b"caller","coll_ratio",b"coll_ratio","in_coin",b"in_coin","out_coin",b"out_coin"]) -> None: ...
+        caller: builtins.str = ...,
+        in_coin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        out_coin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        coll_ratio: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["in_coin", b"in_coin", "out_coin", b"out_coin"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["caller", b"caller", "coll_ratio", b"coll_ratio", "in_coin", b"in_coin", "out_coin", b"out_coin"]) -> None: ...
+
 global___EventRecollateralize = EventRecollateralize
 
 class EventBuyback(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CALLER_FIELD_NUMBER: builtins.int
     IN_COIN_FIELD_NUMBER: builtins.int
     OUT_COIN_FIELD_NUMBER: builtins.int
     COLL_RATIO_FIELD_NUMBER: builtins.int
-    caller: typing.Text
+    caller: builtins.str
     @property
     def in_coin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     @property
     def out_coin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
-    coll_ratio: typing.Text
-    def __init__(self,
+    coll_ratio: builtins.str
+    def __init__(
+        self,
         *,
-        caller: typing.Text = ...,
-        in_coin: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        out_coin: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        coll_ratio: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["in_coin",b"in_coin","out_coin",b"out_coin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["caller",b"caller","coll_ratio",b"coll_ratio","in_coin",b"in_coin","out_coin",b"out_coin"]) -> None: ...
+        caller: builtins.str = ...,
+        in_coin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        out_coin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        coll_ratio: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["in_coin", b"in_coin", "out_coin", b"out_coin"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["caller", b"caller", "coll_ratio", b"coll_ratio", "in_coin", b"in_coin", "out_coin", b"out_coin"]) -> None: ...
+
 global___EventBuyback = EventBuyback

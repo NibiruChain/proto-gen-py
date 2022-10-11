@@ -3,51 +3,68 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import epochs.state_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class QueryEpochsInfoRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___QueryEpochsInfoRequest = QueryEpochsInfoRequest
 
 class QueryEpochsInfoResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EPOCHS_FIELD_NUMBER: builtins.int
     @property
     def epochs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[epochs.state_pb2.EpochInfo]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        epochs: typing.Optional[typing.Iterable[epochs.state_pb2.EpochInfo]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["epochs",b"epochs"]) -> None: ...
+        epochs: collections.abc.Iterable[epochs.state_pb2.EpochInfo] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["epochs", b"epochs"]) -> None: ...
+
 global___QueryEpochsInfoResponse = QueryEpochsInfoResponse
 
 class QueryCurrentEpochRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     IDENTIFIER_FIELD_NUMBER: builtins.int
-    identifier: typing.Text
-    def __init__(self,
+    identifier: builtins.str
+    def __init__(
+        self,
         *,
-        identifier: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["identifier",b"identifier"]) -> None: ...
+        identifier: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["identifier", b"identifier"]) -> None: ...
+
 global___QueryCurrentEpochRequest = QueryCurrentEpochRequest
 
 class QueryCurrentEpochResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CURRENT_EPOCH_FIELD_NUMBER: builtins.int
     current_epoch: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
         current_epoch: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["current_epoch",b"current_epoch"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["current_epoch", b"current_epoch"]) -> None: ...
+
 global___QueryCurrentEpochResponse = QueryCurrentEpochResponse

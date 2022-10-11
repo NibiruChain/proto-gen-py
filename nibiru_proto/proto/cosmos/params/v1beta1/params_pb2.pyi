@@ -3,49 +3,62 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ParameterChangeProposal(google.protobuf.message.Message):
     """ParameterChangeProposal defines a proposal to change one or more parameters."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     CHANGES_FIELD_NUMBER: builtins.int
-    title: typing.Text
-    description: typing.Text
+    title: builtins.str
+    description: builtins.str
     @property
     def changes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ParamChange]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        description: typing.Text = ...,
-        changes: typing.Optional[typing.Iterable[global___ParamChange]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["changes",b"changes","description",b"description","title",b"title"]) -> None: ...
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        changes: collections.abc.Iterable[global___ParamChange] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["changes", b"changes", "description", b"description", "title", b"title"]) -> None: ...
+
 global___ParameterChangeProposal = ParameterChangeProposal
 
 class ParamChange(google.protobuf.message.Message):
     """ParamChange defines an individual parameter change, for use in
     ParameterChangeProposal.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     SUBSPACE_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
-    subspace: typing.Text
-    key: typing.Text
-    value: typing.Text
-    def __init__(self,
+    subspace: builtins.str
+    key: builtins.str
+    value: builtins.str
+    def __init__(
+        self,
         *,
-        subspace: typing.Text = ...,
-        key: typing.Text = ...,
-        value: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","subspace",b"subspace","value",b"value"]) -> None: ...
+        subspace: builtins.str = ...,
+        key: builtins.str = ...,
+        value: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "subspace", b"subspace", "value", b"value"]) -> None: ...
+
 global___ParamChange = ParamChange

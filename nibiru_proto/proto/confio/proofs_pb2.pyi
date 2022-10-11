@@ -3,23 +3,29 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
-import typing_extensions
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _HashOp:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _HashOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HashOp.ValueType], builtins.type):
+
+class _HashOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HashOp.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NO_HASH: _HashOp.ValueType  # 0
     """NO_HASH is the default if no data passed. Note this is an illegal argument some places."""
-
     SHA256: _HashOp.ValueType  # 1
     SHA512: _HashOp.ValueType  # 2
     KECCAK: _HashOp.ValueType  # 3
@@ -27,51 +33,40 @@ class _HashOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     BITCOIN: _HashOp.ValueType  # 5
     """ripemd160(sha256(x))"""
 
-class HashOp(_HashOp, metaclass=_HashOpEnumTypeWrapper):
-    pass
+class HashOp(_HashOp, metaclass=_HashOpEnumTypeWrapper): ...
 
 NO_HASH: HashOp.ValueType  # 0
 """NO_HASH is the default if no data passed. Note this is an illegal argument some places."""
-
 SHA256: HashOp.ValueType  # 1
 SHA512: HashOp.ValueType  # 2
 KECCAK: HashOp.ValueType  # 3
 RIPEMD160: HashOp.ValueType  # 4
 BITCOIN: HashOp.ValueType  # 5
 """ripemd160(sha256(x))"""
-
 global___HashOp = HashOp
 
-
 class _LengthOp:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _LengthOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LengthOp.ValueType], builtins.type):
+
+class _LengthOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LengthOp.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NO_PREFIX: _LengthOp.ValueType  # 0
     """NO_PREFIX don't include any length info"""
-
     VAR_PROTO: _LengthOp.ValueType  # 1
     """VAR_PROTO uses protobuf (and go-amino) varint encoding of the length"""
-
     VAR_RLP: _LengthOp.ValueType  # 2
     """VAR_RLP uses rlp int encoding of the length"""
-
     FIXED32_BIG: _LengthOp.ValueType  # 3
     """FIXED32_BIG uses big-endian encoding of the length as a 32 bit integer"""
-
     FIXED32_LITTLE: _LengthOp.ValueType  # 4
     """FIXED32_LITTLE uses little-endian encoding of the length as a 32 bit integer"""
-
     FIXED64_BIG: _LengthOp.ValueType  # 5
     """FIXED64_BIG uses big-endian encoding of the length as a 64 bit integer"""
-
     FIXED64_LITTLE: _LengthOp.ValueType  # 6
     """FIXED64_LITTLE uses little-endian encoding of the length as a 64 bit integer"""
-
     REQUIRE_32_BYTES: _LengthOp.ValueType  # 7
     """REQUIRE_32_BYTES is like NONE, but will fail if the input is not exactly 32 bytes (sha256 output)"""
-
     REQUIRE_64_BYTES: _LengthOp.ValueType  # 8
     """REQUIRE_64_BYTES is like NONE, but will fail if the input is not exactly 64 bytes (sha512 output)"""
 
@@ -82,37 +77,26 @@ class LengthOp(_LengthOp, metaclass=_LengthOpEnumTypeWrapper):
     algorithm, the length will be prepended to the key and value bytes.
     (Each one with it's own encoded length)
     """
-    pass
 
 NO_PREFIX: LengthOp.ValueType  # 0
 """NO_PREFIX don't include any length info"""
-
 VAR_PROTO: LengthOp.ValueType  # 1
 """VAR_PROTO uses protobuf (and go-amino) varint encoding of the length"""
-
 VAR_RLP: LengthOp.ValueType  # 2
 """VAR_RLP uses rlp int encoding of the length"""
-
 FIXED32_BIG: LengthOp.ValueType  # 3
 """FIXED32_BIG uses big-endian encoding of the length as a 32 bit integer"""
-
 FIXED32_LITTLE: LengthOp.ValueType  # 4
 """FIXED32_LITTLE uses little-endian encoding of the length as a 32 bit integer"""
-
 FIXED64_BIG: LengthOp.ValueType  # 5
 """FIXED64_BIG uses big-endian encoding of the length as a 64 bit integer"""
-
 FIXED64_LITTLE: LengthOp.ValueType  # 6
 """FIXED64_LITTLE uses little-endian encoding of the length as a 64 bit integer"""
-
 REQUIRE_32_BYTES: LengthOp.ValueType  # 7
 """REQUIRE_32_BYTES is like NONE, but will fail if the input is not exactly 32 bytes (sha256 output)"""
-
 REQUIRE_64_BYTES: LengthOp.ValueType  # 8
 """REQUIRE_64_BYTES is like NONE, but will fail if the input is not exactly 64 bytes (sha512 output)"""
-
 global___LengthOp = LengthOp
-
 
 class ExistenceProof(google.protobuf.message.Message):
     """*
@@ -136,7 +120,9 @@ class ExistenceProof(google.protobuf.message.Message):
     in the ProofSpec is valuable to prevent this mutability. And why all trees should
     length-prefix the data before hashing it.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
     LEAF_FIELD_NUMBER: builtins.int
@@ -147,15 +133,17 @@ class ExistenceProof(google.protobuf.message.Message):
     def leaf(self) -> global___LeafOp: ...
     @property
     def path(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___InnerOp]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
         value: builtins.bytes = ...,
-        leaf: typing.Optional[global___LeafOp] = ...,
-        path: typing.Optional[typing.Iterable[global___InnerOp]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["leaf",b"leaf"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","leaf",b"leaf","path",b"path","value",b"value"]) -> None: ...
+        leaf: global___LeafOp | None = ...,
+        path: collections.abc.Iterable[global___InnerOp] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["leaf", b"leaf"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "leaf", b"leaf", "path", b"path", "value", b"value"]) -> None: ...
+
 global___ExistenceProof = ExistenceProof
 
 class NonExistenceProof(google.protobuf.message.Message):
@@ -164,32 +152,37 @@ class NonExistenceProof(google.protobuf.message.Message):
     one right of the desired key. If both proofs are valid AND they are neighbors,
     then there is no valid proof for the given key.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     LEFT_FIELD_NUMBER: builtins.int
     RIGHT_FIELD_NUMBER: builtins.int
     key: builtins.bytes
     """TODO: remove this as unnecessary??? we prove a range"""
-
     @property
     def left(self) -> global___ExistenceProof: ...
     @property
     def right(self) -> global___ExistenceProof: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
-        left: typing.Optional[global___ExistenceProof] = ...,
-        right: typing.Optional[global___ExistenceProof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["left",b"left","right",b"right"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","left",b"left","right",b"right"]) -> None: ...
+        left: global___ExistenceProof | None = ...,
+        right: global___ExistenceProof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["left", b"left", "right", b"right"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "left", b"left", "right", b"right"]) -> None: ...
+
 global___NonExistenceProof = NonExistenceProof
 
 class CommitmentProof(google.protobuf.message.Message):
     """
     CommitmentProof is either an ExistenceProof or a NonExistenceProof, or a Batch of such messages
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EXIST_FIELD_NUMBER: builtins.int
     NONEXIST_FIELD_NUMBER: builtins.int
     BATCH_FIELD_NUMBER: builtins.int
@@ -202,16 +195,18 @@ class CommitmentProof(google.protobuf.message.Message):
     def batch(self) -> global___BatchProof: ...
     @property
     def compressed(self) -> global___CompressedBatchProof: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        exist: typing.Optional[global___ExistenceProof] = ...,
-        nonexist: typing.Optional[global___NonExistenceProof] = ...,
-        batch: typing.Optional[global___BatchProof] = ...,
-        compressed: typing.Optional[global___CompressedBatchProof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["batch",b"batch","compressed",b"compressed","exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["batch",b"batch","compressed",b"compressed","exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof",b"proof"]) -> typing.Optional[typing_extensions.Literal["exist","nonexist","batch","compressed"]]: ...
+        exist: global___ExistenceProof | None = ...,
+        nonexist: global___NonExistenceProof | None = ...,
+        batch: global___BatchProof | None = ...,
+        compressed: global___CompressedBatchProof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["batch", b"batch", "compressed", b"compressed", "exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["batch", b"batch", "compressed", b"compressed", "exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof", b"proof"]) -> typing_extensions.Literal["exist", "nonexist", "batch", "compressed"] | None: ...
+
 global___CommitmentProof = CommitmentProof
 
 class LeafOp(google.protobuf.message.Message):
@@ -231,7 +226,9 @@ class LeafOp(google.protobuf.message.Message):
     Then combine the bytes, and hash it
     output = hash(prefix || length(hkey) || hkey || length(hvalue) || hvalue)
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HASH_FIELD_NUMBER: builtins.int
     PREHASH_KEY_FIELD_NUMBER: builtins.int
     PREHASH_VALUE_FIELD_NUMBER: builtins.int
@@ -245,16 +242,17 @@ class LeafOp(google.protobuf.message.Message):
     """prefix is a fixed bytes that may optionally be included at the beginning to differentiate
     a leaf node from an inner node.
     """
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         hash: global___HashOp.ValueType = ...,
         prehash_key: global___HashOp.ValueType = ...,
         prehash_value: global___HashOp.ValueType = ...,
         length: global___LengthOp.ValueType = ...,
         prefix: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["hash",b"hash","length",b"length","prefix",b"prefix","prehash_key",b"prehash_key","prehash_value",b"prehash_value"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hash", b"hash", "length", b"length", "prefix", b"prefix", "prehash_key", b"prehash_key", "prehash_value", b"prehash_value"]) -> None: ...
+
 global___LeafOp = LeafOp
 
 class InnerOp(google.protobuf.message.Message):
@@ -275,20 +273,24 @@ class InnerOp(google.protobuf.message.Message):
     some value to differentiate from leaf nodes, should be included in prefix and suffix.
     If either of prefix or suffix is empty, we just treat it as an empty string
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HASH_FIELD_NUMBER: builtins.int
     PREFIX_FIELD_NUMBER: builtins.int
     SUFFIX_FIELD_NUMBER: builtins.int
     hash: global___HashOp.ValueType
     prefix: builtins.bytes
     suffix: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
         hash: global___HashOp.ValueType = ...,
         prefix: builtins.bytes = ...,
         suffix: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["hash",b"hash","prefix",b"prefix","suffix",b"suffix"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hash", b"hash", "prefix", b"prefix", "suffix", b"suffix"]) -> None: ...
+
 global___InnerOp = InnerOp
 
 class ProofSpec(google.protobuf.message.Message):
@@ -304,7 +306,9 @@ class ProofSpec(google.protobuf.message.Message):
     We need this for proper security, requires client knows a priori what
     tree format server uses. But not in code, rather a configuration object.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     LEAF_SPEC_FIELD_NUMBER: builtins.int
     INNER_SPEC_FIELD_NUMBER: builtins.int
     MAX_DEPTH_FIELD_NUMBER: builtins.int
@@ -314,24 +318,23 @@ class ProofSpec(google.protobuf.message.Message):
         """any field in the ExistenceProof must be the same as in this spec.
         except Prefix, which is just the first bytes of prefix (spec can be longer)
         """
-        pass
     @property
     def inner_spec(self) -> global___InnerSpec: ...
     max_depth: builtins.int
     """max_depth (if > 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)"""
-
     min_depth: builtins.int
     """min_depth (if > 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        leaf_spec: typing.Optional[global___LeafOp] = ...,
-        inner_spec: typing.Optional[global___InnerSpec] = ...,
+        leaf_spec: global___LeafOp | None = ...,
+        inner_spec: global___InnerSpec | None = ...,
         max_depth: builtins.int = ...,
         min_depth: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["inner_spec",b"inner_spec","leaf_spec",b"leaf_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["inner_spec",b"inner_spec","leaf_spec",b"leaf_spec","max_depth",b"max_depth","min_depth",b"min_depth"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["inner_spec", b"inner_spec", "leaf_spec", b"leaf_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["inner_spec", b"inner_spec", "leaf_spec", b"leaf_spec", "max_depth", b"max_depth", "min_depth", b"min_depth"]) -> None: ...
+
 global___ProofSpec = ProofSpec
 
 class InnerSpec(google.protobuf.message.Message):
@@ -345,7 +348,9 @@ class InnerSpec(google.protobuf.message.Message):
     isRightMost(spec: InnerSpec, op: InnerOp)
     isLeftNeighbor(spec: InnerSpec, left: InnerOp, right: InnerOp)
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CHILD_ORDER_FIELD_NUMBER: builtins.int
     CHILD_SIZE_FIELD_NUMBER: builtins.int
     MIN_PREFIX_LENGTH_FIELD_NUMBER: builtins.int
@@ -358,102 +363,116 @@ class InnerSpec(google.protobuf.message.Message):
         iavl tree is [0, 1] (left then right)
         merk is [0, 2, 1] (left, right, here)
         """
-        pass
     child_size: builtins.int
     min_prefix_length: builtins.int
     max_prefix_length: builtins.int
     empty_child: builtins.bytes
     """empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)"""
-
     hash: global___HashOp.ValueType
     """hash is the algorithm that must be used for each InnerOp"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        child_order: typing.Optional[typing.Iterable[builtins.int]] = ...,
+        child_order: collections.abc.Iterable[builtins.int] | None = ...,
         child_size: builtins.int = ...,
         min_prefix_length: builtins.int = ...,
         max_prefix_length: builtins.int = ...,
         empty_child: builtins.bytes = ...,
         hash: global___HashOp.ValueType = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["child_order",b"child_order","child_size",b"child_size","empty_child",b"empty_child","hash",b"hash","max_prefix_length",b"max_prefix_length","min_prefix_length",b"min_prefix_length"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["child_order", b"child_order", "child_size", b"child_size", "empty_child", b"empty_child", "hash", b"hash", "max_prefix_length", b"max_prefix_length", "min_prefix_length", b"min_prefix_length"]) -> None: ...
+
 global___InnerSpec = InnerSpec
 
 class BatchProof(google.protobuf.message.Message):
     """
     BatchProof is a group of multiple proof types than can be compressed
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ENTRIES_FIELD_NUMBER: builtins.int
     @property
     def entries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BatchEntry]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        entries: typing.Optional[typing.Iterable[global___BatchEntry]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["entries",b"entries"]) -> None: ...
+        entries: collections.abc.Iterable[global___BatchEntry] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["entries", b"entries"]) -> None: ...
+
 global___BatchProof = BatchProof
 
 class BatchEntry(google.protobuf.message.Message):
     """Use BatchEntry not CommitmentProof, to avoid recursion"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EXIST_FIELD_NUMBER: builtins.int
     NONEXIST_FIELD_NUMBER: builtins.int
     @property
     def exist(self) -> global___ExistenceProof: ...
     @property
     def nonexist(self) -> global___NonExistenceProof: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        exist: typing.Optional[global___ExistenceProof] = ...,
-        nonexist: typing.Optional[global___NonExistenceProof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof",b"proof"]) -> typing.Optional[typing_extensions.Literal["exist","nonexist"]]: ...
+        exist: global___ExistenceProof | None = ...,
+        nonexist: global___NonExistenceProof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof", b"proof"]) -> typing_extensions.Literal["exist", "nonexist"] | None: ...
+
 global___BatchEntry = BatchEntry
 
 class CompressedBatchProof(google.protobuf.message.Message):
-    """***** all items here are compressed forms ******
+    """***** all items here are compressed forms ******"""
 
-    """
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ENTRIES_FIELD_NUMBER: builtins.int
     LOOKUP_INNERS_FIELD_NUMBER: builtins.int
     @property
     def entries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CompressedBatchEntry]: ...
     @property
     def lookup_inners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___InnerOp]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        entries: typing.Optional[typing.Iterable[global___CompressedBatchEntry]] = ...,
-        lookup_inners: typing.Optional[typing.Iterable[global___InnerOp]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["entries",b"entries","lookup_inners",b"lookup_inners"]) -> None: ...
+        entries: collections.abc.Iterable[global___CompressedBatchEntry] | None = ...,
+        lookup_inners: collections.abc.Iterable[global___InnerOp] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["entries", b"entries", "lookup_inners", b"lookup_inners"]) -> None: ...
+
 global___CompressedBatchProof = CompressedBatchProof
 
 class CompressedBatchEntry(google.protobuf.message.Message):
     """Use BatchEntry not CommitmentProof, to avoid recursion"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EXIST_FIELD_NUMBER: builtins.int
     NONEXIST_FIELD_NUMBER: builtins.int
     @property
     def exist(self) -> global___CompressedExistenceProof: ...
     @property
     def nonexist(self) -> global___CompressedNonExistenceProof: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        exist: typing.Optional[global___CompressedExistenceProof] = ...,
-        nonexist: typing.Optional[global___CompressedNonExistenceProof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exist",b"exist","nonexist",b"nonexist","proof",b"proof"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof",b"proof"]) -> typing.Optional[typing_extensions.Literal["exist","nonexist"]]: ...
+        exist: global___CompressedExistenceProof | None = ...,
+        nonexist: global___CompressedNonExistenceProof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exist", b"exist", "nonexist", b"nonexist", "proof", b"proof"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["proof", b"proof"]) -> typing_extensions.Literal["exist", "nonexist"] | None: ...
+
 global___CompressedBatchEntry = CompressedBatchEntry
 
 class CompressedExistenceProof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
     LEAF_FIELD_NUMBER: builtins.int
@@ -465,36 +484,39 @@ class CompressedExistenceProof(google.protobuf.message.Message):
     @property
     def path(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
         """these are indexes into the lookup_inners table in CompressedBatchProof"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
         value: builtins.bytes = ...,
-        leaf: typing.Optional[global___LeafOp] = ...,
-        path: typing.Optional[typing.Iterable[builtins.int]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["leaf",b"leaf"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","leaf",b"leaf","path",b"path","value",b"value"]) -> None: ...
+        leaf: global___LeafOp | None = ...,
+        path: collections.abc.Iterable[builtins.int] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["leaf", b"leaf"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "leaf", b"leaf", "path", b"path", "value", b"value"]) -> None: ...
+
 global___CompressedExistenceProof = CompressedExistenceProof
 
 class CompressedNonExistenceProof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     LEFT_FIELD_NUMBER: builtins.int
     RIGHT_FIELD_NUMBER: builtins.int
     key: builtins.bytes
     """TODO: remove this as unnecessary??? we prove a range"""
-
     @property
     def left(self) -> global___CompressedExistenceProof: ...
     @property
     def right(self) -> global___CompressedExistenceProof: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
-        left: typing.Optional[global___CompressedExistenceProof] = ...,
-        right: typing.Optional[global___CompressedExistenceProof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["left",b"left","right",b"right"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","left",b"left","right",b"right"]) -> None: ...
+        left: global___CompressedExistenceProof | None = ...,
+        right: global___CompressedExistenceProof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["left", b"left", "right", b"right"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "left", b"left", "right", b"right"]) -> None: ...
+
 global___CompressedNonExistenceProof = CompressedNonExistenceProof

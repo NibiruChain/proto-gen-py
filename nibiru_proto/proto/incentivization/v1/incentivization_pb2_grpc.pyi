@@ -10,32 +10,30 @@ class MsgStub:
     def __init__(self, channel: grpc.Channel) -> None: ...
     CreateIncentivizationProgram: grpc.UnaryUnaryMultiCallable[
         incentivization.v1.incentivization_pb2.MsgCreateIncentivizationProgram,
-        incentivization.v1.incentivization_pb2.MsgCreateIncentivizationProgramResponse]
+        incentivization.v1.incentivization_pb2.MsgCreateIncentivizationProgramResponse,
+    ]
     """CreateIncentivizationProgram allows an entity to create an incentivization program for a liquidity pool."""
-
     FundIncentivizationProgram: grpc.UnaryUnaryMultiCallable[
         incentivization.v1.incentivization_pb2.MsgFundIncentivizationProgram,
-        incentivization.v1.incentivization_pb2.MsgFundIncentivizationProgramResponse]
+        incentivization.v1.incentivization_pb2.MsgFundIncentivizationProgramResponse,
+    ]
     """FundIncentivizationProgram allows an entity to fund an already existing incentivization program with more coins."""
-
 
 class MsgServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def CreateIncentivizationProgram(self,
+    def CreateIncentivizationProgram(
+        self,
         request: incentivization.v1.incentivization_pb2.MsgCreateIncentivizationProgram,
         context: grpc.ServicerContext,
     ) -> incentivization.v1.incentivization_pb2.MsgCreateIncentivizationProgramResponse:
         """CreateIncentivizationProgram allows an entity to create an incentivization program for a liquidity pool."""
-        pass
-
     @abc.abstractmethod
-    def FundIncentivizationProgram(self,
+    def FundIncentivizationProgram(
+        self,
         request: incentivization.v1.incentivization_pb2.MsgFundIncentivizationProgram,
         context: grpc.ServicerContext,
     ) -> incentivization.v1.incentivization_pb2.MsgFundIncentivizationProgramResponse:
         """FundIncentivizationProgram allows an entity to fund an already existing incentivization program with more coins."""
-        pass
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...
 
@@ -43,25 +41,25 @@ class QueryStub:
     def __init__(self, channel: grpc.Channel) -> None: ...
     IncentivizationProgram: grpc.UnaryUnaryMultiCallable[
         incentivization.v1.incentivization_pb2.QueryIncentivizationProgramRequest,
-        incentivization.v1.incentivization_pb2.QueryIncentivizationProgramResponse]
-
+        incentivization.v1.incentivization_pb2.QueryIncentivizationProgramResponse,
+    ]
     IncentivizationPrograms: grpc.UnaryUnaryMultiCallable[
         incentivization.v1.incentivization_pb2.QueryIncentivizationProgramsRequest,
-        incentivization.v1.incentivization_pb2.QueryIncentivizationProgramsResponse]
-
+        incentivization.v1.incentivization_pb2.QueryIncentivizationProgramsResponse,
+    ]
 
 class QueryServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def IncentivizationProgram(self,
+    def IncentivizationProgram(
+        self,
         request: incentivization.v1.incentivization_pb2.QueryIncentivizationProgramRequest,
         context: grpc.ServicerContext,
     ) -> incentivization.v1.incentivization_pb2.QueryIncentivizationProgramResponse: ...
-
     @abc.abstractmethod
-    def IncentivizationPrograms(self,
+    def IncentivizationPrograms(
+        self,
         request: incentivization.v1.incentivization_pb2.QueryIncentivizationProgramsRequest,
         context: grpc.ServicerContext,
     ) -> incentivization.v1.incentivization_pb2.QueryIncentivizationProgramsResponse: ...
-
 
 def add_QueryServicer_to_server(servicer: QueryServicer, server: grpc.Server) -> None: ...

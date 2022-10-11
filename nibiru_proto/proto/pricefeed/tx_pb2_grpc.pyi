@@ -8,22 +8,23 @@ import pricefeed.tx_pb2
 
 class MsgStub:
     """Msg defines the pricefeed Msg service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     PostPrice: grpc.UnaryUnaryMultiCallable[
         pricefeed.tx_pb2.MsgPostPrice,
-        pricefeed.tx_pb2.MsgPostPriceResponse]
+        pricefeed.tx_pb2.MsgPostPriceResponse,
+    ]
     """PostPrice defines a method for creating a new post price"""
-
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the pricefeed Msg service."""
+
     @abc.abstractmethod
-    def PostPrice(self,
+    def PostPrice(
+        self,
         request: pricefeed.tx_pb2.MsgPostPrice,
         context: grpc.ServicerContext,
     ) -> pricefeed.tx_pb2.MsgPostPriceResponse:
         """PostPrice defines a method for creating a new post price"""
-        pass
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...

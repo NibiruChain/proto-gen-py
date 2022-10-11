@@ -3,30 +3,34 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
-import typing_extensions
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _AuthorizationType:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _AuthorizationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthorizationType.ValueType], builtins.type):
+
+class _AuthorizationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthorizationType.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     AUTHORIZATION_TYPE_UNSPECIFIED: _AuthorizationType.ValueType  # 0
     """AUTHORIZATION_TYPE_UNSPECIFIED specifies an unknown authorization type"""
-
     AUTHORIZATION_TYPE_DELEGATE: _AuthorizationType.ValueType  # 1
     """AUTHORIZATION_TYPE_DELEGATE defines an authorization type for Msg/Delegate"""
-
     AUTHORIZATION_TYPE_UNDELEGATE: _AuthorizationType.ValueType  # 2
     """AUTHORIZATION_TYPE_UNDELEGATE defines an authorization type for Msg/Undelegate"""
-
     AUTHORIZATION_TYPE_REDELEGATE: _AuthorizationType.ValueType  # 3
     """AUTHORIZATION_TYPE_REDELEGATE defines an authorization type for Msg/BeginRedelegate"""
 
@@ -35,40 +39,39 @@ class AuthorizationType(_AuthorizationType, metaclass=_AuthorizationTypeEnumType
 
     Since: cosmos-sdk 0.43
     """
-    pass
 
 AUTHORIZATION_TYPE_UNSPECIFIED: AuthorizationType.ValueType  # 0
 """AUTHORIZATION_TYPE_UNSPECIFIED specifies an unknown authorization type"""
-
 AUTHORIZATION_TYPE_DELEGATE: AuthorizationType.ValueType  # 1
 """AUTHORIZATION_TYPE_DELEGATE defines an authorization type for Msg/Delegate"""
-
 AUTHORIZATION_TYPE_UNDELEGATE: AuthorizationType.ValueType  # 2
 """AUTHORIZATION_TYPE_UNDELEGATE defines an authorization type for Msg/Undelegate"""
-
 AUTHORIZATION_TYPE_REDELEGATE: AuthorizationType.ValueType  # 3
 """AUTHORIZATION_TYPE_REDELEGATE defines an authorization type for Msg/BeginRedelegate"""
-
 global___AuthorizationType = AuthorizationType
-
 
 class StakeAuthorization(google.protobuf.message.Message):
     """StakeAuthorization defines authorization for delegate/undelegate/redelegate.
 
     Since: cosmos-sdk 0.43
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     class Validators(google.protobuf.message.Message):
         """Validators defines list of validator addresses."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         ADDRESS_FIELD_NUMBER: builtins.int
         @property
-        def address(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
-        def __init__(self,
+        def address(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
             *,
-            address: typing.Optional[typing.Iterable[typing.Text]] = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["address",b"address"]) -> None: ...
+            address: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["address", b"address"]) -> None: ...
 
     MAX_TOKENS_FIELD_NUMBER: builtins.int
     ALLOW_LIST_FIELD_NUMBER: builtins.int
@@ -79,28 +82,26 @@ class StakeAuthorization(google.protobuf.message.Message):
         """max_tokens specifies the maximum amount of tokens can be delegate to a validator. If it is
         empty, there is no spend limit and any amount of coins can be delegated.
         """
-        pass
     @property
     def allow_list(self) -> global___StakeAuthorization.Validators:
         """allow_list specifies list of validator addresses to whom grantee can delegate tokens on behalf of granter's
         account.
         """
-        pass
     @property
     def deny_list(self) -> global___StakeAuthorization.Validators:
         """deny_list specifies list of validator addresses to whom grantee can not delegate tokens."""
-        pass
     authorization_type: global___AuthorizationType.ValueType
     """authorization_type defines one of AuthorizationType."""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        max_tokens: typing.Optional[cosmos.base.v1beta1.coin_pb2.Coin] = ...,
-        allow_list: typing.Optional[global___StakeAuthorization.Validators] = ...,
-        deny_list: typing.Optional[global___StakeAuthorization.Validators] = ...,
+        max_tokens: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        allow_list: global___StakeAuthorization.Validators | None = ...,
+        deny_list: global___StakeAuthorization.Validators | None = ...,
         authorization_type: global___AuthorizationType.ValueType = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["allow_list",b"allow_list","deny_list",b"deny_list","max_tokens",b"max_tokens","validators",b"validators"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["allow_list",b"allow_list","authorization_type",b"authorization_type","deny_list",b"deny_list","max_tokens",b"max_tokens","validators",b"validators"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["validators",b"validators"]) -> typing.Optional[typing_extensions.Literal["allow_list","deny_list"]]: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["allow_list", b"allow_list", "deny_list", b"deny_list", "max_tokens", b"max_tokens", "validators", b"validators"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["allow_list", b"allow_list", "authorization_type", b"authorization_type", "deny_list", b"deny_list", "max_tokens", b"max_tokens", "validators", b"validators"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["validators", b"validators"]) -> typing_extensions.Literal["allow_list", "deny_list"] | None: ...
+
 global___StakeAuthorization = StakeAuthorization

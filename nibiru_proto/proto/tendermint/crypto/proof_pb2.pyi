@@ -3,16 +3,22 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Proof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TOTAL_FIELD_NUMBER: builtins.int
     INDEX_FIELD_NUMBER: builtins.int
     LEAF_HASH_FIELD_NUMBER: builtins.int
@@ -22,51 +28,57 @@ class Proof(google.protobuf.message.Message):
     leaf_hash: builtins.bytes
     @property
     def aunts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.bytes]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         total: builtins.int = ...,
         index: builtins.int = ...,
         leaf_hash: builtins.bytes = ...,
-        aunts: typing.Optional[typing.Iterable[builtins.bytes]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aunts",b"aunts","index",b"index","leaf_hash",b"leaf_hash","total",b"total"]) -> None: ...
+        aunts: collections.abc.Iterable[builtins.bytes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aunts", b"aunts", "index", b"index", "leaf_hash", b"leaf_hash", "total", b"total"]) -> None: ...
+
 global___Proof = Proof
 
 class ValueOp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     PROOF_FIELD_NUMBER: builtins.int
     key: builtins.bytes
     """Encoded in ProofOp.Key."""
-
     @property
     def proof(self) -> global___Proof:
         """To encode in ProofOp.Data"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
-        proof: typing.Optional[global___Proof] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["proof",b"proof"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["key",b"key","proof",b"proof"]) -> None: ...
+        proof: global___Proof | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["proof", b"proof"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "proof", b"proof"]) -> None: ...
+
 global___ValueOp = ValueOp
 
 class DominoOp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     INPUT_FIELD_NUMBER: builtins.int
     OUTPUT_FIELD_NUMBER: builtins.int
-    key: typing.Text
-    input: typing.Text
-    output: typing.Text
-    def __init__(self,
+    key: builtins.str
+    input: builtins.str
+    output: builtins.str
+    def __init__(
+        self,
         *,
-        key: typing.Text = ...,
-        input: typing.Text = ...,
-        output: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["input",b"input","key",b"key","output",b"output"]) -> None: ...
+        key: builtins.str = ...,
+        input: builtins.str = ...,
+        output: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["input", b"input", "key", b"key", "output", b"output"]) -> None: ...
+
 global___DominoOp = DominoOp
 
 class ProofOp(google.protobuf.message.Message):
@@ -74,31 +86,39 @@ class ProofOp(google.protobuf.message.Message):
     The data could be arbitrary format, providing nessecary data
     for example neighbouring node hash
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TYPE_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
-    type: typing.Text
+    type: builtins.str
     key: builtins.bytes
     data: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        type: typing.Text = ...,
+        type: builtins.str = ...,
         key: builtins.bytes = ...,
         data: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["data",b"data","key",b"key","type",b"type"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data", "key", b"key", "type", b"type"]) -> None: ...
+
 global___ProofOp = ProofOp
 
 class ProofOps(google.protobuf.message.Message):
     """ProofOps is Merkle proof defined by the list of ProofOps"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OPS_FIELD_NUMBER: builtins.int
     @property
     def ops(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ProofOp]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        ops: typing.Optional[typing.Iterable[global___ProofOp]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ops",b"ops"]) -> None: ...
+        ops: collections.abc.Iterable[global___ProofOp] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ops", b"ops"]) -> None: ...
+
 global___ProofOps = ProofOps

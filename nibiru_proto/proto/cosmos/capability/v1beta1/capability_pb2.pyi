@@ -3,11 +3,16 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -15,44 +20,56 @@ class Capability(google.protobuf.message.Message):
     """Capability defines an implementation of an object capability. The index
     provided to a Capability must be globally unique.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     INDEX_FIELD_NUMBER: builtins.int
     index: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
         index: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["index",b"index"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["index", b"index"]) -> None: ...
+
 global___Capability = Capability
 
 class Owner(google.protobuf.message.Message):
     """Owner defines a single capability owner. An owner is defined by the name of
     capability and the module name.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MODULE_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    module: typing.Text
-    name: typing.Text
-    def __init__(self,
+    module: builtins.str
+    name: builtins.str
+    def __init__(
+        self,
         *,
-        module: typing.Text = ...,
-        name: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["module",b"module","name",b"name"]) -> None: ...
+        module: builtins.str = ...,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["module", b"module", "name", b"name"]) -> None: ...
+
 global___Owner = Owner
 
 class CapabilityOwners(google.protobuf.message.Message):
     """CapabilityOwners defines a set of owners of a single Capability. The set of
     owners must be unique.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OWNERS_FIELD_NUMBER: builtins.int
     @property
     def owners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Owner]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        owners: typing.Optional[typing.Iterable[global___Owner]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["owners",b"owners"]) -> None: ...
+        owners: collections.abc.Iterable[global___Owner] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["owners", b"owners"]) -> None: ...
+
 global___CapabilityOwners = CapabilityOwners

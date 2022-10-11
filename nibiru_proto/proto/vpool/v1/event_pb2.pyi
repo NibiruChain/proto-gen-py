@@ -6,77 +6,93 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ReserveSnapshotSavedEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_FIELD_NUMBER: builtins.int
     QUOTE_RESERVE_FIELD_NUMBER: builtins.int
     BASE_RESERVE_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    quote_reserve: typing.Text
-    base_reserve: typing.Text
-    def __init__(self,
+    pair: builtins.str
+    quote_reserve: builtins.str
+    base_reserve: builtins.str
+    def __init__(
+        self,
         *,
-        pair: typing.Text = ...,
-        quote_reserve: typing.Text = ...,
-        base_reserve: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_reserve",b"base_reserve","pair",b"pair","quote_reserve",b"quote_reserve"]) -> None: ...
+        pair: builtins.str = ...,
+        quote_reserve: builtins.str = ...,
+        base_reserve: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_reserve", b"base_reserve", "pair", b"pair", "quote_reserve", b"quote_reserve"]) -> None: ...
+
 global___ReserveSnapshotSavedEvent = ReserveSnapshotSavedEvent
 
 class SwapQuoteForBaseEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_FIELD_NUMBER: builtins.int
     QUOTE_AMOUNT_FIELD_NUMBER: builtins.int
     BASE_AMOUNT_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    quote_amount: typing.Text
-    base_amount: typing.Text
-    def __init__(self,
+    pair: builtins.str
+    quote_amount: builtins.str
+    base_amount: builtins.str
+    def __init__(
+        self,
         *,
-        pair: typing.Text = ...,
-        quote_amount: typing.Text = ...,
-        base_amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_amount",b"base_amount","pair",b"pair","quote_amount",b"quote_amount"]) -> None: ...
+        pair: builtins.str = ...,
+        quote_amount: builtins.str = ...,
+        base_amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_amount", b"base_amount", "pair", b"pair", "quote_amount", b"quote_amount"]) -> None: ...
+
 global___SwapQuoteForBaseEvent = SwapQuoteForBaseEvent
 
 class SwapBaseForQuoteEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_FIELD_NUMBER: builtins.int
     QUOTE_AMOUNT_FIELD_NUMBER: builtins.int
     BASE_AMOUNT_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    quote_amount: typing.Text
-    base_amount: typing.Text
-    def __init__(self,
+    pair: builtins.str
+    quote_amount: builtins.str
+    base_amount: builtins.str
+    def __init__(
+        self,
         *,
-        pair: typing.Text = ...,
-        quote_amount: typing.Text = ...,
-        base_amount: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_amount",b"base_amount","pair",b"pair","quote_amount",b"quote_amount"]) -> None: ...
+        pair: builtins.str = ...,
+        quote_amount: builtins.str = ...,
+        base_amount: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_amount", b"base_amount", "pair", b"pair", "quote_amount", b"quote_amount"]) -> None: ...
+
 global___SwapBaseForQuoteEvent = SwapBaseForQuoteEvent
 
 class MarkPriceChangedEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAIR_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
     TIMESTAMP_FIELD_NUMBER: builtins.int
-    pair: typing.Text
-    price: typing.Text
+    pair: builtins.str
+    price: builtins.str
     @property
     def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        pair: typing.Text = ...,
-        price: typing.Text = ...,
-        timestamp: typing.Optional[google.protobuf.timestamp_pb2.Timestamp] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["timestamp",b"timestamp"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair",b"pair","price",b"price","timestamp",b"timestamp"]) -> None: ...
+        pair: builtins.str = ...,
+        price: builtins.str = ...,
+        timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["timestamp", b"timestamp"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "price", b"price", "timestamp", b"timestamp"]) -> None: ...
+
 global___MarkPriceChangedEvent = MarkPriceChangedEvent

@@ -8,61 +8,59 @@ import grpc
 
 class MsgStub:
     """Msg defines the Msg service."""
+
     def __init__(self, channel: grpc.Channel) -> None: ...
     CreatePool: grpc.UnaryUnaryMultiCallable[
         dex.v1.tx_pb2.MsgCreatePool,
-        dex.v1.tx_pb2.MsgCreatePoolResponse]
+        dex.v1.tx_pb2.MsgCreatePoolResponse,
+    ]
     """Used to create a pool."""
-
     JoinPool: grpc.UnaryUnaryMultiCallable[
         dex.v1.tx_pb2.MsgJoinPool,
-        dex.v1.tx_pb2.MsgJoinPoolResponse]
+        dex.v1.tx_pb2.MsgJoinPoolResponse,
+    ]
     """Join a pool as a liquidity provider."""
-
     ExitPool: grpc.UnaryUnaryMultiCallable[
         dex.v1.tx_pb2.MsgExitPool,
-        dex.v1.tx_pb2.MsgExitPoolResponse]
+        dex.v1.tx_pb2.MsgExitPoolResponse,
+    ]
     """Exit a pool position by returning LP shares"""
-
     SwapAssets: grpc.UnaryUnaryMultiCallable[
         dex.v1.tx_pb2.MsgSwapAssets,
-        dex.v1.tx_pb2.MsgSwapAssetsResponse]
+        dex.v1.tx_pb2.MsgSwapAssetsResponse,
+    ]
     """Swap assets in a pool"""
-
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the Msg service."""
+
     @abc.abstractmethod
-    def CreatePool(self,
+    def CreatePool(
+        self,
         request: dex.v1.tx_pb2.MsgCreatePool,
         context: grpc.ServicerContext,
     ) -> dex.v1.tx_pb2.MsgCreatePoolResponse:
         """Used to create a pool."""
-        pass
-
     @abc.abstractmethod
-    def JoinPool(self,
+    def JoinPool(
+        self,
         request: dex.v1.tx_pb2.MsgJoinPool,
         context: grpc.ServicerContext,
     ) -> dex.v1.tx_pb2.MsgJoinPoolResponse:
         """Join a pool as a liquidity provider."""
-        pass
-
     @abc.abstractmethod
-    def ExitPool(self,
+    def ExitPool(
+        self,
         request: dex.v1.tx_pb2.MsgExitPool,
         context: grpc.ServicerContext,
     ) -> dex.v1.tx_pb2.MsgExitPoolResponse:
         """Exit a pool position by returning LP shares"""
-        pass
-
     @abc.abstractmethod
-    def SwapAssets(self,
+    def SwapAssets(
+        self,
         request: dex.v1.tx_pb2.MsgSwapAssets,
         context: grpc.ServicerContext,
     ) -> dex.v1.tx_pb2.MsgSwapAssetsResponse:
         """Swap assets in a pool"""
-        pass
-
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...

@@ -3,17 +3,24 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Snapshot(google.protobuf.message.Message):
     """Snapshot contains Tendermint state sync snapshot info."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HEIGHT_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
     CHUNKS_FIELD_NUMBER: builtins.int
@@ -25,36 +32,43 @@ class Snapshot(google.protobuf.message.Message):
     hash: builtins.bytes
     @property
     def metadata(self) -> global___Metadata: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
         height: builtins.int = ...,
         format: builtins.int = ...,
         chunks: builtins.int = ...,
         hash: builtins.bytes = ...,
-        metadata: typing.Optional[global___Metadata] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["metadata",b"metadata"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["chunks",b"chunks","format",b"format","hash",b"hash","height",b"height","metadata",b"metadata"]) -> None: ...
+        metadata: global___Metadata | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["metadata", b"metadata"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["chunks", b"chunks", "format", b"format", "hash", b"hash", "height", b"height", "metadata", b"metadata"]) -> None: ...
+
 global___Snapshot = Snapshot
 
 class Metadata(google.protobuf.message.Message):
     """Metadata contains SDK-specific snapshot metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CHUNK_HASHES_FIELD_NUMBER: builtins.int
     @property
     def chunk_hashes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.bytes]:
         """SHA-256 chunk hashes"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        chunk_hashes: typing.Optional[typing.Iterable[builtins.bytes]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["chunk_hashes",b"chunk_hashes"]) -> None: ...
+        chunk_hashes: collections.abc.Iterable[builtins.bytes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["chunk_hashes", b"chunk_hashes"]) -> None: ...
+
 global___Metadata = Metadata
 
 class SnapshotItem(google.protobuf.message.Message):
     """SnapshotItem is an item contained in a rootmulti.Store snapshot."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     STORE_FIELD_NUMBER: builtins.int
     IAVL_FIELD_NUMBER: builtins.int
     EXTENSION_FIELD_NUMBER: builtins.int
@@ -67,33 +81,41 @@ class SnapshotItem(google.protobuf.message.Message):
     def extension(self) -> global___SnapshotExtensionMeta: ...
     @property
     def extension_payload(self) -> global___SnapshotExtensionPayload: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        store: typing.Optional[global___SnapshotStoreItem] = ...,
-        iavl: typing.Optional[global___SnapshotIAVLItem] = ...,
-        extension: typing.Optional[global___SnapshotExtensionMeta] = ...,
-        extension_payload: typing.Optional[global___SnapshotExtensionPayload] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["extension",b"extension","extension_payload",b"extension_payload","iavl",b"iavl","item",b"item","store",b"store"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["extension",b"extension","extension_payload",b"extension_payload","iavl",b"iavl","item",b"item","store",b"store"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["item",b"item"]) -> typing.Optional[typing_extensions.Literal["store","iavl","extension","extension_payload"]]: ...
+        store: global___SnapshotStoreItem | None = ...,
+        iavl: global___SnapshotIAVLItem | None = ...,
+        extension: global___SnapshotExtensionMeta | None = ...,
+        extension_payload: global___SnapshotExtensionPayload | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["extension", b"extension", "extension_payload", b"extension_payload", "iavl", b"iavl", "item", b"item", "store", b"store"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["extension", b"extension", "extension_payload", b"extension_payload", "iavl", b"iavl", "item", b"item", "store", b"store"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["store", "iavl", "extension", "extension_payload"] | None: ...
+
 global___SnapshotItem = SnapshotItem
 
 class SnapshotStoreItem(google.protobuf.message.Message):
     """SnapshotStoreItem contains metadata about a snapshotted store."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NAME_FIELD_NUMBER: builtins.int
-    name: typing.Text
-    def __init__(self,
+    name: builtins.str
+    def __init__(
+        self,
         *,
-        name: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["name",b"name"]) -> None: ...
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["name", b"name"]) -> None: ...
+
 global___SnapshotStoreItem = SnapshotStoreItem
 
 class SnapshotIAVLItem(google.protobuf.message.Message):
     """SnapshotIAVLItem is an exported IAVL node."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
@@ -102,43 +124,51 @@ class SnapshotIAVLItem(google.protobuf.message.Message):
     value: builtins.bytes
     version: builtins.int
     """version is block height"""
-
     height: builtins.int
     """height is depth of the tree."""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         key: builtins.bytes = ...,
         value: builtins.bytes = ...,
         version: builtins.int = ...,
         height: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["height",b"height","key",b"key","value",b"value","version",b"version"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["height", b"height", "key", b"key", "value", b"value", "version", b"version"]) -> None: ...
+
 global___SnapshotIAVLItem = SnapshotIAVLItem
 
 class SnapshotExtensionMeta(google.protobuf.message.Message):
     """SnapshotExtensionMeta contains metadata about an external snapshotter."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NAME_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
-    name: typing.Text
+    name: builtins.str
     format: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name: typing.Text = ...,
+        name: builtins.str = ...,
         format: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["format",b"format","name",b"name"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["format", b"format", "name", b"name"]) -> None: ...
+
 global___SnapshotExtensionMeta = SnapshotExtensionMeta
 
 class SnapshotExtensionPayload(google.protobuf.message.Message):
     """SnapshotExtensionPayload contains payloads of an external snapshotter."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAYLOAD_FIELD_NUMBER: builtins.int
     payload: builtins.bytes
-    def __init__(self,
+    def __init__(
+        self,
         *,
         payload: builtins.bytes = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["payload",b"payload"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["payload", b"payload"]) -> None: ...
+
 global___SnapshotExtensionPayload = SnapshotExtensionPayload

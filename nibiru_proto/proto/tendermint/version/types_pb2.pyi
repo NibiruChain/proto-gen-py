@@ -5,8 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -15,17 +19,21 @@ class App(google.protobuf.message.Message):
     This information is included in ResponseInfo. The App.Protocol can be
     updated in ResponseEndBlock.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PROTOCOL_FIELD_NUMBER: builtins.int
     SOFTWARE_FIELD_NUMBER: builtins.int
     protocol: builtins.int
-    software: typing.Text
-    def __init__(self,
+    software: builtins.str
+    def __init__(
+        self,
         *,
         protocol: builtins.int = ...,
-        software: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["protocol",b"protocol","software",b"software"]) -> None: ...
+        software: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["protocol", b"protocol", "software", b"software"]) -> None: ...
+
 global___App = App
 
 class Consensus(google.protobuf.message.Message):
@@ -33,15 +41,19 @@ class Consensus(google.protobuf.message.Message):
     including all blockchain data structures and the rules of the application's
     state transition machine.
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BLOCK_FIELD_NUMBER: builtins.int
     APP_FIELD_NUMBER: builtins.int
     block: builtins.int
     app: builtins.int
-    def __init__(self,
+    def __init__(
+        self,
         *,
         block: builtins.int = ...,
         app: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["app",b"app","block",b"block"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["app", b"app", "block", b"block"]) -> None: ...
+
 global___Consensus = Consensus

@@ -3,18 +3,25 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import perp.v1.state_pb2
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the perp module's genesis state."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PARAMS_FIELD_NUMBER: builtins.int
     PAIR_METADATA_FIELD_NUMBER: builtins.int
     POSITIONS_FIELD_NUMBER: builtins.int
@@ -27,13 +34,15 @@ class GenesisState(google.protobuf.message.Message):
     def positions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[perp.v1.state_pb2.Position]: ...
     @property
     def prepaid_bad_debts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[perp.v1.state_pb2.PrepaidBadDebt]: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        params: typing.Optional[perp.v1.state_pb2.Params] = ...,
-        pair_metadata: typing.Optional[typing.Iterable[perp.v1.state_pb2.PairMetadata]] = ...,
-        positions: typing.Optional[typing.Iterable[perp.v1.state_pb2.Position]] = ...,
-        prepaid_bad_debts: typing.Optional[typing.Iterable[perp.v1.state_pb2.PrepaidBadDebt]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["params",b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair_metadata",b"pair_metadata","params",b"params","positions",b"positions","prepaid_bad_debts",b"prepaid_bad_debts"]) -> None: ...
+        params: perp.v1.state_pb2.Params | None = ...,
+        pair_metadata: collections.abc.Iterable[perp.v1.state_pb2.PairMetadata] | None = ...,
+        positions: collections.abc.Iterable[perp.v1.state_pb2.Position] | None = ...,
+        prepaid_bad_debts: collections.abc.Iterable[perp.v1.state_pb2.PrepaidBadDebt] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair_metadata", b"pair_metadata", "params", b"params", "positions", b"positions", "prepaid_bad_debts", b"prepaid_bad_debts"]) -> None: ...
+
 global___GenesisState = GenesisState

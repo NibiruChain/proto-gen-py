@@ -3,32 +3,40 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class AddOracleProposal(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     ORACLES_FIELD_NUMBER: builtins.int
     PAIRS_FIELD_NUMBER: builtins.int
-    title: typing.Text
-    description: typing.Text
+    title: builtins.str
+    description: builtins.str
     @property
-    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
+    def oracles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def pairs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
-    def __init__(self,
+    def pairs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        description: typing.Text = ...,
-        oracles: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        pairs: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["description",b"description","oracles",b"oracles","pairs",b"pairs","title",b"title"]) -> None: ...
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        oracles: collections.abc.Iterable[builtins.str] | None = ...,
+        pairs: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["description", b"description", "oracles", b"oracles", "pairs", b"pairs", "title", b"title"]) -> None: ...
+
 global___AddOracleProposal = AddOracleProposal

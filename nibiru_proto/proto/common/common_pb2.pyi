@@ -5,21 +5,28 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class AssetPair(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TOKEN0_FIELD_NUMBER: builtins.int
     TOKEN1_FIELD_NUMBER: builtins.int
-    token0: typing.Text
-    token1: typing.Text
-    def __init__(self,
+    token0: builtins.str
+    token1: builtins.str
+    def __init__(
+        self,
         *,
-        token0: typing.Text = ...,
-        token1: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["token0",b"token0","token1",b"token1"]) -> None: ...
+        token0: builtins.str = ...,
+        token1: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["token0", b"token0", "token1", b"token1"]) -> None: ...
+
 global___AssetPair = AssetPair

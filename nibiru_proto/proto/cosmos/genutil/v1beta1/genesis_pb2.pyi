@@ -3,25 +3,33 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the raw genesis transaction in JSON."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     GEN_TXS_FIELD_NUMBER: builtins.int
     @property
     def gen_txs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.bytes]:
         """gen_txs defines the genesis transactions."""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        gen_txs: typing.Optional[typing.Iterable[builtins.bytes]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["gen_txs",b"gen_txs"]) -> None: ...
+        gen_txs: collections.abc.Iterable[builtins.bytes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["gen_txs", b"gen_txs"]) -> None: ...
+
 global___GenesisState = GenesisState
