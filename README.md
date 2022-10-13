@@ -2,14 +2,20 @@
 
 Generates the `nibiru_proto` Python package for the [Nibiru Python SDK][repo-py-sdk].
 
-## Python Code Generation 
+<!-- Badges -->
+[![][discord-badge]][discord-url]
+[![PyPI Version][pypi-image]][pypi-url]
+[![MIT license][license-badge]][license-link]
 
-Currently, the [NibiruChain/nibiru repo][repo-nibiru] is private, so the protobufs have to exist on your local machine. It's assumed you have the `nibiru` repo alongisde `sdk-proto-gen` when running the code generation script, [proto-gen-py.sh][script-proto-gen].
+## Python Code Generation 
 
 All you need to do is run:
 ```sh
 make proto-gen
 ```
+This executes the code generation script, [proto-gen-py.sh][script-proto-gen].
+
+The protobuf files come from the [NibiruChain/nibiru repo][repo-nibiru], which is private (for now), so you'll need these files on your local machine. It's assumed you have the `nibiru` repo as a neighbor to `sdk-proto-gen` when running the code generation script.
 
 ## Other Development Guidelines
 
@@ -49,6 +55,24 @@ The publish workflow looks like this:
    dotenv -e .env poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
    ```
 
+## 🔓 License
+
+This software is licensed under the MIT license. See [LICENSE](./LICENSE) for full disclosure.
+
+© 2022 Nibi, Inc.
+
+<p align="center">
+<img src="https://cdn-images-1.medium.com/max/2400/1*ZHWKH2guuV6JL8_mdCbtLQ.png" width="800">
+</p>
+
 [repo-nibiru]: https://github.com/NibiruChain/nibiru
 [repo-py-sdk]: https://github.com/NibiruChain/py-sdk
 [script-proto-gen]: https://github.com/NibiruChain/sdk-proto-gen/blob/main/scripts/proto-gen-py.sh
+
+<!-- Badges links -->
+[pypi-image]: https://img.shields.io/pypi/v/nibiru-proto
+[pypi-url]: https://pypi.org/project/nibiru-proto/
+[discord-badge]: https://img.shields.io/badge/Nibiru%20Chain-%237289DA.svg?style=&logo=discord&logoColor=white
+[discord-url]: https://discord.gg/sgPw8ZYfpQ
+[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
+[license-link]: https://github.com/NibiruChain/sdk-proto-gen/blob/master/LICENSE
