@@ -33,7 +33,7 @@ class Params(google.protobuf.message.Message):
     vote_threshold: builtins.str
     reward_band: builtins.str
     @property
-    def whitelist(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Pair]: ...
+    def whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     slash_fraction: builtins.str
     slash_window: builtins.int
     min_valid_per_window: builtins.str
@@ -43,7 +43,7 @@ class Params(google.protobuf.message.Message):
         vote_period: builtins.int = ...,
         vote_threshold: builtins.str = ...,
         reward_band: builtins.str = ...,
-        whitelist: collections.abc.Iterable[global___Pair] | None = ...,
+        whitelist: collections.abc.Iterable[builtins.str] | None = ...,
         slash_fraction: builtins.str = ...,
         slash_window: builtins.int = ...,
         min_valid_per_window: builtins.str = ...,
@@ -51,22 +51,6 @@ class Params(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window", b"min_valid_per_window", "reward_band", b"reward_band", "slash_fraction", b"slash_fraction", "slash_window", b"slash_window", "vote_period", b"vote_period", "vote_threshold", b"vote_threshold", "whitelist", b"whitelist"]) -> None: ...
 
 global___Params = Params
-
-class Pair(google.protobuf.message.Message):
-    """Pair is the object that holds configuration of each pair."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["name", b"name"]) -> None: ...
-
-global___Pair = Pair
 
 class AggregateExchangeRatePrevote(google.protobuf.message.Message):
     """struct for aggregate prevoting on the ExchangeRateVote.

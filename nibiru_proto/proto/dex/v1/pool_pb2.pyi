@@ -7,15 +7,35 @@ import collections.abc
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
+import typing
 
-if sys.version_info >= (3, 8):
+if sys.version_info >= (3, 10):
     import typing as typing_extensions
 else:
     import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _PoolType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _PoolTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PoolType.ValueType], builtins.type):  # noqa: F821
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    BALANCER: _PoolType.ValueType  # 0
+    STABLESWAP: _PoolType.ValueType  # 1
+
+class PoolType(_PoolType, metaclass=_PoolTypeEnumTypeWrapper):
+    """- `balancer`: Balancer are pools defined by the equation xy=k, extended by the weighs introduced by Balancer.
+    - `stableswap`: Stableswap pools are defined by a combination of constant-product and constant-sum pool
+    """
+
+BALANCER: PoolType.ValueType  # 0
+STABLESWAP: PoolType.ValueType  # 1
+global___PoolType = PoolType
 
 class PoolParams(google.protobuf.message.Message):
     """Configuration parameters for the pool."""
@@ -24,15 +44,26 @@ class PoolParams(google.protobuf.message.Message):
 
     SWAP_FEE_FIELD_NUMBER: builtins.int
     EXIT_FEE_FIELD_NUMBER: builtins.int
+    A_FIELD_NUMBER: builtins.int
+    POOL_TYPE_FIELD_NUMBER: builtins.int
     swap_fee: builtins.str
     exit_fee: builtins.str
+    A: builtins.str
+    """Amplification Parameter (A): Larger value of A make the curve better resemble a straight 
+    line in the center (when pool is near balance).  Highly volatile assets should use a lower value, while assets that 
+    are closer together may be best with a higher value.
+    This is only used if the pool_type is set to 1 (stableswap)
+    """
+    pool_type: global___PoolType.ValueType
     def __init__(
         self,
         *,
         swap_fee: builtins.str = ...,
         exit_fee: builtins.str = ...,
+        A: builtins.str = ...,
+        pool_type: global___PoolType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exit_fee", b"exit_fee", "swap_fee", b"swap_fee"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["A", b"A", "exit_fee", b"exit_fee", "pool_type", b"pool_type", "swap_fee", b"swap_fee"]) -> None: ...
 
 global___PoolParams = PoolParams
 

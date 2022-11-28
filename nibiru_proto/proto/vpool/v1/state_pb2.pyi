@@ -60,7 +60,7 @@ BASE_ASSET_SWAP: TwapCalcOption.ValueType  # 3
 """Swapping with base assets, output denominated in quote assets"""
 global___TwapCalcOption = TwapCalcOption
 
-class VPool(google.protobuf.message.Message):
+class Vpool(google.protobuf.message.Message):
     """A virtual pool used only for price discovery of perpetual futures contracts.
     No real liquidity exists in this pool.
     """
@@ -70,11 +70,7 @@ class VPool(google.protobuf.message.Message):
     PAIR_FIELD_NUMBER: builtins.int
     BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
-    TRADE_LIMIT_RATIO_FIELD_NUMBER: builtins.int
-    FLUCTUATION_LIMIT_RATIO_FIELD_NUMBER: builtins.int
-    MAX_ORACLE_SPREAD_RATIO_FIELD_NUMBER: builtins.int
-    MAINTENANCE_MARGIN_RATIO_FIELD_NUMBER: builtins.int
-    MAX_LEVERAGE_FIELD_NUMBER: builtins.int
+    CONFIG_FIELD_NUMBER: builtins.int
     @property
     def pair(self) -> common.common_pb2.AssetPair:
         """always BASE:QUOTE, e.g. BTC:NUSD or ETH:NUSD"""
@@ -82,6 +78,29 @@ class VPool(google.protobuf.message.Message):
     """base asset is the crypto asset, e.g. BTC or ETH"""
     quote_asset_reserve: builtins.str
     """quote asset is usually stablecoin, in our case NUSD"""
+    @property
+    def config(self) -> global___VpoolConfig: ...
+    def __init__(
+        self,
+        *,
+        pair: common.common_pb2.AssetPair | None = ...,
+        base_asset_reserve: builtins.str = ...,
+        quote_asset_reserve: builtins.str = ...,
+        config: global___VpoolConfig | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["config", b"config", "pair", b"pair"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "config", b"config", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve"]) -> None: ...
+
+global___Vpool = Vpool
+
+class VpoolConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRADE_LIMIT_RATIO_FIELD_NUMBER: builtins.int
+    FLUCTUATION_LIMIT_RATIO_FIELD_NUMBER: builtins.int
+    MAX_ORACLE_SPREAD_RATIO_FIELD_NUMBER: builtins.int
+    MAINTENANCE_MARGIN_RATIO_FIELD_NUMBER: builtins.int
+    MAX_LEVERAGE_FIELD_NUMBER: builtins.int
     trade_limit_ratio: builtins.str
     """ratio applied to reserves in order not to over trade"""
     fluctuation_limit_ratio: builtins.str
@@ -95,19 +114,15 @@ class VPool(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        pair: common.common_pb2.AssetPair | None = ...,
-        base_asset_reserve: builtins.str = ...,
-        quote_asset_reserve: builtins.str = ...,
         trade_limit_ratio: builtins.str = ...,
         fluctuation_limit_ratio: builtins.str = ...,
         max_oracle_spread_ratio: builtins.str = ...,
         maintenance_margin_ratio: builtins.str = ...,
         max_leverage: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "fluctuation_limit_ratio", b"fluctuation_limit_ratio", "maintenance_margin_ratio", b"maintenance_margin_ratio", "max_leverage", b"max_leverage", "max_oracle_spread_ratio", b"max_oracle_spread_ratio", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve", "trade_limit_ratio", b"trade_limit_ratio"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fluctuation_limit_ratio", b"fluctuation_limit_ratio", "maintenance_margin_ratio", b"maintenance_margin_ratio", "max_leverage", b"max_leverage", "max_oracle_spread_ratio", b"max_oracle_spread_ratio", "trade_limit_ratio", b"trade_limit_ratio"]) -> None: ...
 
-global___VPool = VPool
+global___VpoolConfig = VpoolConfig
 
 class CurrentTWAP(google.protobuf.message.Message):
     """CurrentTWAP states defines the numerator and denominator for the TWAP calculation"""

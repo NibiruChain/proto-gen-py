@@ -356,3 +356,34 @@ class MsgClosePositionResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["exchanged_notional_value", b"exchanged_notional_value", "exchanged_position_size", b"exchanged_position_size", "funding_payment", b"funding_payment", "margin_to_trader", b"margin_to_trader", "realized_pnl", b"realized_pnl"]) -> None: ...
 
 global___MsgClosePositionResponse = MsgClosePositionResponse
+
+class MsgDonateToEcosystemFund(google.protobuf.message.Message):
+    """-------------------------- DonateToEcosystemFund --------------------------"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SENDER_FIELD_NUMBER: builtins.int
+    DONATION_FIELD_NUMBER: builtins.int
+    sender: builtins.str
+    @property
+    def donation(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
+        """donation to the EF"""
+    def __init__(
+        self,
+        *,
+        sender: builtins.str = ...,
+        donation: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["donation", b"donation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["donation", b"donation", "sender", b"sender"]) -> None: ...
+
+global___MsgDonateToEcosystemFund = MsgDonateToEcosystemFund
+
+class MsgDonateToEcosystemFundResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___MsgDonateToEcosystemFundResponse = MsgDonateToEcosystemFundResponse

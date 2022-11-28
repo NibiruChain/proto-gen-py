@@ -37,6 +37,10 @@ class MsgStub:
         perp.v1.tx_pb2.MsgClosePosition,
         perp.v1.tx_pb2.MsgClosePositionResponse,
     ]
+    DonateToEcosystemFund: grpc.UnaryUnaryMultiCallable[
+        perp.v1.tx_pb2.MsgDonateToEcosystemFund,
+        perp.v1.tx_pb2.MsgDonateToEcosystemFundResponse,
+    ]
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the x/perp Msg service."""
@@ -80,5 +84,11 @@ class MsgServicer(metaclass=abc.ABCMeta):
         request: perp.v1.tx_pb2.MsgClosePosition,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgClosePositionResponse: ...
+    @abc.abstractmethod
+    def DonateToEcosystemFund(
+        self,
+        request: perp.v1.tx_pb2.MsgDonateToEcosystemFund,
+        context: grpc.ServicerContext,
+    ) -> perp.v1.tx_pb2.MsgDonateToEcosystemFundResponse: ...
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...
