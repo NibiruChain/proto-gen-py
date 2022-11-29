@@ -21,17 +21,31 @@ class ReserveSnapshotSavedEvent(google.protobuf.message.Message):
     PAIR_FIELD_NUMBER: builtins.int
     QUOTE_RESERVE_FIELD_NUMBER: builtins.int
     BASE_RESERVE_FIELD_NUMBER: builtins.int
+    MARK_PRICE_FIELD_NUMBER: builtins.int
+    BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
+    BLOCK_TIMESTAMP_FIELD_NUMBER: builtins.int
     pair: builtins.str
     quote_reserve: builtins.str
     base_reserve: builtins.str
+    mark_price: builtins.str
+    """MarkPrice at the end of the block. 
+    (instantaneous) markPrice := quoteReserve / baseReserve
+    """
+    block_height: builtins.int
+    @property
+    def block_timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     def __init__(
         self,
         *,
         pair: builtins.str = ...,
         quote_reserve: builtins.str = ...,
         base_reserve: builtins.str = ...,
+        mark_price: builtins.str = ...,
+        block_height: builtins.int = ...,
+        block_timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_reserve", b"base_reserve", "pair", b"pair", "quote_reserve", b"quote_reserve"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["block_timestamp", b"block_timestamp"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_reserve", b"base_reserve", "block_height", b"block_height", "block_timestamp", b"block_timestamp", "mark_price", b"mark_price", "pair", b"pair", "quote_reserve", b"quote_reserve"]) -> None: ...
 
 global___ReserveSnapshotSavedEvent = ReserveSnapshotSavedEvent
 
@@ -80,19 +94,19 @@ class MarkPriceChangedEvent(google.protobuf.message.Message):
 
     PAIR_FIELD_NUMBER: builtins.int
     PRICE_FIELD_NUMBER: builtins.int
-    TIMESTAMP_FIELD_NUMBER: builtins.int
+    BLOCK_TIMESTAMP_FIELD_NUMBER: builtins.int
     pair: builtins.str
     price: builtins.str
     @property
-    def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def block_timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     def __init__(
         self,
         *,
         pair: builtins.str = ...,
         price: builtins.str = ...,
-        timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        block_timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["timestamp", b"timestamp"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "price", b"price", "timestamp", b"timestamp"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["block_timestamp", b"block_timestamp"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["block_timestamp", b"block_timestamp", "pair", b"pair", "price", b"price"]) -> None: ...
 
 global___MarkPriceChangedEvent = MarkPriceChangedEvent

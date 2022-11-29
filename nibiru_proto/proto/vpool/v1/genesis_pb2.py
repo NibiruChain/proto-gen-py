@@ -16,7 +16,7 @@ from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from vpool.v1 import state_pb2 as vpool_dot_v1_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vpool/v1/genesis.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x14vpool/v1/state.proto\"w\n\x0cGenesisState\x12,\n\x06vpools\x18\x01 \x03(\x0b\x32\x16.nibiru.vpool.v1.VPoolB\x04\xc8\xde\x1f\x00\x12\x39\n\tsnapshots\x18\x02 \x03(\x0b\x32 .nibiru.vpool.v1.ReserveSnapshotB\x04\xc8\xde\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vpool/v1/genesis.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x14vpool/v1/state.proto\"<\n\x0cGenesisState\x12,\n\x06vpools\x18\x01 \x03(\x0b\x32\x16.nibiru.vpool.v1.VpoolB\x04\xc8\xde\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
 
 
 
@@ -34,8 +34,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z+github.com/NibiruChain/nibiru/x/vpool/types'
   _GENESISSTATE.fields_by_name['vpools']._options = None
   _GENESISSTATE.fields_by_name['vpools']._serialized_options = b'\310\336\037\000'
-  _GENESISSTATE.fields_by_name['snapshots']._options = None
-  _GENESISSTATE.fields_by_name['snapshots']._serialized_options = b'\310\336\037\000'
   _GENESISSTATE._serialized_start=87
-  _GENESISSTATE._serialized_end=206
+  _GENESISSTATE._serialized_end=147
 # @@protoc_insertion_point(module_scope)

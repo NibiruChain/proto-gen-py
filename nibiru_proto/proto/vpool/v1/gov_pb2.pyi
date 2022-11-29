@@ -3,9 +3,12 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import sys
+import vpool.v1.state_pb2
 
 if sys.version_info >= (3, 8):
     import typing as typing_extensions
@@ -20,49 +23,107 @@ class CreatePoolProposal(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     PAIR_FIELD_NUMBER: builtins.int
-    TRADE_LIMIT_RATIO_FIELD_NUMBER: builtins.int
     QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
-    FLUCTUATION_LIMIT_RATIO_FIELD_NUMBER: builtins.int
-    MAX_ORACLE_SPREAD_RATIO_FIELD_NUMBER: builtins.int
-    MAINTENANCE_MARGIN_RATIO_FIELD_NUMBER: builtins.int
-    MAX_LEVERAGE_FIELD_NUMBER: builtins.int
+    CONFIG_FIELD_NUMBER: builtins.int
     title: builtins.str
     description: builtins.str
     pair: builtins.str
     """pair represents the pair of the vpool."""
-    trade_limit_ratio: builtins.str
-    """trade_limit_ratio represents the limit on trading amounts."""
     quote_asset_reserve: builtins.str
     """quote_asset_reserve is the amount of quote asset the pool will be initialized with."""
     base_asset_reserve: builtins.str
     """base_asset_reserve is the amount of base asset the pool will be initialized with."""
-    fluctuation_limit_ratio: builtins.str
-    """fluctuation_limit_ratio represents the maximum price
-    percentage difference a trade can create on the pool.
-    """
-    max_oracle_spread_ratio: builtins.str
-    """max_oracle_spread_ratio represents the maximum price percentage
-    difference that can exist between oracle price and vpool prices after a trade.
-    """
-    maintenance_margin_ratio: builtins.str
-    """maintenance_margin_ratio"""
-    max_leverage: builtins.str
-    """max_leverage"""
+    @property
+    def config(self) -> vpool.v1.state_pb2.VpoolConfig: ...
     def __init__(
         self,
         *,
         title: builtins.str = ...,
         description: builtins.str = ...,
         pair: builtins.str = ...,
-        trade_limit_ratio: builtins.str = ...,
         quote_asset_reserve: builtins.str = ...,
         base_asset_reserve: builtins.str = ...,
-        fluctuation_limit_ratio: builtins.str = ...,
-        max_oracle_spread_ratio: builtins.str = ...,
-        maintenance_margin_ratio: builtins.str = ...,
-        max_leverage: builtins.str = ...,
+        config: vpool.v1.state_pb2.VpoolConfig | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "description", b"description", "fluctuation_limit_ratio", b"fluctuation_limit_ratio", "maintenance_margin_ratio", b"maintenance_margin_ratio", "max_leverage", b"max_leverage", "max_oracle_spread_ratio", b"max_oracle_spread_ratio", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve", "title", b"title", "trade_limit_ratio", b"trade_limit_ratio"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["config", b"config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "config", b"config", "description", b"description", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve", "title", b"title"]) -> None: ...
 
 global___CreatePoolProposal = CreatePoolProposal
+
+class EditPoolConfigProposal(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
+    CONFIG_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    description: builtins.str
+    pair: builtins.str
+    @property
+    def config(self) -> vpool.v1.state_pb2.VpoolConfig: ...
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        pair: builtins.str = ...,
+        config: vpool.v1.state_pb2.VpoolConfig | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["config", b"config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["config", b"config", "description", b"description", "pair", b"pair", "title", b"title"]) -> None: ...
+
+global___EditPoolConfigProposal = EditPoolConfigProposal
+
+class EditSwapInvariantsProposal(google.protobuf.message.Message):
+    """EditSwapInvariantsProposal is a governance proposal to change the swap 
+    invariant of the virtual pool for one or more trading pairs.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class SwapInvariantMultiple(google.protobuf.message.Message):
+        """A map between a trading pair and a desired multiplier for its swap invariant."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        PAIR_FIELD_NUMBER: builtins.int
+        MULTIPLIER_FIELD_NUMBER: builtins.int
+        pair: builtins.str
+        """Pair is a string identifier for an asset pair."""
+        multiplier: builtins.str
+        """Multiplier is a number representing the desired percentage change to the 
+        swap invariant of the AMM pool underlying 'pair'
+        """
+        def __init__(
+            self,
+            *,
+            pair: builtins.str = ...,
+            multiplier: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["multiplier", b"multiplier", "pair", b"pair"]) -> None: ...
+
+    TITLE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    SWAP_INVARIANT_MAPS_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    description: builtins.str
+    @property
+    def swap_invariant_maps(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EditSwapInvariantsProposal.SwapInvariantMultiple]:
+        """Map from pair ID to a multiple on the swap invariant. For example, a proposal containing 
+        "swap_invariant_maps": [{ "uatom:unusd": "5" }, { "uosmo:unusd": "0.9" }]
+        would mutliply the swap invariant of the ATOM and OSMO trading pairs by 
+        5 and 0.9 respectively. The price at which k changes is the instantaneous 
+        mark price at the time of the proposal's execution.
+        """
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        swap_invariant_maps: collections.abc.Iterable[global___EditSwapInvariantsProposal.SwapInvariantMultiple] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["description", b"description", "swap_invariant_maps", b"swap_invariant_maps", "title", b"title"]) -> None: ...
+
+global___EditSwapInvariantsProposal = EditSwapInvariantsProposal

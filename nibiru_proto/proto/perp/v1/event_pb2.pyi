@@ -28,13 +28,13 @@ class PositionChangedEvent(google.protobuf.message.Message):
     TRADER_ADDRESS_FIELD_NUMBER: builtins.int
     MARGIN_FIELD_NUMBER: builtins.int
     POSITION_NOTIONAL_FIELD_NUMBER: builtins.int
-    EXCHANGED_POSITION_SIZE_FIELD_NUMBER: builtins.int
+    EXCHANGED_SIZE_FIELD_NUMBER: builtins.int
+    EXCHANGED_NOTIONAL_FIELD_NUMBER: builtins.int
     TRANSACTION_FEE_FIELD_NUMBER: builtins.int
     POSITION_SIZE_FIELD_NUMBER: builtins.int
     REALIZED_PNL_FIELD_NUMBER: builtins.int
     UNREALIZED_PNL_AFTER_FIELD_NUMBER: builtins.int
     BAD_DEBT_FIELD_NUMBER: builtins.int
-    LIQUIDATION_PENALTY_FIELD_NUMBER: builtins.int
     MARK_PRICE_FIELD_NUMBER: builtins.int
     FUNDING_PAYMENT_FIELD_NUMBER: builtins.int
     BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
@@ -45,16 +45,28 @@ class PositionChangedEvent(google.protobuf.message.Message):
     """owner of the position."""
     @property
     def margin(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
-        """amount of margin backing the position."""
+        """Amount of collateral (quote units) backing the position after the change."""
     position_notional: builtins.str
-    """margin * leverage * vPrice. 'notional' is the virtual size times the virtual price on 'vpool'."""
-    exchanged_position_size: builtins.str
-    """magnitude of the change to vsize. The vsize is the amount of base assets for the position, margin * leverage * priceBasePerQuote."""
+    """Position notional (quote units) after the change. In general, 
+    'notional = baseAmount * priceQuotePerBase', where size is the baseAmount.
+    """
+    exchanged_size: builtins.str
+    """Exchanged size is the magnitude of the change to position size (base units). 
+    The size is a signed quantity expressing how much exposure a position has in 
+    base units of the pair.
+    """
+    exchanged_notional: builtins.str
+    """*
+    Exchanged notional is the value of the exchanged size in quote units.
+    exchangedNotional = posBefore.OpenNotional + (direction * realizedPnl), 
+    where 'posBefore' is the position before the change, and 
+    direction is 1 if posBefore.Size > 0 or -1 if posBefore.Size < 0,
+    """
     @property
     def transaction_fee(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
-        """transaction fee paid"""
+        """Transaction fee paid. A "taker" fee."""
     position_size: builtins.str
-    """position virtual size after the change"""
+    """Position size after the change."""
     realized_pnl: builtins.str
     """realize profits and losses after the change"""
     unrealized_pnl_after: builtins.str
@@ -64,8 +76,6 @@ class PositionChangedEvent(google.protobuf.message.Message):
         """Amount of bad debt cleared by the PerpEF during the change. 
         Bad debt is negative net margin past the liquidation point of a position.
         """
-    liquidation_penalty: builtins.str
-    """amt of margin (y) lost due to liquidation"""
     mark_price: builtins.str
     """Mark price, synonymous with mark price in this context, is the quotient of
     the quote reserves and base reserves
@@ -88,20 +98,20 @@ class PositionChangedEvent(google.protobuf.message.Message):
         trader_address: builtins.str = ...,
         margin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         position_notional: builtins.str = ...,
-        exchanged_position_size: builtins.str = ...,
+        exchanged_size: builtins.str = ...,
+        exchanged_notional: builtins.str = ...,
         transaction_fee: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         position_size: builtins.str = ...,
         realized_pnl: builtins.str = ...,
         unrealized_pnl_after: builtins.str = ...,
         bad_debt: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
-        liquidation_penalty: builtins.str = ...,
         mark_price: builtins.str = ...,
         funding_payment: builtins.str = ...,
         block_height: builtins.int = ...,
         block_time_ms: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "margin", b"margin", "transaction_fee", b"transaction_fee"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "block_height", b"block_height", "block_time_ms", b"block_time_ms", "exchanged_position_size", b"exchanged_position_size", "funding_payment", b"funding_payment", "liquidation_penalty", b"liquidation_penalty", "margin", b"margin", "mark_price", b"mark_price", "pair", b"pair", "position_notional", b"position_notional", "position_size", b"position_size", "realized_pnl", b"realized_pnl", "trader_address", b"trader_address", "transaction_fee", b"transaction_fee", "unrealized_pnl_after", b"unrealized_pnl_after"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "block_height", b"block_height", "block_time_ms", b"block_time_ms", "exchanged_notional", b"exchanged_notional", "exchanged_size", b"exchanged_size", "funding_payment", b"funding_payment", "margin", b"margin", "mark_price", b"mark_price", "pair", b"pair", "position_notional", b"position_notional", "position_size", b"position_size", "realized_pnl", b"realized_pnl", "trader_address", b"trader_address", "transaction_fee", b"transaction_fee", "unrealized_pnl_after", b"unrealized_pnl_after"]) -> None: ...
 
 global___PositionChangedEvent = PositionChangedEvent
 

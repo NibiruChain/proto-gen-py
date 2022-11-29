@@ -13,9 +13,10 @@ _sym_db = _symbol_database.Default()
 
 
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17oracle/v1beta1/tx.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\"\x96\x01\n\x1fMsgAggregateExchangeRatePrevote\x12\x1d\n\x04hash\x18\x01 \x01(\tB\x0f\xf2\xde\x1f\x0byaml:\"hash\"\x12!\n\x06\x66\x65\x65\x64\x65r\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"feeder\"\x12\'\n\tvalidator\x18\x03 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"validator\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\")\n\'MsgAggregateExchangeRatePrevoteResponse\"\xc6\x01\n\x1cMsgAggregateExchangeRateVote\x12\x1d\n\x04salt\x18\x01 \x01(\tB\x0f\xf2\xde\x1f\x0byaml:\"salt\"\x12\x31\n\x0e\x65xchange_rates\x18\x02 \x01(\tB\x19\xf2\xde\x1f\x15yaml:\"exchange_rates\"\x12!\n\x06\x66\x65\x65\x64\x65r\x18\x03 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"feeder\"\x12\'\n\tvalidator\x18\x04 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"validator\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"&\n$MsgAggregateExchangeRateVoteResponse\"p\n\x16MsgDelegateFeedConsent\x12%\n\x08operator\x18\x01 \x01(\tB\x13\xf2\xde\x1f\x0fyaml:\"operator\"\x12%\n\x08\x64\x65legate\x18\x02 \x01(\tB\x13\xf2\xde\x1f\x0fyaml:\"delegate\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\" \n\x1eMsgDelegateFeedConsentResponse2\xab\x03\n\x03Msg\x12\x96\x01\n\x1c\x41ggregateExchangeRatePrevote\x12\x36.nibiru.oracle.v1beta1.MsgAggregateExchangeRatePrevote\x1a>.nibiru.oracle.v1beta1.MsgAggregateExchangeRatePrevoteResponse\x12\x8d\x01\n\x19\x41ggregateExchangeRateVote\x12\x33.nibiru.oracle.v1beta1.MsgAggregateExchangeRateVote\x1a;.nibiru.oracle.v1beta1.MsgAggregateExchangeRateVoteResponse\x12{\n\x13\x44\x65legateFeedConsent\x12-.nibiru.oracle.v1beta1.MsgDelegateFeedConsent\x1a\x35.nibiru.oracle.v1beta1.MsgDelegateFeedConsentResponseB.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17oracle/v1beta1/tx.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\"\x96\x01\n\x1fMsgAggregateExchangeRatePrevote\x12\x1d\n\x04hash\x18\x01 \x01(\tB\x0f\xf2\xde\x1f\x0byaml:\"hash\"\x12!\n\x06\x66\x65\x65\x64\x65r\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"feeder\"\x12\'\n\tvalidator\x18\x03 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"validator\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\")\n\'MsgAggregateExchangeRatePrevoteResponse\"\xc6\x01\n\x1cMsgAggregateExchangeRateVote\x12\x1d\n\x04salt\x18\x01 \x01(\tB\x0f\xf2\xde\x1f\x0byaml:\"salt\"\x12\x31\n\x0e\x65xchange_rates\x18\x02 \x01(\tB\x19\xf2\xde\x1f\x15yaml:\"exchange_rates\"\x12!\n\x06\x66\x65\x65\x64\x65r\x18\x03 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"feeder\"\x12\'\n\tvalidator\x18\x04 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"validator\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"&\n$MsgAggregateExchangeRateVoteResponse\"p\n\x16MsgDelegateFeedConsent\x12%\n\x08operator\x18\x01 \x01(\tB\x13\xf2\xde\x1f\x0fyaml:\"operator\"\x12%\n\x08\x64\x65legate\x18\x02 \x01(\tB\x13\xf2\xde\x1f\x0fyaml:\"delegate\":\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\" \n\x1eMsgDelegateFeedConsentResponse2\x91\x04\n\x03Msg\x12\xb6\x01\n\x1c\x41ggregateExchangeRatePrevote\x12\x36.nibiru.oracle.v1beta1.MsgAggregateExchangeRatePrevote\x1a>.nibiru.oracle.v1beta1.MsgAggregateExchangeRatePrevoteResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x16/nibiru/oracle/prevote\x12\xaa\x01\n\x19\x41ggregateExchangeRateVote\x12\x33.nibiru.oracle.v1beta1.MsgAggregateExchangeRateVote\x1a;.nibiru.oracle.v1beta1.MsgAggregateExchangeRateVoteResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x13/nibiru/oracle/vote\x12\xa3\x01\n\x13\x44\x65legateFeedConsent\x12-.nibiru.oracle.v1beta1.MsgDelegateFeedConsent\x1a\x35.nibiru.oracle.v1beta1.MsgDelegateFeedConsentResponse\"&\x82\xd3\xe4\x93\x02 \"\x1e/nibiru/oracle/feeder-delegateB.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
 
 
 
@@ -96,18 +97,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MSGDELEGATEFEEDCONSENT.fields_by_name['delegate']._serialized_options = b'\362\336\037\017yaml:\"delegate\"'
   _MSGDELEGATEFEEDCONSENT._options = None
   _MSGDELEGATEFEEDCONSENT._serialized_options = b'\350\240\037\000\210\240\037\000'
-  _MSGAGGREGATEEXCHANGERATEPREVOTE._serialized_start=73
-  _MSGAGGREGATEEXCHANGERATEPREVOTE._serialized_end=223
-  _MSGAGGREGATEEXCHANGERATEPREVOTERESPONSE._serialized_start=225
-  _MSGAGGREGATEEXCHANGERATEPREVOTERESPONSE._serialized_end=266
-  _MSGAGGREGATEEXCHANGERATEVOTE._serialized_start=269
-  _MSGAGGREGATEEXCHANGERATEVOTE._serialized_end=467
-  _MSGAGGREGATEEXCHANGERATEVOTERESPONSE._serialized_start=469
-  _MSGAGGREGATEEXCHANGERATEVOTERESPONSE._serialized_end=507
-  _MSGDELEGATEFEEDCONSENT._serialized_start=509
-  _MSGDELEGATEFEEDCONSENT._serialized_end=621
-  _MSGDELEGATEFEEDCONSENTRESPONSE._serialized_start=623
-  _MSGDELEGATEFEEDCONSENTRESPONSE._serialized_end=655
-  _MSG._serialized_start=658
-  _MSG._serialized_end=1085
+  _MSG.methods_by_name['AggregateExchangeRatePrevote']._options = None
+  _MSG.methods_by_name['AggregateExchangeRatePrevote']._serialized_options = b'\202\323\344\223\002\030\"\026/nibiru/oracle/prevote'
+  _MSG.methods_by_name['AggregateExchangeRateVote']._options = None
+  _MSG.methods_by_name['AggregateExchangeRateVote']._serialized_options = b'\202\323\344\223\002\025\"\023/nibiru/oracle/vote'
+  _MSG.methods_by_name['DelegateFeedConsent']._options = None
+  _MSG.methods_by_name['DelegateFeedConsent']._serialized_options = b'\202\323\344\223\002 \"\036/nibiru/oracle/feeder-delegate'
+  _MSGAGGREGATEEXCHANGERATEPREVOTE._serialized_start=103
+  _MSGAGGREGATEEXCHANGERATEPREVOTE._serialized_end=253
+  _MSGAGGREGATEEXCHANGERATEPREVOTERESPONSE._serialized_start=255
+  _MSGAGGREGATEEXCHANGERATEPREVOTERESPONSE._serialized_end=296
+  _MSGAGGREGATEEXCHANGERATEVOTE._serialized_start=299
+  _MSGAGGREGATEEXCHANGERATEVOTE._serialized_end=497
+  _MSGAGGREGATEEXCHANGERATEVOTERESPONSE._serialized_start=499
+  _MSGAGGREGATEEXCHANGERATEVOTERESPONSE._serialized_end=537
+  _MSGDELEGATEFEEDCONSENT._serialized_start=539
+  _MSGDELEGATEFEEDCONSENT._serialized_end=651
+  _MSGDELEGATEFEEDCONSENTRESPONSE._serialized_start=653
+  _MSGDELEGATEFEEDCONSENTRESPONSE._serialized_end=685
+  _MSG._serialized_start=688
+  _MSG._serialized_end=1217
 # @@protoc_insertion_point(module_scope)

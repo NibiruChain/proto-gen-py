@@ -23,17 +23,13 @@ class GenesisState(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VPOOLS_FIELD_NUMBER: builtins.int
-    SNAPSHOTS_FIELD_NUMBER: builtins.int
     @property
-    def vpools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.VPool]: ...
-    @property
-    def snapshots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.ReserveSnapshot]: ...
+    def vpools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[vpool.v1.state_pb2.Vpool]: ...
     def __init__(
         self,
         *,
-        vpools: collections.abc.Iterable[vpool.v1.state_pb2.VPool] | None = ...,
-        snapshots: collections.abc.Iterable[vpool.v1.state_pb2.ReserveSnapshot] | None = ...,
+        vpools: collections.abc.Iterable[vpool.v1.state_pb2.Vpool] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["snapshots", b"snapshots", "vpools", b"vpools"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["vpools", b"vpools"]) -> None: ...
 
 global___GenesisState = GenesisState
