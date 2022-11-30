@@ -30,6 +30,11 @@ class QueryStub(object):
                 request_serializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsRequest.SerializeToString,
                 response_deserializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsResponse.FromString,
                 )
+        self.ModuleAccountByName = channel.unary_unary(
+                '/cosmos.auth.v1beta1.Query/ModuleAccountByName',
+                request_serializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameRequest.SerializeToString,
+                response_deserializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameResponse.FromString,
+                )
 
 
 class QueryServicer(object):
@@ -59,6 +64,13 @@ class QueryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ModuleAccountByName(self, request, context):
+        """ModuleAccountByName returns the module account info by module name
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_QueryServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -76,6 +88,11 @@ def add_QueryServicer_to_server(servicer, server):
                     servicer.Params,
                     request_deserializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsRequest.FromString,
                     response_serializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsResponse.SerializeToString,
+            ),
+            'ModuleAccountByName': grpc.unary_unary_rpc_method_handler(
+                    servicer.ModuleAccountByName,
+                    request_deserializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameRequest.FromString,
+                    response_serializer=cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -136,5 +153,22 @@ class Query(object):
         return grpc.experimental.unary_unary(request, target, '/cosmos.auth.v1beta1.Query/Params',
             cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsRequest.SerializeToString,
             cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryParamsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ModuleAccountByName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cosmos.auth.v1beta1.Query/ModuleAccountByName',
+            cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameRequest.SerializeToString,
+            cosmos_dot_auth_dot_v1beta1_dot_query__pb2.QueryModuleAccountByNameResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -13,5 +13,8 @@ def test_pkg_import():
     import nibiru_proto.proto.perp
     import nibiru_proto.proto.vpool
     import nibiru_proto.proto.pricefeed
+    import nibiru_proto.proto.dex
+    import nibiru_proto.proto.epochs
+    import nibiru_proto.proto.oracle
     print("imports succeeded")
 

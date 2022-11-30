@@ -27,6 +27,10 @@ class QueryStub:
         perp.v1.query_pb2.QueryFundingRatesRequest,
         perp.v1.query_pb2.QueryFundingRatesResponse,
     ]
+    Metrics: grpc.UnaryUnaryMultiCallable[
+        perp.v1.query_pb2.QueryMetricsRequest,
+        perp.v1.query_pb2.QueryMetricsResponse,
+    ]
 
 class QueryServicer(metaclass=abc.ABCMeta):
     """Query defines the gRPC querier service."""
@@ -56,5 +60,11 @@ class QueryServicer(metaclass=abc.ABCMeta):
         request: perp.v1.query_pb2.QueryFundingRatesRequest,
         context: grpc.ServicerContext,
     ) -> perp.v1.query_pb2.QueryFundingRatesResponse: ...
+    @abc.abstractmethod
+    def Metrics(
+        self,
+        request: perp.v1.query_pb2.QueryMetricsRequest,
+        context: grpc.ServicerContext,
+    ) -> perp.v1.query_pb2.QueryMetricsResponse: ...
 
 def add_QueryServicer_to_server(servicer: QueryServicer, server: grpc.Server) -> None: ...

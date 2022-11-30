@@ -133,3 +133,37 @@ class QueryParamsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["params", b"params"]) -> None: ...
 
 global___QueryParamsResponse = QueryParamsResponse
+
+class QueryModuleAccountByNameRequest(google.protobuf.message.Message):
+    """QueryModuleAccountByNameRequest is the request type for the Query/ModuleAccountByName RPC method."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["name", b"name"]) -> None: ...
+
+global___QueryModuleAccountByNameRequest = QueryModuleAccountByNameRequest
+
+class QueryModuleAccountByNameResponse(google.protobuf.message.Message):
+    """QueryModuleAccountByNameResponse is the response type for the Query/ModuleAccountByName RPC method."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCOUNT_FIELD_NUMBER: builtins.int
+    @property
+    def account(self) -> google.protobuf.any_pb2.Any: ...
+    def __init__(
+        self,
+        *,
+        account: google.protobuf.any_pb2.Any | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["account", b"account"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["account", b"account"]) -> None: ...
+
+global___QueryModuleAccountByNameResponse = QueryModuleAccountByNameResponse

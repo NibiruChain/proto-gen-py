@@ -28,6 +28,11 @@ class QueryStub:
         cosmos.auth.v1beta1.query_pb2.QueryParamsResponse,
     ]
     """Params queries all parameters."""
+    ModuleAccountByName: grpc.UnaryUnaryMultiCallable[
+        cosmos.auth.v1beta1.query_pb2.QueryModuleAccountByNameRequest,
+        cosmos.auth.v1beta1.query_pb2.QueryModuleAccountByNameResponse,
+    ]
+    """ModuleAccountByName returns the module account info by module name"""
 
 class QueryServicer(metaclass=abc.ABCMeta):
     """Query defines the gRPC querier service."""
@@ -56,5 +61,12 @@ class QueryServicer(metaclass=abc.ABCMeta):
         context: grpc.ServicerContext,
     ) -> cosmos.auth.v1beta1.query_pb2.QueryParamsResponse:
         """Params queries all parameters."""
+    @abc.abstractmethod
+    def ModuleAccountByName(
+        self,
+        request: cosmos.auth.v1beta1.query_pb2.QueryModuleAccountByNameRequest,
+        context: grpc.ServicerContext,
+    ) -> cosmos.auth.v1beta1.query_pb2.QueryModuleAccountByNameResponse:
+        """ModuleAccountByName returns the module account info by module name"""
 
 def add_QueryServicer_to_server(servicer: QueryServicer, server: grpc.Server) -> None: ...

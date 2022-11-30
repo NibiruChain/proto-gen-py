@@ -266,3 +266,29 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["block_height", b"block_height", "block_time_ms", b"block_time_ms", "cumulative_premium_fraction", b"cumulative_premium_fraction", "index_price", b"index_price", "latest_funding_rate", b"latest_funding_rate", "latest_premium_fraction", b"latest_premium_fraction", "mark_price", b"mark_price", "pair", b"pair"]) -> None: ...
 
 global___FundingRateChangedEvent = FundingRateChangedEvent
+
+class MetricsEvent(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAIR_FIELD_NUMBER: builtins.int
+    NET_SIZE_FIELD_NUMBER: builtins.int
+    BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
+    BLOCK_TIME_MS_FIELD_NUMBER: builtins.int
+    pair: builtins.str
+    net_size: builtins.str
+    """Sum of all active position sizes for the pair."""
+    block_height: builtins.int
+    """The block number at which metrics were generated."""
+    block_time_ms: builtins.int
+    """The block time in unix milliseconds at which metrics were generated."""
+    def __init__(
+        self,
+        *,
+        pair: builtins.str = ...,
+        net_size: builtins.str = ...,
+        block_height: builtins.int = ...,
+        block_time_ms: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["block_height", b"block_height", "block_time_ms", b"block_time_ms", "net_size", b"net_size", "pair", b"pair"]) -> None: ...
+
+global___MetricsEvent = MetricsEvent

@@ -183,3 +183,37 @@ class QueryFundingRatesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["cumulative_funding_rates", b"cumulative_funding_rates"]) -> None: ...
 
 global___QueryFundingRatesResponse = QueryFundingRatesResponse
+
+class QueryMetricsRequest(google.protobuf.message.Message):
+    """---------------------------------------- Metrics"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAIR_FIELD_NUMBER: builtins.int
+    pair: builtins.str
+    """the pair to query for"""
+    def __init__(
+        self,
+        *,
+        pair: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> None: ...
+
+global___QueryMetricsRequest = QueryMetricsRequest
+
+class QueryMetricsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    METRICS_FIELD_NUMBER: builtins.int
+    @property
+    def metrics(self) -> perp.v1.state_pb2.Metrics:
+        """list of perp metrics"""
+    def __init__(
+        self,
+        *,
+        metrics: perp.v1.state_pb2.Metrics | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["metrics", b"metrics"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["metrics", b"metrics"]) -> None: ...
+
+global___QueryMetricsResponse = QueryMetricsResponse
