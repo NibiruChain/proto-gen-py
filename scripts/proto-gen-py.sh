@@ -53,10 +53,25 @@ refresh_protobuf() {
   fi
 }
 
+# update_binary updates the nibid binary and proto-version file.
+# It assumes the cwd is nibiru
+update_binary() {
+  if [[ $(pwd) = */nibiru ]]; then
+    make build && make install
+  fi
+
+  if [ ! -d $PKG_PATH ]; then 
+    mkdir $PKG_PATH
+  fi
+  # Create __init__.py to make it a Python package.
+  echo > $PKG_PATH/__init__.py 
+}
+
 code_gen() {
   echo "grabbing cosmos-sdk proto file locations from disk"
   echo "current dir: $(pwd)"
   cd ../nibiru;
+  
   protoc_gen_gocosmos
   cosmos_sdk_dir=$(go list -f '{{ .Dir }}' -m github.com/cosmos/cosmos-sdk)
 
@@ -66,6 +81,9 @@ code_gen() {
   proto_dirs=$(find $cosmos_sdk_dir/proto $cosmos_sdk_dir/third_party/proto ./proto -path -prune -o -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
   echo "Proto Directories: "
   echo $proto_dirs
+
+  # update the proto-version using the release tag or commit hash
+  nibid version > proto-version
 
   # generate the protos for each directory
   for dir in $proto_dirs; do \
