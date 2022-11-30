@@ -327,3 +327,24 @@ class LiquidateResp(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "fee_to_liquidator", b"fee_to_liquidator", "fee_to_perp_ecosystem_fund", b"fee_to_perp_ecosystem_fund", "liquidator", b"liquidator", "position_resp", b"position_resp"]) -> None: ...
 
 global___LiquidateResp = LiquidateResp
+
+class Metrics(google.protobuf.message.Message):
+    """PoolMetrics is a structure that displays a snapshot of perp metrics for each pair."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAIR_FIELD_NUMBER: builtins.int
+    NET_SIZE_FIELD_NUMBER: builtins.int
+    pair: builtins.str
+    """Pair identifier for the two assets. Always in format 'base:quote'"""
+    net_size: builtins.str
+    """Sum of all active position sizes for the pair."""
+    def __init__(
+        self,
+        *,
+        pair: builtins.str = ...,
+        net_size: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["net_size", b"net_size", "pair", b"pair"]) -> None: ...
+
+global___Metrics = Metrics

@@ -20,7 +20,7 @@ from cosmos.auth.v1beta1 import auth_pb2 as cosmos_dot_auth_dot_v1beta1_dot_auth
 from cosmos_proto import cosmos_pb2 as cosmos__proto_dot_cosmos__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x63osmos/auth/v1beta1/query.proto\x12\x13\x63osmos.auth.v1beta1\x1a*cosmos/base/query/v1beta1/pagination.proto\x1a\x14gogoproto/gogo.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x63osmos/auth/v1beta1/auth.proto\x1a\x19\x63osmos_proto/cosmos.proto\"R\n\x14QueryAccountsRequest\x12:\n\npagination\x18\x01 \x01(\x0b\x32&.cosmos.base.query.v1beta1.PageRequest\"\x8a\x01\n\x15QueryAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x14.google.protobuf.AnyB\x0c\xca\xb4-\x08\x41\x63\x63ountI\x12;\n\npagination\x18\x02 \x01(\x0b\x32\'.cosmos.base.query.v1beta1.PageResponse\"0\n\x13QueryAccountRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"K\n\x14QueryAccountResponse\x12\x33\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.google.protobuf.AnyB\x0c\xca\xb4-\x08\x41\x63\x63ountI\"\x14\n\x12QueryParamsRequest\"H\n\x13QueryParamsResponse\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.cosmos.auth.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\x32\xa7\x03\n\x05Query\x12\x88\x01\n\x08\x41\x63\x63ounts\x12).cosmos.auth.v1beta1.QueryAccountsRequest\x1a*.cosmos.auth.v1beta1.QueryAccountsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/cosmos/auth/v1beta1/accounts\x12\x8f\x01\n\x07\x41\x63\x63ount\x12(.cosmos.auth.v1beta1.QueryAccountRequest\x1a).cosmos.auth.v1beta1.QueryAccountResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/cosmos/auth/v1beta1/accounts/{address}\x12\x80\x01\n\x06Params\x12\'.cosmos.auth.v1beta1.QueryParamsRequest\x1a(.cosmos.auth.v1beta1.QueryParamsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/cosmos/auth/v1beta1/paramsB+Z)github.com/cosmos/cosmos-sdk/x/auth/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x63osmos/auth/v1beta1/query.proto\x12\x13\x63osmos.auth.v1beta1\x1a*cosmos/base/query/v1beta1/pagination.proto\x1a\x14gogoproto/gogo.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x63osmos/auth/v1beta1/auth.proto\x1a\x19\x63osmos_proto/cosmos.proto\"R\n\x14QueryAccountsRequest\x12:\n\npagination\x18\x01 \x01(\x0b\x32&.cosmos.base.query.v1beta1.PageRequest\"\x8a\x01\n\x15QueryAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x14.google.protobuf.AnyB\x0c\xca\xb4-\x08\x41\x63\x63ountI\x12;\n\npagination\x18\x02 \x01(\x0b\x32\'.cosmos.base.query.v1beta1.PageResponse\"0\n\x13QueryAccountRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"K\n\x14QueryAccountResponse\x12\x33\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.google.protobuf.AnyB\x0c\xca\xb4-\x08\x41\x63\x63ountI\"\x14\n\x12QueryParamsRequest\"H\n\x13QueryParamsResponse\x12\x31\n\x06params\x18\x01 \x01(\x0b\x32\x1b.cosmos.auth.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\"/\n\x1fQueryModuleAccountByNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"]\n QueryModuleAccountByNameResponse\x12\x39\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.google.protobuf.AnyB\x12\xca\xb4-\x0eModuleAccountI2\xe1\x04\n\x05Query\x12\x88\x01\n\x08\x41\x63\x63ounts\x12).cosmos.auth.v1beta1.QueryAccountsRequest\x1a*.cosmos.auth.v1beta1.QueryAccountsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/cosmos/auth/v1beta1/accounts\x12\x8f\x01\n\x07\x41\x63\x63ount\x12(.cosmos.auth.v1beta1.QueryAccountRequest\x1a).cosmos.auth.v1beta1.QueryAccountResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/cosmos/auth/v1beta1/accounts/{address}\x12\x80\x01\n\x06Params\x12\'.cosmos.auth.v1beta1.QueryParamsRequest\x1a(.cosmos.auth.v1beta1.QueryParamsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/cosmos/auth/v1beta1/params\x12\xb7\x01\n\x13ModuleAccountByName\x12\x34.cosmos.auth.v1beta1.QueryModuleAccountByNameRequest\x1a\x35.cosmos.auth.v1beta1.QueryModuleAccountByNameResponse\"3\x82\xd3\xe4\x93\x02-\x12+/cosmos/auth/v1beta1/module_accounts/{name}B+Z)github.com/cosmos/cosmos-sdk/x/auth/typesb\x06proto3')
 
 
 
@@ -30,6 +30,8 @@ _QUERYACCOUNTREQUEST = DESCRIPTOR.message_types_by_name['QueryAccountRequest']
 _QUERYACCOUNTRESPONSE = DESCRIPTOR.message_types_by_name['QueryAccountResponse']
 _QUERYPARAMSREQUEST = DESCRIPTOR.message_types_by_name['QueryParamsRequest']
 _QUERYPARAMSRESPONSE = DESCRIPTOR.message_types_by_name['QueryParamsResponse']
+_QUERYMODULEACCOUNTBYNAMEREQUEST = DESCRIPTOR.message_types_by_name['QueryModuleAccountByNameRequest']
+_QUERYMODULEACCOUNTBYNAMERESPONSE = DESCRIPTOR.message_types_by_name['QueryModuleAccountByNameResponse']
 QueryAccountsRequest = _reflection.GeneratedProtocolMessageType('QueryAccountsRequest', (_message.Message,), {
   'DESCRIPTOR' : _QUERYACCOUNTSREQUEST,
   '__module__' : 'cosmos.auth.v1beta1.query_pb2'
@@ -72,6 +74,20 @@ QueryParamsResponse = _reflection.GeneratedProtocolMessageType('QueryParamsRespo
   })
 _sym_db.RegisterMessage(QueryParamsResponse)
 
+QueryModuleAccountByNameRequest = _reflection.GeneratedProtocolMessageType('QueryModuleAccountByNameRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYMODULEACCOUNTBYNAMEREQUEST,
+  '__module__' : 'cosmos.auth.v1beta1.query_pb2'
+  # @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+  })
+_sym_db.RegisterMessage(QueryModuleAccountByNameRequest)
+
+QueryModuleAccountByNameResponse = _reflection.GeneratedProtocolMessageType('QueryModuleAccountByNameResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYMODULEACCOUNTBYNAMERESPONSE,
+  '__module__' : 'cosmos.auth.v1beta1.query_pb2'
+  # @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+  })
+_sym_db.RegisterMessage(QueryModuleAccountByNameResponse)
+
 _QUERY = DESCRIPTOR.services_by_name['Query']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -85,12 +101,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QUERYACCOUNTRESPONSE.fields_by_name['account']._serialized_options = b'\312\264-\010AccountI'
   _QUERYPARAMSRESPONSE.fields_by_name['params']._options = None
   _QUERYPARAMSRESPONSE.fields_by_name['params']._serialized_options = b'\310\336\037\000'
+  _QUERYMODULEACCOUNTBYNAMERESPONSE.fields_by_name['account']._options = None
+  _QUERYMODULEACCOUNTBYNAMERESPONSE.fields_by_name['account']._serialized_options = b'\312\264-\016ModuleAccountI'
   _QUERY.methods_by_name['Accounts']._options = None
   _QUERY.methods_by_name['Accounts']._serialized_options = b'\202\323\344\223\002\037\022\035/cosmos/auth/v1beta1/accounts'
   _QUERY.methods_by_name['Account']._options = None
   _QUERY.methods_by_name['Account']._serialized_options = b'\202\323\344\223\002)\022\'/cosmos/auth/v1beta1/accounts/{address}'
   _QUERY.methods_by_name['Params']._options = None
   _QUERY.methods_by_name['Params']._serialized_options = b'\202\323\344\223\002\035\022\033/cosmos/auth/v1beta1/params'
+  _QUERY.methods_by_name['ModuleAccountByName']._options = None
+  _QUERY.methods_by_name['ModuleAccountByName']._serialized_options = b'\202\323\344\223\002-\022+/cosmos/auth/v1beta1/module_accounts/{name}'
   _QUERYACCOUNTSREQUEST._serialized_start=238
   _QUERYACCOUNTSREQUEST._serialized_end=320
   _QUERYACCOUNTSRESPONSE._serialized_start=323
@@ -103,6 +123,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QUERYPARAMSREQUEST._serialized_end=610
   _QUERYPARAMSRESPONSE._serialized_start=612
   _QUERYPARAMSRESPONSE._serialized_end=684
-  _QUERY._serialized_start=687
-  _QUERY._serialized_end=1110
+  _QUERYMODULEACCOUNTBYNAMEREQUEST._serialized_start=686
+  _QUERYMODULEACCOUNTBYNAMEREQUEST._serialized_end=733
+  _QUERYMODULEACCOUNTBYNAMERESPONSE._serialized_start=735
+  _QUERYMODULEACCOUNTBYNAMERESPONSE._serialized_end=828
+  _QUERY._serialized_start=831
+  _QUERY._serialized_end=1440
 # @@protoc_insertion_point(module_scope)

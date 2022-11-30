@@ -671,6 +671,9 @@ class ResponseCheckTx(google.protobuf.message.Message):
     GAS_USED_FIELD_NUMBER: builtins.int
     EVENTS_FIELD_NUMBER: builtins.int
     CODESPACE_FIELD_NUMBER: builtins.int
+    SENDER_FIELD_NUMBER: builtins.int
+    PRIORITY_FIELD_NUMBER: builtins.int
+    MEMPOOL_ERROR_FIELD_NUMBER: builtins.int
     code: builtins.int
     data: builtins.bytes
     log: builtins.str
@@ -682,6 +685,12 @@ class ResponseCheckTx(google.protobuf.message.Message):
     @property
     def events(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Event]: ...
     codespace: builtins.str
+    sender: builtins.str
+    priority: builtins.int
+    mempool_error: builtins.str
+    """mempool_error is set by Tendermint.
+    ABCI applictions creating a ResponseCheckTX should not set mempool_error.
+    """
     def __init__(
         self,
         *,
@@ -693,8 +702,11 @@ class ResponseCheckTx(google.protobuf.message.Message):
         gas_used: builtins.int = ...,
         events: collections.abc.Iterable[global___Event] | None = ...,
         codespace: builtins.str = ...,
+        sender: builtins.str = ...,
+        priority: builtins.int = ...,
+        mempool_error: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "codespace", b"codespace", "data", b"data", "events", b"events", "gas_used", b"gas_used", "gas_wanted", b"gas_wanted", "info", b"info", "log", b"log"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "codespace", b"codespace", "data", b"data", "events", b"events", "gas_used", b"gas_used", "gas_wanted", b"gas_wanted", "info", b"info", "log", b"log", "mempool_error", b"mempool_error", "priority", b"priority", "sender", b"sender"]) -> None: ...
 
 global___ResponseCheckTx = ResponseCheckTx
 
@@ -718,7 +730,8 @@ class ResponseDeliverTx(google.protobuf.message.Message):
     gas_wanted: builtins.int
     gas_used: builtins.int
     @property
-    def events(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Event]: ...
+    def events(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Event]:
+        """nondeterministic"""
     codespace: builtins.str
     def __init__(
         self,

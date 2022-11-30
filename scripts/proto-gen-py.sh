@@ -5,6 +5,7 @@ set -e pipefail # see https://stackoverflow.com/a/68465418/13305627
 # ------------------------------------------------ CONFIG
 PKG_PATH="nibiru_proto"
 PKG_PROTO_SUBDIR="$PKG_PATH/proto"
+nibiru_chain_version=v0.45.10
 # ------------------------------------------------ 
 
 protoc_gen_gocosmos() {
@@ -16,7 +17,7 @@ protoc_gen_gocosmos() {
   # get protoc executions
   go get github.com/regen-network/cosmos-proto/protoc-gen-gocosmos@latest 2>/dev/null
   # get cosmos sdk from github
-  go get github.com/cosmos/cosmos-sdk@v0.45.6 2>/dev/null
+  go get github.com/cosmos/cosmos-sdk@$nibiru_chain_version 2>/dev/null
 }
 
 # Add PKG_PATH as dir if it doesn't exist. 
@@ -31,6 +32,8 @@ create_pkg() {
 copy_nibiru_protobuf_from_local() {
   rm -rf proto
   cp -r ../nibiru/proto proto
+  cp ../nibiru/go.mod go.mod
+  cp ../nibiru/go.sum go.sum
 }
 
 copy_nibiru_protobuf_from_remote() {
@@ -101,6 +104,7 @@ printf "import os\nimport sys\n\nsys.path.insert(0, os.path.abspath(os.path.dirn
 echo "Complete - generated Python types from proto"
 # cleanup
 rm -rf $PKG_PATH/home
+rm go.mod go.sum
 
 # poetry run python scripts/init-py.py
 # echo "Complete - converted types directories into packages"

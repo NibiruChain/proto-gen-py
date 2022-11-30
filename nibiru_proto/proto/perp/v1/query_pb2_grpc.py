@@ -35,6 +35,11 @@ class QueryStub(object):
                 request_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
                 response_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
                 )
+        self.Metrics = channel.unary_unary(
+                '/nibiru.perp.v1.Query/Metrics',
+                request_serializer=perp_dot_v1_dot_query__pb2.QueryMetricsRequest.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_query__pb2.QueryMetricsResponse.FromString,
+                )
 
 
 class QueryServicer(object):
@@ -66,6 +71,12 @@ class QueryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Metrics(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_QueryServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -88,6 +99,11 @@ def add_QueryServicer_to_server(servicer, server):
                     servicer.FundingRates,
                     request_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.FromString,
                     response_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.SerializeToString,
+            ),
+            'Metrics': grpc.unary_unary_rpc_method_handler(
+                    servicer.Metrics,
+                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryMetricsRequest.FromString,
+                    response_serializer=perp_dot_v1_dot_query__pb2.QueryMetricsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -165,5 +181,22 @@ class Query(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/FundingRates',
             perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
             perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Metrics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/Metrics',
+            perp_dot_v1_dot_query__pb2.QueryMetricsRequest.SerializeToString,
+            perp_dot_v1_dot_query__pb2.QueryMetricsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
