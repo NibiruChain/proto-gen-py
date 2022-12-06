@@ -7,12 +7,14 @@ Generates the `nibiru_proto` Python package for the [Nibiru Python SDK][repo-py-
 [![PyPI Version][pypi-image]][pypi-url]
 [![MIT license][license-badge]][license-link]
 
-## Python Code Generation 
+## Python Code Generation
 
 All you need to do is run:
+
 ```sh
 make proto-gen
 ```
+
 This executes the code generation script, [proto-gen-py.sh][script-proto-gen].
 
 The protobuf files come from the [NibiruChain/nibiru repo][repo-nibiru], which is private (for now), so you'll need these files on your local machine. It's assumed you have the `nibiru` repo as a neighbor to `sdk-proto-gen` when running the code generation script.
@@ -39,21 +41,25 @@ poetry run pytest
 The publish workflow looks like this:
 
 1. Code-gen the new types from the chain. If there are changes, these should be committed.
+
    ```sh
    make proto-gen
    ```
+
 2. Increment the package version. For example, use `poetry version preminor` to do a pre-release for a minor version.
+
    ```sh
    poetry version [update-keyword]
    ```
-3. Create a build for the wheel and source code.
+
+3. Create a tag and push it the remote origin.
+
    ```sh
-   poetry build
+   git tag -asm "v0.16.0-beta.1" v0.16.0-beta.1
+   git push --tags
    ```
-4. Put your PyPI credentials into the `.env` file. Then, use the `dotenv` CLI tool from `npm` to pass variables from the `.env` into the `poetry publish` command.
-   ```sh
-   dotenv -e .env poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
-   ```
+
+4. The tag should trigger a [GitHub Action Workflow](https://github.com/NibiruChain/sdk-proto-gen/actions/workflows/publish-to-test-pypi.yml).
 
 ## 🔓 License
 
