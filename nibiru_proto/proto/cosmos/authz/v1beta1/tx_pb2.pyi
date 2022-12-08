@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgGrant(google.protobuf.message.Message):
     """MsgGrant is a request type for Grant method. It declares authorization to the grantee
     on behalf of the granter with the provided expiration time.
@@ -44,6 +45,7 @@ class MsgGrant(google.protobuf.message.Message):
 
 global___MsgGrant = MsgGrant
 
+@typing_extensions.final
 class MsgExecResponse(google.protobuf.message.Message):
     """MsgExecResponse defines the Msg/MsgExecResponse response type."""
 
@@ -61,6 +63,7 @@ class MsgExecResponse(google.protobuf.message.Message):
 
 global___MsgExecResponse = MsgExecResponse
 
+@typing_extensions.final
 class MsgExec(google.protobuf.message.Message):
     """MsgExec attempts to execute the provided messages using
     authorizations granted to the grantee. Each message should have only
@@ -88,6 +91,7 @@ class MsgExec(google.protobuf.message.Message):
 
 global___MsgExec = MsgExec
 
+@typing_extensions.final
 class MsgGrantResponse(google.protobuf.message.Message):
     """MsgGrantResponse defines the Msg/MsgGrant response type."""
 
@@ -99,6 +103,7 @@ class MsgGrantResponse(google.protobuf.message.Message):
 
 global___MsgGrantResponse = MsgGrantResponse
 
+@typing_extensions.final
 class MsgRevoke(google.protobuf.message.Message):
     """MsgRevoke revokes any authorization with the provided sdk.Msg type on the
     granter's account with that has been granted to the grantee.
@@ -123,6 +128,7 @@ class MsgRevoke(google.protobuf.message.Message):
 
 global___MsgRevoke = MsgRevoke
 
+@typing_extensions.final
 class MsgRevokeResponse(google.protobuf.message.Message):
     """MsgRevokeResponse defines the Msg/MsgRevokeResponse response type."""
 

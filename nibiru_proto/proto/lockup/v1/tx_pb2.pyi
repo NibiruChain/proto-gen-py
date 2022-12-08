@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgLockTokens(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -42,6 +43,7 @@ class MsgLockTokens(google.protobuf.message.Message):
 
 global___MsgLockTokens = MsgLockTokens
 
+@typing_extensions.final
 class MsgLockTokensResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -56,6 +58,7 @@ class MsgLockTokensResponse(google.protobuf.message.Message):
 
 global___MsgLockTokensResponse = MsgLockTokensResponse
 
+@typing_extensions.final
 class MsgInitiateUnlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -73,6 +76,7 @@ class MsgInitiateUnlock(google.protobuf.message.Message):
 
 global___MsgInitiateUnlock = MsgInitiateUnlock
 
+@typing_extensions.final
 class MsgInitiateUnlockResponse(google.protobuf.message.Message):
     """TODO(mercilex): maybe report unlock time"""
 
@@ -84,6 +88,7 @@ class MsgInitiateUnlockResponse(google.protobuf.message.Message):
 
 global___MsgInitiateUnlockResponse = MsgInitiateUnlockResponse
 
+@typing_extensions.final
 class MsgUnlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -101,6 +106,7 @@ class MsgUnlock(google.protobuf.message.Message):
 
 global___MsgUnlock = MsgUnlock
 
+@typing_extensions.final
 class MsgUnlockResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -110,6 +116,7 @@ class MsgUnlockResponse(google.protobuf.message.Message):
 
 global___MsgUnlockResponse = MsgUnlockResponse
 
+@typing_extensions.final
 class EventLock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -136,6 +143,7 @@ class EventLock(google.protobuf.message.Message):
 
 global___EventLock = EventLock
 
+@typing_extensions.final
 class EventUnlockInitiated(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -162,6 +170,7 @@ class EventUnlockInitiated(google.protobuf.message.Message):
 
 global___EventUnlockInitiated = EventUnlockInitiated
 
+@typing_extensions.final
 class EventUnlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Proof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -40,6 +41,7 @@ class Proof(google.protobuf.message.Message):
 
 global___Proof = Proof
 
+@typing_extensions.final
 class ValueOp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -61,6 +63,7 @@ class ValueOp(google.protobuf.message.Message):
 
 global___ValueOp = ValueOp
 
+@typing_extensions.final
 class DominoOp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -81,6 +84,7 @@ class DominoOp(google.protobuf.message.Message):
 
 global___DominoOp = DominoOp
 
+@typing_extensions.final
 class ProofOp(google.protobuf.message.Message):
     """ProofOp defines an operation used for calculating Merkle root
     The data could be arbitrary format, providing nessecary data
@@ -106,6 +110,7 @@ class ProofOp(google.protobuf.message.Message):
 
 global___ProofOp = ProofOp
 
+@typing_extensions.final
 class ProofOps(google.protobuf.message.Message):
     """ProofOps is Merkle proof defined by the list of ProofOps"""
 

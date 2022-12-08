@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class NetAddress(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -34,6 +35,7 @@ class NetAddress(google.protobuf.message.Message):
 
 global___NetAddress = NetAddress
 
+@typing_extensions.final
 class ProtocolVersion(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -54,6 +56,7 @@ class ProtocolVersion(google.protobuf.message.Message):
 
 global___ProtocolVersion = ProtocolVersion
 
+@typing_extensions.final
 class DefaultNodeInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -92,6 +95,7 @@ class DefaultNodeInfo(google.protobuf.message.Message):
 
 global___DefaultNodeInfo = DefaultNodeInfo
 
+@typing_extensions.final
 class DefaultNodeInfoOther(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

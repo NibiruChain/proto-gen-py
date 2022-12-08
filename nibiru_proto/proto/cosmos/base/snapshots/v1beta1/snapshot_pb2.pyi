@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Snapshot(google.protobuf.message.Message):
     """Snapshot contains Tendermint state sync snapshot info."""
 
@@ -46,6 +47,7 @@ class Snapshot(google.protobuf.message.Message):
 
 global___Snapshot = Snapshot
 
+@typing_extensions.final
 class Metadata(google.protobuf.message.Message):
     """Metadata contains SDK-specific snapshot metadata."""
 
@@ -64,6 +66,7 @@ class Metadata(google.protobuf.message.Message):
 
 global___Metadata = Metadata
 
+@typing_extensions.final
 class SnapshotItem(google.protobuf.message.Message):
     """SnapshotItem is an item contained in a rootmulti.Store snapshot."""
 
@@ -95,6 +98,7 @@ class SnapshotItem(google.protobuf.message.Message):
 
 global___SnapshotItem = SnapshotItem
 
+@typing_extensions.final
 class SnapshotStoreItem(google.protobuf.message.Message):
     """SnapshotStoreItem contains metadata about a snapshotted store."""
 
@@ -111,6 +115,7 @@ class SnapshotStoreItem(google.protobuf.message.Message):
 
 global___SnapshotStoreItem = SnapshotStoreItem
 
+@typing_extensions.final
 class SnapshotIAVLItem(google.protobuf.message.Message):
     """SnapshotIAVLItem is an exported IAVL node."""
 
@@ -138,6 +143,7 @@ class SnapshotIAVLItem(google.protobuf.message.Message):
 
 global___SnapshotIAVLItem = SnapshotIAVLItem
 
+@typing_extensions.final
 class SnapshotExtensionMeta(google.protobuf.message.Message):
     """SnapshotExtensionMeta contains metadata about an external snapshotter."""
 
@@ -157,6 +163,7 @@ class SnapshotExtensionMeta(google.protobuf.message.Message):
 
 global___SnapshotExtensionMeta = SnapshotExtensionMeta
 
+@typing_extensions.final
 class SnapshotExtensionPayload(google.protobuf.message.Message):
     """SnapshotExtensionPayload contains payloads of an external snapshotter."""
 

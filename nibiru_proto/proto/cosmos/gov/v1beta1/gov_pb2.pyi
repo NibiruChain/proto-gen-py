@@ -26,7 +26,7 @@ class _VoteOption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _VoteOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VoteOption.ValueType], builtins.type):  # noqa: F821
+class _VoteOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VoteOption.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     VOTE_OPTION_UNSPECIFIED: _VoteOption.ValueType  # 0
     """VOTE_OPTION_UNSPECIFIED defines a no-op vote option."""
@@ -58,7 +58,7 @@ class _ProposalStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ProposalStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ProposalStatus.ValueType], builtins.type):  # noqa: F821
+class _ProposalStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ProposalStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     PROPOSAL_STATUS_UNSPECIFIED: _ProposalStatus.ValueType  # 0
     """PROPOSAL_STATUS_UNSPECIFIED defines the default propopsal status."""
@@ -110,6 +110,7 @@ failed.
 """
 global___ProposalStatus = ProposalStatus
 
+@typing_extensions.final
 class WeightedVoteOption(google.protobuf.message.Message):
     """WeightedVoteOption defines a unit of vote for vote split.
 
@@ -132,6 +133,7 @@ class WeightedVoteOption(google.protobuf.message.Message):
 
 global___WeightedVoteOption = WeightedVoteOption
 
+@typing_extensions.final
 class TextProposal(google.protobuf.message.Message):
     """TextProposal defines a standard text proposal whose changes need to be
     manually updated in case of approval.
@@ -153,6 +155,7 @@ class TextProposal(google.protobuf.message.Message):
 
 global___TextProposal = TextProposal
 
+@typing_extensions.final
 class Deposit(google.protobuf.message.Message):
     """Deposit defines an amount deposited by an account address to an active
     proposal.
@@ -178,6 +181,7 @@ class Deposit(google.protobuf.message.Message):
 
 global___Deposit = Deposit
 
+@typing_extensions.final
 class Proposal(google.protobuf.message.Message):
     """Proposal defines the core field members of a governance proposal."""
 
@@ -226,6 +230,7 @@ class Proposal(google.protobuf.message.Message):
 
 global___Proposal = Proposal
 
+@typing_extensions.final
 class TallyResult(google.protobuf.message.Message):
     """TallyResult defines a standard tally for a governance proposal."""
 
@@ -251,6 +256,7 @@ class TallyResult(google.protobuf.message.Message):
 
 global___TallyResult = TallyResult
 
+@typing_extensions.final
 class Vote(google.protobuf.message.Message):
     """Vote defines a vote on a governance proposal.
     A Vote consists of a proposal ID, the voter, and the vote option.
@@ -284,6 +290,7 @@ class Vote(google.protobuf.message.Message):
 
 global___Vote = Vote
 
+@typing_extensions.final
 class DepositParams(google.protobuf.message.Message):
     """DepositParams defines the params for deposits on governance proposals."""
 
@@ -310,6 +317,7 @@ class DepositParams(google.protobuf.message.Message):
 
 global___DepositParams = DepositParams
 
+@typing_extensions.final
 class VotingParams(google.protobuf.message.Message):
     """VotingParams defines the params for voting on governance proposals."""
 
@@ -329,6 +337,7 @@ class VotingParams(google.protobuf.message.Message):
 
 global___VotingParams = VotingParams
 
+@typing_extensions.final
 class TallyParams(google.protobuf.message.Message):
     """TallyParams defines the params for tallying votes on governance proposals."""
 

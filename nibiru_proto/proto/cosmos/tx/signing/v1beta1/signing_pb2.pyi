@@ -24,7 +24,7 @@ class _SignMode:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SignModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignMode.ValueType], builtins.type):  # noqa: F821
+class _SignModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignMode.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     SIGN_MODE_UNSPECIFIED: _SignMode.ValueType  # 0
     """SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
@@ -90,6 +90,7 @@ Since: cosmos-sdk 0.45.2
 """
 global___SignMode = SignMode
 
+@typing_extensions.final
 class SignatureDescriptors(google.protobuf.message.Message):
     """SignatureDescriptors wraps multiple SignatureDescriptor's."""
 
@@ -108,6 +109,7 @@ class SignatureDescriptors(google.protobuf.message.Message):
 
 global___SignatureDescriptors = SignatureDescriptors
 
+@typing_extensions.final
 class SignatureDescriptor(google.protobuf.message.Message):
     """SignatureDescriptor is a convenience type which represents the full data for
     a signature including the public key of the signer, signing modes and the
@@ -117,11 +119,13 @@ class SignatureDescriptor(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class Data(google.protobuf.message.Message):
         """Data represents signature data"""
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        @typing_extensions.final
         class Single(google.protobuf.message.Message):
             """Single is the signature data for a single signer"""
 
@@ -141,6 +145,7 @@ class SignatureDescriptor(google.protobuf.message.Message):
             ) -> None: ...
             def ClearField(self, field_name: typing_extensions.Literal["mode", b"mode", "signature", b"signature"]) -> None: ...
 
+        @typing_extensions.final
         class Multi(google.protobuf.message.Message):
             """Multi is the signature data for a multisig public key"""
 

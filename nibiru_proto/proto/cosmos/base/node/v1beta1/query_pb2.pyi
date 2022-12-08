@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ConfigRequest(google.protobuf.message.Message):
     """ConfigRequest defines the request structure for the Config gRPC query."""
 
@@ -25,6 +26,7 @@ class ConfigRequest(google.protobuf.message.Message):
 
 global___ConfigRequest = ConfigRequest
 
+@typing_extensions.final
 class ConfigResponse(google.protobuf.message.Message):
     """ConfigResponse defines the response structure for the Config gRPC query."""
 

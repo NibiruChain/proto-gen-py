@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the oracle module's genesis state."""
 
@@ -63,6 +64,7 @@ class GenesisState(google.protobuf.message.Message):
 
 global___GenesisState = GenesisState
 
+@typing_extensions.final
 class FeederDelegation(google.protobuf.message.Message):
     """FeederDelegation is the address for where oracle feeder authority are
     delegated to. By default this struct is only used at genesis to feed in
@@ -85,6 +87,7 @@ class FeederDelegation(google.protobuf.message.Message):
 
 global___FeederDelegation = FeederDelegation
 
+@typing_extensions.final
 class MissCounter(google.protobuf.message.Message):
     """MissCounter defines an miss counter and validator address pair used in
     oracle module's genesis state

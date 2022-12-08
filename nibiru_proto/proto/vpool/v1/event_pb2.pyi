@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ReserveSnapshotSavedEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -49,6 +50,7 @@ class ReserveSnapshotSavedEvent(google.protobuf.message.Message):
 
 global___ReserveSnapshotSavedEvent = ReserveSnapshotSavedEvent
 
+@typing_extensions.final
 class SwapQuoteForBaseEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -69,6 +71,7 @@ class SwapQuoteForBaseEvent(google.protobuf.message.Message):
 
 global___SwapQuoteForBaseEvent = SwapQuoteForBaseEvent
 
+@typing_extensions.final
 class SwapBaseForQuoteEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -89,6 +92,7 @@ class SwapBaseForQuoteEvent(google.protobuf.message.Message):
 
 global___SwapBaseForQuoteEvent = SwapBaseForQuoteEvent
 
+@typing_extensions.final
 class MarkPriceChangedEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

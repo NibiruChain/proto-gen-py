@@ -20,6 +20,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgCreateIncentivizationProgram(google.protobuf.message.Message):
     """MsgCreateIncentivizationProgram is the request needed for the CreateIncentivizationProgram RPC."""
 
@@ -67,6 +68,7 @@ class MsgCreateIncentivizationProgram(google.protobuf.message.Message):
 
 global___MsgCreateIncentivizationProgram = MsgCreateIncentivizationProgram
 
+@typing_extensions.final
 class MsgCreateIncentivizationProgramResponse(google.protobuf.message.Message):
     """MsgCreateIncentivizationProgramResponse is the response returned by the CreateIncentivizationProgram RPC."""
 
@@ -84,6 +86,7 @@ class MsgCreateIncentivizationProgramResponse(google.protobuf.message.Message):
 
 global___MsgCreateIncentivizationProgramResponse = MsgCreateIncentivizationProgramResponse
 
+@typing_extensions.final
 class MsgFundIncentivizationProgram(google.protobuf.message.Message):
     """MsgFundIncentivizationProgram is the request for the FundIncentivizationProgram RPC."""
 
@@ -110,6 +113,7 @@ class MsgFundIncentivizationProgram(google.protobuf.message.Message):
 
 global___MsgFundIncentivizationProgram = MsgFundIncentivizationProgram
 
+@typing_extensions.final
 class MsgFundIncentivizationProgramResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -119,6 +123,7 @@ class MsgFundIncentivizationProgramResponse(google.protobuf.message.Message):
 
 global___MsgFundIncentivizationProgramResponse = MsgFundIncentivizationProgramResponse
 
+@typing_extensions.final
 class IncentivizationProgram(google.protobuf.message.Message):
     """IncentivizationProgram defines how an incentivization program looks like."""
 
@@ -165,6 +170,7 @@ class IncentivizationProgram(google.protobuf.message.Message):
 
 global___IncentivizationProgram = IncentivizationProgram
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -180,6 +186,7 @@ class GenesisState(google.protobuf.message.Message):
 
 global___GenesisState = GenesisState
 
+@typing_extensions.final
 class QueryIncentivizationProgramRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -194,6 +201,7 @@ class QueryIncentivizationProgramRequest(google.protobuf.message.Message):
 
 global___QueryIncentivizationProgramRequest = QueryIncentivizationProgramRequest
 
+@typing_extensions.final
 class QueryIncentivizationProgramResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -210,6 +218,7 @@ class QueryIncentivizationProgramResponse(google.protobuf.message.Message):
 
 global___QueryIncentivizationProgramResponse = QueryIncentivizationProgramResponse
 
+@typing_extensions.final
 class QueryIncentivizationProgramsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -226,6 +235,7 @@ class QueryIncentivizationProgramsRequest(google.protobuf.message.Message):
 
 global___QueryIncentivizationProgramsRequest = QueryIncentivizationProgramsRequest
 
+@typing_extensions.final
 class QueryIncentivizationProgramsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

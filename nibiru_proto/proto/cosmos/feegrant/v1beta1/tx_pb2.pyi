@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgGrantAllowance(google.protobuf.message.Message):
     """MsgGrantAllowance adds permission for Grantee to spend up to Allowance
     of fees from the account of Granter.
@@ -44,6 +45,7 @@ class MsgGrantAllowance(google.protobuf.message.Message):
 
 global___MsgGrantAllowance = MsgGrantAllowance
 
+@typing_extensions.final
 class MsgGrantAllowanceResponse(google.protobuf.message.Message):
     """MsgGrantAllowanceResponse defines the Msg/GrantAllowanceResponse response type."""
 
@@ -55,6 +57,7 @@ class MsgGrantAllowanceResponse(google.protobuf.message.Message):
 
 global___MsgGrantAllowanceResponse = MsgGrantAllowanceResponse
 
+@typing_extensions.final
 class MsgRevokeAllowance(google.protobuf.message.Message):
     """MsgRevokeAllowance removes any existing Allowance from Granter to Grantee."""
 
@@ -76,6 +79,7 @@ class MsgRevokeAllowance(google.protobuf.message.Message):
 
 global___MsgRevokeAllowance = MsgRevokeAllowance
 
+@typing_extensions.final
 class MsgRevokeAllowanceResponse(google.protobuf.message.Message):
     """MsgRevokeAllowanceResponse defines the Msg/RevokeAllowanceResponse response type."""
 

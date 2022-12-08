@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Lock(google.protobuf.message.Message):
     """Lock represents a users locked tokens for a period of time.
     It stores owner, duration, unlock time and the amount of coins locked.

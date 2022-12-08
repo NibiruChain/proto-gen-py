@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgVerifyInvariant(google.protobuf.message.Message):
     """MsgVerifyInvariant represents a message to verify a particular invariance."""
 
@@ -36,6 +37,7 @@ class MsgVerifyInvariant(google.protobuf.message.Message):
 
 global___MsgVerifyInvariant = MsgVerifyInvariant
 
+@typing_extensions.final
 class MsgVerifyInvariantResponse(google.protobuf.message.Message):
     """MsgVerifyInvariantResponse defines the Msg/VerifyInvariant response type."""
 

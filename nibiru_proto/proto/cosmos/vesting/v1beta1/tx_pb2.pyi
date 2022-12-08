@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgCreateVestingAccount(google.protobuf.message.Message):
     """MsgCreateVestingAccount defines a message that enables creating a vesting
     account.
@@ -48,6 +49,7 @@ class MsgCreateVestingAccount(google.protobuf.message.Message):
 
 global___MsgCreateVestingAccount = MsgCreateVestingAccount
 
+@typing_extensions.final
 class MsgCreateVestingAccountResponse(google.protobuf.message.Message):
     """MsgCreateVestingAccountResponse defines the Msg/CreateVestingAccount response type."""
 

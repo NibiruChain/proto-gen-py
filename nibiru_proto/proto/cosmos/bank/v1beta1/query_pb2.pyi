@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryBalanceRequest(google.protobuf.message.Message):
     """QueryBalanceRequest is the request type for the Query/Balance RPC method."""
 
@@ -40,6 +41,7 @@ class QueryBalanceRequest(google.protobuf.message.Message):
 
 global___QueryBalanceRequest = QueryBalanceRequest
 
+@typing_extensions.final
 class QueryBalanceResponse(google.protobuf.message.Message):
     """QueryBalanceResponse is the response type for the Query/Balance RPC method."""
 
@@ -59,6 +61,7 @@ class QueryBalanceResponse(google.protobuf.message.Message):
 
 global___QueryBalanceResponse = QueryBalanceResponse
 
+@typing_extensions.final
 class QueryAllBalancesRequest(google.protobuf.message.Message):
     """QueryBalanceRequest is the request type for the Query/AllBalances RPC method."""
 
@@ -82,6 +85,7 @@ class QueryAllBalancesRequest(google.protobuf.message.Message):
 
 global___QueryAllBalancesRequest = QueryAllBalancesRequest
 
+@typing_extensions.final
 class QueryAllBalancesResponse(google.protobuf.message.Message):
     """QueryAllBalancesResponse is the response type for the Query/AllBalances RPC
     method.
@@ -108,6 +112,7 @@ class QueryAllBalancesResponse(google.protobuf.message.Message):
 
 global___QueryAllBalancesResponse = QueryAllBalancesResponse
 
+@typing_extensions.final
 class QuerySpendableBalancesRequest(google.protobuf.message.Message):
     """QuerySpendableBalancesRequest defines the gRPC request structure for querying
     an account's spendable balances.
@@ -133,6 +138,7 @@ class QuerySpendableBalancesRequest(google.protobuf.message.Message):
 
 global___QuerySpendableBalancesRequest = QuerySpendableBalancesRequest
 
+@typing_extensions.final
 class QuerySpendableBalancesResponse(google.protobuf.message.Message):
     """QuerySpendableBalancesResponse defines the gRPC response structure for querying
     an account's spendable balances.
@@ -159,6 +165,7 @@ class QuerySpendableBalancesResponse(google.protobuf.message.Message):
 
 global___QuerySpendableBalancesResponse = QuerySpendableBalancesResponse
 
+@typing_extensions.final
 class QueryTotalSupplyRequest(google.protobuf.message.Message):
     """QueryTotalSupplyRequest is the request type for the Query/TotalSupply RPC
     method.
@@ -183,6 +190,7 @@ class QueryTotalSupplyRequest(google.protobuf.message.Message):
 
 global___QueryTotalSupplyRequest = QueryTotalSupplyRequest
 
+@typing_extensions.final
 class QueryTotalSupplyResponse(google.protobuf.message.Message):
     """QueryTotalSupplyResponse is the response type for the Query/TotalSupply RPC
     method
@@ -212,6 +220,7 @@ class QueryTotalSupplyResponse(google.protobuf.message.Message):
 
 global___QueryTotalSupplyResponse = QueryTotalSupplyResponse
 
+@typing_extensions.final
 class QuerySupplyOfRequest(google.protobuf.message.Message):
     """QuerySupplyOfRequest is the request type for the Query/SupplyOf RPC method."""
 
@@ -229,6 +238,7 @@ class QuerySupplyOfRequest(google.protobuf.message.Message):
 
 global___QuerySupplyOfRequest = QuerySupplyOfRequest
 
+@typing_extensions.final
 class QuerySupplyOfResponse(google.protobuf.message.Message):
     """QuerySupplyOfResponse is the response type for the Query/SupplyOf RPC method."""
 
@@ -248,6 +258,7 @@ class QuerySupplyOfResponse(google.protobuf.message.Message):
 
 global___QuerySupplyOfResponse = QuerySupplyOfResponse
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest defines the request type for querying x/bank parameters."""
 
@@ -259,6 +270,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse defines the response type for querying x/bank parameters."""
 
@@ -277,6 +289,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryDenomsMetadataRequest(google.protobuf.message.Message):
     """QueryDenomsMetadataRequest is the request type for the Query/DenomsMetadata RPC method."""
 
@@ -296,6 +309,7 @@ class QueryDenomsMetadataRequest(google.protobuf.message.Message):
 
 global___QueryDenomsMetadataRequest = QueryDenomsMetadataRequest
 
+@typing_extensions.final
 class QueryDenomsMetadataResponse(google.protobuf.message.Message):
     """QueryDenomsMetadataResponse is the response type for the Query/DenomsMetadata RPC
     method.
@@ -322,6 +336,7 @@ class QueryDenomsMetadataResponse(google.protobuf.message.Message):
 
 global___QueryDenomsMetadataResponse = QueryDenomsMetadataResponse
 
+@typing_extensions.final
 class QueryDenomMetadataRequest(google.protobuf.message.Message):
     """QueryDenomMetadataRequest is the request type for the Query/DenomMetadata RPC method."""
 
@@ -339,6 +354,7 @@ class QueryDenomMetadataRequest(google.protobuf.message.Message):
 
 global___QueryDenomMetadataRequest = QueryDenomMetadataRequest
 
+@typing_extensions.final
 class QueryDenomMetadataResponse(google.protobuf.message.Message):
     """QueryDenomMetadataResponse is the response type for the Query/DenomMetadata RPC
     method.

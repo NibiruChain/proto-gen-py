@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class CommitInfo(google.protobuf.message.Message):
     """CommitInfo defines commit information used by the multi-store when committing
     a version/height.
@@ -38,6 +39,7 @@ class CommitInfo(google.protobuf.message.Message):
 
 global___CommitInfo = CommitInfo
 
+@typing_extensions.final
 class StoreInfo(google.protobuf.message.Message):
     """StoreInfo defines store-specific commit information. It contains a reference
     between a store name and the commit ID.
@@ -61,6 +63,7 @@ class StoreInfo(google.protobuf.message.Message):
 
 global___StoreInfo = StoreInfo
 
+@typing_extensions.final
 class CommitID(google.protobuf.message.Message):
     """CommitID defines the committment information when a specific store is
     committed.

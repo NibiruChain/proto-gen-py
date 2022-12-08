@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Plan(google.protobuf.message.Message):
     """Plan specifies information about a planned upgrade and when it should occur."""
 
@@ -69,6 +70,7 @@ class Plan(google.protobuf.message.Message):
 
 global___Plan = Plan
 
+@typing_extensions.final
 class SoftwareUpgradeProposal(google.protobuf.message.Message):
     """SoftwareUpgradeProposal is a gov Content type for initiating a software
     upgrade.
@@ -95,6 +97,7 @@ class SoftwareUpgradeProposal(google.protobuf.message.Message):
 
 global___SoftwareUpgradeProposal = SoftwareUpgradeProposal
 
+@typing_extensions.final
 class CancelSoftwareUpgradeProposal(google.protobuf.message.Message):
     """CancelSoftwareUpgradeProposal is a gov Content type for cancelling a software
     upgrade.
@@ -116,6 +119,7 @@ class CancelSoftwareUpgradeProposal(google.protobuf.message.Message):
 
 global___CancelSoftwareUpgradeProposal = CancelSoftwareUpgradeProposal
 
+@typing_extensions.final
 class ModuleVersion(google.protobuf.message.Message):
     """ModuleVersion specifies a module and its consensus version.
 

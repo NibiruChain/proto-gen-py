@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """---------------------------------------- Params
 
@@ -32,6 +33,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is response type for the Query/Params RPC method."""
 
@@ -51,6 +53,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryModuleAccountBalances(google.protobuf.message.Message):
     """---------------------------------------- ModuleAccountBalances
 
@@ -66,6 +69,7 @@ class QueryModuleAccountBalances(google.protobuf.message.Message):
 
 global___QueryModuleAccountBalances = QueryModuleAccountBalances
 
+@typing_extensions.final
 class QueryModuleAccountBalancesResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -82,6 +86,7 @@ class QueryModuleAccountBalancesResponse(google.protobuf.message.Message):
 
 global___QueryModuleAccountBalancesResponse = QueryModuleAccountBalancesResponse
 
+@typing_extensions.final
 class QueryCirculatingSupplies(google.protobuf.message.Message):
     """---------------------------------------- CirculatingSupplies
 
@@ -97,6 +102,7 @@ class QueryCirculatingSupplies(google.protobuf.message.Message):
 
 global___QueryCirculatingSupplies = QueryCirculatingSupplies
 
+@typing_extensions.final
 class QueryCirculatingSuppliesResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -117,6 +123,7 @@ class QueryCirculatingSuppliesResponse(google.protobuf.message.Message):
 
 global___QueryCirculatingSuppliesResponse = QueryCirculatingSuppliesResponse
 
+@typing_extensions.final
 class QueryGovToMintStable(google.protobuf.message.Message):
     """---------------------------------------- GovToMintStable
 
@@ -138,6 +145,7 @@ class QueryGovToMintStable(google.protobuf.message.Message):
 
 global___QueryGovToMintStable = QueryGovToMintStable
 
+@typing_extensions.final
 class QueryGovToMintStableResponse(google.protobuf.message.Message):
     """QueryGovToMintStableResponse is the response type for 'QueryGovToMintStable'"""
 
@@ -156,6 +164,7 @@ class QueryGovToMintStableResponse(google.protobuf.message.Message):
 
 global___QueryGovToMintStableResponse = QueryGovToMintStableResponse
 
+@typing_extensions.final
 class LiquidityRatioInfo(google.protobuf.message.Message):
     """---------------------------------------- Liquidity Ratio Info"""
 
@@ -178,6 +187,7 @@ class LiquidityRatioInfo(google.protobuf.message.Message):
 
 global___LiquidityRatioInfo = LiquidityRatioInfo
 
+@typing_extensions.final
 class QueryLiquidityRatioInfoRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -187,6 +197,7 @@ class QueryLiquidityRatioInfoRequest(google.protobuf.message.Message):
 
 global___QueryLiquidityRatioInfoRequest = QueryLiquidityRatioInfoRequest
 
+@typing_extensions.final
 class QueryLiquidityRatioInfoResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

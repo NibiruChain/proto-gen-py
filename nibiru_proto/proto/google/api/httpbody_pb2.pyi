@@ -30,6 +30,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class HttpBody(google.protobuf.message.Message):
     """Message that represents an arbitrary HTTP body. It should only be used for
     payload formats that can't be represented as JSON, such as raw binary or

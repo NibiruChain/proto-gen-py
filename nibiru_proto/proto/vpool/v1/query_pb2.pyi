@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryReserveAssetsRequest(google.protobuf.message.Message):
     """---------------------------------------- QueryReserveAssets"""
 
@@ -34,6 +35,7 @@ class QueryReserveAssetsRequest(google.protobuf.message.Message):
 
 global___QueryReserveAssetsRequest = QueryReserveAssetsRequest
 
+@typing_extensions.final
 class QueryReserveAssetsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -53,6 +55,7 @@ class QueryReserveAssetsResponse(google.protobuf.message.Message):
 
 global___QueryReserveAssetsResponse = QueryReserveAssetsResponse
 
+@typing_extensions.final
 class QueryAllPoolsRequest(google.protobuf.message.Message):
     """---------------------------------------- QueryAllPools"""
 
@@ -64,6 +67,7 @@ class QueryAllPoolsRequest(google.protobuf.message.Message):
 
 global___QueryAllPoolsRequest = QueryAllPoolsRequest
 
+@typing_extensions.final
 class QueryAllPoolsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -83,6 +87,7 @@ class QueryAllPoolsResponse(google.protobuf.message.Message):
 
 global___QueryAllPoolsResponse = QueryAllPoolsResponse
 
+@typing_extensions.final
 class QueryBaseAssetPriceRequest(google.protobuf.message.Message):
     """---------------------------------------- BaseAssetPrice"""
 
@@ -106,6 +111,7 @@ class QueryBaseAssetPriceRequest(google.protobuf.message.Message):
 
 global___QueryBaseAssetPriceRequest = QueryBaseAssetPriceRequest
 
+@typing_extensions.final
 class QueryBaseAssetPriceResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

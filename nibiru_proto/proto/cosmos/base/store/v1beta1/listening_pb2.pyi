@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class StoreKVPair(google.protobuf.message.Message):
     """StoreKVPair is a KVStore KVPair used for listening to state changes (Sets and Deletes)
     It optionally includes the StoreKey for the originating KVStore and a Boolean flag to distinguish between Sets and

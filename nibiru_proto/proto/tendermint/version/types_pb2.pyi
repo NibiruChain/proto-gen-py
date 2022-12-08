@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class App(google.protobuf.message.Message):
     """App includes the protocol and software version for the application.
     This information is included in ResponseInfo. The App.Protocol can be
@@ -36,6 +37,7 @@ class App(google.protobuf.message.Message):
 
 global___App = App
 
+@typing_extensions.final
 class Consensus(google.protobuf.message.Message):
     """Consensus captures the consensus rules for processing a block in the blockchain,
     including all blockchain data structures and the rules of the application's

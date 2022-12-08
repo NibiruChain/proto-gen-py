@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgSubmitEvidence(google.protobuf.message.Message):
     """MsgSubmitEvidence represents a message that supports submitting arbitrary
     Evidence of misbehavior such as equivocation or counterfactual signing.
@@ -38,6 +39,7 @@ class MsgSubmitEvidence(google.protobuf.message.Message):
 
 global___MsgSubmitEvidence = MsgSubmitEvidence
 
+@typing_extensions.final
 class MsgSubmitEvidenceResponse(google.protobuf.message.Message):
     """MsgSubmitEvidenceResponse defines the Msg/SubmitEvidence response type."""
 

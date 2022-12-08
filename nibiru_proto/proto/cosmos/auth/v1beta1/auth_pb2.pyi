@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class BaseAccount(google.protobuf.message.Message):
     """BaseAccount defines a base account type. It contains all the necessary fields
     for basic account functionality. Any custom account type should extend this
@@ -47,6 +48,7 @@ class BaseAccount(google.protobuf.message.Message):
 
 global___BaseAccount = BaseAccount
 
+@typing_extensions.final
 class ModuleAccount(google.protobuf.message.Message):
     """ModuleAccount defines an account for modules that holds coins on a pool."""
 
@@ -72,6 +74,7 @@ class ModuleAccount(google.protobuf.message.Message):
 
 global___ModuleAccount = ModuleAccount
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the auth module."""
 

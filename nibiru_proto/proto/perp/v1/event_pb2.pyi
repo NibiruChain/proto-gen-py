@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PositionChangedEvent(google.protobuf.message.Message):
     """Emitted when a position changes.
     TODO: Is there a way to split this into different events without creating too much complexity?
@@ -115,6 +116,7 @@ class PositionChangedEvent(google.protobuf.message.Message):
 
 global___PositionChangedEvent = PositionChangedEvent
 
+@typing_extensions.final
 class PositionLiquidatedEvent(google.protobuf.message.Message):
     """Emitted when a position is liquidated."""
 
@@ -193,6 +195,7 @@ class PositionLiquidatedEvent(google.protobuf.message.Message):
 
 global___PositionLiquidatedEvent = PositionLiquidatedEvent
 
+@typing_extensions.final
 class PositionSettledEvent(google.protobuf.message.Message):
     """Emitted when a position is settled."""
 
@@ -219,6 +222,7 @@ class PositionSettledEvent(google.protobuf.message.Message):
 
 global___PositionSettledEvent = PositionSettledEvent
 
+@typing_extensions.final
 class FundingRateChangedEvent(google.protobuf.message.Message):
     """Emitted when a new funding rate is calculated."""
 
@@ -267,6 +271,7 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
 
 global___FundingRateChangedEvent = FundingRateChangedEvent
 
+@typing_extensions.final
 class MetricsEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

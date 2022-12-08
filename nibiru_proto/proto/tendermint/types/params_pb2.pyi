@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ConsensusParams(google.protobuf.message.Message):
     """ConsensusParams contains consensus critical parameters that determine the
     validity of blocks.
@@ -49,6 +50,7 @@ class ConsensusParams(google.protobuf.message.Message):
 
 global___ConsensusParams = ConsensusParams
 
+@typing_extensions.final
 class BlockParams(google.protobuf.message.Message):
     """BlockParams contains limits on the block size."""
 
@@ -82,6 +84,7 @@ class BlockParams(google.protobuf.message.Message):
 
 global___BlockParams = BlockParams
 
+@typing_extensions.final
 class EvidenceParams(google.protobuf.message.Message):
     """EvidenceParams determine how we handle evidence of malfeasance."""
 
@@ -121,6 +124,7 @@ class EvidenceParams(google.protobuf.message.Message):
 
 global___EvidenceParams = EvidenceParams
 
+@typing_extensions.final
 class ValidatorParams(google.protobuf.message.Message):
     """ValidatorParams restrict the public key types validators can use.
     NOTE: uses ABCI pubkey naming, not Amino names.
@@ -140,6 +144,7 @@ class ValidatorParams(google.protobuf.message.Message):
 
 global___ValidatorParams = ValidatorParams
 
+@typing_extensions.final
 class VersionParams(google.protobuf.message.Message):
     """VersionParams contains the ABCI application version."""
 
@@ -156,6 +161,7 @@ class VersionParams(google.protobuf.message.Message):
 
 global___VersionParams = VersionParams
 
+@typing_extensions.final
 class HashedParams(google.protobuf.message.Message):
     """HashedParams is a subset of ConsensusParams.
 

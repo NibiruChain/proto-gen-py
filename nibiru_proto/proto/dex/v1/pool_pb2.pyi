@@ -23,7 +23,7 @@ class _PoolType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PoolTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PoolType.ValueType], builtins.type):  # noqa: F821
+class _PoolTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PoolType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     BALANCER: _PoolType.ValueType  # 0
     STABLESWAP: _PoolType.ValueType  # 1
@@ -37,6 +37,7 @@ BALANCER: PoolType.ValueType  # 0
 STABLESWAP: PoolType.ValueType  # 1
 global___PoolType = PoolType
 
+@typing_extensions.final
 class PoolParams(google.protobuf.message.Message):
     """Configuration parameters for the pool."""
 
@@ -67,6 +68,7 @@ class PoolParams(google.protobuf.message.Message):
 
 global___PoolParams = PoolParams
 
+@typing_extensions.final
 class PoolAsset(google.protobuf.message.Message):
     """Which assets the pool contains."""
 
@@ -92,6 +94,7 @@ class PoolAsset(google.protobuf.message.Message):
 
 global___PoolAsset = PoolAsset
 
+@typing_extensions.final
 class Pool(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

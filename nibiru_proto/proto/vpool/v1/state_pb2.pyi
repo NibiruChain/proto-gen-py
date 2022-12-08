@@ -21,7 +21,7 @@ class _Direction:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DirectionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Direction.ValueType], builtins.type):  # noqa: F821
+class _DirectionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Direction.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DIRECTION_UNSPECIFIED: _Direction.ValueType  # 0
     ADD_TO_POOL: _Direction.ValueType  # 1
@@ -38,7 +38,7 @@ class _TwapCalcOption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _TwapCalcOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TwapCalcOption.ValueType], builtins.type):  # noqa: F821
+class _TwapCalcOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TwapCalcOption.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     TWAP_CALC_OPTION_UNSPECIFIED: _TwapCalcOption.ValueType  # 0
     SPOT: _TwapCalcOption.ValueType  # 1
@@ -60,6 +60,7 @@ BASE_ASSET_SWAP: TwapCalcOption.ValueType  # 3
 """Swapping with base assets, output denominated in quote assets"""
 global___TwapCalcOption = TwapCalcOption
 
+@typing_extensions.final
 class Vpool(google.protobuf.message.Message):
     """A virtual pool used only for price discovery of perpetual futures contracts.
     No real liquidity exists in this pool.
@@ -93,6 +94,7 @@ class Vpool(google.protobuf.message.Message):
 
 global___Vpool = Vpool
 
+@typing_extensions.final
 class VpoolConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -124,6 +126,7 @@ class VpoolConfig(google.protobuf.message.Message):
 
 global___VpoolConfig = VpoolConfig
 
+@typing_extensions.final
 class CurrentTWAP(google.protobuf.message.Message):
     """CurrentTWAP states defines the numerator and denominator for the TWAP calculation"""
 
@@ -149,6 +152,7 @@ class CurrentTWAP(google.protobuf.message.Message):
 
 global___CurrentTWAP = CurrentTWAP
 
+@typing_extensions.final
 class ReserveSnapshot(google.protobuf.message.Message):
     """a snapshot of the vpool's reserves at a given point in time"""
 
@@ -178,6 +182,7 @@ class ReserveSnapshot(google.protobuf.message.Message):
 
 global___ReserveSnapshot = ReserveSnapshot
 
+@typing_extensions.final
 class PoolPrices(google.protobuf.message.Message):
     """PoolPrices is a simple structure that displays a snapshot of the mark and index
     prices for an asset. Empty strings for the indexPrice or twapMark fields 

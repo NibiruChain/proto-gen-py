@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PubKey(google.protobuf.message.Message):
     """PubKey defines a secp256r1 ECDSA public key."""
 
@@ -33,6 +34,7 @@ class PubKey(google.protobuf.message.Message):
 
 global___PubKey = PubKey
 
+@typing_extensions.final
 class PrivKey(google.protobuf.message.Message):
     """PrivKey defines a secp256r1 ECDSA private key."""
 

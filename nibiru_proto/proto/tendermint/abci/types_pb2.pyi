@@ -27,7 +27,7 @@ class _CheckTxType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CheckTxTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CheckTxType.ValueType], builtins.type):  # noqa: F821
+class _CheckTxTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CheckTxType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NEW: _CheckTxType.ValueType  # 0
     RECHECK: _CheckTxType.ValueType  # 1
@@ -42,7 +42,7 @@ class _EvidenceType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _EvidenceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EvidenceType.ValueType], builtins.type):  # noqa: F821
+class _EvidenceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EvidenceType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN: _EvidenceType.ValueType  # 0
     DUPLICATE_VOTE: _EvidenceType.ValueType  # 1
@@ -55,6 +55,7 @@ DUPLICATE_VOTE: EvidenceType.ValueType  # 1
 LIGHT_CLIENT_ATTACK: EvidenceType.ValueType  # 2
 global___EvidenceType = EvidenceType
 
+@typing_extensions.final
 class Request(google.protobuf.message.Message):
     """----------------------------------------
     Request types
@@ -132,6 +133,7 @@ class Request(google.protobuf.message.Message):
 
 global___Request = Request
 
+@typing_extensions.final
 class RequestEcho(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -146,6 +148,7 @@ class RequestEcho(google.protobuf.message.Message):
 
 global___RequestEcho = RequestEcho
 
+@typing_extensions.final
 class RequestFlush(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -155,6 +158,7 @@ class RequestFlush(google.protobuf.message.Message):
 
 global___RequestFlush = RequestFlush
 
+@typing_extensions.final
 class RequestInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -175,6 +179,7 @@ class RequestInfo(google.protobuf.message.Message):
 
 global___RequestInfo = RequestInfo
 
+@typing_extensions.final
 class RequestSetOption(google.protobuf.message.Message):
     """nondeterministic"""
 
@@ -194,6 +199,7 @@ class RequestSetOption(google.protobuf.message.Message):
 
 global___RequestSetOption = RequestSetOption
 
+@typing_extensions.final
 class RequestInitChain(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -227,6 +233,7 @@ class RequestInitChain(google.protobuf.message.Message):
 
 global___RequestInitChain = RequestInitChain
 
+@typing_extensions.final
 class RequestQuery(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -250,6 +257,7 @@ class RequestQuery(google.protobuf.message.Message):
 
 global___RequestQuery = RequestQuery
 
+@typing_extensions.final
 class RequestBeginBlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -277,6 +285,7 @@ class RequestBeginBlock(google.protobuf.message.Message):
 
 global___RequestBeginBlock = RequestBeginBlock
 
+@typing_extensions.final
 class RequestCheckTx(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -294,6 +303,7 @@ class RequestCheckTx(google.protobuf.message.Message):
 
 global___RequestCheckTx = RequestCheckTx
 
+@typing_extensions.final
 class RequestDeliverTx(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -308,6 +318,7 @@ class RequestDeliverTx(google.protobuf.message.Message):
 
 global___RequestDeliverTx = RequestDeliverTx
 
+@typing_extensions.final
 class RequestEndBlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -322,6 +333,7 @@ class RequestEndBlock(google.protobuf.message.Message):
 
 global___RequestEndBlock = RequestEndBlock
 
+@typing_extensions.final
 class RequestCommit(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -331,6 +343,7 @@ class RequestCommit(google.protobuf.message.Message):
 
 global___RequestCommit = RequestCommit
 
+@typing_extensions.final
 class RequestListSnapshots(google.protobuf.message.Message):
     """lists available snapshots"""
 
@@ -342,6 +355,7 @@ class RequestListSnapshots(google.protobuf.message.Message):
 
 global___RequestListSnapshots = RequestListSnapshots
 
+@typing_extensions.final
 class RequestOfferSnapshot(google.protobuf.message.Message):
     """offers a snapshot to the application"""
 
@@ -365,6 +379,7 @@ class RequestOfferSnapshot(google.protobuf.message.Message):
 
 global___RequestOfferSnapshot = RequestOfferSnapshot
 
+@typing_extensions.final
 class RequestLoadSnapshotChunk(google.protobuf.message.Message):
     """loads a snapshot chunk"""
 
@@ -387,6 +402,7 @@ class RequestLoadSnapshotChunk(google.protobuf.message.Message):
 
 global___RequestLoadSnapshotChunk = RequestLoadSnapshotChunk
 
+@typing_extensions.final
 class RequestApplySnapshotChunk(google.protobuf.message.Message):
     """Applies a snapshot chunk"""
 
@@ -409,6 +425,7 @@ class RequestApplySnapshotChunk(google.protobuf.message.Message):
 
 global___RequestApplySnapshotChunk = RequestApplySnapshotChunk
 
+@typing_extensions.final
 class Response(google.protobuf.message.Message):
     """----------------------------------------
     Response types
@@ -490,6 +507,7 @@ class Response(google.protobuf.message.Message):
 
 global___Response = Response
 
+@typing_extensions.final
 class ResponseException(google.protobuf.message.Message):
     """nondeterministic"""
 
@@ -506,6 +524,7 @@ class ResponseException(google.protobuf.message.Message):
 
 global___ResponseException = ResponseException
 
+@typing_extensions.final
 class ResponseEcho(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -520,6 +539,7 @@ class ResponseEcho(google.protobuf.message.Message):
 
 global___ResponseEcho = ResponseEcho
 
+@typing_extensions.final
 class ResponseFlush(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -529,6 +549,7 @@ class ResponseFlush(google.protobuf.message.Message):
 
 global___ResponseFlush = ResponseFlush
 
+@typing_extensions.final
 class ResponseInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -555,6 +576,7 @@ class ResponseInfo(google.protobuf.message.Message):
 
 global___ResponseInfo = ResponseInfo
 
+@typing_extensions.final
 class ResponseSetOption(google.protobuf.message.Message):
     """nondeterministic"""
 
@@ -578,6 +600,7 @@ class ResponseSetOption(google.protobuf.message.Message):
 
 global___ResponseSetOption = ResponseSetOption
 
+@typing_extensions.final
 class ResponseInitChain(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -601,6 +624,7 @@ class ResponseInitChain(google.protobuf.message.Message):
 
 global___ResponseInitChain = ResponseInitChain
 
+@typing_extensions.final
 class ResponseQuery(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -645,6 +669,7 @@ class ResponseQuery(google.protobuf.message.Message):
 
 global___ResponseQuery = ResponseQuery
 
+@typing_extensions.final
 class ResponseBeginBlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -660,6 +685,7 @@ class ResponseBeginBlock(google.protobuf.message.Message):
 
 global___ResponseBeginBlock = ResponseBeginBlock
 
+@typing_extensions.final
 class ResponseCheckTx(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -710,6 +736,7 @@ class ResponseCheckTx(google.protobuf.message.Message):
 
 global___ResponseCheckTx = ResponseCheckTx
 
+@typing_extensions.final
 class ResponseDeliverTx(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -749,6 +776,7 @@ class ResponseDeliverTx(google.protobuf.message.Message):
 
 global___ResponseDeliverTx = ResponseDeliverTx
 
+@typing_extensions.final
 class ResponseEndBlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -773,6 +801,7 @@ class ResponseEndBlock(google.protobuf.message.Message):
 
 global___ResponseEndBlock = ResponseEndBlock
 
+@typing_extensions.final
 class ResponseCommit(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -791,6 +820,7 @@ class ResponseCommit(google.protobuf.message.Message):
 
 global___ResponseCommit = ResponseCommit
 
+@typing_extensions.final
 class ResponseListSnapshots(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -806,6 +836,7 @@ class ResponseListSnapshots(google.protobuf.message.Message):
 
 global___ResponseListSnapshots = ResponseListSnapshots
 
+@typing_extensions.final
 class ResponseOfferSnapshot(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -853,6 +884,7 @@ class ResponseOfferSnapshot(google.protobuf.message.Message):
 
 global___ResponseOfferSnapshot = ResponseOfferSnapshot
 
+@typing_extensions.final
 class ResponseLoadSnapshotChunk(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -867,6 +899,7 @@ class ResponseLoadSnapshotChunk(google.protobuf.message.Message):
 
 global___ResponseLoadSnapshotChunk = ResponseLoadSnapshotChunk
 
+@typing_extensions.final
 class ResponseApplySnapshotChunk(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -924,6 +957,7 @@ class ResponseApplySnapshotChunk(google.protobuf.message.Message):
 
 global___ResponseApplySnapshotChunk = ResponseApplySnapshotChunk
 
+@typing_extensions.final
 class ConsensusParams(google.protobuf.message.Message):
     """----------------------------------------
     Misc.
@@ -959,6 +993,7 @@ class ConsensusParams(google.protobuf.message.Message):
 
 global___ConsensusParams = ConsensusParams
 
+@typing_extensions.final
 class BlockParams(google.protobuf.message.Message):
     """BlockParams contains limits on the block size."""
 
@@ -980,6 +1015,7 @@ class BlockParams(google.protobuf.message.Message):
 
 global___BlockParams = BlockParams
 
+@typing_extensions.final
 class LastCommitInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -998,6 +1034,7 @@ class LastCommitInfo(google.protobuf.message.Message):
 
 global___LastCommitInfo = LastCommitInfo
 
+@typing_extensions.final
 class Event(google.protobuf.message.Message):
     """Event allows application developers to attach additional information to
     ResponseBeginBlock, ResponseEndBlock, ResponseCheckTx and ResponseDeliverTx.
@@ -1021,6 +1058,7 @@ class Event(google.protobuf.message.Message):
 
 global___Event = Event
 
+@typing_extensions.final
 class EventAttribute(google.protobuf.message.Message):
     """EventAttribute is a single key-value pair, associated with an event."""
 
@@ -1044,6 +1082,7 @@ class EventAttribute(google.protobuf.message.Message):
 
 global___EventAttribute = EventAttribute
 
+@typing_extensions.final
 class TxResult(google.protobuf.message.Message):
     """TxResult contains results of executing the transaction.
 
@@ -1074,6 +1113,7 @@ class TxResult(google.protobuf.message.Message):
 
 global___TxResult = TxResult
 
+@typing_extensions.final
 class Validator(google.protobuf.message.Message):
     """----------------------------------------
     Blockchain Types
@@ -1101,6 +1141,7 @@ class Validator(google.protobuf.message.Message):
 
 global___Validator = Validator
 
+@typing_extensions.final
 class ValidatorUpdate(google.protobuf.message.Message):
     """ValidatorUpdate"""
 
@@ -1122,6 +1163,7 @@ class ValidatorUpdate(google.protobuf.message.Message):
 
 global___ValidatorUpdate = ValidatorUpdate
 
+@typing_extensions.final
 class VoteInfo(google.protobuf.message.Message):
     """VoteInfo"""
 
@@ -1143,6 +1185,7 @@ class VoteInfo(google.protobuf.message.Message):
 
 global___VoteInfo = VoteInfo
 
+@typing_extensions.final
 class Evidence(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1179,6 +1222,7 @@ class Evidence(google.protobuf.message.Message):
 
 global___Evidence = Evidence
 
+@typing_extensions.final
 class Snapshot(google.protobuf.message.Message):
     """----------------------------------------
     State Sync Types

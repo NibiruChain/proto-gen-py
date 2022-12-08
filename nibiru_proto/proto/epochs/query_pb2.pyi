@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryEpochsInfoRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -26,6 +27,7 @@ class QueryEpochsInfoRequest(google.protobuf.message.Message):
 
 global___QueryEpochsInfoRequest = QueryEpochsInfoRequest
 
+@typing_extensions.final
 class QueryEpochsInfoResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -41,6 +43,7 @@ class QueryEpochsInfoResponse(google.protobuf.message.Message):
 
 global___QueryEpochsInfoResponse = QueryEpochsInfoResponse
 
+@typing_extensions.final
 class QueryCurrentEpochRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -55,6 +58,7 @@ class QueryCurrentEpochRequest(google.protobuf.message.Message):
 
 global___QueryCurrentEpochRequest = QueryCurrentEpochRequest
 
+@typing_extensions.final
 class QueryCurrentEpochResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ListAllInterfacesRequest(google.protobuf.message.Message):
     """ListAllInterfacesRequest is the request type of the ListAllInterfaces RPC."""
 
@@ -27,6 +28,7 @@ class ListAllInterfacesRequest(google.protobuf.message.Message):
 
 global___ListAllInterfacesRequest = ListAllInterfacesRequest
 
+@typing_extensions.final
 class ListAllInterfacesResponse(google.protobuf.message.Message):
     """ListAllInterfacesResponse is the response type of the ListAllInterfaces RPC."""
 
@@ -45,6 +47,7 @@ class ListAllInterfacesResponse(google.protobuf.message.Message):
 
 global___ListAllInterfacesResponse = ListAllInterfacesResponse
 
+@typing_extensions.final
 class ListImplementationsRequest(google.protobuf.message.Message):
     """ListImplementationsRequest is the request type of the ListImplementations
     RPC.
@@ -64,6 +67,7 @@ class ListImplementationsRequest(google.protobuf.message.Message):
 
 global___ListImplementationsRequest = ListImplementationsRequest
 
+@typing_extensions.final
 class ListImplementationsResponse(google.protobuf.message.Message):
     """ListImplementationsResponse is the response type of the ListImplementations
     RPC.

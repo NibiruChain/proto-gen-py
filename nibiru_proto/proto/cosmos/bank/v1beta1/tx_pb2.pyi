@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgSend(google.protobuf.message.Message):
     """MsgSend represents a message to send coins from one account to another."""
 
@@ -41,6 +42,7 @@ class MsgSend(google.protobuf.message.Message):
 
 global___MsgSend = MsgSend
 
+@typing_extensions.final
 class MsgSendResponse(google.protobuf.message.Message):
     """MsgSendResponse defines the Msg/Send response type."""
 
@@ -52,6 +54,7 @@ class MsgSendResponse(google.protobuf.message.Message):
 
 global___MsgSendResponse = MsgSendResponse
 
+@typing_extensions.final
 class MsgMultiSend(google.protobuf.message.Message):
     """MsgMultiSend represents an arbitrary multi-in, multi-out send message."""
 
@@ -73,6 +76,7 @@ class MsgMultiSend(google.protobuf.message.Message):
 
 global___MsgMultiSend = MsgMultiSend
 
+@typing_extensions.final
 class MsgMultiSendResponse(google.protobuf.message.Message):
     """MsgMultiSendResponse defines the Msg/MultiSend response type."""
 

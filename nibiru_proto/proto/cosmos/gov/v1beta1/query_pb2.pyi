@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryProposalRequest(google.protobuf.message.Message):
     """QueryProposalRequest is the request type for the Query/Proposal RPC method."""
 
@@ -35,6 +36,7 @@ class QueryProposalRequest(google.protobuf.message.Message):
 
 global___QueryProposalRequest = QueryProposalRequest
 
+@typing_extensions.final
 class QueryProposalResponse(google.protobuf.message.Message):
     """QueryProposalResponse is the response type for the Query/Proposal RPC method."""
 
@@ -53,6 +55,7 @@ class QueryProposalResponse(google.protobuf.message.Message):
 
 global___QueryProposalResponse = QueryProposalResponse
 
+@typing_extensions.final
 class QueryProposalsRequest(google.protobuf.message.Message):
     """QueryProposalsRequest is the request type for the Query/Proposals RPC method."""
 
@@ -84,6 +87,7 @@ class QueryProposalsRequest(google.protobuf.message.Message):
 
 global___QueryProposalsRequest = QueryProposalsRequest
 
+@typing_extensions.final
 class QueryProposalsResponse(google.protobuf.message.Message):
     """QueryProposalsResponse is the response type for the Query/Proposals RPC
     method.
@@ -109,6 +113,7 @@ class QueryProposalsResponse(google.protobuf.message.Message):
 
 global___QueryProposalsResponse = QueryProposalsResponse
 
+@typing_extensions.final
 class QueryVoteRequest(google.protobuf.message.Message):
     """QueryVoteRequest is the request type for the Query/Vote RPC method."""
 
@@ -130,6 +135,7 @@ class QueryVoteRequest(google.protobuf.message.Message):
 
 global___QueryVoteRequest = QueryVoteRequest
 
+@typing_extensions.final
 class QueryVoteResponse(google.protobuf.message.Message):
     """QueryVoteResponse is the response type for the Query/Vote RPC method."""
 
@@ -149,6 +155,7 @@ class QueryVoteResponse(google.protobuf.message.Message):
 
 global___QueryVoteResponse = QueryVoteResponse
 
+@typing_extensions.final
 class QueryVotesRequest(google.protobuf.message.Message):
     """QueryVotesRequest is the request type for the Query/Votes RPC method."""
 
@@ -172,6 +179,7 @@ class QueryVotesRequest(google.protobuf.message.Message):
 
 global___QueryVotesRequest = QueryVotesRequest
 
+@typing_extensions.final
 class QueryVotesResponse(google.protobuf.message.Message):
     """QueryVotesResponse is the response type for the Query/Votes RPC method."""
 
@@ -196,6 +204,7 @@ class QueryVotesResponse(google.protobuf.message.Message):
 
 global___QueryVotesResponse = QueryVotesResponse
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method."""
 
@@ -215,6 +224,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method."""
 
@@ -244,6 +254,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryDepositRequest(google.protobuf.message.Message):
     """QueryDepositRequest is the request type for the Query/Deposit RPC method."""
 
@@ -265,6 +276,7 @@ class QueryDepositRequest(google.protobuf.message.Message):
 
 global___QueryDepositRequest = QueryDepositRequest
 
+@typing_extensions.final
 class QueryDepositResponse(google.protobuf.message.Message):
     """QueryDepositResponse is the response type for the Query/Deposit RPC method."""
 
@@ -284,6 +296,7 @@ class QueryDepositResponse(google.protobuf.message.Message):
 
 global___QueryDepositResponse = QueryDepositResponse
 
+@typing_extensions.final
 class QueryDepositsRequest(google.protobuf.message.Message):
     """QueryDepositsRequest is the request type for the Query/Deposits RPC method."""
 
@@ -307,6 +320,7 @@ class QueryDepositsRequest(google.protobuf.message.Message):
 
 global___QueryDepositsRequest = QueryDepositsRequest
 
+@typing_extensions.final
 class QueryDepositsResponse(google.protobuf.message.Message):
     """QueryDepositsResponse is the response type for the Query/Deposits RPC method."""
 
@@ -330,6 +344,7 @@ class QueryDepositsResponse(google.protobuf.message.Message):
 
 global___QueryDepositsResponse = QueryDepositsResponse
 
+@typing_extensions.final
 class QueryTallyResultRequest(google.protobuf.message.Message):
     """QueryTallyResultRequest is the request type for the Query/Tally RPC method."""
 
@@ -347,6 +362,7 @@ class QueryTallyResultRequest(google.protobuf.message.Message):
 
 global___QueryTallyResultRequest = QueryTallyResultRequest
 
+@typing_extensions.final
 class QueryTallyResultResponse(google.protobuf.message.Message):
     """QueryTallyResultResponse is the response type for the Query/Tally RPC method."""
 

@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the bank module."""
 
@@ -37,6 +38,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class SendEnabled(google.protobuf.message.Message):
     """SendEnabled maps coin denom to a send_enabled status (whether a denom is
     sendable).
@@ -58,6 +60,7 @@ class SendEnabled(google.protobuf.message.Message):
 
 global___SendEnabled = SendEnabled
 
+@typing_extensions.final
 class Input(google.protobuf.message.Message):
     """Input models transaction input."""
 
@@ -78,6 +81,7 @@ class Input(google.protobuf.message.Message):
 
 global___Input = Input
 
+@typing_extensions.final
 class Output(google.protobuf.message.Message):
     """Output models transaction outputs."""
 
@@ -98,6 +102,7 @@ class Output(google.protobuf.message.Message):
 
 global___Output = Output
 
+@typing_extensions.final
 class Supply(google.protobuf.message.Message):
     """Supply represents a struct that passively keeps track of the total supply
     amounts in the network.
@@ -118,6 +123,7 @@ class Supply(google.protobuf.message.Message):
 
 global___Supply = Supply
 
+@typing_extensions.final
 class DenomUnit(google.protobuf.message.Message):
     """DenomUnit represents a struct that describes a given
     denomination unit of the basic token.
@@ -151,6 +157,7 @@ class DenomUnit(google.protobuf.message.Message):
 
 global___DenomUnit = DenomUnit
 
+@typing_extensions.final
 class Metadata(google.protobuf.message.Message):
     """Metadata represents a struct that describes
     a basic token.

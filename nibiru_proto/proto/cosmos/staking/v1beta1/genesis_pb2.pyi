@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the staking module's genesis state."""
 
@@ -72,6 +73,7 @@ class GenesisState(google.protobuf.message.Message):
 
 global___GenesisState = GenesisState
 
+@typing_extensions.final
 class LastValidatorPower(google.protobuf.message.Message):
     """LastValidatorPower required for validator set update logic."""
 

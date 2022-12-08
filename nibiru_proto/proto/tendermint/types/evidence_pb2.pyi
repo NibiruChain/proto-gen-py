@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Evidence(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -40,6 +41,7 @@ class Evidence(google.protobuf.message.Message):
 
 global___Evidence = Evidence
 
+@typing_extensions.final
 class DuplicateVoteEvidence(google.protobuf.message.Message):
     """DuplicateVoteEvidence contains evidence of a validator signed two conflicting votes."""
 
@@ -72,6 +74,7 @@ class DuplicateVoteEvidence(google.protobuf.message.Message):
 
 global___DuplicateVoteEvidence = DuplicateVoteEvidence
 
+@typing_extensions.final
 class LightClientAttackEvidence(google.protobuf.message.Message):
     """LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client."""
 
@@ -104,6 +107,7 @@ class LightClientAttackEvidence(google.protobuf.message.Message):
 
 global___LightClientAttackEvidence = LightClientAttackEvidence
 
+@typing_extensions.final
 class EvidenceList(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

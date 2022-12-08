@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MultiSignature(google.protobuf.message.Message):
     """MultiSignature wraps the signatures from a multisig.LegacyAminoPubKey.
     See cosmos.tx.v1betata1.ModeInfo.Multi for how to specify which signers
@@ -36,6 +37,7 @@ class MultiSignature(google.protobuf.message.Message):
 
 global___MultiSignature = MultiSignature
 
+@typing_extensions.final
 class CompactBitArray(google.protobuf.message.Message):
     """CompactBitArray is an implementation of a space efficient bit array.
     This is used to ensure that the encoded data takes up a minimal amount of

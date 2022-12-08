@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgRemoveMargin(google.protobuf.message.Message):
     """-------------------------- RemoveMargin --------------------------
 
@@ -45,6 +46,7 @@ class MsgRemoveMargin(google.protobuf.message.Message):
 
 global___MsgRemoveMargin = MsgRemoveMargin
 
+@typing_extensions.final
 class MsgRemoveMarginResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -71,6 +73,7 @@ class MsgRemoveMarginResponse(google.protobuf.message.Message):
 
 global___MsgRemoveMarginResponse = MsgRemoveMarginResponse
 
+@typing_extensions.final
 class MsgAddMargin(google.protobuf.message.Message):
     """-------------------------- AddMargin --------------------------
 
@@ -98,6 +101,7 @@ class MsgAddMargin(google.protobuf.message.Message):
 
 global___MsgAddMargin = MsgAddMargin
 
+@typing_extensions.final
 class MsgAddMarginResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -117,6 +121,7 @@ class MsgAddMarginResponse(google.protobuf.message.Message):
 
 global___MsgAddMarginResponse = MsgAddMarginResponse
 
+@typing_extensions.final
 class MsgLiquidate(google.protobuf.message.Message):
     """-------------------------- Liquidate --------------------------"""
 
@@ -142,6 +147,7 @@ class MsgLiquidate(google.protobuf.message.Message):
 
 global___MsgLiquidate = MsgLiquidate
 
+@typing_extensions.final
 class MsgLiquidateResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -162,9 +168,11 @@ class MsgLiquidateResponse(google.protobuf.message.Message):
 
 global___MsgLiquidateResponse = MsgLiquidateResponse
 
+@typing_extensions.final
 class MsgMultiLiquidate(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class MultiLiquidation(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -195,9 +203,11 @@ class MsgMultiLiquidate(google.protobuf.message.Message):
 
 global___MsgMultiLiquidate = MsgMultiLiquidate
 
+@typing_extensions.final
 class MsgMultiLiquidateResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class MultiLiquidateResponse(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -228,6 +238,7 @@ class MsgMultiLiquidateResponse(google.protobuf.message.Message):
 
 global___MsgMultiLiquidateResponse = MsgMultiLiquidateResponse
 
+@typing_extensions.final
 class MsgOpenPosition(google.protobuf.message.Message):
     """-------------------------- OpenPosition --------------------------"""
 
@@ -259,6 +270,7 @@ class MsgOpenPosition(google.protobuf.message.Message):
 
 global___MsgOpenPosition = MsgOpenPosition
 
+@typing_extensions.final
 class MsgOpenPositionResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -305,6 +317,7 @@ class MsgOpenPositionResponse(google.protobuf.message.Message):
 
 global___MsgOpenPositionResponse = MsgOpenPositionResponse
 
+@typing_extensions.final
 class MsgClosePosition(google.protobuf.message.Message):
     """-------------------------- ClosePosition --------------------------"""
 
@@ -324,6 +337,7 @@ class MsgClosePosition(google.protobuf.message.Message):
 
 global___MsgClosePosition = MsgClosePosition
 
+@typing_extensions.final
 class MsgClosePositionResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -357,6 +371,7 @@ class MsgClosePositionResponse(google.protobuf.message.Message):
 
 global___MsgClosePositionResponse = MsgClosePositionResponse
 
+@typing_extensions.final
 class MsgDonateToEcosystemFund(google.protobuf.message.Message):
     """-------------------------- DonateToEcosystemFund --------------------------"""
 
@@ -379,6 +394,7 @@ class MsgDonateToEcosystemFund(google.protobuf.message.Message):
 
 global___MsgDonateToEcosystemFund = MsgDonateToEcosystemFund
 
+@typing_extensions.final
 class MsgDonateToEcosystemFundResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

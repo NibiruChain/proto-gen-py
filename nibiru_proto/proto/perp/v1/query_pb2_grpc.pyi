@@ -23,10 +23,11 @@ class QueryStub:
         perp.v1.query_pb2.QueryPositionsRequest,
         perp.v1.query_pb2.QueryPositionsResponse,
     ]
-    FundingRates: grpc.UnaryUnaryMultiCallable[
-        perp.v1.query_pb2.QueryFundingRatesRequest,
-        perp.v1.query_pb2.QueryFundingRatesResponse,
+    CumulativePremiumFraction: grpc.UnaryUnaryMultiCallable[
+        perp.v1.query_pb2.QueryCumulativePremiumFractionRequest,
+        perp.v1.query_pb2.QueryCumulativePremiumFractionResponse,
     ]
+    """Queries the latest cumulative premium fraction and the estimated next cumulative premium fraction."""
     Metrics: grpc.UnaryUnaryMultiCallable[
         perp.v1.query_pb2.QueryMetricsRequest,
         perp.v1.query_pb2.QueryMetricsResponse,
@@ -55,11 +56,12 @@ class QueryServicer(metaclass=abc.ABCMeta):
         context: grpc.ServicerContext,
     ) -> perp.v1.query_pb2.QueryPositionsResponse: ...
     @abc.abstractmethod
-    def FundingRates(
+    def CumulativePremiumFraction(
         self,
-        request: perp.v1.query_pb2.QueryFundingRatesRequest,
+        request: perp.v1.query_pb2.QueryCumulativePremiumFractionRequest,
         context: grpc.ServicerContext,
-    ) -> perp.v1.query_pb2.QueryFundingRatesResponse: ...
+    ) -> perp.v1.query_pb2.QueryCumulativePremiumFractionResponse:
+        """Queries the latest cumulative premium fraction and the estimated next cumulative premium fraction."""
     @abc.abstractmethod
     def Metrics(
         self,

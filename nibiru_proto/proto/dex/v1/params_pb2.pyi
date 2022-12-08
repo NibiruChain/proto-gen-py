@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the module."""
 

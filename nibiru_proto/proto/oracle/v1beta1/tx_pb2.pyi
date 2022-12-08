@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgAggregateExchangeRatePrevote(google.protobuf.message.Message):
     """MsgAggregateExchangeRatePrevote represents a message to submit
     aggregate exchange rate prevote.
@@ -38,6 +39,7 @@ class MsgAggregateExchangeRatePrevote(google.protobuf.message.Message):
 
 global___MsgAggregateExchangeRatePrevote = MsgAggregateExchangeRatePrevote
 
+@typing_extensions.final
 class MsgAggregateExchangeRatePrevoteResponse(google.protobuf.message.Message):
     """MsgAggregateExchangeRatePrevoteResponse defines the Msg/AggregateExchangeRatePrevote response type."""
 
@@ -49,6 +51,7 @@ class MsgAggregateExchangeRatePrevoteResponse(google.protobuf.message.Message):
 
 global___MsgAggregateExchangeRatePrevoteResponse = MsgAggregateExchangeRatePrevoteResponse
 
+@typing_extensions.final
 class MsgAggregateExchangeRateVote(google.protobuf.message.Message):
     """MsgAggregateExchangeRateVote represents a message to submit
     aggregate exchange rate vote.
@@ -76,6 +79,7 @@ class MsgAggregateExchangeRateVote(google.protobuf.message.Message):
 
 global___MsgAggregateExchangeRateVote = MsgAggregateExchangeRateVote
 
+@typing_extensions.final
 class MsgAggregateExchangeRateVoteResponse(google.protobuf.message.Message):
     """MsgAggregateExchangeRateVoteResponse defines the Msg/AggregateExchangeRateVote response type."""
 
@@ -87,6 +91,7 @@ class MsgAggregateExchangeRateVoteResponse(google.protobuf.message.Message):
 
 global___MsgAggregateExchangeRateVoteResponse = MsgAggregateExchangeRateVoteResponse
 
+@typing_extensions.final
 class MsgDelegateFeedConsent(google.protobuf.message.Message):
     """MsgDelegateFeedConsent represents a message to
     delegate oracle voting rights to another address.
@@ -108,6 +113,7 @@ class MsgDelegateFeedConsent(google.protobuf.message.Message):
 
 global___MsgDelegateFeedConsent = MsgDelegateFeedConsent
 
+@typing_extensions.final
 class MsgDelegateFeedConsentResponse(google.protobuf.message.Message):
     """MsgDelegateFeedConsentResponse defines the Msg/DelegateFeedConsent response type."""
 

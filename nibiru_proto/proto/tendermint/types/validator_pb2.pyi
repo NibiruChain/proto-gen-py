@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ValidatorSet(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -40,6 +41,7 @@ class ValidatorSet(google.protobuf.message.Message):
 
 global___ValidatorSet = ValidatorSet
 
+@typing_extensions.final
 class Validator(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -65,6 +67,7 @@ class Validator(google.protobuf.message.Message):
 
 global___Validator = Validator
 
+@typing_extensions.final
 class SimpleValidator(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

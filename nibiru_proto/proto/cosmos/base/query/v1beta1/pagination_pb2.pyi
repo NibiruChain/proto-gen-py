@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PageRequest(google.protobuf.message.Message):
     """PageRequest is to be embedded in gRPC request messages for efficient
     pagination. Ex:
@@ -69,6 +70,7 @@ class PageRequest(google.protobuf.message.Message):
 
 global___PageRequest = PageRequest
 
+@typing_extensions.final
 class PageResponse(google.protobuf.message.Message):
     """PageResponse is to be embedded in gRPC response messages where the
     corresponding request message has used PageRequest.

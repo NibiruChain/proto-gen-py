@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgCreatePool(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -41,6 +42,7 @@ class MsgCreatePool(google.protobuf.message.Message):
 
 global___MsgCreatePool = MsgCreatePool
 
+@typing_extensions.final
 class MsgCreatePoolResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -55,6 +57,7 @@ class MsgCreatePoolResponse(google.protobuf.message.Message):
 
 global___MsgCreatePoolResponse = MsgCreatePoolResponse
 
+@typing_extensions.final
 class MsgJoinPool(google.protobuf.message.Message):
     """
     Message to join a pool (identified by poolId) with a set of tokens to deposit.
@@ -83,6 +86,7 @@ class MsgJoinPool(google.protobuf.message.Message):
 
 global___MsgJoinPool = MsgJoinPool
 
+@typing_extensions.final
 class MsgJoinPoolResponse(google.protobuf.message.Message):
     """
     Response when a user joins a pool.
@@ -114,6 +118,7 @@ class MsgJoinPoolResponse(google.protobuf.message.Message):
 
 global___MsgJoinPoolResponse = MsgJoinPoolResponse
 
+@typing_extensions.final
 class MsgExitPool(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -136,6 +141,7 @@ class MsgExitPool(google.protobuf.message.Message):
 
 global___MsgExitPool = MsgExitPool
 
+@typing_extensions.final
 class MsgExitPoolResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -151,6 +157,7 @@ class MsgExitPoolResponse(google.protobuf.message.Message):
 
 global___MsgExitPoolResponse = MsgExitPoolResponse
 
+@typing_extensions.final
 class MsgSwapAssets(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -176,6 +183,7 @@ class MsgSwapAssets(google.protobuf.message.Message):
 
 global___MsgSwapAssets = MsgSwapAssets
 
+@typing_extensions.final
 class MsgSwapAssetsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

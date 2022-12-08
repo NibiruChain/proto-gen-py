@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the auth module's genesis state."""
 

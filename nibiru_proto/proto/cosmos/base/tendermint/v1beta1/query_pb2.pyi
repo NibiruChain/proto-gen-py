@@ -21,6 +21,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GetValidatorSetByHeightRequest(google.protobuf.message.Message):
     """GetValidatorSetByHeightRequest is the request type for the Query/GetValidatorSetByHeight RPC method."""
 
@@ -43,6 +44,7 @@ class GetValidatorSetByHeightRequest(google.protobuf.message.Message):
 
 global___GetValidatorSetByHeightRequest = GetValidatorSetByHeightRequest
 
+@typing_extensions.final
 class GetValidatorSetByHeightResponse(google.protobuf.message.Message):
     """GetValidatorSetByHeightResponse is the response type for the Query/GetValidatorSetByHeight RPC method."""
 
@@ -69,6 +71,7 @@ class GetValidatorSetByHeightResponse(google.protobuf.message.Message):
 
 global___GetValidatorSetByHeightResponse = GetValidatorSetByHeightResponse
 
+@typing_extensions.final
 class GetLatestValidatorSetRequest(google.protobuf.message.Message):
     """GetLatestValidatorSetRequest is the request type for the Query/GetValidatorSetByHeight RPC method."""
 
@@ -88,6 +91,7 @@ class GetLatestValidatorSetRequest(google.protobuf.message.Message):
 
 global___GetLatestValidatorSetRequest = GetLatestValidatorSetRequest
 
+@typing_extensions.final
 class GetLatestValidatorSetResponse(google.protobuf.message.Message):
     """GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method."""
 
@@ -114,6 +118,7 @@ class GetLatestValidatorSetResponse(google.protobuf.message.Message):
 
 global___GetLatestValidatorSetResponse = GetLatestValidatorSetResponse
 
+@typing_extensions.final
 class Validator(google.protobuf.message.Message):
     """Validator is the type for the validator-set."""
 
@@ -141,6 +146,7 @@ class Validator(google.protobuf.message.Message):
 
 global___Validator = Validator
 
+@typing_extensions.final
 class GetBlockByHeightRequest(google.protobuf.message.Message):
     """GetBlockByHeightRequest is the request type for the Query/GetBlockByHeight RPC method."""
 
@@ -157,6 +163,7 @@ class GetBlockByHeightRequest(google.protobuf.message.Message):
 
 global___GetBlockByHeightRequest = GetBlockByHeightRequest
 
+@typing_extensions.final
 class GetBlockByHeightResponse(google.protobuf.message.Message):
     """GetBlockByHeightResponse is the response type for the Query/GetBlockByHeight RPC method."""
 
@@ -179,6 +186,7 @@ class GetBlockByHeightResponse(google.protobuf.message.Message):
 
 global___GetBlockByHeightResponse = GetBlockByHeightResponse
 
+@typing_extensions.final
 class GetLatestBlockRequest(google.protobuf.message.Message):
     """GetLatestBlockRequest is the request type for the Query/GetLatestBlock RPC method."""
 
@@ -190,6 +198,7 @@ class GetLatestBlockRequest(google.protobuf.message.Message):
 
 global___GetLatestBlockRequest = GetLatestBlockRequest
 
+@typing_extensions.final
 class GetLatestBlockResponse(google.protobuf.message.Message):
     """GetLatestBlockResponse is the response type for the Query/GetLatestBlock RPC method."""
 
@@ -212,6 +221,7 @@ class GetLatestBlockResponse(google.protobuf.message.Message):
 
 global___GetLatestBlockResponse = GetLatestBlockResponse
 
+@typing_extensions.final
 class GetSyncingRequest(google.protobuf.message.Message):
     """GetSyncingRequest is the request type for the Query/GetSyncing RPC method."""
 
@@ -223,6 +233,7 @@ class GetSyncingRequest(google.protobuf.message.Message):
 
 global___GetSyncingRequest = GetSyncingRequest
 
+@typing_extensions.final
 class GetSyncingResponse(google.protobuf.message.Message):
     """GetSyncingResponse is the response type for the Query/GetSyncing RPC method."""
 
@@ -239,6 +250,7 @@ class GetSyncingResponse(google.protobuf.message.Message):
 
 global___GetSyncingResponse = GetSyncingResponse
 
+@typing_extensions.final
 class GetNodeInfoRequest(google.protobuf.message.Message):
     """GetNodeInfoRequest is the request type for the Query/GetNodeInfo RPC method."""
 
@@ -250,6 +262,7 @@ class GetNodeInfoRequest(google.protobuf.message.Message):
 
 global___GetNodeInfoRequest = GetNodeInfoRequest
 
+@typing_extensions.final
 class GetNodeInfoResponse(google.protobuf.message.Message):
     """GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method."""
 
@@ -272,6 +285,7 @@ class GetNodeInfoResponse(google.protobuf.message.Message):
 
 global___GetNodeInfoResponse = GetNodeInfoResponse
 
+@typing_extensions.final
 class VersionInfo(google.protobuf.message.Message):
     """VersionInfo is the type for the GetNodeInfoResponse message."""
 
@@ -311,6 +325,7 @@ class VersionInfo(google.protobuf.message.Message):
 
 global___VersionInfo = VersionInfo
 
+@typing_extensions.final
 class Module(google.protobuf.message.Message):
     """Module is the type for VersionInfo"""
 

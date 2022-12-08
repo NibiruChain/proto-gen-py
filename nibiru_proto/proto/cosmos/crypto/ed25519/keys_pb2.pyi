@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PubKey(google.protobuf.message.Message):
     """PubKey is an ed25519 public key for handling Tendermint keys in SDK.
     It's needed for Any serialization and SDK compatibility.
@@ -35,6 +36,7 @@ class PubKey(google.protobuf.message.Message):
 
 global___PubKey = PubKey
 
+@typing_extensions.final
 class PrivKey(google.protobuf.message.Message):
     """Deprecated: PrivKey defines a ed25519 private key.
     NOTE: ed25519 keys must not be used in SDK apps except in a tendermint validator context.

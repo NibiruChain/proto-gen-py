@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgMintStable(google.protobuf.message.Message):
     """
     MsgMintStable: Msg to mint NUSD. A user deposits NIBI and collateral and gets 
@@ -42,6 +43,7 @@ class MsgMintStable(google.protobuf.message.Message):
 
 global___MsgMintStable = MsgMintStable
 
+@typing_extensions.final
 class MsgMintStableResponse(google.protobuf.message.Message):
     """MsgMintStableResponse specifies the amount of NUSD token the user will receive after their
     mint transaction
@@ -70,6 +72,7 @@ class MsgMintStableResponse(google.protobuf.message.Message):
 
 global___MsgMintStableResponse = MsgMintStableResponse
 
+@typing_extensions.final
 class MsgBurnStable(google.protobuf.message.Message):
     """
     MsgBurnStable allows users to burn NUSD in exchange for NIBI and collateral. 
@@ -95,6 +98,7 @@ class MsgBurnStable(google.protobuf.message.Message):
 
 global___MsgBurnStable = MsgBurnStable
 
+@typing_extensions.final
 class MsgBurnStableResponse(google.protobuf.message.Message):
     """MsgBurnStableResponse specifies the amount of collateral and governance 
     token the user will receive after their burn transaction.
@@ -123,6 +127,7 @@ class MsgBurnStableResponse(google.protobuf.message.Message):
 
 global___MsgBurnStableResponse = MsgBurnStableResponse
 
+@typing_extensions.final
 class MsgRecollateralize(google.protobuf.message.Message):
     """MsgRecollateralize"""
 
@@ -144,6 +149,7 @@ class MsgRecollateralize(google.protobuf.message.Message):
 
 global___MsgRecollateralize = MsgRecollateralize
 
+@typing_extensions.final
 class MsgRecollateralizeResponse(google.protobuf.message.Message):
     """MsgRecollateralizeResponse is the output of a successful 'Recollateralize'"""
 
@@ -163,6 +169,7 @@ class MsgRecollateralizeResponse(google.protobuf.message.Message):
 
 global___MsgRecollateralizeResponse = MsgRecollateralizeResponse
 
+@typing_extensions.final
 class MsgBuyback(google.protobuf.message.Message):
     """MsgBuyback"""
 
@@ -187,6 +194,7 @@ class MsgBuyback(google.protobuf.message.Message):
 
 global___MsgBuyback = MsgBuyback
 
+@typing_extensions.final
 class MsgBuybackResponse(google.protobuf.message.Message):
     """MsgBuybackResponse is the output of a successful 'Buyback'"""
 

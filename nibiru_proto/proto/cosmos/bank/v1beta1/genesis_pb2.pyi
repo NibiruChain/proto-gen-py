@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the bank module's genesis state."""
 
@@ -54,6 +55,7 @@ class GenesisState(google.protobuf.message.Message):
 
 global___GenesisState = GenesisState
 
+@typing_extensions.final
 class Balance(google.protobuf.message.Message):
     """Balance defines an account address and balance pair used in the bank module's
     genesis state.

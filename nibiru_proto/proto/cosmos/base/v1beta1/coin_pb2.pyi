@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Coin(google.protobuf.message.Message):
     """Coin defines a token with a denomination and an amount.
 
@@ -37,6 +38,7 @@ class Coin(google.protobuf.message.Message):
 
 global___Coin = Coin
 
+@typing_extensions.final
 class DecCoin(google.protobuf.message.Message):
     """DecCoin defines a token with a denomination and a decimal amount.
 
@@ -60,6 +62,7 @@ class DecCoin(google.protobuf.message.Message):
 
 global___DecCoin = DecCoin
 
+@typing_extensions.final
 class IntProto(google.protobuf.message.Message):
     """IntProto defines a Protobuf wrapper around an Int object."""
 
@@ -76,6 +79,7 @@ class IntProto(google.protobuf.message.Message):
 
 global___IntProto = IntProto
 
+@typing_extensions.final
 class DecProto(google.protobuf.message.Message):
     """DecProto defines a Protobuf wrapper around a Dec object."""
 

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ParameterChangeProposal(google.protobuf.message.Message):
     """ParameterChangeProposal defines a proposal to change one or more parameters."""
 
@@ -39,6 +40,7 @@ class ParameterChangeProposal(google.protobuf.message.Message):
 
 global___ParameterChangeProposal = ParameterChangeProposal
 
+@typing_extensions.final
 class ParamChange(google.protobuf.message.Message):
     """ParamChange defines an individual parameter change, for use in
     ParameterChangeProposal.

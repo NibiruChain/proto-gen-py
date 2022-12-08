@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgCreateValidator(google.protobuf.message.Message):
     """MsgCreateValidator defines a SDK message for creating a new validator."""
 
@@ -57,6 +58,7 @@ class MsgCreateValidator(google.protobuf.message.Message):
 
 global___MsgCreateValidator = MsgCreateValidator
 
+@typing_extensions.final
 class MsgCreateValidatorResponse(google.protobuf.message.Message):
     """MsgCreateValidatorResponse defines the Msg/CreateValidator response type."""
 
@@ -68,6 +70,7 @@ class MsgCreateValidatorResponse(google.protobuf.message.Message):
 
 global___MsgCreateValidatorResponse = MsgCreateValidatorResponse
 
+@typing_extensions.final
 class MsgEditValidator(google.protobuf.message.Message):
     """MsgEditValidator defines a SDK message for editing an existing validator."""
 
@@ -100,6 +103,7 @@ class MsgEditValidator(google.protobuf.message.Message):
 
 global___MsgEditValidator = MsgEditValidator
 
+@typing_extensions.final
 class MsgEditValidatorResponse(google.protobuf.message.Message):
     """MsgEditValidatorResponse defines the Msg/EditValidator response type."""
 
@@ -111,6 +115,7 @@ class MsgEditValidatorResponse(google.protobuf.message.Message):
 
 global___MsgEditValidatorResponse = MsgEditValidatorResponse
 
+@typing_extensions.final
 class MsgDelegate(google.protobuf.message.Message):
     """MsgDelegate defines a SDK message for performing a delegation of coins
     from a delegator to a validator.
@@ -137,6 +142,7 @@ class MsgDelegate(google.protobuf.message.Message):
 
 global___MsgDelegate = MsgDelegate
 
+@typing_extensions.final
 class MsgDelegateResponse(google.protobuf.message.Message):
     """MsgDelegateResponse defines the Msg/Delegate response type."""
 
@@ -148,6 +154,7 @@ class MsgDelegateResponse(google.protobuf.message.Message):
 
 global___MsgDelegateResponse = MsgDelegateResponse
 
+@typing_extensions.final
 class MsgBeginRedelegate(google.protobuf.message.Message):
     """MsgBeginRedelegate defines a SDK message for performing a redelegation
     of coins from a delegator and source validator to a destination validator.
@@ -177,6 +184,7 @@ class MsgBeginRedelegate(google.protobuf.message.Message):
 
 global___MsgBeginRedelegate = MsgBeginRedelegate
 
+@typing_extensions.final
 class MsgBeginRedelegateResponse(google.protobuf.message.Message):
     """MsgBeginRedelegateResponse defines the Msg/BeginRedelegate response type."""
 
@@ -195,6 +203,7 @@ class MsgBeginRedelegateResponse(google.protobuf.message.Message):
 
 global___MsgBeginRedelegateResponse = MsgBeginRedelegateResponse
 
+@typing_extensions.final
 class MsgUndelegate(google.protobuf.message.Message):
     """MsgUndelegate defines a SDK message for performing an undelegation from a
     delegate and a validator.
@@ -221,6 +230,7 @@ class MsgUndelegate(google.protobuf.message.Message):
 
 global___MsgUndelegate = MsgUndelegate
 
+@typing_extensions.final
 class MsgUndelegateResponse(google.protobuf.message.Message):
     """MsgUndelegateResponse defines the Msg/Undelegate response type."""
 

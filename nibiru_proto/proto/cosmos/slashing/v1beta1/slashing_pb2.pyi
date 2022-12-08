@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ValidatorSigningInfo(google.protobuf.message.Message):
     """ValidatorSigningInfo defines a validator's signing info for monitoring their
     liveness activity.
@@ -63,6 +64,7 @@ class ValidatorSigningInfo(google.protobuf.message.Message):
 
 global___ValidatorSigningInfo = ValidatorSigningInfo
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params represents the parameters used for by the slashing module."""
 

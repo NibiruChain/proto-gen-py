@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class EventGrant(google.protobuf.message.Message):
     """EventGrant is emitted on Msg/Grant"""
 
@@ -39,6 +40,7 @@ class EventGrant(google.protobuf.message.Message):
 
 global___EventGrant = EventGrant
 
+@typing_extensions.final
 class EventRevoke(google.protobuf.message.Message):
     """EventRevoke is emitted on Msg/Revoke"""
 

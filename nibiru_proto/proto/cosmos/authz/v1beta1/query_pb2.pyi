@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryGrantsRequest(google.protobuf.message.Message):
     """QueryGrantsRequest is the request type for the Query/Grants RPC method."""
 
@@ -47,6 +48,7 @@ class QueryGrantsRequest(google.protobuf.message.Message):
 
 global___QueryGrantsRequest = QueryGrantsRequest
 
+@typing_extensions.final
 class QueryGrantsResponse(google.protobuf.message.Message):
     """QueryGrantsResponse is the response type for the Query/Authorizations RPC method."""
 
@@ -71,6 +73,7 @@ class QueryGrantsResponse(google.protobuf.message.Message):
 
 global___QueryGrantsResponse = QueryGrantsResponse
 
+@typing_extensions.final
 class QueryGranterGrantsRequest(google.protobuf.message.Message):
     """QueryGranterGrantsRequest is the request type for the Query/GranterGrants RPC method."""
 
@@ -93,6 +96,7 @@ class QueryGranterGrantsRequest(google.protobuf.message.Message):
 
 global___QueryGranterGrantsRequest = QueryGranterGrantsRequest
 
+@typing_extensions.final
 class QueryGranterGrantsResponse(google.protobuf.message.Message):
     """QueryGranterGrantsResponse is the response type for the Query/GranterGrants RPC method."""
 
@@ -117,6 +121,7 @@ class QueryGranterGrantsResponse(google.protobuf.message.Message):
 
 global___QueryGranterGrantsResponse = QueryGranterGrantsResponse
 
+@typing_extensions.final
 class QueryGranteeGrantsRequest(google.protobuf.message.Message):
     """QueryGranteeGrantsRequest is the request type for the Query/IssuedGrants RPC method."""
 
@@ -139,6 +144,7 @@ class QueryGranteeGrantsRequest(google.protobuf.message.Message):
 
 global___QueryGranteeGrantsRequest = QueryGranteeGrantsRequest
 
+@typing_extensions.final
 class QueryGranteeGrantsResponse(google.protobuf.message.Message):
     """QueryGranteeGrantsResponse is the response type for the Query/GranteeGrants RPC method."""
 
