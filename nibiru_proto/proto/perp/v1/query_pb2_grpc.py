@@ -30,10 +30,10 @@ class QueryStub(object):
                 request_serializer=perp_dot_v1_dot_query__pb2.QueryPositionsRequest.SerializeToString,
                 response_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionsResponse.FromString,
                 )
-        self.FundingRates = channel.unary_unary(
-                '/nibiru.perp.v1.Query/FundingRates',
-                request_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
-                response_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
+        self.CumulativePremiumFraction = channel.unary_unary(
+                '/nibiru.perp.v1.Query/CumulativePremiumFraction',
+                request_serializer=perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionRequest.SerializeToString,
+                response_deserializer=perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionResponse.FromString,
                 )
         self.Metrics = channel.unary_unary(
                 '/nibiru.perp.v1.Query/Metrics',
@@ -65,8 +65,9 @@ class QueryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def FundingRates(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def CumulativePremiumFraction(self, request, context):
+        """Queries the latest cumulative premium fraction and the estimated next cumulative premium fraction.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -95,10 +96,10 @@ def add_QueryServicer_to_server(servicer, server):
                     request_deserializer=perp_dot_v1_dot_query__pb2.QueryPositionsRequest.FromString,
                     response_serializer=perp_dot_v1_dot_query__pb2.QueryPositionsResponse.SerializeToString,
             ),
-            'FundingRates': grpc.unary_unary_rpc_method_handler(
-                    servicer.FundingRates,
-                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.FromString,
-                    response_serializer=perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.SerializeToString,
+            'CumulativePremiumFraction': grpc.unary_unary_rpc_method_handler(
+                    servicer.CumulativePremiumFraction,
+                    request_deserializer=perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionRequest.FromString,
+                    response_serializer=perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionResponse.SerializeToString,
             ),
             'Metrics': grpc.unary_unary_rpc_method_handler(
                     servicer.Metrics,
@@ -168,7 +169,7 @@ class Query(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def FundingRates(request,
+    def CumulativePremiumFraction(request,
             target,
             options=(),
             channel_credentials=None,
@@ -178,9 +179,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/FundingRates',
-            perp_dot_v1_dot_query__pb2.QueryFundingRatesRequest.SerializeToString,
-            perp_dot_v1_dot_query__pb2.QueryFundingRatesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Query/CumulativePremiumFraction',
+            perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionRequest.SerializeToString,
+            perp_dot_v1_dot_query__pb2.QueryCumulativePremiumFractionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

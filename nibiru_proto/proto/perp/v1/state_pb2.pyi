@@ -200,24 +200,23 @@ class PairMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PAIR_FIELD_NUMBER: builtins.int
-    CUMULATIVE_PREMIUM_FRACTIONS_FIELD_NUMBER: builtins.int
+    LATEST_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
     @property
     def pair(self) -> common.common_pb2.AssetPair: ...
-    @property
-    def cumulative_premium_fractions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """The historical list of cumulative premium fractions for a given pair.
-        Calculated once per epoch.
-        A premium fraction is the difference between mark and index, divided by the number of payments per day.
-        (mark - index) / # payments in a day
-        """
+    latest_cumulative_premium_fraction: builtins.str
+    """Latest cumulative premium fraction for a given pair.
+    Calculated once per funding rate interval.
+    A premium fraction is the difference between mark and index, divided by the number of payments per day.
+    (mark - index) / # payments in a day
+    """
     def __init__(
         self,
         *,
         pair: common.common_pb2.AssetPair | None = ...,
-        cumulative_premium_fractions: collections.abc.Iterable[builtins.str] | None = ...,
+        latest_cumulative_premium_fraction: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cumulative_premium_fractions", b"cumulative_premium_fractions", "pair", b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "pair", b"pair"]) -> None: ...
 
 global___PairMetadata = PairMetadata
 
@@ -335,16 +334,24 @@ class Metrics(google.protobuf.message.Message):
 
     PAIR_FIELD_NUMBER: builtins.int
     NET_SIZE_FIELD_NUMBER: builtins.int
+    VOLUMEQUOTE_FIELD_NUMBER: builtins.int
+    VOLUMEBASE_FIELD_NUMBER: builtins.int
     pair: builtins.str
     """Pair identifier for the two assets. Always in format 'base:quote'"""
     net_size: builtins.str
     """Sum of all active position sizes for the pair."""
+    volumeQuote: builtins.str
+    """Total notional volume for the pair."""
+    volumeBase: builtins.str
+    """Total size volume for the pair."""
     def __init__(
         self,
         *,
         pair: builtins.str = ...,
         net_size: builtins.str = ...,
+        volumeQuote: builtins.str = ...,
+        volumeBase: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["net_size", b"net_size", "pair", b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["net_size", b"net_size", "pair", b"pair", "volumeBase", b"volumeBase", "volumeQuote", b"volumeQuote"]) -> None: ...
 
 global___Metrics = Metrics

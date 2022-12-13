@@ -149,7 +149,7 @@ class QueryPositionResponse(google.protobuf.message.Message):
 
 global___QueryPositionResponse = QueryPositionResponse
 
-class QueryFundingRatesRequest(google.protobuf.message.Message):
+class QueryCumulativePremiumFractionRequest(google.protobuf.message.Message):
     """---------------------------------------- FundingPayments"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -164,25 +164,25 @@ class QueryFundingRatesRequest(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> None: ...
 
-global___QueryFundingRatesRequest = QueryFundingRatesRequest
+global___QueryCumulativePremiumFractionRequest = QueryCumulativePremiumFractionRequest
 
-class QueryFundingRatesResponse(google.protobuf.message.Message):
+class QueryCumulativePremiumFractionResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CUMULATIVE_FUNDING_RATES_FIELD_NUMBER: builtins.int
-    @property
-    def cumulative_funding_rates(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """a historical list of cumulative funding rates, with the most recent one
-        last
-        """
+    CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
+    ESTIMATED_NEXT_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
+    cumulative_premium_fraction: builtins.str
+    """The latest cumulative premium fraction."""
+    estimated_next_cumulative_premium_fraction: builtins.str
     def __init__(
         self,
         *,
-        cumulative_funding_rates: collections.abc.Iterable[builtins.str] | None = ...,
+        cumulative_premium_fraction: builtins.str = ...,
+        estimated_next_cumulative_premium_fraction: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cumulative_funding_rates", b"cumulative_funding_rates"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cumulative_premium_fraction", b"cumulative_premium_fraction", "estimated_next_cumulative_premium_fraction", b"estimated_next_cumulative_premium_fraction"]) -> None: ...
 
-global___QueryFundingRatesResponse = QueryFundingRatesResponse
+global___QueryCumulativePremiumFractionResponse = QueryCumulativePremiumFractionResponse
 
 class QueryMetricsRequest(google.protobuf.message.Message):
     """---------------------------------------- Metrics"""
