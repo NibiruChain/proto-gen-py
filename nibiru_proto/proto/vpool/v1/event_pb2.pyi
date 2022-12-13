@@ -51,7 +51,12 @@ class ReserveSnapshotSavedEvent(google.protobuf.message.Message):
 global___ReserveSnapshotSavedEvent = ReserveSnapshotSavedEvent
 
 @typing_extensions.final
-class SwapQuoteForBaseEvent(google.protobuf.message.Message):
+class SwapOnVpoolEvent(google.protobuf.message.Message):
+    """A swap on the vpool represented by 'pair'. 
+    Amounts are negative or positive base on the perspective of the pool, i.e.
+    a negative quote means the trader has gained quote and the vpool lost quote.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PAIR_FIELD_NUMBER: builtins.int
@@ -59,7 +64,9 @@ class SwapQuoteForBaseEvent(google.protobuf.message.Message):
     BASE_AMOUNT_FIELD_NUMBER: builtins.int
     pair: builtins.str
     quote_amount: builtins.str
+    """delta in the quote reserves of the vpool"""
     base_amount: builtins.str
+    """delta in the base reserves of the vpool"""
     def __init__(
         self,
         *,
@@ -69,28 +76,7 @@ class SwapQuoteForBaseEvent(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["base_amount", b"base_amount", "pair", b"pair", "quote_amount", b"quote_amount"]) -> None: ...
 
-global___SwapQuoteForBaseEvent = SwapQuoteForBaseEvent
-
-@typing_extensions.final
-class SwapBaseForQuoteEvent(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PAIR_FIELD_NUMBER: builtins.int
-    QUOTE_AMOUNT_FIELD_NUMBER: builtins.int
-    BASE_AMOUNT_FIELD_NUMBER: builtins.int
-    pair: builtins.str
-    quote_amount: builtins.str
-    base_amount: builtins.str
-    def __init__(
-        self,
-        *,
-        pair: builtins.str = ...,
-        quote_amount: builtins.str = ...,
-        base_amount: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_amount", b"base_amount", "pair", b"pair", "quote_amount", b"quote_amount"]) -> None: ...
-
-global___SwapBaseForQuoteEvent = SwapBaseForQuoteEvent
+global___SwapOnVpoolEvent = SwapOnVpoolEvent
 
 @typing_extensions.final
 class MarkPriceChangedEvent(google.protobuf.message.Message):
