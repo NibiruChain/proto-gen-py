@@ -52,9 +52,6 @@ code_gen() {
   echo "Proto Directories: "
   echo $proto_dirs
 
-  # update the proto-version file
-  echo "$nibiru_chain_version" > proto-version
-
   # generate the protos for each directory
   for dir in $proto_dirs; do \
     string=$dir
