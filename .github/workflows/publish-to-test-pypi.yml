@@ -33,4 +33,4 @@ jobs:
 
       - name: Publish distribution 📦 to PyPI
         if: startsWith(github.ref, 'refs/tags')
-        run: poetry publish -r pypi -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
+        run: poetry publish -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
