@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method"""
 
@@ -29,6 +30,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method"""
 
@@ -47,6 +49,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QuerySigningInfoRequest(google.protobuf.message.Message):
     """QuerySigningInfoRequest is the request type for the Query/SigningInfo RPC
     method
@@ -66,6 +69,7 @@ class QuerySigningInfoRequest(google.protobuf.message.Message):
 
 global___QuerySigningInfoRequest = QuerySigningInfoRequest
 
+@typing_extensions.final
 class QuerySigningInfoResponse(google.protobuf.message.Message):
     """QuerySigningInfoResponse is the response type for the Query/SigningInfo RPC
     method
@@ -87,6 +91,7 @@ class QuerySigningInfoResponse(google.protobuf.message.Message):
 
 global___QuerySigningInfoResponse = QuerySigningInfoResponse
 
+@typing_extensions.final
 class QuerySigningInfosRequest(google.protobuf.message.Message):
     """QuerySigningInfosRequest is the request type for the Query/SigningInfos RPC
     method
@@ -107,6 +112,7 @@ class QuerySigningInfosRequest(google.protobuf.message.Message):
 
 global___QuerySigningInfosRequest = QuerySigningInfosRequest
 
+@typing_extensions.final
 class QuerySigningInfosResponse(google.protobuf.message.Message):
     """QuerySigningInfosResponse is the response type for the Query/SigningInfos RPC
     method

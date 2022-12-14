@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryLockedCoinsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -33,6 +34,7 @@ class QueryLockedCoinsRequest(google.protobuf.message.Message):
 
 global___QueryLockedCoinsRequest = QueryLockedCoinsRequest
 
+@typing_extensions.final
 class QueryLockedCoinsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -48,6 +50,7 @@ class QueryLockedCoinsResponse(google.protobuf.message.Message):
 
 global___QueryLockedCoinsResponse = QueryLockedCoinsResponse
 
+@typing_extensions.final
 class QueryLockRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -62,6 +65,7 @@ class QueryLockRequest(google.protobuf.message.Message):
 
 global___QueryLockRequest = QueryLockRequest
 
+@typing_extensions.final
 class QueryLockResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -78,6 +82,7 @@ class QueryLockResponse(google.protobuf.message.Message):
 
 global___QueryLockResponse = QueryLockResponse
 
+@typing_extensions.final
 class QueryLocksByAddress(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -97,6 +102,7 @@ class QueryLocksByAddress(google.protobuf.message.Message):
 
 global___QueryLocksByAddress = QueryLocksByAddress
 
+@typing_extensions.final
 class QueryLocksByAddressResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

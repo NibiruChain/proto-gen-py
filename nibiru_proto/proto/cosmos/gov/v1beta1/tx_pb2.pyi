@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgSubmitProposal(google.protobuf.message.Message):
     """MsgSubmitProposal defines an sdk.Msg type that supports submitting arbitrary
     proposal Content.
@@ -46,6 +47,7 @@ class MsgSubmitProposal(google.protobuf.message.Message):
 
 global___MsgSubmitProposal = MsgSubmitProposal
 
+@typing_extensions.final
 class MsgSubmitProposalResponse(google.protobuf.message.Message):
     """MsgSubmitProposalResponse defines the Msg/SubmitProposal response type."""
 
@@ -62,6 +64,7 @@ class MsgSubmitProposalResponse(google.protobuf.message.Message):
 
 global___MsgSubmitProposalResponse = MsgSubmitProposalResponse
 
+@typing_extensions.final
 class MsgVote(google.protobuf.message.Message):
     """MsgVote defines a message to cast a vote."""
 
@@ -84,6 +87,7 @@ class MsgVote(google.protobuf.message.Message):
 
 global___MsgVote = MsgVote
 
+@typing_extensions.final
 class MsgVoteResponse(google.protobuf.message.Message):
     """MsgVoteResponse defines the Msg/Vote response type."""
 
@@ -95,6 +99,7 @@ class MsgVoteResponse(google.protobuf.message.Message):
 
 global___MsgVoteResponse = MsgVoteResponse
 
+@typing_extensions.final
 class MsgVoteWeighted(google.protobuf.message.Message):
     """MsgVoteWeighted defines a message to cast a vote.
 
@@ -121,6 +126,7 @@ class MsgVoteWeighted(google.protobuf.message.Message):
 
 global___MsgVoteWeighted = MsgVoteWeighted
 
+@typing_extensions.final
 class MsgVoteWeightedResponse(google.protobuf.message.Message):
     """MsgVoteWeightedResponse defines the Msg/VoteWeighted response type.
 
@@ -135,6 +141,7 @@ class MsgVoteWeightedResponse(google.protobuf.message.Message):
 
 global___MsgVoteWeightedResponse = MsgVoteWeightedResponse
 
+@typing_extensions.final
 class MsgDeposit(google.protobuf.message.Message):
     """MsgDeposit defines a message to submit a deposit to an existing proposal."""
 
@@ -158,6 +165,7 @@ class MsgDeposit(google.protobuf.message.Message):
 
 global___MsgDeposit = MsgDeposit
 
+@typing_extensions.final
 class MsgDepositResponse(google.protobuf.message.Message):
     """MsgDepositResponse defines the Msg/Deposit response type."""
 

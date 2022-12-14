@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method."""
 
@@ -26,6 +27,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method."""
 
@@ -45,6 +47,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryInflationRequest(google.protobuf.message.Message):
     """QueryInflationRequest is the request type for the Query/Inflation RPC method."""
 
@@ -56,6 +59,7 @@ class QueryInflationRequest(google.protobuf.message.Message):
 
 global___QueryInflationRequest = QueryInflationRequest
 
+@typing_extensions.final
 class QueryInflationResponse(google.protobuf.message.Message):
     """QueryInflationResponse is the response type for the Query/Inflation RPC
     method.
@@ -75,6 +79,7 @@ class QueryInflationResponse(google.protobuf.message.Message):
 
 global___QueryInflationResponse = QueryInflationResponse
 
+@typing_extensions.final
 class QueryAnnualProvisionsRequest(google.protobuf.message.Message):
     """QueryAnnualProvisionsRequest is the request type for the
     Query/AnnualProvisions RPC method.
@@ -88,6 +93,7 @@ class QueryAnnualProvisionsRequest(google.protobuf.message.Message):
 
 global___QueryAnnualProvisionsRequest = QueryAnnualProvisionsRequest
 
+@typing_extensions.final
 class QueryAnnualProvisionsResponse(google.protobuf.message.Message):
     """QueryAnnualProvisionsResponse is the response type for the
     Query/AnnualProvisions RPC method.

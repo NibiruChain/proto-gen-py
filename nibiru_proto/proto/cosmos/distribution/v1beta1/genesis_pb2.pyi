@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class DelegatorWithdrawInfo(google.protobuf.message.Message):
     """DelegatorWithdrawInfo is the address for where distributions rewards are
     withdrawn to by default this struct is only used at genesis to feed in
@@ -42,6 +43,7 @@ class DelegatorWithdrawInfo(google.protobuf.message.Message):
 
 global___DelegatorWithdrawInfo = DelegatorWithdrawInfo
 
+@typing_extensions.final
 class ValidatorOutstandingRewardsRecord(google.protobuf.message.Message):
     """ValidatorOutstandingRewardsRecord is used for import/export via genesis json."""
 
@@ -64,6 +66,7 @@ class ValidatorOutstandingRewardsRecord(google.protobuf.message.Message):
 
 global___ValidatorOutstandingRewardsRecord = ValidatorOutstandingRewardsRecord
 
+@typing_extensions.final
 class ValidatorAccumulatedCommissionRecord(google.protobuf.message.Message):
     """ValidatorAccumulatedCommissionRecord is used for import / export via genesis
     json.
@@ -89,6 +92,7 @@ class ValidatorAccumulatedCommissionRecord(google.protobuf.message.Message):
 
 global___ValidatorAccumulatedCommissionRecord = ValidatorAccumulatedCommissionRecord
 
+@typing_extensions.final
 class ValidatorHistoricalRewardsRecord(google.protobuf.message.Message):
     """ValidatorHistoricalRewardsRecord is used for import / export via genesis
     json.
@@ -118,6 +122,7 @@ class ValidatorHistoricalRewardsRecord(google.protobuf.message.Message):
 
 global___ValidatorHistoricalRewardsRecord = ValidatorHistoricalRewardsRecord
 
+@typing_extensions.final
 class ValidatorCurrentRewardsRecord(google.protobuf.message.Message):
     """ValidatorCurrentRewardsRecord is used for import / export via genesis json."""
 
@@ -141,6 +146,7 @@ class ValidatorCurrentRewardsRecord(google.protobuf.message.Message):
 
 global___ValidatorCurrentRewardsRecord = ValidatorCurrentRewardsRecord
 
+@typing_extensions.final
 class DelegatorStartingInfoRecord(google.protobuf.message.Message):
     """DelegatorStartingInfoRecord used for import / export via genesis json."""
 
@@ -168,6 +174,7 @@ class DelegatorStartingInfoRecord(google.protobuf.message.Message):
 
 global___DelegatorStartingInfoRecord = DelegatorStartingInfoRecord
 
+@typing_extensions.final
 class ValidatorSlashEventRecord(google.protobuf.message.Message):
     """ValidatorSlashEventRecord is used for import / export via genesis json."""
 
@@ -199,6 +206,7 @@ class ValidatorSlashEventRecord(google.protobuf.message.Message):
 
 global___ValidatorSlashEventRecord = ValidatorSlashEventRecord
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the distribution module's genesis state."""
 

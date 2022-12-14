@@ -24,7 +24,7 @@ class _Side:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SideEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Side.ValueType], builtins.type):  # noqa: F821
+class _SideEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Side.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     SIDE_UNSPECIFIED: _Side.ValueType  # 0
     BUY: _Side.ValueType  # 1
@@ -41,7 +41,7 @@ class _PnLCalcOption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PnLCalcOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PnLCalcOption.ValueType], builtins.type):  # noqa: F821
+class _PnLCalcOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PnLCalcOption.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     PNL_CALC_OPTION_UNSPECIFIED: _PnLCalcOption.ValueType  # 0
     SPOT_PRICE: _PnLCalcOption.ValueType  # 1
@@ -60,7 +60,7 @@ class _PnLPreferenceOption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PnLPreferenceOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PnLPreferenceOption.ValueType], builtins.type):  # noqa: F821
+class _PnLPreferenceOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PnLPreferenceOption.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     PNL_PREFERENCE_UNSPECIFIED: _PnLPreferenceOption.ValueType  # 0
     MAX: _PnLPreferenceOption.ValueType  # 1
@@ -77,7 +77,7 @@ class _MarginCalculationPriceOption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MarginCalculationPriceOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MarginCalculationPriceOption.ValueType], builtins.type):  # noqa: F821
+class _MarginCalculationPriceOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MarginCalculationPriceOption.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     MARGIN_CALCULATION_PRICE_OPTION_UNSPECIFIED: _MarginCalculationPriceOption.ValueType  # 0
     SPOT: _MarginCalculationPriceOption.ValueType  # 1
@@ -92,6 +92,7 @@ INDEX: MarginCalculationPriceOption.ValueType  # 2
 MAX_PNL: MarginCalculationPriceOption.ValueType  # 3
 global___MarginCalculationPriceOption = MarginCalculationPriceOption
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -145,6 +146,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class Position(google.protobuf.message.Message):
     """Position identifies and records information on a user's position on one of
     the virtual liquidity pools.
@@ -196,31 +198,32 @@ class Position(google.protobuf.message.Message):
 
 global___Position = Position
 
+@typing_extensions.final
 class PairMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PAIR_FIELD_NUMBER: builtins.int
-    CUMULATIVE_PREMIUM_FRACTIONS_FIELD_NUMBER: builtins.int
+    LATEST_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
     @property
     def pair(self) -> common.common_pb2.AssetPair: ...
-    @property
-    def cumulative_premium_fractions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """The historical list of cumulative premium fractions for a given pair.
-        Calculated once per epoch.
-        A premium fraction is the difference between mark and index, divided by the number of payments per day.
-        (mark - index) / # payments in a day
-        """
+    latest_cumulative_premium_fraction: builtins.str
+    """Latest cumulative premium fraction for a given pair.
+    Calculated once per funding rate interval.
+    A premium fraction is the difference between mark and index, divided by the number of payments per day.
+    (mark - index) / # payments in a day
+    """
     def __init__(
         self,
         *,
         pair: common.common_pb2.AssetPair | None = ...,
-        cumulative_premium_fractions: collections.abc.Iterable[builtins.str] | None = ...,
+        latest_cumulative_premium_fraction: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cumulative_premium_fractions", b"cumulative_premium_fractions", "pair", b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "pair", b"pair"]) -> None: ...
 
 global___PairMetadata = PairMetadata
 
+@typing_extensions.final
 class PrepaidBadDebt(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -238,6 +241,7 @@ class PrepaidBadDebt(google.protobuf.message.Message):
 
 global___PrepaidBadDebt = PrepaidBadDebt
 
+@typing_extensions.final
 class PositionResp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -295,6 +299,7 @@ class PositionResp(google.protobuf.message.Message):
 
 global___PositionResp = PositionResp
 
+@typing_extensions.final
 class LiquidateResp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -328,6 +333,7 @@ class LiquidateResp(google.protobuf.message.Message):
 
 global___LiquidateResp = LiquidateResp
 
+@typing_extensions.final
 class Metrics(google.protobuf.message.Message):
     """PoolMetrics is a structure that displays a snapshot of perp metrics for each pair."""
 
@@ -335,16 +341,24 @@ class Metrics(google.protobuf.message.Message):
 
     PAIR_FIELD_NUMBER: builtins.int
     NET_SIZE_FIELD_NUMBER: builtins.int
+    VOLUMEQUOTE_FIELD_NUMBER: builtins.int
+    VOLUMEBASE_FIELD_NUMBER: builtins.int
     pair: builtins.str
     """Pair identifier for the two assets. Always in format 'base:quote'"""
     net_size: builtins.str
     """Sum of all active position sizes for the pair."""
+    volumeQuote: builtins.str
+    """Total notional volume for the pair."""
+    volumeBase: builtins.str
+    """Total size volume for the pair."""
     def __init__(
         self,
         *,
         pair: builtins.str = ...,
         net_size: builtins.str = ...,
+        volumeQuote: builtins.str = ...,
+        volumeBase: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["net_size", b"net_size", "pair", b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["net_size", b"net_size", "pair", b"pair", "volumeBase", b"volumeBase", "volumeQuote", b"volumeQuote"]) -> None: ...
 
 global___Metrics = Metrics

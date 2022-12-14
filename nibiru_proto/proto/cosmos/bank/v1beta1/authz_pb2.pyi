@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class SendAuthorization(google.protobuf.message.Message):
     """SendAuthorization allows the grantee to spend up to spend_limit coins from
     the granter's account.

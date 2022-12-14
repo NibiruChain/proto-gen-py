@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest defines the request type for querying x/pricefeed
     parameters.
@@ -31,6 +32,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse defines the response type for querying x/pricefeed
     parameters.
@@ -51,6 +53,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryPriceRequest(google.protobuf.message.Message):
     """QueryPriceRequest is the request type for the Query/PriceRequest RPC method."""
 
@@ -67,6 +70,7 @@ class QueryPriceRequest(google.protobuf.message.Message):
 
 global___QueryPriceRequest = QueryPriceRequest
 
+@typing_extensions.final
 class QueryPriceResponse(google.protobuf.message.Message):
     """QueryPriceResponse is the response type for the Query/Prices RPC method."""
 
@@ -85,6 +89,7 @@ class QueryPriceResponse(google.protobuf.message.Message):
 
 global___QueryPriceResponse = QueryPriceResponse
 
+@typing_extensions.final
 class QueryPricesRequest(google.protobuf.message.Message):
     """QueryPricesRequest is the request type for the Query/Prices RPC method."""
 
@@ -96,6 +101,7 @@ class QueryPricesRequest(google.protobuf.message.Message):
 
 global___QueryPricesRequest = QueryPricesRequest
 
+@typing_extensions.final
 class QueryPricesResponse(google.protobuf.message.Message):
     """QueryPricesResponse is the response type for the Query/Prices RPC method."""
 
@@ -113,6 +119,7 @@ class QueryPricesResponse(google.protobuf.message.Message):
 
 global___QueryPricesResponse = QueryPricesResponse
 
+@typing_extensions.final
 class QueryRawPricesRequest(google.protobuf.message.Message):
     """QueryRawPricesRequest is the request type for the Query/RawPrices RPC method."""
 
@@ -129,6 +136,7 @@ class QueryRawPricesRequest(google.protobuf.message.Message):
 
 global___QueryRawPricesRequest = QueryRawPricesRequest
 
+@typing_extensions.final
 class QueryRawPricesResponse(google.protobuf.message.Message):
     """QueryRawPricesResponse is the response type for the Query/RawPrices RPC
     method.
@@ -148,6 +156,7 @@ class QueryRawPricesResponse(google.protobuf.message.Message):
 
 global___QueryRawPricesResponse = QueryRawPricesResponse
 
+@typing_extensions.final
 class QueryOraclesRequest(google.protobuf.message.Message):
     """QueryOraclesRequest is the request type for the Query/Oracles RPC method."""
 
@@ -164,6 +173,7 @@ class QueryOraclesRequest(google.protobuf.message.Message):
 
 global___QueryOraclesRequest = QueryOraclesRequest
 
+@typing_extensions.final
 class QueryOraclesResponse(google.protobuf.message.Message):
     """QueryOraclesResponse is the response type for the Query/Oracles RPC method."""
 
@@ -182,6 +192,7 @@ class QueryOraclesResponse(google.protobuf.message.Message):
 
 global___QueryOraclesResponse = QueryOraclesResponse
 
+@typing_extensions.final
 class QueryMarketsRequest(google.protobuf.message.Message):
     """QueryMarketsRequest is the request type for the Query/Pairs RPC method."""
 
@@ -193,6 +204,7 @@ class QueryMarketsRequest(google.protobuf.message.Message):
 
 global___QueryMarketsRequest = QueryMarketsRequest
 
+@typing_extensions.final
 class QueryMarketsResponse(google.protobuf.message.Message):
     """QueryMarketsResponse is the response type for the Query/Pairs RPC method."""
 
@@ -210,6 +222,7 @@ class QueryMarketsResponse(google.protobuf.message.Message):
 
 global___QueryMarketsResponse = QueryMarketsResponse
 
+@typing_extensions.final
 class PostedPriceResponse(google.protobuf.message.Message):
     """PostedPriceResponse defines a price for 'PairID' posted by a specific oracle."""
 
@@ -237,6 +250,7 @@ class PostedPriceResponse(google.protobuf.message.Message):
 
 global___PostedPriceResponse = PostedPriceResponse
 
+@typing_extensions.final
 class CurrentPriceResponse(google.protobuf.message.Message):
     """CurrentPriceResponse defines a current price for a particular 'PairID' in the pricefeed
     module.
@@ -263,6 +277,7 @@ class CurrentPriceResponse(google.protobuf.message.Message):
 
 global___CurrentPriceResponse = CurrentPriceResponse
 
+@typing_extensions.final
 class Market(google.protobuf.message.Message):
     """Market defines an asset in the pricefeed."""
 

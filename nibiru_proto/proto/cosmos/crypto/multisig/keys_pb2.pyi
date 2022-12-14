@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class LegacyAminoPubKey(google.protobuf.message.Message):
     """LegacyAminoPubKey specifies a public key type
     which nests multiple public keys and a threshold,

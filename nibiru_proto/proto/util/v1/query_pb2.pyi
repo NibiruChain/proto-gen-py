@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryModuleAccountsRequest(google.protobuf.message.Message):
     """----------------------------------------"""
 
@@ -28,6 +29,7 @@ class QueryModuleAccountsRequest(google.protobuf.message.Message):
 
 global___QueryModuleAccountsRequest = QueryModuleAccountsRequest
 
+@typing_extensions.final
 class QueryModuleAccountsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -43,6 +45,7 @@ class QueryModuleAccountsResponse(google.protobuf.message.Message):
 
 global___QueryModuleAccountsResponse = QueryModuleAccountsResponse
 
+@typing_extensions.final
 class AccountWithBalance(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenericAuthorization(google.protobuf.message.Message):
     """GenericAuthorization gives the grantee unrestricted permissions to execute
     the provided method on behalf of the granter's account.
@@ -35,6 +36,7 @@ class GenericAuthorization(google.protobuf.message.Message):
 
 global___GenericAuthorization = GenericAuthorization
 
+@typing_extensions.final
 class Grant(google.protobuf.message.Message):
     """Grant gives permissions to execute
     the provide method with expiration time.
@@ -59,6 +61,7 @@ class Grant(google.protobuf.message.Message):
 
 global___Grant = Grant
 
+@typing_extensions.final
 class GrantAuthorization(google.protobuf.message.Message):
     """GrantAuthorization extends a grant with both the addresses of the grantee and granter.
     It is used in genesis.proto and query.proto

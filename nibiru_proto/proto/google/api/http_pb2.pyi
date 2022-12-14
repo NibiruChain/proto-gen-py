@@ -29,6 +29,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Http(google.protobuf.message.Message):
     """Defines the HTTP configuration for an API service. It contains a list of
     [HttpRule][google.api.HttpRule], each specifying the mapping of an RPC method
@@ -63,6 +64,7 @@ class Http(google.protobuf.message.Message):
 
 global___Http = Http
 
+@typing_extensions.final
 class HttpRule(google.protobuf.message.Message):
     """`HttpRule` defines the mapping of an RPC method to one or more HTTP
     REST API methods. The mapping specifies how different portions of the RPC
@@ -354,6 +356,7 @@ class HttpRule(google.protobuf.message.Message):
 
 global___HttpRule = HttpRule
 
+@typing_extensions.final
 class CustomHttpPattern(google.protobuf.message.Message):
     """A custom pattern is used for defining custom HTTP verb."""
 

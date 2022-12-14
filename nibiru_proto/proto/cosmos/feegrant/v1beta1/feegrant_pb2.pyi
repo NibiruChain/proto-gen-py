@@ -20,6 +20,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class BasicAllowance(google.protobuf.message.Message):
     """BasicAllowance implements Allowance with a one-time grant of tokens
     that optionally expires. The grantee can use up to SpendLimit to cover fees.
@@ -49,6 +50,7 @@ class BasicAllowance(google.protobuf.message.Message):
 
 global___BasicAllowance = BasicAllowance
 
+@typing_extensions.final
 class PeriodicAllowance(google.protobuf.message.Message):
     """PeriodicAllowance extends Allowance to allow for both a maximum cap,
     as well as a limit per time period.
@@ -97,6 +99,7 @@ class PeriodicAllowance(google.protobuf.message.Message):
 
 global___PeriodicAllowance = PeriodicAllowance
 
+@typing_extensions.final
 class AllowedMsgAllowance(google.protobuf.message.Message):
     """AllowedMsgAllowance creates allowance only for specified message types."""
 
@@ -121,6 +124,7 @@ class AllowedMsgAllowance(google.protobuf.message.Message):
 
 global___AllowedMsgAllowance = AllowedMsgAllowance
 
+@typing_extensions.final
 class Grant(google.protobuf.message.Message):
     """Grant is stored in the KVStore to record a grant with full context"""
 

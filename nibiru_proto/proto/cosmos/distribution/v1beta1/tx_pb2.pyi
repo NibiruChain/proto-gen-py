@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgSetWithdrawAddress(google.protobuf.message.Message):
     """MsgSetWithdrawAddress sets the withdraw address for
     a delegator (or validator self-delegation).
@@ -38,6 +39,7 @@ class MsgSetWithdrawAddress(google.protobuf.message.Message):
 
 global___MsgSetWithdrawAddress = MsgSetWithdrawAddress
 
+@typing_extensions.final
 class MsgSetWithdrawAddressResponse(google.protobuf.message.Message):
     """MsgSetWithdrawAddressResponse defines the Msg/SetWithdrawAddress response type."""
 
@@ -49,6 +51,7 @@ class MsgSetWithdrawAddressResponse(google.protobuf.message.Message):
 
 global___MsgSetWithdrawAddressResponse = MsgSetWithdrawAddressResponse
 
+@typing_extensions.final
 class MsgWithdrawDelegatorReward(google.protobuf.message.Message):
     """MsgWithdrawDelegatorReward represents delegation withdrawal to a delegator
     from a single validator.
@@ -70,6 +73,7 @@ class MsgWithdrawDelegatorReward(google.protobuf.message.Message):
 
 global___MsgWithdrawDelegatorReward = MsgWithdrawDelegatorReward
 
+@typing_extensions.final
 class MsgWithdrawDelegatorRewardResponse(google.protobuf.message.Message):
     """MsgWithdrawDelegatorRewardResponse defines the Msg/WithdrawDelegatorReward response type."""
 
@@ -81,6 +85,7 @@ class MsgWithdrawDelegatorRewardResponse(google.protobuf.message.Message):
 
 global___MsgWithdrawDelegatorRewardResponse = MsgWithdrawDelegatorRewardResponse
 
+@typing_extensions.final
 class MsgWithdrawValidatorCommission(google.protobuf.message.Message):
     """MsgWithdrawValidatorCommission withdraws the full commission to the validator
     address.
@@ -99,6 +104,7 @@ class MsgWithdrawValidatorCommission(google.protobuf.message.Message):
 
 global___MsgWithdrawValidatorCommission = MsgWithdrawValidatorCommission
 
+@typing_extensions.final
 class MsgWithdrawValidatorCommissionResponse(google.protobuf.message.Message):
     """MsgWithdrawValidatorCommissionResponse defines the Msg/WithdrawValidatorCommission response type."""
 
@@ -110,6 +116,7 @@ class MsgWithdrawValidatorCommissionResponse(google.protobuf.message.Message):
 
 global___MsgWithdrawValidatorCommissionResponse = MsgWithdrawValidatorCommissionResponse
 
+@typing_extensions.final
 class MsgFundCommunityPool(google.protobuf.message.Message):
     """MsgFundCommunityPool allows an account to directly
     fund the community pool.
@@ -132,6 +139,7 @@ class MsgFundCommunityPool(google.protobuf.message.Message):
 
 global___MsgFundCommunityPool = MsgFundCommunityPool
 
+@typing_extensions.final
 class MsgFundCommunityPoolResponse(google.protobuf.message.Message):
     """MsgFundCommunityPoolResponse defines the Msg/FundCommunityPool response type."""
 

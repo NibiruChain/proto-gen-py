@@ -15,9 +15,7 @@ All you need to do is run:
 make proto-gen
 ```
 
-This executes the code generation script, [proto-gen-py.sh][script-proto-gen].
-
-The protobuf files come from the [NibiruChain/nibiru repo][repo-nibiru], which is private (for now), so you'll need these files on your local machine. It's assumed you have the `nibiru` repo as a neighbor to `sdk-proto-gen` when running the code generation script.
+This executes the code generation script, [proto-gen-py.sh][script-proto-gen]. The protobuf files come from the [NibiruChain/nibiru repo][repo-nibiru].
 
 ## Other Development Guidelines
 
@@ -55,7 +53,7 @@ The publish workflow looks like this:
 3. Create a tag and push it the remote origin.
 
    ```sh
-   git tag -asm "v0.16.0-beta.1" v0.16.0-beta.1
+   git tag -asm "v0.16.2" v0.16.2
    git push --tags
    ```
 

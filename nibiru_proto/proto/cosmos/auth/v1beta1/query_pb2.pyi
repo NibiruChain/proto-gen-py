@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryAccountsRequest(google.protobuf.message.Message):
     """QueryAccountsRequest is the request type for the Query/Accounts RPC method.
 
@@ -41,6 +42,7 @@ class QueryAccountsRequest(google.protobuf.message.Message):
 
 global___QueryAccountsRequest = QueryAccountsRequest
 
+@typing_extensions.final
 class QueryAccountsResponse(google.protobuf.message.Message):
     """QueryAccountsResponse is the response type for the Query/Accounts RPC method.
 
@@ -68,6 +70,7 @@ class QueryAccountsResponse(google.protobuf.message.Message):
 
 global___QueryAccountsResponse = QueryAccountsResponse
 
+@typing_extensions.final
 class QueryAccountRequest(google.protobuf.message.Message):
     """QueryAccountRequest is the request type for the Query/Account RPC method."""
 
@@ -85,6 +88,7 @@ class QueryAccountRequest(google.protobuf.message.Message):
 
 global___QueryAccountRequest = QueryAccountRequest
 
+@typing_extensions.final
 class QueryAccountResponse(google.protobuf.message.Message):
     """QueryAccountResponse is the response type for the Query/Account RPC method."""
 
@@ -104,6 +108,7 @@ class QueryAccountResponse(google.protobuf.message.Message):
 
 global___QueryAccountResponse = QueryAccountResponse
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method."""
 
@@ -115,6 +120,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method."""
 
@@ -134,6 +140,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryModuleAccountByNameRequest(google.protobuf.message.Message):
     """QueryModuleAccountByNameRequest is the request type for the Query/ModuleAccountByName RPC method."""
 
@@ -150,6 +157,7 @@ class QueryModuleAccountByNameRequest(google.protobuf.message.Message):
 
 global___QueryModuleAccountByNameRequest = QueryModuleAccountByNameRequest
 
+@typing_extensions.final
 class QueryModuleAccountByNameResponse(google.protobuf.message.Message):
     """QueryModuleAccountByNameResponse is the response type for the Query/ModuleAccountByName RPC method."""
 

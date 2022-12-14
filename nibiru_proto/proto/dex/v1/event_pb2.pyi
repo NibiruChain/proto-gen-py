@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class EventPoolJoined(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -47,6 +48,7 @@ class EventPoolJoined(google.protobuf.message.Message):
 
 global___EventPoolJoined = EventPoolJoined
 
+@typing_extensions.final
 class EventPoolCreated(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -64,6 +66,7 @@ class EventPoolCreated(google.protobuf.message.Message):
 
 global___EventPoolCreated = EventPoolCreated
 
+@typing_extensions.final
 class EventPoolExited(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -90,6 +93,7 @@ class EventPoolExited(google.protobuf.message.Message):
 
 global___EventPoolExited = EventPoolExited
 
+@typing_extensions.final
 class EventAssetsSwapped(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryAllowanceRequest(google.protobuf.message.Message):
     """QueryAllowanceRequest is the request type for the Query/Allowance RPC method."""
 
@@ -39,6 +40,7 @@ class QueryAllowanceRequest(google.protobuf.message.Message):
 
 global___QueryAllowanceRequest = QueryAllowanceRequest
 
+@typing_extensions.final
 class QueryAllowanceResponse(google.protobuf.message.Message):
     """QueryAllowanceResponse is the response type for the Query/Allowance RPC method."""
 
@@ -58,6 +60,7 @@ class QueryAllowanceResponse(google.protobuf.message.Message):
 
 global___QueryAllowanceResponse = QueryAllowanceResponse
 
+@typing_extensions.final
 class QueryAllowancesRequest(google.protobuf.message.Message):
     """QueryAllowancesRequest is the request type for the Query/Allowances RPC method."""
 
@@ -80,6 +83,7 @@ class QueryAllowancesRequest(google.protobuf.message.Message):
 
 global___QueryAllowancesRequest = QueryAllowancesRequest
 
+@typing_extensions.final
 class QueryAllowancesResponse(google.protobuf.message.Message):
     """QueryAllowancesResponse is the response type for the Query/Allowances RPC method."""
 
@@ -104,6 +108,7 @@ class QueryAllowancesResponse(google.protobuf.message.Message):
 
 global___QueryAllowancesResponse = QueryAllowancesResponse
 
+@typing_extensions.final
 class QueryAllowancesByGranterRequest(google.protobuf.message.Message):
     """QueryAllowancesByGranterRequest is the request type for the Query/AllowancesByGranter RPC method."""
 
@@ -126,6 +131,7 @@ class QueryAllowancesByGranterRequest(google.protobuf.message.Message):
 
 global___QueryAllowancesByGranterRequest = QueryAllowancesByGranterRequest
 
+@typing_extensions.final
 class QueryAllowancesByGranterResponse(google.protobuf.message.Message):
     """QueryAllowancesByGranterResponse is the response type for the Query/AllowancesByGranter RPC method."""
 

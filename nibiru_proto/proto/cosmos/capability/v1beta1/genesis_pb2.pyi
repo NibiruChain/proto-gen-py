@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisOwners(google.protobuf.message.Message):
     """GenesisOwners defines the capability owners with their corresponding index."""
 
@@ -40,6 +41,7 @@ class GenesisOwners(google.protobuf.message.Message):
 
 global___GenesisOwners = GenesisOwners
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the capability module's genesis state."""
 

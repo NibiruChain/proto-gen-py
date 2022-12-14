@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Minter(google.protobuf.message.Message):
     """Minter represents the minting state."""
 
@@ -35,6 +36,7 @@ class Minter(google.protobuf.message.Message):
 
 global___Minter = Minter
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params holds parameters for the mint module."""
 

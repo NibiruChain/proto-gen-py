@@ -27,7 +27,7 @@ class _OrderBy:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _OrderByEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_OrderBy.ValueType], builtins.type):  # noqa: F821
+class _OrderByEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_OrderBy.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     ORDER_BY_UNSPECIFIED: _OrderBy.ValueType  # 0
     """ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults to ASC in this case."""
@@ -51,7 +51,7 @@ class _BroadcastMode:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _BroadcastModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BroadcastMode.ValueType], builtins.type):  # noqa: F821
+class _BroadcastModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BroadcastMode.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     BROADCAST_MODE_UNSPECIFIED: _BroadcastMode.ValueType  # 0
     """zero-value for mode ordering"""
@@ -87,6 +87,7 @@ immediately.
 """
 global___BroadcastMode = BroadcastMode
 
+@typing_extensions.final
 class GetTxsEventRequest(google.protobuf.message.Message):
     """GetTxsEventRequest is the request type for the Service.TxsByEvents
     RPC method.
@@ -116,6 +117,7 @@ class GetTxsEventRequest(google.protobuf.message.Message):
 
 global___GetTxsEventRequest = GetTxsEventRequest
 
+@typing_extensions.final
 class GetTxsEventResponse(google.protobuf.message.Message):
     """GetTxsEventResponse is the response type for the Service.TxsByEvents
     RPC method.
@@ -147,6 +149,7 @@ class GetTxsEventResponse(google.protobuf.message.Message):
 
 global___GetTxsEventResponse = GetTxsEventResponse
 
+@typing_extensions.final
 class BroadcastTxRequest(google.protobuf.message.Message):
     """BroadcastTxRequest is the request type for the Service.BroadcastTxRequest
     RPC method.
@@ -169,6 +172,7 @@ class BroadcastTxRequest(google.protobuf.message.Message):
 
 global___BroadcastTxRequest = BroadcastTxRequest
 
+@typing_extensions.final
 class BroadcastTxResponse(google.protobuf.message.Message):
     """BroadcastTxResponse is the response type for the
     Service.BroadcastTx method.
@@ -190,6 +194,7 @@ class BroadcastTxResponse(google.protobuf.message.Message):
 
 global___BroadcastTxResponse = BroadcastTxResponse
 
+@typing_extensions.final
 class SimulateRequest(google.protobuf.message.Message):
     """SimulateRequest is the request type for the Service.Simulate
     RPC method.
@@ -220,6 +225,7 @@ class SimulateRequest(google.protobuf.message.Message):
 
 global___SimulateRequest = SimulateRequest
 
+@typing_extensions.final
 class SimulateResponse(google.protobuf.message.Message):
     """SimulateResponse is the response type for the
     Service.SimulateRPC method.
@@ -246,6 +252,7 @@ class SimulateResponse(google.protobuf.message.Message):
 
 global___SimulateResponse = SimulateResponse
 
+@typing_extensions.final
 class GetTxRequest(google.protobuf.message.Message):
     """GetTxRequest is the request type for the Service.GetTx
     RPC method.
@@ -265,6 +272,7 @@ class GetTxRequest(google.protobuf.message.Message):
 
 global___GetTxRequest = GetTxRequest
 
+@typing_extensions.final
 class GetTxResponse(google.protobuf.message.Message):
     """GetTxResponse is the response type for the Service.GetTx method."""
 
@@ -289,6 +297,7 @@ class GetTxResponse(google.protobuf.message.Message):
 
 global___GetTxResponse = GetTxResponse
 
+@typing_extensions.final
 class GetBlockWithTxsRequest(google.protobuf.message.Message):
     """GetBlockWithTxsRequest is the request type for the Service.GetBlockWithTxs
     RPC method.
@@ -316,6 +325,7 @@ class GetBlockWithTxsRequest(google.protobuf.message.Message):
 
 global___GetBlockWithTxsRequest = GetBlockWithTxsRequest
 
+@typing_extensions.final
 class GetBlockWithTxsResponse(google.protobuf.message.Message):
     """GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs method.
 

@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class CreatePoolProposal(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -51,6 +52,7 @@ class CreatePoolProposal(google.protobuf.message.Message):
 
 global___CreatePoolProposal = CreatePoolProposal
 
+@typing_extensions.final
 class EditPoolConfigProposal(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -76,6 +78,7 @@ class EditPoolConfigProposal(google.protobuf.message.Message):
 
 global___EditPoolConfigProposal = EditPoolConfigProposal
 
+@typing_extensions.final
 class EditSwapInvariantsProposal(google.protobuf.message.Message):
     """EditSwapInvariantsProposal is a governance proposal to change the swap 
     invariant of the virtual pool for one or more trading pairs.
@@ -83,6 +86,7 @@ class EditSwapInvariantsProposal(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class SwapInvariantMultiple(google.protobuf.message.Message):
         """A map between a trading pair and a desired multiplier for its swap invariant."""
 

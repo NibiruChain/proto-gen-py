@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Equivocation(google.protobuf.message.Message):
     """Equivocation implements the Evidence interface and defines evidence of double
     signing misbehavior.

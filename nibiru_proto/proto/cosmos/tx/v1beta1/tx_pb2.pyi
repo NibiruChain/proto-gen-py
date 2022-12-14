@@ -20,6 +20,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Tx(google.protobuf.message.Message):
     """Tx is the standard type used for broadcasting transactions."""
 
@@ -54,6 +55,7 @@ class Tx(google.protobuf.message.Message):
 
 global___Tx = Tx
 
+@typing_extensions.final
 class TxRaw(google.protobuf.message.Message):
     """TxRaw is a variant of Tx that pins the signer's exact binary representation
     of body and auth_info. This is used for signing, broadcasting and
@@ -92,6 +94,7 @@ class TxRaw(google.protobuf.message.Message):
 
 global___TxRaw = TxRaw
 
+@typing_extensions.final
 class SignDoc(google.protobuf.message.Message):
     """SignDoc is the type used for generating sign bytes for SIGN_MODE_DIRECT."""
 
@@ -128,6 +131,7 @@ class SignDoc(google.protobuf.message.Message):
 
 global___SignDoc = SignDoc
 
+@typing_extensions.final
 class TxBody(google.protobuf.message.Message):
     """TxBody is the body of a transaction that all signers sign over."""
 
@@ -182,6 +186,7 @@ class TxBody(google.protobuf.message.Message):
 
 global___TxBody = TxBody
 
+@typing_extensions.final
 class AuthInfo(google.protobuf.message.Message):
     """AuthInfo describes the fee and signer modes that are used to sign a
     transaction.
@@ -216,6 +221,7 @@ class AuthInfo(google.protobuf.message.Message):
 
 global___AuthInfo = AuthInfo
 
+@typing_extensions.final
 class SignerInfo(google.protobuf.message.Message):
     """SignerInfo describes the public key and signing mode of a single top-level
     signer.
@@ -254,11 +260,13 @@ class SignerInfo(google.protobuf.message.Message):
 
 global___SignerInfo = SignerInfo
 
+@typing_extensions.final
 class ModeInfo(google.protobuf.message.Message):
     """ModeInfo describes the signing mode of a single or nested multisig signer."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class Single(google.protobuf.message.Message):
         """Single is the mode info for a single signer. It is structured as a message
         to allow for additional fields such as locale for SIGN_MODE_TEXTUAL in the
@@ -277,6 +285,7 @@ class ModeInfo(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing_extensions.Literal["mode", b"mode"]) -> None: ...
 
+    @typing_extensions.final
     class Multi(google.protobuf.message.Message):
         """Multi is the mode info for a multisig public key"""
 
@@ -321,6 +330,7 @@ class ModeInfo(google.protobuf.message.Message):
 
 global___ModeInfo = ModeInfo
 
+@typing_extensions.final
 class Fee(google.protobuf.message.Message):
     """Fee includes the amount of coins paid in fees and the maximum
     gas to be used by the transaction. The ratio yields an effective "gasprice",

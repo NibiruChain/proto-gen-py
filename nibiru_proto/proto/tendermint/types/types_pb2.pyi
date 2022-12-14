@@ -26,7 +26,7 @@ class _BlockIDFlag:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _BlockIDFlagEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BlockIDFlag.ValueType], builtins.type):  # noqa: F821
+class _BlockIDFlagEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BlockIDFlag.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     BLOCK_ID_FLAG_UNKNOWN: _BlockIDFlag.ValueType  # 0
     BLOCK_ID_FLAG_ABSENT: _BlockIDFlag.ValueType  # 1
@@ -46,7 +46,7 @@ class _SignedMsgType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SignedMsgTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignedMsgType.ValueType], builtins.type):  # noqa: F821
+class _SignedMsgTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SignedMsgType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     SIGNED_MSG_TYPE_UNKNOWN: _SignedMsgType.ValueType  # 0
     SIGNED_MSG_TYPE_PREVOTE: _SignedMsgType.ValueType  # 1
@@ -66,6 +66,7 @@ SIGNED_MSG_TYPE_PROPOSAL: SignedMsgType.ValueType  # 32
 """Proposals"""
 global___SignedMsgType = SignedMsgType
 
+@typing_extensions.final
 class PartSetHeader(google.protobuf.message.Message):
     """PartsetHeader"""
 
@@ -85,6 +86,7 @@ class PartSetHeader(google.protobuf.message.Message):
 
 global___PartSetHeader = PartSetHeader
 
+@typing_extensions.final
 class Part(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -107,6 +109,7 @@ class Part(google.protobuf.message.Message):
 
 global___Part = Part
 
+@typing_extensions.final
 class BlockID(google.protobuf.message.Message):
     """BlockID"""
 
@@ -128,6 +131,7 @@ class BlockID(google.protobuf.message.Message):
 
 global___BlockID = BlockID
 
+@typing_extensions.final
 class Header(google.protobuf.message.Message):
     """--------------------------------
 
@@ -207,6 +211,7 @@ class Header(google.protobuf.message.Message):
 
 global___Header = Header
 
+@typing_extensions.final
 class Data(google.protobuf.message.Message):
     """Data contains the set of transactions included in the block"""
 
@@ -228,6 +233,7 @@ class Data(google.protobuf.message.Message):
 
 global___Data = Data
 
+@typing_extensions.final
 class Vote(google.protobuf.message.Message):
     """Vote represents a prevote, precommit, or commit vote from validators for
     consensus.
@@ -271,6 +277,7 @@ class Vote(google.protobuf.message.Message):
 
 global___Vote = Vote
 
+@typing_extensions.final
 class Commit(google.protobuf.message.Message):
     """Commit contains the evidence that a block was committed by a set of validators."""
 
@@ -299,6 +306,7 @@ class Commit(google.protobuf.message.Message):
 
 global___Commit = Commit
 
+@typing_extensions.final
 class CommitSig(google.protobuf.message.Message):
     """CommitSig is a part of the Vote included in a Commit."""
 
@@ -326,6 +334,7 @@ class CommitSig(google.protobuf.message.Message):
 
 global___CommitSig = CommitSig
 
+@typing_extensions.final
 class Proposal(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -361,6 +370,7 @@ class Proposal(google.protobuf.message.Message):
 
 global___Proposal = Proposal
 
+@typing_extensions.final
 class SignedHeader(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -381,6 +391,7 @@ class SignedHeader(google.protobuf.message.Message):
 
 global___SignedHeader = SignedHeader
 
+@typing_extensions.final
 class LightBlock(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -401,6 +412,7 @@ class LightBlock(google.protobuf.message.Message):
 
 global___LightBlock = LightBlock
 
+@typing_extensions.final
 class BlockMeta(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -427,6 +439,7 @@ class BlockMeta(google.protobuf.message.Message):
 
 global___BlockMeta = BlockMeta
 
+@typing_extensions.final
 class TxProof(google.protobuf.message.Message):
     """TxProof represents a Merkle proof of the presence of a transaction in the Merkle tree."""
 

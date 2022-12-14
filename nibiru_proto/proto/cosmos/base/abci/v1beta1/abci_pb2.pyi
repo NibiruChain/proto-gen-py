@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class TxResponse(google.protobuf.message.Message):
     """TxResponse defines a structure containing relevant tx data and metadata. The
     tags are stringified and the log is JSON decoded.
@@ -100,6 +101,7 @@ class TxResponse(google.protobuf.message.Message):
 
 global___TxResponse = TxResponse
 
+@typing_extensions.final
 class ABCIMessageLog(google.protobuf.message.Message):
     """ABCIMessageLog defines a structure containing an indexed tx ABCI message log."""
 
@@ -126,6 +128,7 @@ class ABCIMessageLog(google.protobuf.message.Message):
 
 global___ABCIMessageLog = ABCIMessageLog
 
+@typing_extensions.final
 class StringEvent(google.protobuf.message.Message):
     """StringEvent defines en Event object wrapper where all the attributes
     contain key/value pairs that are strings instead of raw bytes.
@@ -148,6 +151,7 @@ class StringEvent(google.protobuf.message.Message):
 
 global___StringEvent = StringEvent
 
+@typing_extensions.final
 class Attribute(google.protobuf.message.Message):
     """Attribute defines an attribute wrapper where the key and value are
     strings instead of raw bytes.
@@ -169,6 +173,7 @@ class Attribute(google.protobuf.message.Message):
 
 global___Attribute = Attribute
 
+@typing_extensions.final
 class GasInfo(google.protobuf.message.Message):
     """GasInfo defines tx execution gas context."""
 
@@ -190,6 +195,7 @@ class GasInfo(google.protobuf.message.Message):
 
 global___GasInfo = GasInfo
 
+@typing_extensions.final
 class Result(google.protobuf.message.Message):
     """Result is the union of ResponseFormat and ResponseCheckTx."""
 
@@ -220,6 +226,7 @@ class Result(google.protobuf.message.Message):
 
 global___Result = Result
 
+@typing_extensions.final
 class SimulationResponse(google.protobuf.message.Message):
     """SimulationResponse defines the response generated when a transaction is
     successfully simulated.
@@ -244,6 +251,7 @@ class SimulationResponse(google.protobuf.message.Message):
 
 global___SimulationResponse = SimulationResponse
 
+@typing_extensions.final
 class MsgData(google.protobuf.message.Message):
     """MsgData defines the data returned in a Result object during message
     execution.
@@ -265,6 +273,7 @@ class MsgData(google.protobuf.message.Message):
 
 global___MsgData = MsgData
 
+@typing_extensions.final
 class TxMsgData(google.protobuf.message.Message):
     """TxMsgData defines a list of MsgData. A transaction will have a MsgData object
     for each message.
@@ -284,6 +293,7 @@ class TxMsgData(google.protobuf.message.Message):
 
 global___TxMsgData = TxMsgData
 
+@typing_extensions.final
 class SearchTxsResult(google.protobuf.message.Message):
     """SearchTxsResult defines a structure for querying txs pageable"""
 

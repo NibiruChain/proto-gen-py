@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class AppDescriptor(google.protobuf.message.Message):
     """AppDescriptor describes a cosmos-sdk based application"""
 
@@ -62,6 +63,7 @@ class AppDescriptor(google.protobuf.message.Message):
 
 global___AppDescriptor = AppDescriptor
 
+@typing_extensions.final
 class TxDescriptor(google.protobuf.message.Message):
     """TxDescriptor describes the accepted transaction type"""
 
@@ -87,6 +89,7 @@ class TxDescriptor(google.protobuf.message.Message):
 
 global___TxDescriptor = TxDescriptor
 
+@typing_extensions.final
 class AuthnDescriptor(google.protobuf.message.Message):
     """AuthnDescriptor provides information on how to sign transactions without relying
     on the online RPCs GetTxMetadata and CombineUnsignedTxAndSignatures
@@ -107,6 +110,7 @@ class AuthnDescriptor(google.protobuf.message.Message):
 
 global___AuthnDescriptor = AuthnDescriptor
 
+@typing_extensions.final
 class SigningModeDescriptor(google.protobuf.message.Message):
     """SigningModeDescriptor provides information on a signing flow of the application
     NOTE(fdymylja): here we could go as far as providing an entire flow on how
@@ -138,6 +142,7 @@ class SigningModeDescriptor(google.protobuf.message.Message):
 
 global___SigningModeDescriptor = SigningModeDescriptor
 
+@typing_extensions.final
 class ChainDescriptor(google.protobuf.message.Message):
     """ChainDescriptor describes chain information of the application"""
 
@@ -155,6 +160,7 @@ class ChainDescriptor(google.protobuf.message.Message):
 
 global___ChainDescriptor = ChainDescriptor
 
+@typing_extensions.final
 class CodecDescriptor(google.protobuf.message.Message):
     """CodecDescriptor describes the registered interfaces and provides metadata information on the types"""
 
@@ -173,6 +179,7 @@ class CodecDescriptor(google.protobuf.message.Message):
 
 global___CodecDescriptor = CodecDescriptor
 
+@typing_extensions.final
 class InterfaceDescriptor(google.protobuf.message.Message):
     """InterfaceDescriptor describes the implementation of an interface"""
 
@@ -202,6 +209,7 @@ class InterfaceDescriptor(google.protobuf.message.Message):
 
 global___InterfaceDescriptor = InterfaceDescriptor
 
+@typing_extensions.final
 class InterfaceImplementerDescriptor(google.protobuf.message.Message):
     """InterfaceImplementerDescriptor describes an interface implementer"""
 
@@ -227,6 +235,7 @@ class InterfaceImplementerDescriptor(google.protobuf.message.Message):
 
 global___InterfaceImplementerDescriptor = InterfaceImplementerDescriptor
 
+@typing_extensions.final
 class InterfaceAcceptingMessageDescriptor(google.protobuf.message.Message):
     """InterfaceAcceptingMessageDescriptor describes a protobuf message which contains
     an interface represented as a google.protobuf.Any
@@ -254,6 +263,7 @@ class InterfaceAcceptingMessageDescriptor(google.protobuf.message.Message):
 
 global___InterfaceAcceptingMessageDescriptor = InterfaceAcceptingMessageDescriptor
 
+@typing_extensions.final
 class ConfigurationDescriptor(google.protobuf.message.Message):
     """ConfigurationDescriptor contains metadata information on the sdk.Config"""
 
@@ -271,6 +281,7 @@ class ConfigurationDescriptor(google.protobuf.message.Message):
 
 global___ConfigurationDescriptor = ConfigurationDescriptor
 
+@typing_extensions.final
 class MsgDescriptor(google.protobuf.message.Message):
     """MsgDescriptor describes a cosmos-sdk message that can be delivered with a transaction"""
 
@@ -288,6 +299,7 @@ class MsgDescriptor(google.protobuf.message.Message):
 
 global___MsgDescriptor = MsgDescriptor
 
+@typing_extensions.final
 class GetAuthnDescriptorRequest(google.protobuf.message.Message):
     """GetAuthnDescriptorRequest is the request used for the GetAuthnDescriptor RPC"""
 
@@ -299,6 +311,7 @@ class GetAuthnDescriptorRequest(google.protobuf.message.Message):
 
 global___GetAuthnDescriptorRequest = GetAuthnDescriptorRequest
 
+@typing_extensions.final
 class GetAuthnDescriptorResponse(google.protobuf.message.Message):
     """GetAuthnDescriptorResponse is the response returned by the GetAuthnDescriptor RPC"""
 
@@ -318,6 +331,7 @@ class GetAuthnDescriptorResponse(google.protobuf.message.Message):
 
 global___GetAuthnDescriptorResponse = GetAuthnDescriptorResponse
 
+@typing_extensions.final
 class GetChainDescriptorRequest(google.protobuf.message.Message):
     """GetChainDescriptorRequest is the request used for the GetChainDescriptor RPC"""
 
@@ -329,6 +343,7 @@ class GetChainDescriptorRequest(google.protobuf.message.Message):
 
 global___GetChainDescriptorRequest = GetChainDescriptorRequest
 
+@typing_extensions.final
 class GetChainDescriptorResponse(google.protobuf.message.Message):
     """GetChainDescriptorResponse is the response returned by the GetChainDescriptor RPC"""
 
@@ -348,6 +363,7 @@ class GetChainDescriptorResponse(google.protobuf.message.Message):
 
 global___GetChainDescriptorResponse = GetChainDescriptorResponse
 
+@typing_extensions.final
 class GetCodecDescriptorRequest(google.protobuf.message.Message):
     """GetCodecDescriptorRequest is the request used for the GetCodecDescriptor RPC"""
 
@@ -359,6 +375,7 @@ class GetCodecDescriptorRequest(google.protobuf.message.Message):
 
 global___GetCodecDescriptorRequest = GetCodecDescriptorRequest
 
+@typing_extensions.final
 class GetCodecDescriptorResponse(google.protobuf.message.Message):
     """GetCodecDescriptorResponse is the response returned by the GetCodecDescriptor RPC"""
 
@@ -378,6 +395,7 @@ class GetCodecDescriptorResponse(google.protobuf.message.Message):
 
 global___GetCodecDescriptorResponse = GetCodecDescriptorResponse
 
+@typing_extensions.final
 class GetConfigurationDescriptorRequest(google.protobuf.message.Message):
     """GetConfigurationDescriptorRequest is the request used for the GetConfigurationDescriptor RPC"""
 
@@ -389,6 +407,7 @@ class GetConfigurationDescriptorRequest(google.protobuf.message.Message):
 
 global___GetConfigurationDescriptorRequest = GetConfigurationDescriptorRequest
 
+@typing_extensions.final
 class GetConfigurationDescriptorResponse(google.protobuf.message.Message):
     """GetConfigurationDescriptorResponse is the response returned by the GetConfigurationDescriptor RPC"""
 
@@ -408,6 +427,7 @@ class GetConfigurationDescriptorResponse(google.protobuf.message.Message):
 
 global___GetConfigurationDescriptorResponse = GetConfigurationDescriptorResponse
 
+@typing_extensions.final
 class GetQueryServicesDescriptorRequest(google.protobuf.message.Message):
     """GetQueryServicesDescriptorRequest is the request used for the GetQueryServicesDescriptor RPC"""
 
@@ -419,6 +439,7 @@ class GetQueryServicesDescriptorRequest(google.protobuf.message.Message):
 
 global___GetQueryServicesDescriptorRequest = GetQueryServicesDescriptorRequest
 
+@typing_extensions.final
 class GetQueryServicesDescriptorResponse(google.protobuf.message.Message):
     """GetQueryServicesDescriptorResponse is the response returned by the GetQueryServicesDescriptor RPC"""
 
@@ -438,6 +459,7 @@ class GetQueryServicesDescriptorResponse(google.protobuf.message.Message):
 
 global___GetQueryServicesDescriptorResponse = GetQueryServicesDescriptorResponse
 
+@typing_extensions.final
 class GetTxDescriptorRequest(google.protobuf.message.Message):
     """GetTxDescriptorRequest is the request used for the GetTxDescriptor RPC"""
 
@@ -449,6 +471,7 @@ class GetTxDescriptorRequest(google.protobuf.message.Message):
 
 global___GetTxDescriptorRequest = GetTxDescriptorRequest
 
+@typing_extensions.final
 class GetTxDescriptorResponse(google.protobuf.message.Message):
     """GetTxDescriptorResponse is the response returned by the GetTxDescriptor RPC"""
 
@@ -470,6 +493,7 @@ class GetTxDescriptorResponse(google.protobuf.message.Message):
 
 global___GetTxDescriptorResponse = GetTxDescriptorResponse
 
+@typing_extensions.final
 class QueryServicesDescriptor(google.protobuf.message.Message):
     """QueryServicesDescriptor contains the list of cosmos-sdk queriable services"""
 
@@ -488,6 +512,7 @@ class QueryServicesDescriptor(google.protobuf.message.Message):
 
 global___QueryServicesDescriptor = QueryServicesDescriptor
 
+@typing_extensions.final
 class QueryServiceDescriptor(google.protobuf.message.Message):
     """QueryServiceDescriptor describes a cosmos-sdk queryable service"""
 
@@ -514,6 +539,7 @@ class QueryServiceDescriptor(google.protobuf.message.Message):
 
 global___QueryServiceDescriptor = QueryServiceDescriptor
 
+@typing_extensions.final
 class QueryMethodDescriptor(google.protobuf.message.Message):
     """QueryMethodDescriptor describes a queryable method of a query service
     no other info is provided beside method name and tendermint queryable path

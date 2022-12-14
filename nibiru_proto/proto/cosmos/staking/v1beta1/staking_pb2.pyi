@@ -27,7 +27,7 @@ class _BondStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _BondStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BondStatus.ValueType], builtins.type):  # noqa: F821
+class _BondStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BondStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     BOND_STATUS_UNSPECIFIED: _BondStatus.ValueType  # 0
     """UNSPECIFIED defines an invalid validator status."""
@@ -51,6 +51,7 @@ BOND_STATUS_BONDED: BondStatus.ValueType  # 3
 """BONDED defines a validator that is bonded."""
 global___BondStatus = BondStatus
 
+@typing_extensions.final
 class HistoricalInfo(google.protobuf.message.Message):
     """HistoricalInfo contains header and validator information for a given block.
     It is stored as part of staking module's state, which persists the `n` most
@@ -77,6 +78,7 @@ class HistoricalInfo(google.protobuf.message.Message):
 
 global___HistoricalInfo = HistoricalInfo
 
+@typing_extensions.final
 class CommissionRates(google.protobuf.message.Message):
     """CommissionRates defines the initial commission rates to be used for creating
     a validator.
@@ -104,6 +106,7 @@ class CommissionRates(google.protobuf.message.Message):
 
 global___CommissionRates = CommissionRates
 
+@typing_extensions.final
 class Commission(google.protobuf.message.Message):
     """Commission defines commission parameters for a given validator."""
 
@@ -128,6 +131,7 @@ class Commission(google.protobuf.message.Message):
 
 global___Commission = Commission
 
+@typing_extensions.final
 class Description(google.protobuf.message.Message):
     """Description defines a validator description."""
 
@@ -161,6 +165,7 @@ class Description(google.protobuf.message.Message):
 
 global___Description = Description
 
+@typing_extensions.final
 class Validator(google.protobuf.message.Message):
     """Validator defines a validator, together with the total amount of the
     Validator's bond shares and their exchange rate to coins. Slashing results in
@@ -231,6 +236,7 @@ class Validator(google.protobuf.message.Message):
 
 global___Validator = Validator
 
+@typing_extensions.final
 class ValAddresses(google.protobuf.message.Message):
     """ValAddresses defines a repeated set of validator addresses."""
 
@@ -248,6 +254,7 @@ class ValAddresses(google.protobuf.message.Message):
 
 global___ValAddresses = ValAddresses
 
+@typing_extensions.final
 class DVPair(google.protobuf.message.Message):
     """DVPair is struct that just has a delegator-validator pair with no other data.
     It is intended to be used as a marshalable pointer. For example, a DVPair can
@@ -270,6 +277,7 @@ class DVPair(google.protobuf.message.Message):
 
 global___DVPair = DVPair
 
+@typing_extensions.final
 class DVPairs(google.protobuf.message.Message):
     """DVPairs defines an array of DVPair objects."""
 
@@ -287,6 +295,7 @@ class DVPairs(google.protobuf.message.Message):
 
 global___DVPairs = DVPairs
 
+@typing_extensions.final
 class DVVTriplet(google.protobuf.message.Message):
     """DVVTriplet is struct that just has a delegator-validator-validator triplet
     with no other data. It is intended to be used as a marshalable pointer. For
@@ -313,6 +322,7 @@ class DVVTriplet(google.protobuf.message.Message):
 
 global___DVVTriplet = DVVTriplet
 
+@typing_extensions.final
 class DVVTriplets(google.protobuf.message.Message):
     """DVVTriplets defines an array of DVVTriplet objects."""
 
@@ -330,6 +340,7 @@ class DVVTriplets(google.protobuf.message.Message):
 
 global___DVVTriplets = DVVTriplets
 
+@typing_extensions.final
 class Delegation(google.protobuf.message.Message):
     """Delegation represents the bond with tokens held by an account. It is
     owned by one delegator, and is associated with the voting power of one
@@ -358,6 +369,7 @@ class Delegation(google.protobuf.message.Message):
 
 global___Delegation = Delegation
 
+@typing_extensions.final
 class UnbondingDelegation(google.protobuf.message.Message):
     """UnbondingDelegation stores all of a single delegator's unbonding bonds
     for a single validator in an time-ordered list.
@@ -388,6 +400,7 @@ class UnbondingDelegation(google.protobuf.message.Message):
 
 global___UnbondingDelegation = UnbondingDelegation
 
+@typing_extensions.final
 class UnbondingDelegationEntry(google.protobuf.message.Message):
     """UnbondingDelegationEntry defines an unbonding object with relevant metadata."""
 
@@ -419,6 +432,7 @@ class UnbondingDelegationEntry(google.protobuf.message.Message):
 
 global___UnbondingDelegationEntry = UnbondingDelegationEntry
 
+@typing_extensions.final
 class RedelegationEntry(google.protobuf.message.Message):
     """RedelegationEntry defines a redelegation object with relevant metadata."""
 
@@ -450,6 +464,7 @@ class RedelegationEntry(google.protobuf.message.Message):
 
 global___RedelegationEntry = RedelegationEntry
 
+@typing_extensions.final
 class Redelegation(google.protobuf.message.Message):
     """Redelegation contains the list of a particular delegator's redelegating bonds
     from a particular source validator to a particular destination validator.
@@ -484,6 +499,7 @@ class Redelegation(google.protobuf.message.Message):
 
 global___Redelegation = Redelegation
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the staking module."""
 
@@ -519,6 +535,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class DelegationResponse(google.protobuf.message.Message):
     """DelegationResponse is equivalent to Delegation except that it contains a
     balance in addition to shares which is more suitable for client responses.
@@ -543,6 +560,7 @@ class DelegationResponse(google.protobuf.message.Message):
 
 global___DelegationResponse = DelegationResponse
 
+@typing_extensions.final
 class RedelegationEntryResponse(google.protobuf.message.Message):
     """RedelegationEntryResponse is equivalent to a RedelegationEntry except that it
     contains a balance in addition to shares which is more suitable for client
@@ -567,6 +585,7 @@ class RedelegationEntryResponse(google.protobuf.message.Message):
 
 global___RedelegationEntryResponse = RedelegationEntryResponse
 
+@typing_extensions.final
 class RedelegationResponse(google.protobuf.message.Message):
     """RedelegationResponse is equivalent to a Redelegation except that its entries
     contain a balance in addition to shares which is more suitable for client
@@ -592,6 +611,7 @@ class RedelegationResponse(google.protobuf.message.Message):
 
 global___RedelegationResponse = RedelegationResponse
 
+@typing_extensions.final
 class Pool(google.protobuf.message.Message):
     """Pool is used for tracking bonded and not-bonded token supply of the bond
     denomination.

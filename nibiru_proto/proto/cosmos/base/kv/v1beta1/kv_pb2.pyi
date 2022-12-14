@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Pairs(google.protobuf.message.Message):
     """Pairs defines a repeated slice of Pair objects."""
 
@@ -33,6 +34,7 @@ class Pairs(google.protobuf.message.Message):
 
 global___Pairs = Pairs
 
+@typing_extensions.final
 class Pair(google.protobuf.message.Message):
     """Pair defines a key/value bytes tuple."""
 

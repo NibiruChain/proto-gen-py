@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class EventTransfer(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -35,6 +36,7 @@ class EventTransfer(google.protobuf.message.Message):
 
 global___EventTransfer = EventTransfer
 
+@typing_extensions.final
 class EventMintStable(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -49,6 +51,7 @@ class EventMintStable(google.protobuf.message.Message):
 
 global___EventMintStable = EventMintStable
 
+@typing_extensions.final
 class EventBurnStable(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -63,6 +66,7 @@ class EventBurnStable(google.protobuf.message.Message):
 
 global___EventBurnStable = EventBurnStable
 
+@typing_extensions.final
 class EventMintNIBI(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -77,6 +81,7 @@ class EventMintNIBI(google.protobuf.message.Message):
 
 global___EventMintNIBI = EventMintNIBI
 
+@typing_extensions.final
 class EventBurnNIBI(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -91,6 +96,7 @@ class EventBurnNIBI(google.protobuf.message.Message):
 
 global___EventBurnNIBI = EventBurnNIBI
 
+@typing_extensions.final
 class EventRecollateralize(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -117,6 +123,7 @@ class EventRecollateralize(google.protobuf.message.Message):
 
 global___EventRecollateralize = EventRecollateralize
 
+@typing_extensions.final
 class EventBuyback(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

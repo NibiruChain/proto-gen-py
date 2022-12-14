@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class BaseVestingAccount(google.protobuf.message.Message):
     """BaseVestingAccount implements the VestingAccount interface. It contains all
     the necessary fields needed for any vesting account implementation.
@@ -53,6 +54,7 @@ class BaseVestingAccount(google.protobuf.message.Message):
 
 global___BaseVestingAccount = BaseVestingAccount
 
+@typing_extensions.final
 class ContinuousVestingAccount(google.protobuf.message.Message):
     """ContinuousVestingAccount implements the VestingAccount interface. It
     continuously vests by unlocking coins linearly with respect to time.
@@ -76,6 +78,7 @@ class ContinuousVestingAccount(google.protobuf.message.Message):
 
 global___ContinuousVestingAccount = ContinuousVestingAccount
 
+@typing_extensions.final
 class DelayedVestingAccount(google.protobuf.message.Message):
     """DelayedVestingAccount implements the VestingAccount interface. It vests all
     coins after a specific time, but non prior. In other words, it keeps them
@@ -97,6 +100,7 @@ class DelayedVestingAccount(google.protobuf.message.Message):
 
 global___DelayedVestingAccount = DelayedVestingAccount
 
+@typing_extensions.final
 class Period(google.protobuf.message.Message):
     """Period defines a length of time and amount of coins that will vest."""
 
@@ -117,6 +121,7 @@ class Period(google.protobuf.message.Message):
 
 global___Period = Period
 
+@typing_extensions.final
 class PeriodicVestingAccount(google.protobuf.message.Message):
     """PeriodicVestingAccount implements the VestingAccount interface. It
     periodically vests by unlocking coins during each specified period.
@@ -144,6 +149,7 @@ class PeriodicVestingAccount(google.protobuf.message.Message):
 
 global___PeriodicVestingAccount = PeriodicVestingAccount
 
+@typing_extensions.final
 class PermanentLockedAccount(google.protobuf.message.Message):
     """PermanentLockedAccount implements the VestingAccount interface. It does
     not ever release coins, locking them indefinitely. Coins in this account can

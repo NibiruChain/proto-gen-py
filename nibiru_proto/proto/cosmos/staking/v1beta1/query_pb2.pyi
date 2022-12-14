@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryValidatorsRequest(google.protobuf.message.Message):
     """QueryValidatorsRequest is request type for Query/Validators RPC method."""
 
@@ -41,6 +42,7 @@ class QueryValidatorsRequest(google.protobuf.message.Message):
 
 global___QueryValidatorsRequest = QueryValidatorsRequest
 
+@typing_extensions.final
 class QueryValidatorsResponse(google.protobuf.message.Message):
     """QueryValidatorsResponse is response type for the Query/Validators RPC method"""
 
@@ -65,6 +67,7 @@ class QueryValidatorsResponse(google.protobuf.message.Message):
 
 global___QueryValidatorsResponse = QueryValidatorsResponse
 
+@typing_extensions.final
 class QueryValidatorRequest(google.protobuf.message.Message):
     """QueryValidatorRequest is response type for the Query/Validator RPC method"""
 
@@ -82,6 +85,7 @@ class QueryValidatorRequest(google.protobuf.message.Message):
 
 global___QueryValidatorRequest = QueryValidatorRequest
 
+@typing_extensions.final
 class QueryValidatorResponse(google.protobuf.message.Message):
     """QueryValidatorResponse is response type for the Query/Validator RPC method"""
 
@@ -101,6 +105,7 @@ class QueryValidatorResponse(google.protobuf.message.Message):
 
 global___QueryValidatorResponse = QueryValidatorResponse
 
+@typing_extensions.final
 class QueryValidatorDelegationsRequest(google.protobuf.message.Message):
     """QueryValidatorDelegationsRequest is request type for the
     Query/ValidatorDelegations RPC method
@@ -126,6 +131,7 @@ class QueryValidatorDelegationsRequest(google.protobuf.message.Message):
 
 global___QueryValidatorDelegationsRequest = QueryValidatorDelegationsRequest
 
+@typing_extensions.final
 class QueryValidatorDelegationsResponse(google.protobuf.message.Message):
     """QueryValidatorDelegationsResponse is response type for the
     Query/ValidatorDelegations RPC method
@@ -151,6 +157,7 @@ class QueryValidatorDelegationsResponse(google.protobuf.message.Message):
 
 global___QueryValidatorDelegationsResponse = QueryValidatorDelegationsResponse
 
+@typing_extensions.final
 class QueryValidatorUnbondingDelegationsRequest(google.protobuf.message.Message):
     """QueryValidatorUnbondingDelegationsRequest is required type for the
     Query/ValidatorUnbondingDelegations RPC method
@@ -176,6 +183,7 @@ class QueryValidatorUnbondingDelegationsRequest(google.protobuf.message.Message)
 
 global___QueryValidatorUnbondingDelegationsRequest = QueryValidatorUnbondingDelegationsRequest
 
+@typing_extensions.final
 class QueryValidatorUnbondingDelegationsResponse(google.protobuf.message.Message):
     """QueryValidatorUnbondingDelegationsResponse is response type for the
     Query/ValidatorUnbondingDelegations RPC method.
@@ -201,6 +209,7 @@ class QueryValidatorUnbondingDelegationsResponse(google.protobuf.message.Message
 
 global___QueryValidatorUnbondingDelegationsResponse = QueryValidatorUnbondingDelegationsResponse
 
+@typing_extensions.final
 class QueryDelegationRequest(google.protobuf.message.Message):
     """QueryDelegationRequest is request type for the Query/Delegation RPC method."""
 
@@ -222,6 +231,7 @@ class QueryDelegationRequest(google.protobuf.message.Message):
 
 global___QueryDelegationRequest = QueryDelegationRequest
 
+@typing_extensions.final
 class QueryDelegationResponse(google.protobuf.message.Message):
     """QueryDelegationResponse is response type for the Query/Delegation RPC method."""
 
@@ -241,6 +251,7 @@ class QueryDelegationResponse(google.protobuf.message.Message):
 
 global___QueryDelegationResponse = QueryDelegationResponse
 
+@typing_extensions.final
 class QueryUnbondingDelegationRequest(google.protobuf.message.Message):
     """QueryUnbondingDelegationRequest is request type for the
     Query/UnbondingDelegation RPC method.
@@ -264,6 +275,7 @@ class QueryUnbondingDelegationRequest(google.protobuf.message.Message):
 
 global___QueryUnbondingDelegationRequest = QueryUnbondingDelegationRequest
 
+@typing_extensions.final
 class QueryUnbondingDelegationResponse(google.protobuf.message.Message):
     """QueryDelegationResponse is response type for the Query/UnbondingDelegation
     RPC method.
@@ -285,6 +297,7 @@ class QueryUnbondingDelegationResponse(google.protobuf.message.Message):
 
 global___QueryUnbondingDelegationResponse = QueryUnbondingDelegationResponse
 
+@typing_extensions.final
 class QueryDelegatorDelegationsRequest(google.protobuf.message.Message):
     """QueryDelegatorDelegationsRequest is request type for the
     Query/DelegatorDelegations RPC method.
@@ -310,6 +323,7 @@ class QueryDelegatorDelegationsRequest(google.protobuf.message.Message):
 
 global___QueryDelegatorDelegationsRequest = QueryDelegatorDelegationsRequest
 
+@typing_extensions.final
 class QueryDelegatorDelegationsResponse(google.protobuf.message.Message):
     """QueryDelegatorDelegationsResponse is response type for the
     Query/DelegatorDelegations RPC method.
@@ -336,6 +350,7 @@ class QueryDelegatorDelegationsResponse(google.protobuf.message.Message):
 
 global___QueryDelegatorDelegationsResponse = QueryDelegatorDelegationsResponse
 
+@typing_extensions.final
 class QueryDelegatorUnbondingDelegationsRequest(google.protobuf.message.Message):
     """QueryDelegatorUnbondingDelegationsRequest is request type for the
     Query/DelegatorUnbondingDelegations RPC method.
@@ -361,6 +376,7 @@ class QueryDelegatorUnbondingDelegationsRequest(google.protobuf.message.Message)
 
 global___QueryDelegatorUnbondingDelegationsRequest = QueryDelegatorUnbondingDelegationsRequest
 
+@typing_extensions.final
 class QueryDelegatorUnbondingDelegationsResponse(google.protobuf.message.Message):
     """QueryUnbondingDelegatorDelegationsResponse is response type for the
     Query/UnbondingDelegatorDelegations RPC method.
@@ -386,6 +402,7 @@ class QueryDelegatorUnbondingDelegationsResponse(google.protobuf.message.Message
 
 global___QueryDelegatorUnbondingDelegationsResponse = QueryDelegatorUnbondingDelegationsResponse
 
+@typing_extensions.final
 class QueryRedelegationsRequest(google.protobuf.message.Message):
     """QueryRedelegationsRequest is request type for the Query/Redelegations RPC
     method.
@@ -419,6 +436,7 @@ class QueryRedelegationsRequest(google.protobuf.message.Message):
 
 global___QueryRedelegationsRequest = QueryRedelegationsRequest
 
+@typing_extensions.final
 class QueryRedelegationsResponse(google.protobuf.message.Message):
     """QueryRedelegationsResponse is response type for the Query/Redelegations RPC
     method.
@@ -444,6 +462,7 @@ class QueryRedelegationsResponse(google.protobuf.message.Message):
 
 global___QueryRedelegationsResponse = QueryRedelegationsResponse
 
+@typing_extensions.final
 class QueryDelegatorValidatorsRequest(google.protobuf.message.Message):
     """QueryDelegatorValidatorsRequest is request type for the
     Query/DelegatorValidators RPC method.
@@ -469,6 +488,7 @@ class QueryDelegatorValidatorsRequest(google.protobuf.message.Message):
 
 global___QueryDelegatorValidatorsRequest = QueryDelegatorValidatorsRequest
 
+@typing_extensions.final
 class QueryDelegatorValidatorsResponse(google.protobuf.message.Message):
     """QueryDelegatorValidatorsResponse is response type for the
     Query/DelegatorValidators RPC method.
@@ -495,6 +515,7 @@ class QueryDelegatorValidatorsResponse(google.protobuf.message.Message):
 
 global___QueryDelegatorValidatorsResponse = QueryDelegatorValidatorsResponse
 
+@typing_extensions.final
 class QueryDelegatorValidatorRequest(google.protobuf.message.Message):
     """QueryDelegatorValidatorRequest is request type for the
     Query/DelegatorValidator RPC method.
@@ -518,6 +539,7 @@ class QueryDelegatorValidatorRequest(google.protobuf.message.Message):
 
 global___QueryDelegatorValidatorRequest = QueryDelegatorValidatorRequest
 
+@typing_extensions.final
 class QueryDelegatorValidatorResponse(google.protobuf.message.Message):
     """QueryDelegatorValidatorResponse response type for the
     Query/DelegatorValidator RPC method.
@@ -539,6 +561,7 @@ class QueryDelegatorValidatorResponse(google.protobuf.message.Message):
 
 global___QueryDelegatorValidatorResponse = QueryDelegatorValidatorResponse
 
+@typing_extensions.final
 class QueryHistoricalInfoRequest(google.protobuf.message.Message):
     """QueryHistoricalInfoRequest is request type for the Query/HistoricalInfo RPC
     method.
@@ -558,6 +581,7 @@ class QueryHistoricalInfoRequest(google.protobuf.message.Message):
 
 global___QueryHistoricalInfoRequest = QueryHistoricalInfoRequest
 
+@typing_extensions.final
 class QueryHistoricalInfoResponse(google.protobuf.message.Message):
     """QueryHistoricalInfoResponse is response type for the Query/HistoricalInfo RPC
     method.
@@ -579,6 +603,7 @@ class QueryHistoricalInfoResponse(google.protobuf.message.Message):
 
 global___QueryHistoricalInfoResponse = QueryHistoricalInfoResponse
 
+@typing_extensions.final
 class QueryPoolRequest(google.protobuf.message.Message):
     """QueryPoolRequest is request type for the Query/Pool RPC method."""
 
@@ -590,6 +615,7 @@ class QueryPoolRequest(google.protobuf.message.Message):
 
 global___QueryPoolRequest = QueryPoolRequest
 
+@typing_extensions.final
 class QueryPoolResponse(google.protobuf.message.Message):
     """QueryPoolResponse is response type for the Query/Pool RPC method."""
 
@@ -609,6 +635,7 @@ class QueryPoolResponse(google.protobuf.message.Message):
 
 global___QueryPoolResponse = QueryPoolResponse
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is request type for the Query/Params RPC method."""
 
@@ -620,6 +647,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is response type for the Query/Params RPC method."""
 

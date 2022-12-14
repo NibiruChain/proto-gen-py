@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PositionChangedEvent(google.protobuf.message.Message):
     """Emitted when a position changes.
     TODO: Is there a way to split this into different events without creating too much complexity?
@@ -115,6 +116,7 @@ class PositionChangedEvent(google.protobuf.message.Message):
 
 global___PositionChangedEvent = PositionChangedEvent
 
+@typing_extensions.final
 class PositionLiquidatedEvent(google.protobuf.message.Message):
     """Emitted when a position is liquidated."""
 
@@ -193,6 +195,7 @@ class PositionLiquidatedEvent(google.protobuf.message.Message):
 
 global___PositionLiquidatedEvent = PositionLiquidatedEvent
 
+@typing_extensions.final
 class PositionSettledEvent(google.protobuf.message.Message):
     """Emitted when a position is settled."""
 
@@ -219,6 +222,7 @@ class PositionSettledEvent(google.protobuf.message.Message):
 
 global___PositionSettledEvent = PositionSettledEvent
 
+@typing_extensions.final
 class FundingRateChangedEvent(google.protobuf.message.Message):
     """Emitted when a new funding rate is calculated."""
 
@@ -267,16 +271,23 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
 
 global___FundingRateChangedEvent = FundingRateChangedEvent
 
+@typing_extensions.final
 class MetricsEvent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PAIR_FIELD_NUMBER: builtins.int
     NET_SIZE_FIELD_NUMBER: builtins.int
+    VOLUMEQUOTE_FIELD_NUMBER: builtins.int
+    VOLUMEBASE_FIELD_NUMBER: builtins.int
     BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
     BLOCK_TIME_MS_FIELD_NUMBER: builtins.int
     pair: builtins.str
     net_size: builtins.str
     """Sum of all active position sizes for the pair."""
+    volumeQuote: builtins.str
+    """Total notional volume for the pair."""
+    volumeBase: builtins.str
+    """Total size volume for the pair."""
     block_height: builtins.int
     """The block number at which metrics were generated."""
     block_time_ms: builtins.int
@@ -286,9 +297,11 @@ class MetricsEvent(google.protobuf.message.Message):
         *,
         pair: builtins.str = ...,
         net_size: builtins.str = ...,
+        volumeQuote: builtins.str = ...,
+        volumeBase: builtins.str = ...,
         block_height: builtins.int = ...,
         block_time_ms: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["block_height", b"block_height", "block_time_ms", b"block_time_ms", "net_size", b"net_size", "pair", b"pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["block_height", b"block_height", "block_time_ms", b"block_time_ms", "net_size", b"net_size", "pair", b"pair", "volumeBase", b"volumeBase", "volumeQuote", b"volumeQuote"]) -> None: ...
 
 global___MetricsEvent = MetricsEvent

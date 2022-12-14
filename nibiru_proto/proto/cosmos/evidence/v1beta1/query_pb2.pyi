@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryEvidenceRequest(google.protobuf.message.Message):
     """QueryEvidenceRequest is the request type for the Query/Evidence RPC method."""
 
@@ -35,6 +36,7 @@ class QueryEvidenceRequest(google.protobuf.message.Message):
 
 global___QueryEvidenceRequest = QueryEvidenceRequest
 
+@typing_extensions.final
 class QueryEvidenceResponse(google.protobuf.message.Message):
     """QueryEvidenceResponse is the response type for the Query/Evidence RPC method."""
 
@@ -54,6 +56,7 @@ class QueryEvidenceResponse(google.protobuf.message.Message):
 
 global___QueryEvidenceResponse = QueryEvidenceResponse
 
+@typing_extensions.final
 class QueryAllEvidenceRequest(google.protobuf.message.Message):
     """QueryEvidenceRequest is the request type for the Query/AllEvidence RPC
     method.
@@ -75,6 +78,7 @@ class QueryAllEvidenceRequest(google.protobuf.message.Message):
 
 global___QueryAllEvidenceRequest = QueryAllEvidenceRequest
 
+@typing_extensions.final
 class QueryAllEvidenceResponse(google.protobuf.message.Message):
     """QueryAllEvidenceResponse is the response type for the Query/AllEvidence RPC
     method.

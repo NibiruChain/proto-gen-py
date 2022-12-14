@@ -19,6 +19,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the x/pricefeed module."""
 
@@ -45,6 +46,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class PriceSnapshot(google.protobuf.message.Message):
     """a snapshot of the pricefeed oracle's median price at a given point in time"""
 
@@ -70,6 +72,7 @@ class PriceSnapshot(google.protobuf.message.Message):
 
 global___PriceSnapshot = PriceSnapshot
 
+@typing_extensions.final
 class OraclesMarshaler(google.protobuf.message.Message):
     """OraclesMarshaler is a codec.ProtoMarshaler for an oracles array in the
     OraclesState sdk.KVStore.
@@ -89,6 +92,7 @@ class OraclesMarshaler(google.protobuf.message.Message):
 
 global___OraclesMarshaler = OraclesMarshaler
 
+@typing_extensions.final
 class ActivePairMarshaler(google.protobuf.message.Message):
     """ActivePairMarshaler is a codec.ProtoMarshaler for the "IsActive" status of
     a pair in the ActivePairState sdk.KVStore.
@@ -107,6 +111,7 @@ class ActivePairMarshaler(google.protobuf.message.Message):
 
 global___ActivePairMarshaler = ActivePairMarshaler
 
+@typing_extensions.final
 class PostedPrice(google.protobuf.message.Message):
     """PostedPrice defines a price for an asset pair posted by a specific oracle."""
 
@@ -134,6 +139,7 @@ class PostedPrice(google.protobuf.message.Message):
 
 global___PostedPrice = PostedPrice
 
+@typing_extensions.final
 class CurrentPrice(google.protobuf.message.Message):
     """CurrentPrice defines the current price for an asset pair in the pricefeed
     module.
@@ -155,6 +161,7 @@ class CurrentPrice(google.protobuf.message.Message):
 
 global___CurrentPrice = CurrentPrice
 
+@typing_extensions.final
 class CurrentTWAP(google.protobuf.message.Message):
     """CurrentTWAP states defines the numerator and denominator for the TWAP calculation"""
 

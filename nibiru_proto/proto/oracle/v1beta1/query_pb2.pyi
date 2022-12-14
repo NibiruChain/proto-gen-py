@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryExchangeRateRequest(google.protobuf.message.Message):
     """QueryExchangeRateRequest is the request type for the Query/ExchangeRate RPC method."""
 
@@ -34,6 +35,7 @@ class QueryExchangeRateRequest(google.protobuf.message.Message):
 
 global___QueryExchangeRateRequest = QueryExchangeRateRequest
 
+@typing_extensions.final
 class QueryExchangeRateResponse(google.protobuf.message.Message):
     """QueryExchangeRateResponse is response type for the
     Query/ExchangeRate RPC method.
@@ -53,6 +55,7 @@ class QueryExchangeRateResponse(google.protobuf.message.Message):
 
 global___QueryExchangeRateResponse = QueryExchangeRateResponse
 
+@typing_extensions.final
 class QueryExchangeRatesRequest(google.protobuf.message.Message):
     """QueryExchangeRatesRequest is the request type for the Query/ExchangeRates RPC method."""
 
@@ -64,6 +67,7 @@ class QueryExchangeRatesRequest(google.protobuf.message.Message):
 
 global___QueryExchangeRatesRequest = QueryExchangeRatesRequest
 
+@typing_extensions.final
 class QueryExchangeRatesResponse(google.protobuf.message.Message):
     """QueryExchangeRatesResponse is response type for the
     Query/ExchangeRates RPC method.
@@ -84,6 +88,7 @@ class QueryExchangeRatesResponse(google.protobuf.message.Message):
 
 global___QueryExchangeRatesResponse = QueryExchangeRatesResponse
 
+@typing_extensions.final
 class QueryActivesRequest(google.protobuf.message.Message):
     """QueryActivesRequest is the request type for the Query/Actives RPC method."""
 
@@ -95,6 +100,7 @@ class QueryActivesRequest(google.protobuf.message.Message):
 
 global___QueryActivesRequest = QueryActivesRequest
 
+@typing_extensions.final
 class QueryActivesResponse(google.protobuf.message.Message):
     """QueryActivesResponse is response type for the
     Query/Actives RPC method.
@@ -115,6 +121,7 @@ class QueryActivesResponse(google.protobuf.message.Message):
 
 global___QueryActivesResponse = QueryActivesResponse
 
+@typing_extensions.final
 class QueryVoteTargetsRequest(google.protobuf.message.Message):
     """QueryVoteTargetsRequest is the request type for the Query/VoteTargets RPC method."""
 
@@ -126,6 +133,7 @@ class QueryVoteTargetsRequest(google.protobuf.message.Message):
 
 global___QueryVoteTargetsRequest = QueryVoteTargetsRequest
 
+@typing_extensions.final
 class QueryVoteTargetsResponse(google.protobuf.message.Message):
     """QueryVoteTargetsResponse is response type for the
     Query/VoteTargets RPC method.
@@ -148,6 +156,7 @@ class QueryVoteTargetsResponse(google.protobuf.message.Message):
 
 global___QueryVoteTargetsResponse = QueryVoteTargetsResponse
 
+@typing_extensions.final
 class QueryFeederDelegationRequest(google.protobuf.message.Message):
     """QueryFeederDelegationRequest is the request type for the Query/FeederDelegation RPC method."""
 
@@ -165,6 +174,7 @@ class QueryFeederDelegationRequest(google.protobuf.message.Message):
 
 global___QueryFeederDelegationRequest = QueryFeederDelegationRequest
 
+@typing_extensions.final
 class QueryFeederDelegationResponse(google.protobuf.message.Message):
     """QueryFeederDelegationResponse is response type for the
     Query/FeederDelegation RPC method.
@@ -184,6 +194,7 @@ class QueryFeederDelegationResponse(google.protobuf.message.Message):
 
 global___QueryFeederDelegationResponse = QueryFeederDelegationResponse
 
+@typing_extensions.final
 class QueryMissCounterRequest(google.protobuf.message.Message):
     """QueryMissCounterRequest is the request type for the Query/MissCounter RPC method."""
 
@@ -201,6 +212,7 @@ class QueryMissCounterRequest(google.protobuf.message.Message):
 
 global___QueryMissCounterRequest = QueryMissCounterRequest
 
+@typing_extensions.final
 class QueryMissCounterResponse(google.protobuf.message.Message):
     """QueryMissCounterResponse is response type for the
     Query/MissCounter RPC method.
@@ -220,6 +232,7 @@ class QueryMissCounterResponse(google.protobuf.message.Message):
 
 global___QueryMissCounterResponse = QueryMissCounterResponse
 
+@typing_extensions.final
 class QueryAggregatePrevoteRequest(google.protobuf.message.Message):
     """QueryAggregatePrevoteRequest is the request type for the Query/AggregatePrevote RPC method."""
 
@@ -237,6 +250,7 @@ class QueryAggregatePrevoteRequest(google.protobuf.message.Message):
 
 global___QueryAggregatePrevoteRequest = QueryAggregatePrevoteRequest
 
+@typing_extensions.final
 class QueryAggregatePrevoteResponse(google.protobuf.message.Message):
     """QueryAggregatePrevoteResponse is response type for the
     Query/AggregatePrevote RPC method.
@@ -258,6 +272,7 @@ class QueryAggregatePrevoteResponse(google.protobuf.message.Message):
 
 global___QueryAggregatePrevoteResponse = QueryAggregatePrevoteResponse
 
+@typing_extensions.final
 class QueryAggregatePrevotesRequest(google.protobuf.message.Message):
     """QueryAggregatePrevotesRequest is the request type for the Query/AggregatePrevotes RPC method."""
 
@@ -269,6 +284,7 @@ class QueryAggregatePrevotesRequest(google.protobuf.message.Message):
 
 global___QueryAggregatePrevotesRequest = QueryAggregatePrevotesRequest
 
+@typing_extensions.final
 class QueryAggregatePrevotesResponse(google.protobuf.message.Message):
     """QueryAggregatePrevotesResponse is response type for the
     Query/AggregatePrevotes RPC method.
@@ -289,6 +305,7 @@ class QueryAggregatePrevotesResponse(google.protobuf.message.Message):
 
 global___QueryAggregatePrevotesResponse = QueryAggregatePrevotesResponse
 
+@typing_extensions.final
 class QueryAggregateVoteRequest(google.protobuf.message.Message):
     """QueryAggregateVoteRequest is the request type for the Query/AggregateVote RPC method."""
 
@@ -306,6 +323,7 @@ class QueryAggregateVoteRequest(google.protobuf.message.Message):
 
 global___QueryAggregateVoteRequest = QueryAggregateVoteRequest
 
+@typing_extensions.final
 class QueryAggregateVoteResponse(google.protobuf.message.Message):
     """QueryAggregateVoteResponse is response type for the
     Query/AggregateVote RPC method.
@@ -327,6 +345,7 @@ class QueryAggregateVoteResponse(google.protobuf.message.Message):
 
 global___QueryAggregateVoteResponse = QueryAggregateVoteResponse
 
+@typing_extensions.final
 class QueryAggregateVotesRequest(google.protobuf.message.Message):
     """QueryAggregateVotesRequest is the request type for the Query/AggregateVotes RPC method."""
 
@@ -338,6 +357,7 @@ class QueryAggregateVotesRequest(google.protobuf.message.Message):
 
 global___QueryAggregateVotesRequest = QueryAggregateVotesRequest
 
+@typing_extensions.final
 class QueryAggregateVotesResponse(google.protobuf.message.Message):
     """QueryAggregateVotesResponse is response type for the
     Query/AggregateVotes RPC method.
@@ -358,6 +378,7 @@ class QueryAggregateVotesResponse(google.protobuf.message.Message):
 
 global___QueryAggregateVotesResponse = QueryAggregateVotesResponse
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is the request type for the Query/Params RPC method."""
 
@@ -369,6 +390,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is the response type for the Query/Params RPC method."""
 

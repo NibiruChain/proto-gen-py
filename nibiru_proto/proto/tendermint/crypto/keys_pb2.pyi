@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PublicKey(google.protobuf.message.Message):
     """PublicKey defines the keys available for use with Tendermint Validators"""
 

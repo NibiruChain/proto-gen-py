@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgPostPrice(google.protobuf.message.Message):
     """MsgPostPrice represents a method for creating a new post price"""
 
@@ -49,6 +50,7 @@ class MsgPostPrice(google.protobuf.message.Message):
 
 global___MsgPostPrice = MsgPostPrice
 
+@typing_extensions.final
 class MsgPostPriceResponse(google.protobuf.message.Message):
     """MsgPostPriceResponse defines the Msg/PostPrice response type."""
 
@@ -60,6 +62,7 @@ class MsgPostPriceResponse(google.protobuf.message.Message):
 
 global___MsgPostPriceResponse = MsgPostPriceResponse
 
+@typing_extensions.final
 class EventOracleUpdatePrice(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -85,6 +88,7 @@ class EventOracleUpdatePrice(google.protobuf.message.Message):
 
 global___EventOracleUpdatePrice = EventOracleUpdatePrice
 
+@typing_extensions.final
 class EventPairPriceUpdated(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

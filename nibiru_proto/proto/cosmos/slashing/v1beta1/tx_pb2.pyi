@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MsgUnjail(google.protobuf.message.Message):
     """MsgUnjail defines the Msg/Unjail request type"""
 
@@ -30,6 +31,7 @@ class MsgUnjail(google.protobuf.message.Message):
 
 global___MsgUnjail = MsgUnjail
 
+@typing_extensions.final
 class MsgUnjailResponse(google.protobuf.message.Message):
     """MsgUnjailResponse defines the Msg/Unjail response type"""
 

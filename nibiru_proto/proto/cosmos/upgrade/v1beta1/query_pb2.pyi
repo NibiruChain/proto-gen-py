@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryCurrentPlanRequest(google.protobuf.message.Message):
     """QueryCurrentPlanRequest is the request type for the Query/CurrentPlan RPC
     method.
@@ -30,6 +31,7 @@ class QueryCurrentPlanRequest(google.protobuf.message.Message):
 
 global___QueryCurrentPlanRequest = QueryCurrentPlanRequest
 
+@typing_extensions.final
 class QueryCurrentPlanResponse(google.protobuf.message.Message):
     """QueryCurrentPlanResponse is the response type for the Query/CurrentPlan RPC
     method.
@@ -51,6 +53,7 @@ class QueryCurrentPlanResponse(google.protobuf.message.Message):
 
 global___QueryCurrentPlanResponse = QueryCurrentPlanResponse
 
+@typing_extensions.final
 class QueryAppliedPlanRequest(google.protobuf.message.Message):
     """QueryCurrentPlanRequest is the request type for the Query/AppliedPlan RPC
     method.
@@ -70,6 +73,7 @@ class QueryAppliedPlanRequest(google.protobuf.message.Message):
 
 global___QueryAppliedPlanRequest = QueryAppliedPlanRequest
 
+@typing_extensions.final
 class QueryAppliedPlanResponse(google.protobuf.message.Message):
     """QueryAppliedPlanResponse is the response type for the Query/AppliedPlan RPC
     method.
@@ -89,6 +93,7 @@ class QueryAppliedPlanResponse(google.protobuf.message.Message):
 
 global___QueryAppliedPlanResponse = QueryAppliedPlanResponse
 
+@typing_extensions.final
 class QueryUpgradedConsensusStateRequest(google.protobuf.message.Message):
     """QueryUpgradedConsensusStateRequest is the request type for the Query/UpgradedConsensusState
     RPC method.
@@ -110,6 +115,7 @@ class QueryUpgradedConsensusStateRequest(google.protobuf.message.Message):
 
 global___QueryUpgradedConsensusStateRequest = QueryUpgradedConsensusStateRequest
 
+@typing_extensions.final
 class QueryUpgradedConsensusStateResponse(google.protobuf.message.Message):
     """QueryUpgradedConsensusStateResponse is the response type for the Query/UpgradedConsensusState
     RPC method.
@@ -129,6 +135,7 @@ class QueryUpgradedConsensusStateResponse(google.protobuf.message.Message):
 
 global___QueryUpgradedConsensusStateResponse = QueryUpgradedConsensusStateResponse
 
+@typing_extensions.final
 class QueryModuleVersionsRequest(google.protobuf.message.Message):
     """QueryModuleVersionsRequest is the request type for the Query/ModuleVersions
     RPC method.
@@ -153,6 +160,7 @@ class QueryModuleVersionsRequest(google.protobuf.message.Message):
 
 global___QueryModuleVersionsRequest = QueryModuleVersionsRequest
 
+@typing_extensions.final
 class QueryModuleVersionsResponse(google.protobuf.message.Message):
     """QueryModuleVersionsResponse is the response type for the Query/ModuleVersions
     RPC method.

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Capability(google.protobuf.message.Message):
     """Capability defines an implementation of an object capability. The index
     provided to a Capability must be globally unique.
@@ -34,6 +35,7 @@ class Capability(google.protobuf.message.Message):
 
 global___Capability = Capability
 
+@typing_extensions.final
 class Owner(google.protobuf.message.Message):
     """Owner defines a single capability owner. An owner is defined by the name of
     capability and the module name.
@@ -55,6 +57,7 @@ class Owner(google.protobuf.message.Message):
 
 global___Owner = Owner
 
+@typing_extensions.final
 class CapabilityOwners(google.protobuf.message.Message):
     """CapabilityOwners defines a set of owners of a single Capability. The set of
     owners must be unique.

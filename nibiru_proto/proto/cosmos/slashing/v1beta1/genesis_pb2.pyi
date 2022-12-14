@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
     """GenesisState defines the slashing module's genesis state."""
 
@@ -50,6 +51,7 @@ class GenesisState(google.protobuf.message.Message):
 
 global___GenesisState = GenesisState
 
+@typing_extensions.final
 class SigningInfo(google.protobuf.message.Message):
     """SigningInfo stores validator signing info of corresponding address."""
 
@@ -73,6 +75,7 @@ class SigningInfo(google.protobuf.message.Message):
 
 global___SigningInfo = SigningInfo
 
+@typing_extensions.final
 class ValidatorMissedBlocks(google.protobuf.message.Message):
     """ValidatorMissedBlocks contains array of missed blocks of corresponding
     address.
@@ -97,6 +100,7 @@ class ValidatorMissedBlocks(google.protobuf.message.Message):
 
 global___ValidatorMissedBlocks = ValidatorMissedBlocks
 
+@typing_extensions.final
 class MissedBlock(google.protobuf.message.Message):
     """MissedBlock contains height and missed status as boolean."""
 

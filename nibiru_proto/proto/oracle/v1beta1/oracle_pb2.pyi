@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the parameters for the oracle module."""
 
@@ -52,6 +53,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class AggregateExchangeRatePrevote(google.protobuf.message.Message):
     """struct for aggregate prevoting on the ExchangeRateVote.
     The purpose of aggregate prevote is to hide vote exchange rates with hash
@@ -77,6 +79,7 @@ class AggregateExchangeRatePrevote(google.protobuf.message.Message):
 
 global___AggregateExchangeRatePrevote = AggregateExchangeRatePrevote
 
+@typing_extensions.final
 class AggregateExchangeRateVote(google.protobuf.message.Message):
     """MsgAggregateExchangeRateVote - struct for voting on
     the exchange rates different assets.
@@ -99,6 +102,7 @@ class AggregateExchangeRateVote(google.protobuf.message.Message):
 
 global___AggregateExchangeRateVote = AggregateExchangeRateVote
 
+@typing_extensions.final
 class ExchangeRateTuple(google.protobuf.message.Message):
     """ExchangeRateTuple - struct to store interpreted exchange rates data to store"""
 
@@ -118,6 +122,7 @@ class ExchangeRateTuple(google.protobuf.message.Message):
 
 global___ExchangeRateTuple = ExchangeRateTuple
 
+@typing_extensions.final
 class PairReward(google.protobuf.message.Message):
     """PairReward defines a credit object towards validators
     which provide prices faithfully for different pairs.

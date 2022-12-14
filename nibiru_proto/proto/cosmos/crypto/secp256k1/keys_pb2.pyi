@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PubKey(google.protobuf.message.Message):
     """PubKey defines a secp256k1 public key
     Key is the compressed form of the pubkey. The first byte depends is a 0x02 byte
@@ -35,6 +36,7 @@ class PubKey(google.protobuf.message.Message):
 
 global___PubKey = PubKey
 
+@typing_extensions.final
 class PrivKey(google.protobuf.message.Message):
     """PrivKey defines a secp256k1 private key."""
 

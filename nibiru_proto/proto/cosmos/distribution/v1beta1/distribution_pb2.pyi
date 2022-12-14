@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Params(google.protobuf.message.Message):
     """Params defines the set of params for the distribution module."""
 
@@ -42,6 +43,7 @@ class Params(google.protobuf.message.Message):
 
 global___Params = Params
 
+@typing_extensions.final
 class ValidatorHistoricalRewards(google.protobuf.message.Message):
     """ValidatorHistoricalRewards represents historical rewards for a validator.
     Height is implicit within the store key.
@@ -74,6 +76,7 @@ class ValidatorHistoricalRewards(google.protobuf.message.Message):
 
 global___ValidatorHistoricalRewards = ValidatorHistoricalRewards
 
+@typing_extensions.final
 class ValidatorCurrentRewards(google.protobuf.message.Message):
     """ValidatorCurrentRewards represents current rewards and current
     period for a validator kept as a running counter and incremented
@@ -97,6 +100,7 @@ class ValidatorCurrentRewards(google.protobuf.message.Message):
 
 global___ValidatorCurrentRewards = ValidatorCurrentRewards
 
+@typing_extensions.final
 class ValidatorAccumulatedCommission(google.protobuf.message.Message):
     """ValidatorAccumulatedCommission represents accumulated commission
     for a validator kept as a running counter, can be withdrawn at any time.
@@ -116,6 +120,7 @@ class ValidatorAccumulatedCommission(google.protobuf.message.Message):
 
 global___ValidatorAccumulatedCommission = ValidatorAccumulatedCommission
 
+@typing_extensions.final
 class ValidatorOutstandingRewards(google.protobuf.message.Message):
     """ValidatorOutstandingRewards represents outstanding (un-withdrawn) rewards
     for a validator inexpensive to track, allows simple sanity checks.
@@ -135,6 +140,7 @@ class ValidatorOutstandingRewards(google.protobuf.message.Message):
 
 global___ValidatorOutstandingRewards = ValidatorOutstandingRewards
 
+@typing_extensions.final
 class ValidatorSlashEvent(google.protobuf.message.Message):
     """ValidatorSlashEvent represents a validator slash event.
     Height is implicit within the store key.
@@ -158,6 +164,7 @@ class ValidatorSlashEvent(google.protobuf.message.Message):
 
 global___ValidatorSlashEvent = ValidatorSlashEvent
 
+@typing_extensions.final
 class ValidatorSlashEvents(google.protobuf.message.Message):
     """ValidatorSlashEvents is a collection of ValidatorSlashEvent messages."""
 
@@ -175,6 +182,7 @@ class ValidatorSlashEvents(google.protobuf.message.Message):
 
 global___ValidatorSlashEvents = ValidatorSlashEvents
 
+@typing_extensions.final
 class FeePool(google.protobuf.message.Message):
     """FeePool is the global fee pool for distribution."""
 
@@ -192,6 +200,7 @@ class FeePool(google.protobuf.message.Message):
 
 global___FeePool = FeePool
 
+@typing_extensions.final
 class CommunityPoolSpendProposal(google.protobuf.message.Message):
     """CommunityPoolSpendProposal details a proposal for use of community funds,
     together with how many coins are proposed to be spent, and to which
@@ -221,6 +230,7 @@ class CommunityPoolSpendProposal(google.protobuf.message.Message):
 
 global___CommunityPoolSpendProposal = CommunityPoolSpendProposal
 
+@typing_extensions.final
 class DelegatorStartingInfo(google.protobuf.message.Message):
     """DelegatorStartingInfo represents the starting info for a delegator reward
     period. It tracks the previous validator period, the delegation's amount of
@@ -249,6 +259,7 @@ class DelegatorStartingInfo(google.protobuf.message.Message):
 
 global___DelegatorStartingInfo = DelegatorStartingInfo
 
+@typing_extensions.final
 class DelegationDelegatorReward(google.protobuf.message.Message):
     """DelegationDelegatorReward represents the properties
     of a delegator's delegation reward.
@@ -271,6 +282,7 @@ class DelegationDelegatorReward(google.protobuf.message.Message):
 
 global___DelegationDelegatorReward = DelegationDelegatorReward
 
+@typing_extensions.final
 class CommunityPoolSpendProposalWithDeposit(google.protobuf.message.Message):
     """CommunityPoolSpendProposalWithDeposit defines a CommunityPoolSpendProposal
     with a deposit

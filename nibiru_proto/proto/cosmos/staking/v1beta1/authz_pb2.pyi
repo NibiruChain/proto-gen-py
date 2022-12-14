@@ -23,7 +23,7 @@ class _AuthorizationType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AuthorizationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthorizationType.ValueType], builtins.type):  # noqa: F821
+class _AuthorizationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthorizationType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     AUTHORIZATION_TYPE_UNSPECIFIED: _AuthorizationType.ValueType  # 0
     """AUTHORIZATION_TYPE_UNSPECIFIED specifies an unknown authorization type"""
@@ -50,6 +50,7 @@ AUTHORIZATION_TYPE_REDELEGATE: AuthorizationType.ValueType  # 3
 """AUTHORIZATION_TYPE_REDELEGATE defines an authorization type for Msg/BeginRedelegate"""
 global___AuthorizationType = AuthorizationType
 
+@typing_extensions.final
 class StakeAuthorization(google.protobuf.message.Message):
     """StakeAuthorization defines authorization for delegate/undelegate/redelegate.
 
@@ -58,6 +59,7 @@ class StakeAuthorization(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class Validators(google.protobuf.message.Message):
         """Validators defines list of validator addresses."""
 

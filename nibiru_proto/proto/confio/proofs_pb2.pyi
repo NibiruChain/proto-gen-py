@@ -22,7 +22,7 @@ class _HashOp:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _HashOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HashOp.ValueType], builtins.type):  # noqa: F821
+class _HashOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HashOp.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NO_HASH: _HashOp.ValueType  # 0
     """NO_HASH is the default if no data passed. Note this is an illegal argument some places."""
@@ -49,7 +49,7 @@ class _LengthOp:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _LengthOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LengthOp.ValueType], builtins.type):  # noqa: F821
+class _LengthOpEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LengthOp.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NO_PREFIX: _LengthOp.ValueType  # 0
     """NO_PREFIX don't include any length info"""
@@ -98,6 +98,7 @@ REQUIRE_64_BYTES: LengthOp.ValueType  # 8
 """REQUIRE_64_BYTES is like NONE, but will fail if the input is not exactly 64 bytes (sha512 output)"""
 global___LengthOp = LengthOp
 
+@typing_extensions.final
 class ExistenceProof(google.protobuf.message.Message):
     """*
     ExistenceProof takes a key and a value and a set of steps to perform on it.
@@ -146,6 +147,7 @@ class ExistenceProof(google.protobuf.message.Message):
 
 global___ExistenceProof = ExistenceProof
 
+@typing_extensions.final
 class NonExistenceProof(google.protobuf.message.Message):
     """
     NonExistenceProof takes a proof of two neighbors, one left of the desired key,
@@ -176,6 +178,7 @@ class NonExistenceProof(google.protobuf.message.Message):
 
 global___NonExistenceProof = NonExistenceProof
 
+@typing_extensions.final
 class CommitmentProof(google.protobuf.message.Message):
     """
     CommitmentProof is either an ExistenceProof or a NonExistenceProof, or a Batch of such messages
@@ -209,6 +212,7 @@ class CommitmentProof(google.protobuf.message.Message):
 
 global___CommitmentProof = CommitmentProof
 
+@typing_extensions.final
 class LeafOp(google.protobuf.message.Message):
     """*
     LeafOp represents the raw key-value data we wish to prove, and
@@ -255,6 +259,7 @@ class LeafOp(google.protobuf.message.Message):
 
 global___LeafOp = LeafOp
 
+@typing_extensions.final
 class InnerOp(google.protobuf.message.Message):
     """*
     InnerOp represents a merkle-proof step that is not a leaf.
@@ -293,6 +298,7 @@ class InnerOp(google.protobuf.message.Message):
 
 global___InnerOp = InnerOp
 
+@typing_extensions.final
 class ProofSpec(google.protobuf.message.Message):
     """*
     ProofSpec defines what the expected parameters are for a given proof type.
@@ -337,6 +343,7 @@ class ProofSpec(google.protobuf.message.Message):
 
 global___ProofSpec = ProofSpec
 
+@typing_extensions.final
 class InnerSpec(google.protobuf.message.Message):
     """
     InnerSpec contains all store-specific structure info to determine if two proofs from a
@@ -384,6 +391,7 @@ class InnerSpec(google.protobuf.message.Message):
 
 global___InnerSpec = InnerSpec
 
+@typing_extensions.final
 class BatchProof(google.protobuf.message.Message):
     """
     BatchProof is a group of multiple proof types than can be compressed
@@ -403,6 +411,7 @@ class BatchProof(google.protobuf.message.Message):
 
 global___BatchProof = BatchProof
 
+@typing_extensions.final
 class BatchEntry(google.protobuf.message.Message):
     """Use BatchEntry not CommitmentProof, to avoid recursion"""
 
@@ -426,6 +435,7 @@ class BatchEntry(google.protobuf.message.Message):
 
 global___BatchEntry = BatchEntry
 
+@typing_extensions.final
 class CompressedBatchProof(google.protobuf.message.Message):
     """***** all items here are compressed forms ******"""
 
@@ -447,6 +457,7 @@ class CompressedBatchProof(google.protobuf.message.Message):
 
 global___CompressedBatchProof = CompressedBatchProof
 
+@typing_extensions.final
 class CompressedBatchEntry(google.protobuf.message.Message):
     """Use BatchEntry not CommitmentProof, to avoid recursion"""
 
@@ -470,6 +481,7 @@ class CompressedBatchEntry(google.protobuf.message.Message):
 
 global___CompressedBatchEntry = CompressedBatchEntry
 
+@typing_extensions.final
 class CompressedExistenceProof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -497,6 +509,7 @@ class CompressedExistenceProof(google.protobuf.message.Message):
 
 global___CompressedExistenceProof = CompressedExistenceProof
 
+@typing_extensions.final
 class CompressedNonExistenceProof(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

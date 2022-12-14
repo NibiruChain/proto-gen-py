@@ -20,6 +20,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QueryParamsRequest(google.protobuf.message.Message):
     """QueryParamsRequest is request type for the Query/Params RPC method."""
 
@@ -31,6 +32,7 @@ class QueryParamsRequest(google.protobuf.message.Message):
 
 global___QueryParamsRequest = QueryParamsRequest
 
+@typing_extensions.final
 class QueryParamsResponse(google.protobuf.message.Message):
     """QueryParamsResponse is response type for the Query/Params RPC method."""
 
@@ -50,6 +52,7 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
 global___QueryParamsResponse = QueryParamsResponse
 
+@typing_extensions.final
 class QueryPoolNumberRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -59,6 +62,7 @@ class QueryPoolNumberRequest(google.protobuf.message.Message):
 
 global___QueryPoolNumberRequest = QueryPoolNumberRequest
 
+@typing_extensions.final
 class QueryPoolNumberResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -73,6 +77,7 @@ class QueryPoolNumberResponse(google.protobuf.message.Message):
 
 global___QueryPoolNumberResponse = QueryPoolNumberResponse
 
+@typing_extensions.final
 class QueryPoolRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -87,6 +92,7 @@ class QueryPoolRequest(google.protobuf.message.Message):
 
 global___QueryPoolRequest = QueryPoolRequest
 
+@typing_extensions.final
 class QueryPoolResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -103,6 +109,7 @@ class QueryPoolResponse(google.protobuf.message.Message):
 
 global___QueryPoolResponse = QueryPoolResponse
 
+@typing_extensions.final
 class QueryPoolsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -120,6 +127,7 @@ class QueryPoolsRequest(google.protobuf.message.Message):
 
 global___QueryPoolsRequest = QueryPoolsRequest
 
+@typing_extensions.final
 class QueryPoolsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -141,6 +149,7 @@ class QueryPoolsResponse(google.protobuf.message.Message):
 
 global___QueryPoolsResponse = QueryPoolsResponse
 
+@typing_extensions.final
 class QueryPoolParamsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -155,6 +164,7 @@ class QueryPoolParamsRequest(google.protobuf.message.Message):
 
 global___QueryPoolParamsRequest = QueryPoolParamsRequest
 
+@typing_extensions.final
 class QueryPoolParamsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -171,6 +181,7 @@ class QueryPoolParamsResponse(google.protobuf.message.Message):
 
 global___QueryPoolParamsResponse = QueryPoolParamsResponse
 
+@typing_extensions.final
 class QueryNumPoolsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -180,6 +191,7 @@ class QueryNumPoolsRequest(google.protobuf.message.Message):
 
 global___QueryNumPoolsRequest = QueryNumPoolsRequest
 
+@typing_extensions.final
 class QueryNumPoolsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -194,6 +206,7 @@ class QueryNumPoolsResponse(google.protobuf.message.Message):
 
 global___QueryNumPoolsResponse = QueryNumPoolsResponse
 
+@typing_extensions.final
 class QueryTotalLiquidityRequest(google.protobuf.message.Message):
     """--------------------------------------------
     Query total liquidity the protocol
@@ -207,6 +220,7 @@ class QueryTotalLiquidityRequest(google.protobuf.message.Message):
 
 global___QueryTotalLiquidityRequest = QueryTotalLiquidityRequest
 
+@typing_extensions.final
 class QueryTotalLiquidityResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -222,6 +236,7 @@ class QueryTotalLiquidityResponse(google.protobuf.message.Message):
 
 global___QueryTotalLiquidityResponse = QueryTotalLiquidityResponse
 
+@typing_extensions.final
 class QueryTotalPoolLiquidityRequest(google.protobuf.message.Message):
     """--------------------------------------------
     Query total liquidity for a pool
@@ -240,6 +255,7 @@ class QueryTotalPoolLiquidityRequest(google.protobuf.message.Message):
 
 global___QueryTotalPoolLiquidityRequest = QueryTotalPoolLiquidityRequest
 
+@typing_extensions.final
 class QueryTotalPoolLiquidityResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -255,6 +271,7 @@ class QueryTotalPoolLiquidityResponse(google.protobuf.message.Message):
 
 global___QueryTotalPoolLiquidityResponse = QueryTotalPoolLiquidityResponse
 
+@typing_extensions.final
 class QueryTotalSharesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -269,6 +286,7 @@ class QueryTotalSharesRequest(google.protobuf.message.Message):
 
 global___QueryTotalSharesRequest = QueryTotalSharesRequest
 
+@typing_extensions.final
 class QueryTotalSharesResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -286,6 +304,7 @@ class QueryTotalSharesResponse(google.protobuf.message.Message):
 
 global___QueryTotalSharesResponse = QueryTotalSharesResponse
 
+@typing_extensions.final
 class QuerySpotPriceRequest(google.protobuf.message.Message):
     """Returns the amount of tokenInDenom to produce 1 tokenOutDenom
     For example, if the price of NIBI = 9.123 NUSD, then setting tokenInDenom=NUSD
@@ -313,6 +332,7 @@ class QuerySpotPriceRequest(google.protobuf.message.Message):
 
 global___QuerySpotPriceRequest = QuerySpotPriceRequest
 
+@typing_extensions.final
 class QuerySpotPriceResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -327,6 +347,7 @@ class QuerySpotPriceResponse(google.protobuf.message.Message):
 
 global___QuerySpotPriceResponse = QuerySpotPriceResponse
 
+@typing_extensions.final
 class QuerySwapExactAmountInRequest(google.protobuf.message.Message):
     """Given an exact amount of tokens in and a target tokenOutDenom, calculates
     the expected amount of tokens out received from a swap.
@@ -353,6 +374,7 @@ class QuerySwapExactAmountInRequest(google.protobuf.message.Message):
 
 global___QuerySwapExactAmountInRequest = QuerySwapExactAmountInRequest
 
+@typing_extensions.final
 class QuerySwapExactAmountInResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -369,6 +391,7 @@ class QuerySwapExactAmountInResponse(google.protobuf.message.Message):
 
 global___QuerySwapExactAmountInResponse = QuerySwapExactAmountInResponse
 
+@typing_extensions.final
 class QuerySwapExactAmountOutRequest(google.protobuf.message.Message):
     """Given an exact amount of tokens out and a target tokenInDenom, calculates
     the expected amount of tokens in required to do the swap.
@@ -395,6 +418,7 @@ class QuerySwapExactAmountOutRequest(google.protobuf.message.Message):
 
 global___QuerySwapExactAmountOutRequest = QuerySwapExactAmountOutRequest
 
+@typing_extensions.final
 class QuerySwapExactAmountOutResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -411,6 +435,7 @@ class QuerySwapExactAmountOutResponse(google.protobuf.message.Message):
 
 global___QuerySwapExactAmountOutResponse = QuerySwapExactAmountOutResponse
 
+@typing_extensions.final
 class QueryJoinExactAmountInRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -429,6 +454,7 @@ class QueryJoinExactAmountInRequest(google.protobuf.message.Message):
 
 global___QueryJoinExactAmountInRequest = QueryJoinExactAmountInRequest
 
+@typing_extensions.final
 class QueryJoinExactAmountInResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -449,6 +475,7 @@ class QueryJoinExactAmountInResponse(google.protobuf.message.Message):
 
 global___QueryJoinExactAmountInResponse = QueryJoinExactAmountInResponse
 
+@typing_extensions.final
 class QueryJoinExactAmountOutRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -463,6 +490,7 @@ class QueryJoinExactAmountOutRequest(google.protobuf.message.Message):
 
 global___QueryJoinExactAmountOutRequest = QueryJoinExactAmountOutRequest
 
+@typing_extensions.final
 class QueryJoinExactAmountOutResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -472,6 +500,7 @@ class QueryJoinExactAmountOutResponse(google.protobuf.message.Message):
 
 global___QueryJoinExactAmountOutResponse = QueryJoinExactAmountOutResponse
 
+@typing_extensions.final
 class QueryExitExactAmountInRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -490,6 +519,7 @@ class QueryExitExactAmountInRequest(google.protobuf.message.Message):
 
 global___QueryExitExactAmountInRequest = QueryExitExactAmountInRequest
 
+@typing_extensions.final
 class QueryExitExactAmountInResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -506,6 +536,7 @@ class QueryExitExactAmountInResponse(google.protobuf.message.Message):
 
 global___QueryExitExactAmountInResponse = QueryExitExactAmountInResponse
 
+@typing_extensions.final
 class QueryExitExactAmountOutRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -520,6 +551,7 @@ class QueryExitExactAmountOutRequest(google.protobuf.message.Message):
 
 global___QueryExitExactAmountOutRequest = QueryExitExactAmountOutRequest
 
+@typing_extensions.final
 class QueryExitExactAmountOutResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
