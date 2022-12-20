@@ -12,7 +12,7 @@ Generates the `nibiru_proto` Python package for the [Nibiru Python SDK][repo-py-
 All you need to do is run:
 
 ```sh
-make proto-gen
+poetry run make proto-gen
 ```
 
 This executes the code generation script, [proto-gen-py.sh][script-proto-gen]. The protobuf files come from the [NibiruChain/nibiru repo][repo-nibiru].
@@ -41,7 +41,7 @@ The publish workflow looks like this:
 1. Code-gen the new types from the chain. If there are changes, these should be committed.
 
    ```sh
-   make proto-gen
+   poetry run make proto-gen
    ```
 
 2. Increment the package version. For example, use `poetry version preminor` to do a pre-release for a minor version.
