@@ -70,7 +70,7 @@ This software is licensed under the MIT license. See [LICENSE](./LICENSE) for fu
 </p>
 
 [repo-nibiru]: https://github.com/NibiruChain/nibiru
-[repo-py-sdk]: https://github.com/NibiruChain/py-sdk
+[repo-py-sdk]: https://github.com/NibiruChain/py-sdk/blob/master/HACKING.md
 [script-proto-gen]: https://github.com/NibiruChain/sdk-proto-gen/blob/main/scripts/proto-gen-py.sh
 
 <!-- Badges links -->
