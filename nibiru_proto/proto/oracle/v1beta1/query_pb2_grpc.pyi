@@ -15,6 +15,11 @@ class QueryStub:
         oracle.v1beta1.query_pb2.QueryExchangeRateResponse,
     ]
     """ExchangeRate returns exchange rate of a pair"""
+    ExchangeRateTwap: grpc.UnaryUnaryMultiCallable[
+        oracle.v1beta1.query_pb2.QueryExchangeRateRequest,
+        oracle.v1beta1.query_pb2.QueryExchangeRateResponse,
+    ]
+    """ExchangeRateTwap returns exchange rate of a pair"""
     ExchangeRates: grpc.UnaryUnaryMultiCallable[
         oracle.v1beta1.query_pb2.QueryExchangeRatesRequest,
         oracle.v1beta1.query_pb2.QueryExchangeRatesResponse,
@@ -76,6 +81,13 @@ class QueryServicer(metaclass=abc.ABCMeta):
         context: grpc.ServicerContext,
     ) -> oracle.v1beta1.query_pb2.QueryExchangeRateResponse:
         """ExchangeRate returns exchange rate of a pair"""
+    @abc.abstractmethod
+    def ExchangeRateTwap(
+        self,
+        request: oracle.v1beta1.query_pb2.QueryExchangeRateRequest,
+        context: grpc.ServicerContext,
+    ) -> oracle.v1beta1.query_pb2.QueryExchangeRateResponse:
+        """ExchangeRateTwap returns exchange rate of a pair"""
     @abc.abstractmethod
     def ExchangeRates(
         self,

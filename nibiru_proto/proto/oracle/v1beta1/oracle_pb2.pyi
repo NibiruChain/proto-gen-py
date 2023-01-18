@@ -6,6 +6,7 @@ import builtins
 import collections.abc
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import sys
@@ -30,6 +31,7 @@ class Params(google.protobuf.message.Message):
     SLASH_FRACTION_FIELD_NUMBER: builtins.int
     SLASH_WINDOW_FIELD_NUMBER: builtins.int
     MIN_VALID_PER_WINDOW_FIELD_NUMBER: builtins.int
+    TWAP_LOOKBACK_WINDOW_FIELD_NUMBER: builtins.int
     vote_period: builtins.int
     vote_threshold: builtins.str
     reward_band: builtins.str
@@ -38,6 +40,9 @@ class Params(google.protobuf.message.Message):
     slash_fraction: builtins.str
     slash_window: builtins.int
     min_valid_per_window: builtins.str
+    @property
+    def twap_lookback_window(self) -> google.protobuf.duration_pb2.Duration:
+        """amount of time to look back for TWAP calculations"""
     def __init__(
         self,
         *,
@@ -48,8 +53,10 @@ class Params(google.protobuf.message.Message):
         slash_fraction: builtins.str = ...,
         slash_window: builtins.int = ...,
         min_valid_per_window: builtins.str = ...,
+        twap_lookback_window: google.protobuf.duration_pb2.Duration | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window", b"min_valid_per_window", "reward_band", b"reward_band", "slash_fraction", b"slash_fraction", "slash_window", b"slash_window", "vote_period", b"vote_period", "vote_threshold", b"vote_threshold", "whitelist", b"whitelist"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["twap_lookback_window", b"twap_lookback_window"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window", b"min_valid_per_window", "reward_band", b"reward_band", "slash_fraction", b"slash_fraction", "slash_window", b"slash_window", "twap_lookback_window", b"twap_lookback_window", "vote_period", b"vote_period", "vote_threshold", b"vote_threshold", "whitelist", b"whitelist"]) -> None: ...
 
 global___Params = Params
 
