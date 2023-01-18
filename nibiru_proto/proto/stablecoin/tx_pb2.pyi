@@ -22,7 +22,7 @@ class MsgMintStable(google.protobuf.message.Message):
     """
     MsgMintStable: Msg to mint NUSD. A user deposits NIBI and collateral and gets 
     NUSD in return. The amount of NUSD received depends on the current price set 
-    by the pricefeed library and the current collateral ratio for the protocol.
+    by the oracle library and the current collateral ratio for the protocol.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -77,7 +77,7 @@ class MsgBurnStable(google.protobuf.message.Message):
     """
     MsgBurnStable allows users to burn NUSD in exchange for NIBI and collateral. 
     The amount of NIBI and Collateral received depends on the current price set by 
-    the x/pricefeed library and the current collateral ratio.
+    the x/oracle library and the current collateral ratio.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

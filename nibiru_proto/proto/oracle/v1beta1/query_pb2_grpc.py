@@ -20,6 +20,11 @@ class QueryStub(object):
                 request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.SerializeToString,
                 response_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.FromString,
                 )
+        self.ExchangeRateTwap = channel.unary_unary(
+                '/nibiru.oracle.v1beta1.Query/ExchangeRateTwap',
+                request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.SerializeToString,
+                response_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.FromString,
+                )
         self.ExchangeRates = channel.unary_unary(
                 '/nibiru.oracle.v1beta1.Query/ExchangeRates',
                 request_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesRequest.SerializeToString,
@@ -78,6 +83,13 @@ class QueryServicer(object):
 
     def ExchangeRate(self, request, context):
         """ExchangeRate returns exchange rate of a pair
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExchangeRateTwap(self, request, context):
+        """ExchangeRateTwap returns exchange rate of a pair
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -161,6 +173,11 @@ def add_QueryServicer_to_server(servicer, server):
                     request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.FromString,
                     response_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.SerializeToString,
             ),
+            'ExchangeRateTwap': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExchangeRateTwap,
+                    request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.FromString,
+                    response_serializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.SerializeToString,
+            ),
             'ExchangeRates': grpc.unary_unary_rpc_method_handler(
                     servicer.ExchangeRates,
                     request_deserializer=oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRatesRequest.FromString,
@@ -234,6 +251,23 @@ class Query(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/nibiru.oracle.v1beta1.Query/ExchangeRate',
+            oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.SerializeToString,
+            oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExchangeRateTwap(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.oracle.v1beta1.Query/ExchangeRateTwap',
             oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateRequest.SerializeToString,
             oracle_dot_v1beta1_dot_query__pb2.QueryExchangeRateResponse.FromString,
             options, channel_credentials,
