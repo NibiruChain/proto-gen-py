@@ -5,6 +5,7 @@ set -e pipefail # see https://stackoverflow.com/a/68465418/13305627
 # ------------------------------------------------ CONFIG
 PKG_PATH="nibiru_proto"
 PKG_PROTO_SUBDIR="$PKG_PATH/proto"
+PKG_BETTERPROTO_SUBDIR="$PKG_PATH/betterproto"
 nibiru_cosmos_sdk_version=v0.45.10
 nibiru_chain_version=v0.17.0
 # ------------------------------------------------
@@ -27,6 +28,7 @@ clean() {
   rm -rf ./nibiru/
   rm -rf $PKG_PATH
   mkdir $PKG_PATH
+  mkdir $PKG_BETTERPROTO_SUBDIR
   echo >$PKG_PATH/__init__.py
 }
 
@@ -66,7 +68,7 @@ code_gen() {
       -I "$cosmos_sdk_dir/proto" \
       --python_out=$PKG_PROTO_SUBDIR \
       --grpc_python_out=$PKG_PROTO_SUBDIR \
-      --python_betterproto_out=$PKG_PROTO_SUBDIR \
+      --python_betterproto_out=$PKG_BETTERPROTO_SUBDIR \
       --mypy_out=$PKG_PROTO_SUBDIR \
       --mypy_grpc_out=$PKG_PROTO_SUBDIR \
       $(find "${dir}" -type f -name '*.proto')
