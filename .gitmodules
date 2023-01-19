@@ -1,0 +1,4 @@
+[submodule "nibiru"]
+path = nibiru
+url = git@github.com:NibiruChain/nibiru.git
+tag = v0.17.0

@@ -31,24 +31,27 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "betterproto"
-version = "1.2.5"
+version = "2.0.0b5"
 description = "A better Protobuf / gRPC generator & library"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.6.2,<4.0"
 
 [package.dependencies]
-grpclib = "*"
-stringcase = "*"
+black = {version = ">=19.3b0", optional = true, markers = "extra == \"compiler\""}
+grpclib = ">=0.4.1,<0.5.0"
+isort = {version = ">=5.10.1,<6.0.0", optional = true, markers = "extra == \"compiler\""}
+jinja2 = {version = ">=3.0.3", optional = true, markers = "extra == \"compiler\""}
+python-dateutil = ">=2.8,<3.0"
 
 [package.extras]
-compiler = ["black", "jinja2", "protobuf"]
+compiler = ["black (>=19.3b0)", "isort (>=5.10.1,<6.0.0)", "jinja2 (>=3.0.3)"]
 
 [[package]]
 name = "black"
 version = "22.12.0"
 description = "The uncompromising code formatter."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -71,7 +74,7 @@ uvloop = ["uvloop (>=0.15.2)"]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -83,7 +86,7 @@ importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
@@ -169,7 +172,7 @@ python-versions = ">=3.6.1"
 name = "importlib-metadata"
 version = "6.0.0"
 description = "Read metadata from Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -189,6 +192,20 @@ description = "brain-dead simple config-ini parsing"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "isort"
+version = "5.11.4"
+description = "A Python utility / library to sort Python imports."
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.extras]
+colors = ["colorama (>=0.4.3,<0.5.0)"]
+pipfile-deprecated-finder = ["pipreqs", "requirementslib"]
+plugins = ["setuptools"]
+requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
 name = "jinja2"
@@ -224,7 +241,7 @@ python-versions = ">=3.7"
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -252,7 +269,7 @@ python-versions = ">=3.7"
 name = "pathspec"
 version = "0.10.3"
 description = "Utility library for gitignore style pattern matching of file paths."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -260,7 +277,7 @@ python-versions = ">=3.7"
 name = "platformdirs"
 version = "2.6.2"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -316,6 +333,17 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "python-dateutil"
+version = "2.8.2"
+description = "Extensions to the standard Python datetime module"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "setuptools"
 version = "66.0.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
@@ -329,18 +357,18 @@ testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8 (<5)", "flake8-202
 testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
-name = "stringcase"
-version = "1.2.0"
-description = "String case converter."
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -348,7 +376,7 @@ python-versions = ">=3.7"
 name = "typed-ast"
 version = "1.5.4"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -364,7 +392,7 @@ python-versions = "*"
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -372,7 +400,7 @@ python-versions = ">=3.7"
 name = "zipp"
 version = "3.11.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -383,7 +411,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "35f916cf626d9f9eecb4596bb79d025597ee549000cd20693ff44dc47634f894"
+content-hash = "0fd0f4a668288eba940149ccba7361d3a9217137c2dd356e48b4a428d16f6b1f"
 
 [metadata.files]
 asyncio = [
@@ -401,7 +429,8 @@ bech32 = [
     {file = "bech32-1.2.0.tar.gz", hash = "sha256:7d6db8214603bd7871fcfa6c0826ef68b85b0abd90fa21c285a9c5e21d2bd899"},
 ]
 betterproto = [
-    {file = "betterproto-1.2.5.tar.gz", hash = "sha256:74a3ab34646054f674d236d1229ba8182dc2eae86feb249b8590ef496ce9803d"},
+    {file = "betterproto-2.0.0b5-py3-none-any.whl", hash = "sha256:d3e6115c7d5136f1d5974e565b7560273f66b43065e74218e472321ee1258f4c"},
+    {file = "betterproto-2.0.0b5.tar.gz", hash = "sha256:00a301c70a2db4d3cdd2b261522ae1d34972fb04b655a154d67daaaf4131102e"},
 ]
 black = [
     {file = "black-22.12.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9eedd20838bd5d75b80c9f5487dbcb06836a43833a37846cf1d8c1cc01cef59d"},
@@ -545,6 +574,10 @@ importlib-metadata = [
 iniconfig = [
     {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
     {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
+]
+isort = [
+    {file = "isort-5.11.4-py3-none-any.whl", hash = "sha256:c033fd0edb91000a7f09527fe5c75321878f98322a77ddcc81adbd83724afb7b"},
+    {file = "isort-5.11.4.tar.gz", hash = "sha256:6db30c5ded9815d813932c04c2f85a360bcdd35fed496f4d8f35495ef0a261b6"},
 ]
 jinja2 = [
     {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
@@ -722,12 +755,17 @@ pytest = [
     {file = "pytest-7.2.1-py3-none-any.whl", hash = "sha256:c7c6ca206e93355074ae32f7403e8ea12163b1163c976fee7d4d84027c162be5"},
     {file = "pytest-7.2.1.tar.gz", hash = "sha256:d45e0952f3727241918b8fd0f376f5ff6b301cc0777c6f9a556935c92d8a7d42"},
 ]
+python-dateutil = [
+    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
+    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+]
 setuptools = [
     {file = "setuptools-66.0.0-py3-none-any.whl", hash = "sha256:a78d01d1e2c175c474884671dde039962c9d74c7223db7369771fcf6e29ceeab"},
     {file = "setuptools-66.0.0.tar.gz", hash = "sha256:bd6eb2d6722568de6d14b87c44a96fac54b2a45ff5e940e639979a3d1792adb6"},
 ]
-stringcase = [
-    {file = "stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"},
+six = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
