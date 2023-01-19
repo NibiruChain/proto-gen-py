@@ -26,4 +26,5 @@ python -m grpc_tools.protoc \
   --proto_path $cosmos_sdk_dir/third_party/proto \
   --proto_path proto \
   --python_betterproto_out=../${OUT_DIR} \
+  --mypy_out=../${OUT_DIR} \
   $(find $cosmos_sdk_dir/proto $cosmos_sdk_dir/third_party/proto proto -path -prune -o -name '*.proto' -print0 | xargs -0)
