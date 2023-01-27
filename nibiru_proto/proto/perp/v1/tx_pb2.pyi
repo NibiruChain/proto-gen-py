@@ -28,21 +28,21 @@ class MsgRemoveMargin(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SENDER_FIELD_NUMBER: builtins.int
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     MARGIN_FIELD_NUMBER: builtins.int
     sender: builtins.str
-    token_pair: builtins.str
+    pair: builtins.str
     @property
     def margin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     def __init__(
         self,
         *,
         sender: builtins.str = ...,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
         margin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["margin", b"margin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["margin", b"margin", "sender", b"sender", "token_pair", b"token_pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["margin", b"margin", "pair", b"pair", "sender", b"sender"]) -> None: ...
 
 global___MsgRemoveMargin = MsgRemoveMargin
 
@@ -83,21 +83,21 @@ class MsgAddMargin(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SENDER_FIELD_NUMBER: builtins.int
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     MARGIN_FIELD_NUMBER: builtins.int
     sender: builtins.str
-    token_pair: builtins.str
+    pair: builtins.str
     @property
     def margin(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     def __init__(
         self,
         *,
         sender: builtins.str = ...,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
         margin: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["margin", b"margin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["margin", b"margin", "sender", b"sender", "token_pair", b"token_pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["margin", b"margin", "pair", b"pair", "sender", b"sender"]) -> None: ...
 
 global___MsgAddMargin = MsgAddMargin
 
@@ -128,11 +128,11 @@ class MsgLiquidate(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SENDER_FIELD_NUMBER: builtins.int
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     TRADER_FIELD_NUMBER: builtins.int
     sender: builtins.str
     """Sender is the liquidator address"""
-    token_pair: builtins.str
+    pair: builtins.str
     """TokenPair is the identifier for the position's virtual pool"""
     trader: builtins.str
     """Trader is the address of the owner of the position"""
@@ -140,10 +140,10 @@ class MsgLiquidate(google.protobuf.message.Message):
         self,
         *,
         sender: builtins.str = ...,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
         trader: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["sender", b"sender", "token_pair", b"token_pair", "trader", b"trader"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "sender", b"sender", "trader", b"trader"]) -> None: ...
 
 global___MsgLiquidate = MsgLiquidate
 
@@ -176,17 +176,17 @@ class MsgMultiLiquidate(google.protobuf.message.Message):
     class MultiLiquidation(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        TOKEN_PAIR_FIELD_NUMBER: builtins.int
+        PAIR_FIELD_NUMBER: builtins.int
         TRADER_FIELD_NUMBER: builtins.int
-        token_pair: builtins.str
+        pair: builtins.str
         trader: builtins.str
         def __init__(
             self,
             *,
-            token_pair: builtins.str = ...,
+            pair: builtins.str = ...,
             trader: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["token_pair", b"token_pair", "trader", b"trader"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "trader", b"trader"]) -> None: ...
 
     SENDER_FIELD_NUMBER: builtins.int
     LIQUIDATIONS_FIELD_NUMBER: builtins.int
@@ -245,13 +245,13 @@ class MsgOpenPosition(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SENDER_FIELD_NUMBER: builtins.int
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     SIDE_FIELD_NUMBER: builtins.int
     QUOTE_ASSET_AMOUNT_FIELD_NUMBER: builtins.int
     LEVERAGE_FIELD_NUMBER: builtins.int
     BASE_ASSET_AMOUNT_LIMIT_FIELD_NUMBER: builtins.int
     sender: builtins.str
-    token_pair: builtins.str
+    pair: builtins.str
     side: perp.v1.state_pb2.Side.ValueType
     quote_asset_amount: builtins.str
     leverage: builtins.str
@@ -260,13 +260,13 @@ class MsgOpenPosition(google.protobuf.message.Message):
         self,
         *,
         sender: builtins.str = ...,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
         side: perp.v1.state_pb2.Side.ValueType = ...,
         quote_asset_amount: builtins.str = ...,
         leverage: builtins.str = ...,
         base_asset_amount_limit: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base_asset_amount_limit", b"base_asset_amount_limit", "leverage", b"leverage", "quote_asset_amount", b"quote_asset_amount", "sender", b"sender", "side", b"side", "token_pair", b"token_pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base_asset_amount_limit", b"base_asset_amount_limit", "leverage", b"leverage", "pair", b"pair", "quote_asset_amount", b"quote_asset_amount", "sender", b"sender", "side", b"side"]) -> None: ...
 
 global___MsgOpenPosition = MsgOpenPosition
 
@@ -324,16 +324,16 @@ class MsgClosePosition(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SENDER_FIELD_NUMBER: builtins.int
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     sender: builtins.str
-    token_pair: builtins.str
+    pair: builtins.str
     def __init__(
         self,
         *,
         sender: builtins.str = ...,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["sender", b"sender", "token_pair", b"token_pair"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "sender", b"sender"]) -> None: ...
 
 global___MsgClosePosition = MsgClosePosition
 

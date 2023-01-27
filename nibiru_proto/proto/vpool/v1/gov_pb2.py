@@ -15,7 +15,7 @@ from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from vpool.v1 import state_pb2 as vpool_dot_v1_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12vpool/v1/gov.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x14vpool/v1/state.proto\"\x93\x02\n\x12\x43reatePoolProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04pair\x18\x03 \x01(\t\x12K\n\x13quote_asset_reserve\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12J\n\x12\x62\x61se_asset_reserve\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x32\n\x06\x63onfig\x18\x07 \x01(\x0b\x32\x1c.nibiru.vpool.v1.VpoolConfigB\x04\xc8\xde\x1f\x00\"~\n\x16\x45\x64itPoolConfigProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04pair\x18\x03 \x01(\t\x12\x32\n\x06\x63onfig\x18\x04 \x01(\x0b\x32\x1c.nibiru.vpool.v1.VpoolConfigB\x04\xc8\xde\x1f\x00\"\x9b\x02\n\x1a\x45\x64itSwapInvariantsProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x64\n\x13swap_invariant_maps\x18\x05 \x03(\x0b\x32\x41.nibiru.vpool.v1.EditSwapInvariantsProposal.SwapInvariantMultipleB\x04\xc8\xde\x1f\x00\x1as\n\x15SwapInvariantMultiple\x12\x0c\n\x04pair\x18\x03 \x01(\t\x12\x42\n\nmultiplier\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00:\x08\x88\xa0\x1f\x00\x98\xa0\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12vpool/v1/gov.proto\x12\x0fnibiru.vpool.v1\x1a\x14gogoproto/gogo.proto\x1a\x14vpool/v1/state.proto\"\xcd\x02\n\x12\x43reatePoolProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x46\n\x04pair\x18\x03 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12K\n\x13quote_asset_reserve\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12J\n\x12\x62\x61se_asset_reserve\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x32\n\x06\x63onfig\x18\x07 \x01(\x0b\x32\x1c.nibiru.vpool.v1.VpoolConfigB\x04\xc8\xde\x1f\x00\"\xb8\x01\n\x16\x45\x64itPoolConfigProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x46\n\x04pair\x18\x03 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12\x32\n\x06\x63onfig\x18\x04 \x01(\x0b\x32\x1c.nibiru.vpool.v1.VpoolConfigB\x04\xc8\xde\x1f\x00\"\xd6\x02\n\x1a\x45\x64itSwapInvariantsProposal\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x64\n\x13swap_invariant_maps\x18\x05 \x03(\x0b\x32\x41.nibiru.vpool.v1.EditSwapInvariantsProposal.SwapInvariantMultipleB\x04\xc8\xde\x1f\x00\x1a\xad\x01\n\x15SwapInvariantMultiple\x12\x46\n\x04pair\x18\x03 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12\x42\n\nmultiplier\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00:\x08\x88\xa0\x1f\x00\x98\xa0\x1f\x00\x42-Z+github.com/NibiruChain/nibiru/x/vpool/typesb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'vpool.v1.gov_pb2', globals())
@@ -23,14 +23,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/NibiruChain/nibiru/x/vpool/types'
+  _CREATEPOOLPROPOSAL.fields_by_name['pair']._options = None
+  _CREATEPOOLPROPOSAL.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _CREATEPOOLPROPOSAL.fields_by_name['quote_asset_reserve']._options = None
   _CREATEPOOLPROPOSAL.fields_by_name['quote_asset_reserve']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _CREATEPOOLPROPOSAL.fields_by_name['base_asset_reserve']._options = None
   _CREATEPOOLPROPOSAL.fields_by_name['base_asset_reserve']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _CREATEPOOLPROPOSAL.fields_by_name['config']._options = None
   _CREATEPOOLPROPOSAL.fields_by_name['config']._serialized_options = b'\310\336\037\000'
+  _EDITPOOLCONFIGPROPOSAL.fields_by_name['pair']._options = None
+  _EDITPOOLCONFIGPROPOSAL.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _EDITPOOLCONFIGPROPOSAL.fields_by_name['config']._options = None
   _EDITPOOLCONFIGPROPOSAL.fields_by_name['config']._serialized_options = b'\310\336\037\000'
+  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE.fields_by_name['pair']._options = None
+  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE.fields_by_name['multiplier']._options = None
   _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE.fields_by_name['multiplier']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE._options = None
@@ -38,11 +44,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EDITSWAPINVARIANTSPROPOSAL.fields_by_name['swap_invariant_maps']._options = None
   _EDITSWAPINVARIANTSPROPOSAL.fields_by_name['swap_invariant_maps']._serialized_options = b'\310\336\037\000'
   _CREATEPOOLPROPOSAL._serialized_start=84
-  _CREATEPOOLPROPOSAL._serialized_end=359
-  _EDITPOOLCONFIGPROPOSAL._serialized_start=361
-  _EDITPOOLCONFIGPROPOSAL._serialized_end=487
-  _EDITSWAPINVARIANTSPROPOSAL._serialized_start=490
-  _EDITSWAPINVARIANTSPROPOSAL._serialized_end=773
-  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE._serialized_start=658
-  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE._serialized_end=773
+  _CREATEPOOLPROPOSAL._serialized_end=417
+  _EDITPOOLCONFIGPROPOSAL._serialized_start=420
+  _EDITPOOLCONFIGPROPOSAL._serialized_end=604
+  _EDITSWAPINVARIANTSPROPOSAL._serialized_start=607
+  _EDITSWAPINVARIANTSPROPOSAL._serialized_end=949
+  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE._serialized_start=776
+  _EDITSWAPINVARIANTSPROPOSAL_SWAPINVARIANTMULTIPLE._serialized_end=949
 # @@protoc_insertion_point(module_scope)

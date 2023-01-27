@@ -95,17 +95,17 @@ class QueryPositionRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TOKEN_PAIR_FIELD_NUMBER: builtins.int
+    PAIR_FIELD_NUMBER: builtins.int
     TRADER_FIELD_NUMBER: builtins.int
-    token_pair: builtins.str
+    pair: builtins.str
     trader: builtins.str
     def __init__(
         self,
         *,
-        token_pair: builtins.str = ...,
+        pair: builtins.str = ...,
         trader: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["token_pair", b"token_pair", "trader", b"trader"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "trader", b"trader"]) -> None: ...
 
 global___QueryPositionRequest = QueryPositionRequest
 
