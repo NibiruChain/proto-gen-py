@@ -4,7 +4,6 @@ isort:skip_file
 """
 import builtins
 import collections.abc
-import common.common_pb2
 import google.protobuf.descriptor
 import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
@@ -163,13 +162,10 @@ class Position(google.protobuf.message.Message):
     BLOCK_NUMBER_FIELD_NUMBER: builtins.int
     trader_address: builtins.str
     """address identifies the address owner of this position"""
-    @property
-    def pair(self) -> common.common_pb2.AssetPair:
-        """pair identifies the pair associated with this position"""
+    pair: builtins.str
+    """pair identifies the pair associated with this position"""
     size: builtins.str
-    """Position size.
-    signed int
-    """
+    """Position size."""
     margin: builtins.str
     """Amount of margin remaining in the position."""
     open_notional: builtins.str
@@ -186,14 +182,13 @@ class Position(google.protobuf.message.Message):
         self,
         *,
         trader_address: builtins.str = ...,
-        pair: common.common_pb2.AssetPair | None = ...,
+        pair: builtins.str = ...,
         size: builtins.str = ...,
         margin: builtins.str = ...,
         open_notional: builtins.str = ...,
         latest_cumulative_premium_fraction: builtins.str = ...,
         block_number: builtins.int = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["block_number", b"block_number", "latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "margin", b"margin", "open_notional", b"open_notional", "pair", b"pair", "size", b"size", "trader_address", b"trader_address"]) -> None: ...
 
 global___Position = Position
@@ -204,8 +199,7 @@ class PairMetadata(google.protobuf.message.Message):
 
     PAIR_FIELD_NUMBER: builtins.int
     LATEST_CUMULATIVE_PREMIUM_FRACTION_FIELD_NUMBER: builtins.int
-    @property
-    def pair(self) -> common.common_pb2.AssetPair: ...
+    pair: builtins.str
     latest_cumulative_premium_fraction: builtins.str
     """Latest cumulative premium fraction for a given pair.
     Calculated once per funding rate interval.
@@ -215,10 +209,9 @@ class PairMetadata(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        pair: common.common_pb2.AssetPair | None = ...,
+        pair: builtins.str = ...,
         latest_cumulative_premium_fraction: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "pair", b"pair"]) -> None: ...
 
 global___PairMetadata = PairMetadata

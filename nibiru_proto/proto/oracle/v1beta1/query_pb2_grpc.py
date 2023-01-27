@@ -89,7 +89,7 @@ class QueryServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ExchangeRateTwap(self, request, context):
-        """ExchangeRateTwap returns exchange rate of a pair
+        """ExchangeRateTwap returns twap exchange rate of a pair
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -1,13 +1,9 @@
 [tool.poetry]
 name = "nibiru-proto"
-version = "0.17.1"
+version = "0.18.0rc2"
 description = "Nibiru Chain Python SDK"
-authors = [
-    "Nibiru Chain <dev@nibiru.fi>"
-]
-packages =[
-  { include = "nibiru_proto" }
-]
+authors = ["Nibiru Chain <dev@nibiru.fi>"]
+packages = [{ include = "nibiru_proto" }]
 license = "MIT"
 
 [tool.poetry.dependencies]

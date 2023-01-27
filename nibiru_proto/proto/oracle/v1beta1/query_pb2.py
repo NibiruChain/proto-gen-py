@@ -17,7 +17,7 @@ from oracle.v1beta1 import oracle_pb2 as oracle_dot_v1beta1_dot_oracle__pb2
 from cosmos.base.v1beta1 import coin_pb2 as cosmos_dot_base_dot_v1beta1_dot_coin__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aoracle/v1beta1/query.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1boracle/v1beta1/oracle.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"2\n\x18QueryExchangeRateRequest\x12\x0c\n\x04pair\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"b\n\x19QueryExchangeRateResponse\x12\x45\n\rexchange_rate\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\x1b\n\x19QueryExchangeRatesRequest\"z\n\x1aQueryExchangeRatesResponse\x12\\\n\x0e\x65xchange_rates\x18\x01 \x03(\x0b\x32(.nibiru.oracle.v1beta1.ExchangeRateTupleB\x1a\xaa\xdf\x1f\x12\x45xchangeRateTuples\xc8\xde\x1f\x00\"\x15\n\x13QueryActivesRequest\"\'\n\x14QueryActivesResponse\x12\x0f\n\x07\x61\x63tives\x18\x01 \x03(\t\"\x19\n\x17QueryVoteTargetsRequest\"0\n\x18QueryVoteTargetsResponse\x12\x14\n\x0cvote_targets\x18\x01 \x03(\t\"@\n\x1cQueryFeederDelegationRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"4\n\x1dQueryFeederDelegationResponse\x12\x13\n\x0b\x66\x65\x65\x64\x65r_addr\x18\x01 \x01(\t\";\n\x17QueryMissCounterRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"0\n\x18QueryMissCounterResponse\x12\x14\n\x0cmiss_counter\x18\x01 \x01(\x04\"@\n\x1cQueryAggregatePrevoteRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"u\n\x1dQueryAggregatePrevoteResponse\x12T\n\x11\x61ggregate_prevote\x18\x01 \x01(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\"\x1f\n\x1dQueryAggregatePrevotesRequest\"w\n\x1eQueryAggregatePrevotesResponse\x12U\n\x12\x61ggregate_prevotes\x18\x01 \x03(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\"=\n\x19QueryAggregateVoteRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"l\n\x1aQueryAggregateVoteResponse\x12N\n\x0e\x61ggregate_vote\x18\x01 \x01(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\"\x1c\n\x1aQueryAggregateVotesRequest\"n\n\x1bQueryAggregateVotesResponse\x12O\n\x0f\x61ggregate_votes\x18\x01 \x03(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\"\x14\n\x12QueryParamsRequest\"J\n\x13QueryParamsResponse\x12\x33\n\x06params\x18\x01 \x01(\x0b\x32\x1d.nibiru.oracle.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\x32\xd0\x10\n\x05Query\x12\xac\x01\n\x0c\x45xchangeRate\x12/.nibiru.oracle.v1beta1.QueryExchangeRateRequest\x1a\x30.nibiru.oracle.v1beta1.QueryExchangeRateResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/nibiru/oracle/v1beta1/pairs/{pair}/exchange_rate\x12\xb0\x01\n\x10\x45xchangeRateTwap\x12/.nibiru.oracle.v1beta1.QueryExchangeRateRequest\x1a\x30.nibiru.oracle.v1beta1.QueryExchangeRateResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/nibiru/oracle/v1beta1/pairs/{pair}/exchange_rate\x12\xa9\x01\n\rExchangeRates\x12\x30.nibiru.oracle.v1beta1.QueryExchangeRatesRequest\x1a\x31.nibiru.oracle.v1beta1.QueryExchangeRatesResponse\"3\x82\xd3\xe4\x93\x02-\x12+/nibiru/oracle/v1beta1/pairs/exchange_rates\x12\x90\x01\n\x07\x41\x63tives\x12*.nibiru.oracle.v1beta1.QueryActivesRequest\x1a+.nibiru.oracle.v1beta1.QueryActivesResponse\",\x82\xd3\xe4\x93\x02&\x12$/nibiru/oracle/v1beta1/pairs/actives\x12\xa1\x01\n\x0bVoteTargets\x12..nibiru.oracle.v1beta1.QueryVoteTargetsRequest\x1a/.nibiru.oracle.v1beta1.QueryVoteTargetsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/nibiru/oracle/v1beta1/pairs/vote_targets\x12\xc0\x01\n\x10\x46\x65\x65\x64\x65rDelegation\x12\x33.nibiru.oracle.v1beta1.QueryFeederDelegationRequest\x1a\x34.nibiru.oracle.v1beta1.QueryFeederDelegationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/nibiru/oracle/v1beta1/validators/{validator_addr}/feeder\x12\xaf\x01\n\x0bMissCounter\x12..nibiru.oracle.v1beta1.QueryMissCounterRequest\x1a/.nibiru.oracle.v1beta1.QueryMissCounterResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/nibiru/oracle/v1beta1/validators/{validator_addr}/miss\x12\xcb\x01\n\x10\x41ggregatePrevote\x12\x33.nibiru.oracle.v1beta1.QueryAggregatePrevoteRequest\x1a\x34.nibiru.oracle.v1beta1.QueryAggregatePrevoteResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/nibiru/oracle/v1beta1/validators/{validator_addr}/aggregate_prevote\x12\xbe\x01\n\x11\x41ggregatePrevotes\x12\x34.nibiru.oracle.v1beta1.QueryAggregatePrevotesRequest\x1a\x35.nibiru.oracle.v1beta1.QueryAggregatePrevotesResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/nibiru/oracle/v1beta1/validators/aggregate_prevotes\x12\xbf\x01\n\rAggregateVote\x12\x30.nibiru.oracle.v1beta1.QueryAggregateVoteRequest\x1a\x31.nibiru.oracle.v1beta1.QueryAggregateVoteResponse\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/nibiru/oracle/v1beta1/valdiators/{validator_addr}/aggregate_vote\x12\xb2\x01\n\x0e\x41ggregateVotes\x12\x31.nibiru.oracle.v1beta1.QueryAggregateVotesRequest\x1a\x32.nibiru.oracle.v1beta1.QueryAggregateVotesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/nibiru/oracle/v1beta1/validators/aggregate_votes\x12\x86\x01\n\x06Params\x12).nibiru.oracle.v1beta1.QueryParamsRequest\x1a*.nibiru.oracle.v1beta1.QueryParamsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/nibiru/oracle/v1beta1/paramsB.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aoracle/v1beta1/query.proto\x12\x15nibiru.oracle.v1beta1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1boracle/v1beta1/oracle.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"l\n\x18QueryExchangeRateRequest\x12\x46\n\x04pair\x18\x01 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"b\n\x19QueryExchangeRateResponse\x12\x45\n\rexchange_rate\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"\x1b\n\x19QueryExchangeRatesRequest\"z\n\x1aQueryExchangeRatesResponse\x12\\\n\x0e\x65xchange_rates\x18\x01 \x03(\x0b\x32(.nibiru.oracle.v1beta1.ExchangeRateTupleB\x1a\xaa\xdf\x1f\x12\x45xchangeRateTuples\xc8\xde\x1f\x00\"\x15\n\x13QueryActivesRequest\"a\n\x14QueryActivesResponse\x12I\n\x07\x61\x63tives\x18\x01 \x03(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\"\x19\n\x17QueryVoteTargetsRequest\"j\n\x18QueryVoteTargetsResponse\x12N\n\x0cvote_targets\x18\x01 \x03(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\"@\n\x1cQueryFeederDelegationRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"4\n\x1dQueryFeederDelegationResponse\x12\x13\n\x0b\x66\x65\x65\x64\x65r_addr\x18\x01 \x01(\t\";\n\x17QueryMissCounterRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"0\n\x18QueryMissCounterResponse\x12\x14\n\x0cmiss_counter\x18\x01 \x01(\x04\"@\n\x1cQueryAggregatePrevoteRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"u\n\x1dQueryAggregatePrevoteResponse\x12T\n\x11\x61ggregate_prevote\x18\x01 \x01(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\"\x1f\n\x1dQueryAggregatePrevotesRequest\"w\n\x1eQueryAggregatePrevotesResponse\x12U\n\x12\x61ggregate_prevotes\x18\x01 \x03(\x0b\x32\x33.nibiru.oracle.v1beta1.AggregateExchangeRatePrevoteB\x04\xc8\xde\x1f\x00\"=\n\x19QueryAggregateVoteRequest\x12\x16\n\x0evalidator_addr\x18\x01 \x01(\t:\x08\xe8\xa0\x1f\x00\x88\xa0\x1f\x00\"l\n\x1aQueryAggregateVoteResponse\x12N\n\x0e\x61ggregate_vote\x18\x01 \x01(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\"\x1c\n\x1aQueryAggregateVotesRequest\"n\n\x1bQueryAggregateVotesResponse\x12O\n\x0f\x61ggregate_votes\x18\x01 \x03(\x0b\x32\x30.nibiru.oracle.v1beta1.AggregateExchangeRateVoteB\x04\xc8\xde\x1f\x00\"\x14\n\x12QueryParamsRequest\"J\n\x13QueryParamsResponse\x12\x33\n\x06params\x18\x01 \x01(\x0b\x32\x1d.nibiru.oracle.v1beta1.ParamsB\x04\xc8\xde\x1f\x00\x32\xbb\x10\n\x05Query\x12\x9f\x01\n\x0c\x45xchangeRate\x12/.nibiru.oracle.v1beta1.QueryExchangeRateRequest\x1a\x30.nibiru.oracle.v1beta1.QueryExchangeRateResponse\",\x82\xd3\xe4\x93\x02&\x12$/nibiru/oracle/v1beta1/exchange_rate\x12\xa8\x01\n\x10\x45xchangeRateTwap\x12/.nibiru.oracle.v1beta1.QueryExchangeRateRequest\x1a\x30.nibiru.oracle.v1beta1.QueryExchangeRateResponse\"1\x82\xd3\xe4\x93\x02+\x12)/nibiru/oracle/v1beta1/exchange_rate_twap\x12\xa9\x01\n\rExchangeRates\x12\x30.nibiru.oracle.v1beta1.QueryExchangeRatesRequest\x1a\x31.nibiru.oracle.v1beta1.QueryExchangeRatesResponse\"3\x82\xd3\xe4\x93\x02-\x12+/nibiru/oracle/v1beta1/pairs/exchange_rates\x12\x90\x01\n\x07\x41\x63tives\x12*.nibiru.oracle.v1beta1.QueryActivesRequest\x1a+.nibiru.oracle.v1beta1.QueryActivesResponse\",\x82\xd3\xe4\x93\x02&\x12$/nibiru/oracle/v1beta1/pairs/actives\x12\xa1\x01\n\x0bVoteTargets\x12..nibiru.oracle.v1beta1.QueryVoteTargetsRequest\x1a/.nibiru.oracle.v1beta1.QueryVoteTargetsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/nibiru/oracle/v1beta1/pairs/vote_targets\x12\xc0\x01\n\x10\x46\x65\x65\x64\x65rDelegation\x12\x33.nibiru.oracle.v1beta1.QueryFeederDelegationRequest\x1a\x34.nibiru.oracle.v1beta1.QueryFeederDelegationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/nibiru/oracle/v1beta1/validators/{validator_addr}/feeder\x12\xaf\x01\n\x0bMissCounter\x12..nibiru.oracle.v1beta1.QueryMissCounterRequest\x1a/.nibiru.oracle.v1beta1.QueryMissCounterResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/nibiru/oracle/v1beta1/validators/{validator_addr}/miss\x12\xcb\x01\n\x10\x41ggregatePrevote\x12\x33.nibiru.oracle.v1beta1.QueryAggregatePrevoteRequest\x1a\x34.nibiru.oracle.v1beta1.QueryAggregatePrevoteResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/nibiru/oracle/v1beta1/validators/{validator_addr}/aggregate_prevote\x12\xbe\x01\n\x11\x41ggregatePrevotes\x12\x34.nibiru.oracle.v1beta1.QueryAggregatePrevotesRequest\x1a\x35.nibiru.oracle.v1beta1.QueryAggregatePrevotesResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/nibiru/oracle/v1beta1/validators/aggregate_prevotes\x12\xbf\x01\n\rAggregateVote\x12\x30.nibiru.oracle.v1beta1.QueryAggregateVoteRequest\x1a\x31.nibiru.oracle.v1beta1.QueryAggregateVoteResponse\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/nibiru/oracle/v1beta1/valdiators/{validator_addr}/aggregate_vote\x12\xb2\x01\n\x0e\x41ggregateVotes\x12\x31.nibiru.oracle.v1beta1.QueryAggregateVotesRequest\x1a\x32.nibiru.oracle.v1beta1.QueryAggregateVotesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/nibiru/oracle/v1beta1/validators/aggregate_votes\x12\x86\x01\n\x06Params\x12).nibiru.oracle.v1beta1.QueryParamsRequest\x1a*.nibiru.oracle.v1beta1.QueryParamsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/nibiru/oracle/v1beta1/paramsB.Z,github.com/NibiruChain/nibiru/x/oracle/typesb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'oracle.v1beta1.query_pb2', globals())
@@ -25,12 +25,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z,github.com/NibiruChain/nibiru/x/oracle/types'
+  _QUERYEXCHANGERATEREQUEST.fields_by_name['pair']._options = None
+  _QUERYEXCHANGERATEREQUEST.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _QUERYEXCHANGERATEREQUEST._options = None
   _QUERYEXCHANGERATEREQUEST._serialized_options = b'\350\240\037\000\210\240\037\000'
   _QUERYEXCHANGERATERESPONSE.fields_by_name['exchange_rate']._options = None
   _QUERYEXCHANGERATERESPONSE.fields_by_name['exchange_rate']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _QUERYEXCHANGERATESRESPONSE.fields_by_name['exchange_rates']._options = None
   _QUERYEXCHANGERATESRESPONSE.fields_by_name['exchange_rates']._serialized_options = b'\252\337\037\022ExchangeRateTuples\310\336\037\000'
+  _QUERYACTIVESRESPONSE.fields_by_name['actives']._options = None
+  _QUERYACTIVESRESPONSE.fields_by_name['actives']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _QUERYVOTETARGETSRESPONSE.fields_by_name['vote_targets']._options = None
+  _QUERYVOTETARGETSRESPONSE.fields_by_name['vote_targets']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _QUERYFEEDERDELEGATIONREQUEST._options = None
   _QUERYFEEDERDELEGATIONREQUEST._serialized_options = b'\350\240\037\000\210\240\037\000'
   _QUERYMISSCOUNTERREQUEST._options = None
@@ -50,9 +56,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QUERYPARAMSRESPONSE.fields_by_name['params']._options = None
   _QUERYPARAMSRESPONSE.fields_by_name['params']._serialized_options = b'\310\336\037\000'
   _QUERY.methods_by_name['ExchangeRate']._options = None
-  _QUERY.methods_by_name['ExchangeRate']._serialized_options = b'\202\323\344\223\0023\0221/nibiru/oracle/v1beta1/pairs/{pair}/exchange_rate'
+  _QUERY.methods_by_name['ExchangeRate']._serialized_options = b'\202\323\344\223\002&\022$/nibiru/oracle/v1beta1/exchange_rate'
   _QUERY.methods_by_name['ExchangeRateTwap']._options = None
-  _QUERY.methods_by_name['ExchangeRateTwap']._serialized_options = b'\202\323\344\223\0023\0221/nibiru/oracle/v1beta1/pairs/{pair}/exchange_rate'
+  _QUERY.methods_by_name['ExchangeRateTwap']._serialized_options = b'\202\323\344\223\002+\022)/nibiru/oracle/v1beta1/exchange_rate_twap'
   _QUERY.methods_by_name['ExchangeRates']._options = None
   _QUERY.methods_by_name['ExchangeRates']._serialized_options = b'\202\323\344\223\002-\022+/nibiru/oracle/v1beta1/pairs/exchange_rates'
   _QUERY.methods_by_name['Actives']._options = None
@@ -74,49 +80,49 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QUERY.methods_by_name['Params']._options = None
   _QUERY.methods_by_name['Params']._serialized_options = b'\202\323\344\223\002\037\022\035/nibiru/oracle/v1beta1/params'
   _QUERYEXCHANGERATEREQUEST._serialized_start=166
-  _QUERYEXCHANGERATEREQUEST._serialized_end=216
-  _QUERYEXCHANGERATERESPONSE._serialized_start=218
-  _QUERYEXCHANGERATERESPONSE._serialized_end=316
-  _QUERYEXCHANGERATESREQUEST._serialized_start=318
-  _QUERYEXCHANGERATESREQUEST._serialized_end=345
-  _QUERYEXCHANGERATESRESPONSE._serialized_start=347
-  _QUERYEXCHANGERATESRESPONSE._serialized_end=469
-  _QUERYACTIVESREQUEST._serialized_start=471
-  _QUERYACTIVESREQUEST._serialized_end=492
-  _QUERYACTIVESRESPONSE._serialized_start=494
-  _QUERYACTIVESRESPONSE._serialized_end=533
-  _QUERYVOTETARGETSREQUEST._serialized_start=535
-  _QUERYVOTETARGETSREQUEST._serialized_end=560
-  _QUERYVOTETARGETSRESPONSE._serialized_start=562
-  _QUERYVOTETARGETSRESPONSE._serialized_end=610
-  _QUERYFEEDERDELEGATIONREQUEST._serialized_start=612
-  _QUERYFEEDERDELEGATIONREQUEST._serialized_end=676
-  _QUERYFEEDERDELEGATIONRESPONSE._serialized_start=678
-  _QUERYFEEDERDELEGATIONRESPONSE._serialized_end=730
-  _QUERYMISSCOUNTERREQUEST._serialized_start=732
-  _QUERYMISSCOUNTERREQUEST._serialized_end=791
-  _QUERYMISSCOUNTERRESPONSE._serialized_start=793
-  _QUERYMISSCOUNTERRESPONSE._serialized_end=841
-  _QUERYAGGREGATEPREVOTEREQUEST._serialized_start=843
-  _QUERYAGGREGATEPREVOTEREQUEST._serialized_end=907
-  _QUERYAGGREGATEPREVOTERESPONSE._serialized_start=909
-  _QUERYAGGREGATEPREVOTERESPONSE._serialized_end=1026
-  _QUERYAGGREGATEPREVOTESREQUEST._serialized_start=1028
-  _QUERYAGGREGATEPREVOTESREQUEST._serialized_end=1059
-  _QUERYAGGREGATEPREVOTESRESPONSE._serialized_start=1061
-  _QUERYAGGREGATEPREVOTESRESPONSE._serialized_end=1180
-  _QUERYAGGREGATEVOTEREQUEST._serialized_start=1182
-  _QUERYAGGREGATEVOTEREQUEST._serialized_end=1243
-  _QUERYAGGREGATEVOTERESPONSE._serialized_start=1245
-  _QUERYAGGREGATEVOTERESPONSE._serialized_end=1353
-  _QUERYAGGREGATEVOTESREQUEST._serialized_start=1355
-  _QUERYAGGREGATEVOTESREQUEST._serialized_end=1383
-  _QUERYAGGREGATEVOTESRESPONSE._serialized_start=1385
-  _QUERYAGGREGATEVOTESRESPONSE._serialized_end=1495
-  _QUERYPARAMSREQUEST._serialized_start=1497
-  _QUERYPARAMSREQUEST._serialized_end=1517
-  _QUERYPARAMSRESPONSE._serialized_start=1519
-  _QUERYPARAMSRESPONSE._serialized_end=1593
-  _QUERY._serialized_start=1596
-  _QUERY._serialized_end=3724
+  _QUERYEXCHANGERATEREQUEST._serialized_end=274
+  _QUERYEXCHANGERATERESPONSE._serialized_start=276
+  _QUERYEXCHANGERATERESPONSE._serialized_end=374
+  _QUERYEXCHANGERATESREQUEST._serialized_start=376
+  _QUERYEXCHANGERATESREQUEST._serialized_end=403
+  _QUERYEXCHANGERATESRESPONSE._serialized_start=405
+  _QUERYEXCHANGERATESRESPONSE._serialized_end=527
+  _QUERYACTIVESREQUEST._serialized_start=529
+  _QUERYACTIVESREQUEST._serialized_end=550
+  _QUERYACTIVESRESPONSE._serialized_start=552
+  _QUERYACTIVESRESPONSE._serialized_end=649
+  _QUERYVOTETARGETSREQUEST._serialized_start=651
+  _QUERYVOTETARGETSREQUEST._serialized_end=676
+  _QUERYVOTETARGETSRESPONSE._serialized_start=678
+  _QUERYVOTETARGETSRESPONSE._serialized_end=784
+  _QUERYFEEDERDELEGATIONREQUEST._serialized_start=786
+  _QUERYFEEDERDELEGATIONREQUEST._serialized_end=850
+  _QUERYFEEDERDELEGATIONRESPONSE._serialized_start=852
+  _QUERYFEEDERDELEGATIONRESPONSE._serialized_end=904
+  _QUERYMISSCOUNTERREQUEST._serialized_start=906
+  _QUERYMISSCOUNTERREQUEST._serialized_end=965
+  _QUERYMISSCOUNTERRESPONSE._serialized_start=967
+  _QUERYMISSCOUNTERRESPONSE._serialized_end=1015
+  _QUERYAGGREGATEPREVOTEREQUEST._serialized_start=1017
+  _QUERYAGGREGATEPREVOTEREQUEST._serialized_end=1081
+  _QUERYAGGREGATEPREVOTERESPONSE._serialized_start=1083
+  _QUERYAGGREGATEPREVOTERESPONSE._serialized_end=1200
+  _QUERYAGGREGATEPREVOTESREQUEST._serialized_start=1202
+  _QUERYAGGREGATEPREVOTESREQUEST._serialized_end=1233
+  _QUERYAGGREGATEPREVOTESRESPONSE._serialized_start=1235
+  _QUERYAGGREGATEPREVOTESRESPONSE._serialized_end=1354
+  _QUERYAGGREGATEVOTEREQUEST._serialized_start=1356
+  _QUERYAGGREGATEVOTEREQUEST._serialized_end=1417
+  _QUERYAGGREGATEVOTERESPONSE._serialized_start=1419
+  _QUERYAGGREGATEVOTERESPONSE._serialized_end=1527
+  _QUERYAGGREGATEVOTESREQUEST._serialized_start=1529
+  _QUERYAGGREGATEVOTESREQUEST._serialized_end=1557
+  _QUERYAGGREGATEVOTESRESPONSE._serialized_start=1559
+  _QUERYAGGREGATEVOTESRESPONSE._serialized_end=1669
+  _QUERYPARAMSREQUEST._serialized_start=1671
+  _QUERYPARAMSREQUEST._serialized_end=1691
+  _QUERYPARAMSRESPONSE._serialized_start=1693
+  _QUERYPARAMSRESPONSE._serialized_end=1767
+  _QUERY._serialized_start=1770
+  _QUERY._serialized_end=3877
 # @@protoc_insertion_point(module_scope)

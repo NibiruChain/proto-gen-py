@@ -3,7 +3,6 @@
 isort:skip_file
 """
 import builtins
-import common.common_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -72,9 +71,8 @@ class Vpool(google.protobuf.message.Message):
     BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     CONFIG_FIELD_NUMBER: builtins.int
-    @property
-    def pair(self) -> common.common_pb2.AssetPair:
-        """always BASE:QUOTE, e.g. BTC:NUSD or ETH:NUSD"""
+    pair: builtins.str
+    """always BASE:QUOTE, e.g. BTC:NUSD or ETH:NUSD"""
     base_asset_reserve: builtins.str
     """base asset is the crypto asset, e.g. BTC or ETH"""
     quote_asset_reserve: builtins.str
@@ -84,12 +82,12 @@ class Vpool(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        pair: common.common_pb2.AssetPair | None = ...,
+        pair: builtins.str = ...,
         base_asset_reserve: builtins.str = ...,
         quote_asset_reserve: builtins.str = ...,
         config: global___VpoolConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["config", b"config", "pair", b"pair"]) -> builtins.bool: ...
+    def HasField(self, field_name: typing_extensions.Literal["config", b"config"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "config", b"config", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve"]) -> None: ...
 
 global___Vpool = Vpool
@@ -162,8 +160,7 @@ class ReserveSnapshot(google.protobuf.message.Message):
     BASE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     QUOTE_ASSET_RESERVE_FIELD_NUMBER: builtins.int
     TIMESTAMP_MS_FIELD_NUMBER: builtins.int
-    @property
-    def pair(self) -> common.common_pb2.AssetPair: ...
+    pair: builtins.str
     base_asset_reserve: builtins.str
     quote_asset_reserve: builtins.str
     """quote asset is usually the margin asset, e.g. NUSD"""
@@ -172,12 +169,11 @@ class ReserveSnapshot(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        pair: common.common_pb2.AssetPair | None = ...,
+        pair: builtins.str = ...,
         base_asset_reserve: builtins.str = ...,
         quote_asset_reserve: builtins.str = ...,
         timestamp_ms: builtins.int = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["pair", b"pair"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["base_asset_reserve", b"base_asset_reserve", "pair", b"pair", "quote_asset_reserve", b"quote_asset_reserve", "timestamp_ms", b"timestamp_ms"]) -> None: ...
 
 global___ReserveSnapshot = ReserveSnapshot
