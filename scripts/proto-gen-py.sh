@@ -6,8 +6,8 @@ set -e pipefail # see https://stackoverflow.com/a/68465418/13305627
 PKG_PATH="nibiru_proto"
 PKG_PROTO_SUBDIR="$PKG_PATH/proto"
 nibiru_cosmos_sdk_version=v0.45.10
-nibiru_chain_version=v0.18.0-rc2
-# ------------------------------------------------ 
+nibiru_chain_version=v0.18.0-rc4
+# ------------------------------------------------
 
 protoc_gen_gocosmos() {
   if ! grep "github.com/gogo/protobuf => github.com/regen-network/protobuf" go.mod &>/dev/null; then
@@ -21,13 +21,13 @@ protoc_gen_gocosmos() {
   go get github.com/cosmos/cosmos-sdk@$nibiru_cosmos_sdk_version 2>/dev/null
 }
 
-# Add PKG_PATH as dir if it doesn't exist. 
+# Add PKG_PATH as dir if it doesn't exist.
 clean() {
   rm -rf ./proto/
   rm -rf ./nibiru/
   rm -rf $PKG_PATH
   mkdir $PKG_PATH
-  echo > $PKG_PATH/__init__.py 
+  echo >$PKG_PATH/__init__.py
 }
 
 copy_nibiru_protobuf_from_remote() {
@@ -40,11 +40,11 @@ copy_nibiru_protobuf_from_remote() {
 code_gen() {
   echo "grabbing cosmos-sdk proto file locations from disk"
   echo "current dir: $(pwd)"
-  
-  cd ./nibiru;
+
+  cd ./nibiru
   protoc_gen_gocosmos
   cosmos_sdk_dir=$(go list -f '{{ .Dir }}' -m github.com/cosmos/cosmos-sdk)
-  cd -;
+  cd -
 
   echo "grab all of the proto directories"
   echo "current dir: $(pwd)"
@@ -53,13 +53,13 @@ code_gen() {
   echo $proto_dirs
 
   # generate the protos for each directory
-  for dir in $proto_dirs; do \
+  for dir in $proto_dirs; do
     string=$dir
     prefix=$HOME/go/pkg/mod/github.com/
-    prefix_removed_string=${string/#$prefix}
-    echo "------------ generating $prefix_removed_string ------------" 
+    prefix_removed_string=${string/#$prefix/}
+    echo "------------ generating $prefix_removed_string ------------"
     # echo "$cosmos_sdk_dir"
-    mkdir -p ./$PKG_PATH/${dir};
+    mkdir -p ./$PKG_PATH/${dir}
     python -m grpc_tools.protoc \
       -I proto \
       -I "$cosmos_sdk_dir/third_party/proto" \
@@ -69,7 +69,7 @@ code_gen() {
       --mypy_out=$PKG_PROTO_SUBDIR \
       --mypy_grpc_out=$PKG_PROTO_SUBDIR \
       $(find "${dir}" -type f -name '*.proto')
-  done; \
+  done
 }
 
 # ------------------------------------------------
@@ -78,11 +78,11 @@ code_gen() {
 
 clean
 
-copy_nibiru_protobuf_from_remote 
+copy_nibiru_protobuf_from_remote
 
 code_gen
 
-printf "import os\nimport sys\n\nsys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))" > $PKG_PROTO_SUBDIR/__init__.py
+printf "import os\nimport sys\n\nsys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))" >$PKG_PROTO_SUBDIR/__init__.py
 
 echo "Complete - generated Python types from proto"
 # cleanup
