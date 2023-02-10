@@ -12,7 +12,7 @@ def test_pkg_import():
     # imports for Nibi-Perps
     import nibiru_proto.proto.perp
     import nibiru_proto.proto.vpool
-    import nibiru_proto.proto.dex
+    import nibiru_proto.proto.spot
     import nibiru_proto.proto.epochs
     import nibiru_proto.proto.oracle
 
