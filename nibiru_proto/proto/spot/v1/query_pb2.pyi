@@ -6,11 +6,11 @@ import builtins
 import collections.abc
 import cosmos.base.query.v1beta1.pagination_pb2
 import cosmos.base.v1beta1.coin_pb2
-import dex.v1.params_pb2
-import dex.v1.pool_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import spot.v1.params_pb2
+import spot.v1.pool_pb2
 import sys
 
 if sys.version_info >= (3, 8):
@@ -40,12 +40,12 @@ class QueryParamsResponse(google.protobuf.message.Message):
 
     PARAMS_FIELD_NUMBER: builtins.int
     @property
-    def params(self) -> dex.v1.params_pb2.Params:
+    def params(self) -> spot.v1.params_pb2.Params:
         """params holds all the parameters of this module."""
     def __init__(
         self,
         *,
-        params: dex.v1.params_pb2.Params | None = ...,
+        params: spot.v1.params_pb2.Params | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["params", b"params"]) -> None: ...
@@ -98,11 +98,11 @@ class QueryPoolResponse(google.protobuf.message.Message):
 
     POOL_FIELD_NUMBER: builtins.int
     @property
-    def pool(self) -> dex.v1.pool_pb2.Pool: ...
+    def pool(self) -> spot.v1.pool_pb2.Pool: ...
     def __init__(
         self,
         *,
-        pool: dex.v1.pool_pb2.Pool | None = ...,
+        pool: spot.v1.pool_pb2.Pool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pool", b"pool"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["pool", b"pool"]) -> None: ...
@@ -134,14 +134,14 @@ class QueryPoolsResponse(google.protobuf.message.Message):
     POOLS_FIELD_NUMBER: builtins.int
     PAGINATION_FIELD_NUMBER: builtins.int
     @property
-    def pools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[dex.v1.pool_pb2.Pool]: ...
+    def pools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[spot.v1.pool_pb2.Pool]: ...
     @property
     def pagination(self) -> cosmos.base.query.v1beta1.pagination_pb2.PageResponse:
         """pagination defines the pagination in the response."""
     def __init__(
         self,
         *,
-        pools: collections.abc.Iterable[dex.v1.pool_pb2.Pool] | None = ...,
+        pools: collections.abc.Iterable[spot.v1.pool_pb2.Pool] | None = ...,
         pagination: cosmos.base.query.v1beta1.pagination_pb2.PageResponse | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pagination", b"pagination"]) -> builtins.bool: ...
@@ -170,11 +170,11 @@ class QueryPoolParamsResponse(google.protobuf.message.Message):
 
     POOL_PARAMS_FIELD_NUMBER: builtins.int
     @property
-    def pool_params(self) -> dex.v1.pool_pb2.PoolParams: ...
+    def pool_params(self) -> spot.v1.pool_pb2.PoolParams: ...
     def __init__(
         self,
         *,
-        pool_params: dex.v1.pool_pb2.PoolParams | None = ...,
+        pool_params: spot.v1.pool_pb2.PoolParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pool_params", b"pool_params"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["pool_params", b"pool_params"]) -> None: ...

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from dex.v1 import tx_pb2 as dex_dot_v1_dot_tx__pb2
+from spot.v1 import tx_pb2 as spot_dot_v1_dot_tx__pb2
 
 
 class MsgStub(object):
@@ -16,24 +16,24 @@ class MsgStub(object):
             channel: A grpc.Channel.
         """
         self.CreatePool = channel.unary_unary(
-                '/nibiru.dex.v1.Msg/CreatePool',
-                request_serializer=dex_dot_v1_dot_tx__pb2.MsgCreatePool.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.FromString,
+                '/nibiru.spot.v1.Msg/CreatePool',
+                request_serializer=spot_dot_v1_dot_tx__pb2.MsgCreatePool.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.FromString,
                 )
         self.JoinPool = channel.unary_unary(
-                '/nibiru.dex.v1.Msg/JoinPool',
-                request_serializer=dex_dot_v1_dot_tx__pb2.MsgJoinPool.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.FromString,
+                '/nibiru.spot.v1.Msg/JoinPool',
+                request_serializer=spot_dot_v1_dot_tx__pb2.MsgJoinPool.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.FromString,
                 )
         self.ExitPool = channel.unary_unary(
-                '/nibiru.dex.v1.Msg/ExitPool',
-                request_serializer=dex_dot_v1_dot_tx__pb2.MsgExitPool.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_tx__pb2.MsgExitPoolResponse.FromString,
+                '/nibiru.spot.v1.Msg/ExitPool',
+                request_serializer=spot_dot_v1_dot_tx__pb2.MsgExitPool.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_tx__pb2.MsgExitPoolResponse.FromString,
                 )
         self.SwapAssets = channel.unary_unary(
-                '/nibiru.dex.v1.Msg/SwapAssets',
-                request_serializer=dex_dot_v1_dot_tx__pb2.MsgSwapAssets.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.FromString,
+                '/nibiru.spot.v1.Msg/SwapAssets',
+                request_serializer=spot_dot_v1_dot_tx__pb2.MsgSwapAssets.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.FromString,
                 )
 
 
@@ -74,27 +74,27 @@ def add_MsgServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreatePool': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePool,
-                    request_deserializer=dex_dot_v1_dot_tx__pb2.MsgCreatePool.FromString,
-                    response_serializer=dex_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_tx__pb2.MsgCreatePool.FromString,
+                    response_serializer=spot_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.SerializeToString,
             ),
             'JoinPool': grpc.unary_unary_rpc_method_handler(
                     servicer.JoinPool,
-                    request_deserializer=dex_dot_v1_dot_tx__pb2.MsgJoinPool.FromString,
-                    response_serializer=dex_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_tx__pb2.MsgJoinPool.FromString,
+                    response_serializer=spot_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.SerializeToString,
             ),
             'ExitPool': grpc.unary_unary_rpc_method_handler(
                     servicer.ExitPool,
-                    request_deserializer=dex_dot_v1_dot_tx__pb2.MsgExitPool.FromString,
-                    response_serializer=dex_dot_v1_dot_tx__pb2.MsgExitPoolResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_tx__pb2.MsgExitPool.FromString,
+                    response_serializer=spot_dot_v1_dot_tx__pb2.MsgExitPoolResponse.SerializeToString,
             ),
             'SwapAssets': grpc.unary_unary_rpc_method_handler(
                     servicer.SwapAssets,
-                    request_deserializer=dex_dot_v1_dot_tx__pb2.MsgSwapAssets.FromString,
-                    response_serializer=dex_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_tx__pb2.MsgSwapAssets.FromString,
+                    response_serializer=spot_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'nibiru.dex.v1.Msg', rpc_method_handlers)
+            'nibiru.spot.v1.Msg', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -114,9 +114,9 @@ class Msg(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Msg/CreatePool',
-            dex_dot_v1_dot_tx__pb2.MsgCreatePool.SerializeToString,
-            dex_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Msg/CreatePool',
+            spot_dot_v1_dot_tx__pb2.MsgCreatePool.SerializeToString,
+            spot_dot_v1_dot_tx__pb2.MsgCreatePoolResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -131,9 +131,9 @@ class Msg(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Msg/JoinPool',
-            dex_dot_v1_dot_tx__pb2.MsgJoinPool.SerializeToString,
-            dex_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Msg/JoinPool',
+            spot_dot_v1_dot_tx__pb2.MsgJoinPool.SerializeToString,
+            spot_dot_v1_dot_tx__pb2.MsgJoinPoolResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -148,9 +148,9 @@ class Msg(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Msg/ExitPool',
-            dex_dot_v1_dot_tx__pb2.MsgExitPool.SerializeToString,
-            dex_dot_v1_dot_tx__pb2.MsgExitPoolResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Msg/ExitPool',
+            spot_dot_v1_dot_tx__pb2.MsgExitPool.SerializeToString,
+            spot_dot_v1_dot_tx__pb2.MsgExitPoolResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -165,8 +165,8 @@ class Msg(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Msg/SwapAssets',
-            dex_dot_v1_dot_tx__pb2.MsgSwapAssets.SerializeToString,
-            dex_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Msg/SwapAssets',
+            spot_dot_v1_dot_tx__pb2.MsgSwapAssets.SerializeToString,
+            spot_dot_v1_dot_tx__pb2.MsgSwapAssetsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

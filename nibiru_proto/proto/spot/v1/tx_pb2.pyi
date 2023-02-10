@@ -5,10 +5,10 @@ isort:skip_file
 import builtins
 import collections.abc
 import cosmos.base.v1beta1.coin_pb2
-import dex.v1.pool_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import spot.v1.pool_pb2
 import sys
 
 if sys.version_info >= (3, 8):
@@ -27,15 +27,15 @@ class MsgCreatePool(google.protobuf.message.Message):
     POOL_ASSETS_FIELD_NUMBER: builtins.int
     creator: builtins.str
     @property
-    def pool_params(self) -> dex.v1.pool_pb2.PoolParams: ...
+    def pool_params(self) -> spot.v1.pool_pb2.PoolParams: ...
     @property
-    def pool_assets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[dex.v1.pool_pb2.PoolAsset]: ...
+    def pool_assets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[spot.v1.pool_pb2.PoolAsset]: ...
     def __init__(
         self,
         *,
         creator: builtins.str = ...,
-        pool_params: dex.v1.pool_pb2.PoolParams | None = ...,
-        pool_assets: collections.abc.Iterable[dex.v1.pool_pb2.PoolAsset] | None = ...,
+        pool_params: spot.v1.pool_pb2.PoolParams | None = ...,
+        pool_assets: collections.abc.Iterable[spot.v1.pool_pb2.PoolAsset] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pool_params", b"pool_params"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["creator", b"creator", "pool_assets", b"pool_assets", "pool_params", b"pool_params"]) -> None: ...
@@ -98,7 +98,7 @@ class MsgJoinPoolResponse(google.protobuf.message.Message):
     NUM_POOL_SHARES_OUT_FIELD_NUMBER: builtins.int
     REMAINING_COINS_FIELD_NUMBER: builtins.int
     @property
-    def pool(self) -> dex.v1.pool_pb2.Pool:
+    def pool(self) -> spot.v1.pool_pb2.Pool:
         """the final state of the pool after a join"""
     @property
     def num_pool_shares_out(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
@@ -109,7 +109,7 @@ class MsgJoinPoolResponse(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        pool: dex.v1.pool_pb2.Pool | None = ...,
+        pool: spot.v1.pool_pb2.Pool | None = ...,
         num_pool_shares_out: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         remaining_coins: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
     ) -> None: ...

@@ -20,7 +20,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing_extensions.final
 class Params(google.protobuf.message.Message):
-    """Params defines the parameters for the oracle module."""
+    """Params defines the module parameters for the x/oracle module."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -32,17 +32,47 @@ class Params(google.protobuf.message.Message):
     SLASH_WINDOW_FIELD_NUMBER: builtins.int
     MIN_VALID_PER_WINDOW_FIELD_NUMBER: builtins.int
     TWAP_LOOKBACK_WINDOW_FIELD_NUMBER: builtins.int
+    MIN_VOTERS_FIELD_NUMBER: builtins.int
     vote_period: builtins.int
+    """VotePeriod defines the number of blocks during which voting takes place."""
     vote_threshold: builtins.str
+    """VoteThreshold specifies the minimum proportion of votes that must be 
+    received for a ballot to pass.
+    """
     reward_band: builtins.str
+    """RewardBand defines a maxium divergence that a price vote can have from the
+    weighted median in the ballot. If a vote lies within the valid range
+    defined by:
+    	μ := weightedMedian,
+    	validRange := μ ± (μ * rewardBand / 2),
+    then rewards are added to the validator performance.
+    Note that if the reward band is smaller than 1 standard
+    deviation, the band is taken to be 1 standard deviation.a price
+    """
     @property
-    def whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """The set of whitelisted markets, or asset pairs, for the module. 
+        Ex. '["unibi:uusd","ubtc:uusd"]'
+        """
     slash_fraction: builtins.str
+    """SlashFraction returns the proportion of an oracle's stake that gets 
+    slashed in the event of slashing. `SlashFraction` specifies the exact 
+    penalty for failing a voting period.
+    """
     slash_window: builtins.int
+    """SlashWindow returns the number of voting periods that specify a 
+    "slash window". After each slash window, all oracles that have missed more 
+    than the penalty threshold are slashed. Missing the penalty threshold is 
+    synonymous with submitting fewer valid votes than `MinValidPerWindow`.
+    """
     min_valid_per_window: builtins.str
     @property
     def twap_lookback_window(self) -> google.protobuf.duration_pb2.Duration:
-        """amount of time to look back for TWAP calculations"""
+        """Amount of time to look back for TWAP calculations"""
+    min_voters: builtins.int
+    """The minimum number of voters (i.e. oracle validators) per pair for it to be considered a passing ballot.
+    Recommended at least 4.
+    """
     def __init__(
         self,
         *,
@@ -54,15 +84,16 @@ class Params(google.protobuf.message.Message):
         slash_window: builtins.int = ...,
         min_valid_per_window: builtins.str = ...,
         twap_lookback_window: google.protobuf.duration_pb2.Duration | None = ...,
+        min_voters: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["twap_lookback_window", b"twap_lookback_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window", b"min_valid_per_window", "reward_band", b"reward_band", "slash_fraction", b"slash_fraction", "slash_window", b"slash_window", "twap_lookback_window", b"twap_lookback_window", "vote_period", b"vote_period", "vote_threshold", b"vote_threshold", "whitelist", b"whitelist"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["min_valid_per_window", b"min_valid_per_window", "min_voters", b"min_voters", "reward_band", b"reward_band", "slash_fraction", b"slash_fraction", "slash_window", b"slash_window", "twap_lookback_window", b"twap_lookback_window", "vote_period", b"vote_period", "vote_threshold", b"vote_threshold", "whitelist", b"whitelist"]) -> None: ...
 
 global___Params = Params
 
 @typing_extensions.final
 class AggregateExchangeRatePrevote(google.protobuf.message.Message):
-    """struct for aggregate prevoting on the ExchangeRateVote.
+    """Struct for aggregate prevoting on the ExchangeRateVote.
     The purpose of aggregate prevote is to hide vote exchange rates with hash
     which is formatted as hex string in SHA256("{salt}:({pair},{exchange_rate})|...|({pair},{exchange_rate}):{voter}")
     """
@@ -149,7 +180,7 @@ class PairReward(google.protobuf.message.Message):
     """vote_periods defines the vote periods left in which rewards will be distributed."""
     @property
     def coins(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]:
-        """coins defines the amount of coins to distribute in a single vote period."""
+        """Coins defines the amount of coins to distribute in a single vote period."""
     def __init__(
         self,
         *,

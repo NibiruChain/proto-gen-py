@@ -27,7 +27,12 @@ class MsgAggregateExchangeRatePrevote(google.protobuf.message.Message):
     VALIDATOR_FIELD_NUMBER: builtins.int
     hash: builtins.str
     feeder: builtins.str
+    """Feeder is the Bech32 address of the price feeder. A validator may 
+    specify multiple price feeders by delegating them consent. The validator  
+    address is also a valid feeder by default.
+    """
     validator: builtins.str
+    """Validator is the Bech32 address to which the prevote will be credited."""
     def __init__(
         self,
         *,
@@ -66,7 +71,12 @@ class MsgAggregateExchangeRateVote(google.protobuf.message.Message):
     salt: builtins.str
     exchange_rates: builtins.str
     feeder: builtins.str
+    """Feeder is the Bech32 address of the price feeder. A validator may 
+    specify multiple price feeders by delegating them consent. The validator  
+    address is also a valid feeder by default.
+    """
     validator: builtins.str
+    """Validator is the Bech32 address to which the vote will be credited."""
     def __init__(
         self,
         *,
@@ -93,8 +103,8 @@ global___MsgAggregateExchangeRateVoteResponse = MsgAggregateExchangeRateVoteResp
 
 @typing_extensions.final
 class MsgDelegateFeedConsent(google.protobuf.message.Message):
-    """MsgDelegateFeedConsent represents a message to
-    delegate oracle voting rights to another address.
+    """MsgDelegateFeedConsent represents a message to delegate oracle voting rights 
+    to another address.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

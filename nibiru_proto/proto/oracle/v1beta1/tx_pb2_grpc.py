@@ -53,7 +53,9 @@ class MsgServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DelegateFeedConsent(self, request, context):
-        """DelegateFeedConsent defines a method for setting the feeder delegation
+        """DelegateFeedConsent defines a method for delegating oracle voting rights 
+        to another address known as a price feeder. 
+        See https://github.com/NibiruChain/pricefeeder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

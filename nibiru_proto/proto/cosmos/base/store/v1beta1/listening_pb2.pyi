@@ -3,9 +3,12 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import sys
+import tendermint.abci.types_pb2
 
 if sys.version_info >= (3, 8):
     import typing as typing_extensions
@@ -46,3 +49,65 @@ class StoreKVPair(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["delete", b"delete", "key", b"key", "store_key", b"store_key", "value", b"value"]) -> None: ...
 
 global___StoreKVPair = StoreKVPair
+
+@typing_extensions.final
+class BlockMetadata(google.protobuf.message.Message):
+    """BlockMetadata contains all the abci event data of a block
+    the file streamer dump them into files together with the state changes.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class DeliverTx(google.protobuf.message.Message):
+        """DeliverTx encapulate deliver tx request and response."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        REQUEST_FIELD_NUMBER: builtins.int
+        RESPONSE_FIELD_NUMBER: builtins.int
+        @property
+        def request(self) -> tendermint.abci.types_pb2.RequestDeliverTx: ...
+        @property
+        def response(self) -> tendermint.abci.types_pb2.ResponseDeliverTx: ...
+        def __init__(
+            self,
+            *,
+            request: tendermint.abci.types_pb2.RequestDeliverTx | None = ...,
+            response: tendermint.abci.types_pb2.ResponseDeliverTx | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["request", b"request", "response", b"response"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["request", b"request", "response", b"response"]) -> None: ...
+
+    REQUEST_BEGIN_BLOCK_FIELD_NUMBER: builtins.int
+    RESPONSE_BEGIN_BLOCK_FIELD_NUMBER: builtins.int
+    DELIVER_TXS_FIELD_NUMBER: builtins.int
+    REQUEST_END_BLOCK_FIELD_NUMBER: builtins.int
+    RESPONSE_END_BLOCK_FIELD_NUMBER: builtins.int
+    RESPONSE_COMMIT_FIELD_NUMBER: builtins.int
+    @property
+    def request_begin_block(self) -> tendermint.abci.types_pb2.RequestBeginBlock: ...
+    @property
+    def response_begin_block(self) -> tendermint.abci.types_pb2.ResponseBeginBlock: ...
+    @property
+    def deliver_txs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BlockMetadata.DeliverTx]: ...
+    @property
+    def request_end_block(self) -> tendermint.abci.types_pb2.RequestEndBlock: ...
+    @property
+    def response_end_block(self) -> tendermint.abci.types_pb2.ResponseEndBlock: ...
+    @property
+    def response_commit(self) -> tendermint.abci.types_pb2.ResponseCommit: ...
+    def __init__(
+        self,
+        *,
+        request_begin_block: tendermint.abci.types_pb2.RequestBeginBlock | None = ...,
+        response_begin_block: tendermint.abci.types_pb2.ResponseBeginBlock | None = ...,
+        deliver_txs: collections.abc.Iterable[global___BlockMetadata.DeliverTx] | None = ...,
+        request_end_block: tendermint.abci.types_pb2.RequestEndBlock | None = ...,
+        response_end_block: tendermint.abci.types_pb2.ResponseEndBlock | None = ...,
+        response_commit: tendermint.abci.types_pb2.ResponseCommit | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["request_begin_block", b"request_begin_block", "request_end_block", b"request_end_block", "response_begin_block", b"response_begin_block", "response_commit", b"response_commit", "response_end_block", b"response_end_block"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["deliver_txs", b"deliver_txs", "request_begin_block", b"request_begin_block", "request_end_block", b"request_end_block", "response_begin_block", b"response_begin_block", "response_commit", b"response_commit", "response_end_block", b"response_end_block"]) -> None: ...
+
+global___BlockMetadata = BlockMetadata

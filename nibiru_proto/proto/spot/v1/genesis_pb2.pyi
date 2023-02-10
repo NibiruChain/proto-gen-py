@@ -3,9 +3,9 @@
 isort:skip_file
 """
 import builtins
-import dex.v1.params_pb2
 import google.protobuf.descriptor
 import google.protobuf.message
+import spot.v1.params_pb2
 import sys
 
 if sys.version_info >= (3, 8):
@@ -17,17 +17,17 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing_extensions.final
 class GenesisState(google.protobuf.message.Message):
-    """GenesisState defines the dex module's genesis state."""
+    """GenesisState defines the spot module's genesis state."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PARAMS_FIELD_NUMBER: builtins.int
     @property
-    def params(self) -> dex.v1.params_pb2.Params: ...
+    def params(self) -> spot.v1.params_pb2.Params: ...
     def __init__(
         self,
         *,
-        params: dex.v1.params_pb2.Params | None = ...,
+        params: spot.v1.params_pb2.Params | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["params", b"params"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["params", b"params"]) -> None: ...

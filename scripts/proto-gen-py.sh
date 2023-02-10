@@ -5,8 +5,8 @@ set -e pipefail # see https://stackoverflow.com/a/68465418/13305627
 # ------------------------------------------------ CONFIG
 PKG_PATH="nibiru_proto"
 PKG_PROTO_SUBDIR="$PKG_PATH/proto"
-nibiru_cosmos_sdk_version=v0.45.10
-nibiru_chain_version=v0.18.0-rc4
+nibiru_cosmos_sdk_version=v0.45.12
+nibiru_chain_version=v0.19.0-rc1
 # ------------------------------------------------
 
 protoc_gen_gocosmos() {

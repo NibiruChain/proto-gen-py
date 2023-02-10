@@ -28,7 +28,10 @@ class MsgStub:
         oracle.v1beta1.tx_pb2.MsgDelegateFeedConsent,
         oracle.v1beta1.tx_pb2.MsgDelegateFeedConsentResponse,
     ]
-    """DelegateFeedConsent defines a method for setting the feeder delegation"""
+    """DelegateFeedConsent defines a method for delegating oracle voting rights 
+    to another address known as a price feeder. 
+    See https://github.com/NibiruChain/pricefeeder.
+    """
 
 class MsgServicer(metaclass=abc.ABCMeta):
     """Msg defines the oracle Msg service."""
@@ -57,6 +60,9 @@ class MsgServicer(metaclass=abc.ABCMeta):
         request: oracle.v1beta1.tx_pb2.MsgDelegateFeedConsent,
         context: grpc.ServicerContext,
     ) -> oracle.v1beta1.tx_pb2.MsgDelegateFeedConsentResponse:
-        """DelegateFeedConsent defines a method for setting the feeder delegation"""
+        """DelegateFeedConsent defines a method for delegating oracle voting rights 
+        to another address known as a price feeder. 
+        See https://github.com/NibiruChain/pricefeeder.
+        """
 
 def add_MsgServicer_to_server(servicer: MsgServicer, server: grpc.Server) -> None: ...

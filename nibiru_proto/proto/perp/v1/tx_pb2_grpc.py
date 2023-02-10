@@ -25,11 +25,6 @@ class MsgStub(object):
                 request_serializer=perp_dot_v1_dot_tx__pb2.MsgAddMargin.SerializeToString,
                 response_deserializer=perp_dot_v1_dot_tx__pb2.MsgAddMarginResponse.FromString,
                 )
-        self.Liquidate = channel.unary_unary(
-                '/nibiru.perp.v1.Msg/Liquidate',
-                request_serializer=perp_dot_v1_dot_tx__pb2.MsgLiquidate.SerializeToString,
-                response_deserializer=perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.FromString,
-                )
         self.MultiLiquidate = channel.unary_unary(
                 '/nibiru.perp.v1.Msg/MultiLiquidate',
                 request_serializer=perp_dot_v1_dot_tx__pb2.MsgMultiLiquidate.SerializeToString,
@@ -64,14 +59,6 @@ class MsgServicer(object):
 
     def AddMargin(self, request, context):
         """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Liquidate(self, request, context):
-        """Liquidate is a transaction that allows the caller to fully or partially 
-        liquidate an existing position. 
-        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -112,11 +99,6 @@ def add_MsgServicer_to_server(servicer, server):
                     servicer.AddMargin,
                     request_deserializer=perp_dot_v1_dot_tx__pb2.MsgAddMargin.FromString,
                     response_serializer=perp_dot_v1_dot_tx__pb2.MsgAddMarginResponse.SerializeToString,
-            ),
-            'Liquidate': grpc.unary_unary_rpc_method_handler(
-                    servicer.Liquidate,
-                    request_deserializer=perp_dot_v1_dot_tx__pb2.MsgLiquidate.FromString,
-                    response_serializer=perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.SerializeToString,
             ),
             'MultiLiquidate': grpc.unary_unary_rpc_method_handler(
                     servicer.MultiLiquidate,
@@ -180,23 +162,6 @@ class Msg(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Msg/AddMargin',
             perp_dot_v1_dot_tx__pb2.MsgAddMargin.SerializeToString,
             perp_dot_v1_dot_tx__pb2.MsgAddMarginResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Liquidate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v1.Msg/Liquidate',
-            perp_dot_v1_dot_tx__pb2.MsgLiquidate.SerializeToString,
-            perp_dot_v1_dot_tx__pb2.MsgLiquidateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -18,13 +18,6 @@ class MsgStub:
         perp.v1.tx_pb2.MsgAddMargin,
         perp.v1.tx_pb2.MsgAddMarginResponse,
     ]
-    Liquidate: grpc.UnaryUnaryMultiCallable[
-        perp.v1.tx_pb2.MsgLiquidate,
-        perp.v1.tx_pb2.MsgLiquidateResponse,
-    ]
-    """Liquidate is a transaction that allows the caller to fully or partially 
-    liquidate an existing position.
-    """
     MultiLiquidate: grpc.UnaryUnaryMultiCallable[
         perp.v1.tx_pb2.MsgMultiLiquidate,
         perp.v1.tx_pb2.MsgMultiLiquidateResponse,
@@ -57,15 +50,6 @@ class MsgServicer(metaclass=abc.ABCMeta):
         request: perp.v1.tx_pb2.MsgAddMargin,
         context: grpc.ServicerContext,
     ) -> perp.v1.tx_pb2.MsgAddMarginResponse: ...
-    @abc.abstractmethod
-    def Liquidate(
-        self,
-        request: perp.v1.tx_pb2.MsgLiquidate,
-        context: grpc.ServicerContext,
-    ) -> perp.v1.tx_pb2.MsgLiquidateResponse:
-        """Liquidate is a transaction that allows the caller to fully or partially 
-        liquidate an existing position.
-        """
     @abc.abstractmethod
     def MultiLiquidate(
         self,

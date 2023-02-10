@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from dex.v1 import query_pb2 as dex_dot_v1_dot_query__pb2
+from spot.v1 import query_pb2 as spot_dot_v1_dot_query__pb2
 
 
 class QueryStub(object):
@@ -16,84 +16,84 @@ class QueryStub(object):
             channel: A grpc.Channel.
         """
         self.Params = channel.unary_unary(
-                '/nibiru.dex.v1.Query/Params',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryParamsRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryParamsResponse.FromString,
+                '/nibiru.spot.v1.Query/Params',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryParamsRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryParamsResponse.FromString,
                 )
         self.PoolNumber = channel.unary_unary(
-                '/nibiru.dex.v1.Query/PoolNumber',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryPoolNumberRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolNumberResponse.FromString,
+                '/nibiru.spot.v1.Query/PoolNumber',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryPoolNumberRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolNumberResponse.FromString,
                 )
         self.Pool = channel.unary_unary(
-                '/nibiru.dex.v1.Query/Pool',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryPoolRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolResponse.FromString,
+                '/nibiru.spot.v1.Query/Pool',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryPoolRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolResponse.FromString,
                 )
         self.Pools = channel.unary_unary(
-                '/nibiru.dex.v1.Query/Pools',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryPoolsRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolsResponse.FromString,
+                '/nibiru.spot.v1.Query/Pools',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryPoolsRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolsResponse.FromString,
                 )
         self.PoolParams = channel.unary_unary(
-                '/nibiru.dex.v1.Query/PoolParams',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryPoolParamsRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolParamsResponse.FromString,
+                '/nibiru.spot.v1.Query/PoolParams',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryPoolParamsRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolParamsResponse.FromString,
                 )
         self.NumPools = channel.unary_unary(
-                '/nibiru.dex.v1.Query/NumPools',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryNumPoolsRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryNumPoolsResponse.FromString,
+                '/nibiru.spot.v1.Query/NumPools',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryNumPoolsRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryNumPoolsResponse.FromString,
                 )
         self.TotalLiquidity = channel.unary_unary(
-                '/nibiru.dex.v1.Query/TotalLiquidity',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.FromString,
+                '/nibiru.spot.v1.Query/TotalLiquidity',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.FromString,
                 )
         self.TotalPoolLiquidity = channel.unary_unary(
-                '/nibiru.dex.v1.Query/TotalPoolLiquidity',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.FromString,
+                '/nibiru.spot.v1.Query/TotalPoolLiquidity',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.FromString,
                 )
         self.TotalShares = channel.unary_unary(
-                '/nibiru.dex.v1.Query/TotalShares',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryTotalSharesRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalSharesResponse.FromString,
+                '/nibiru.spot.v1.Query/TotalShares',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryTotalSharesRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalSharesResponse.FromString,
                 )
         self.SpotPrice = channel.unary_unary(
-                '/nibiru.dex.v1.Query/SpotPrice',
-                request_serializer=dex_dot_v1_dot_query__pb2.QuerySpotPriceRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QuerySpotPriceResponse.FromString,
+                '/nibiru.spot.v1.Query/SpotPrice',
+                request_serializer=spot_dot_v1_dot_query__pb2.QuerySpotPriceRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QuerySpotPriceResponse.FromString,
                 )
         self.EstimateSwapExactAmountIn = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateSwapExactAmountIn',
-                request_serializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateSwapExactAmountIn',
+                request_serializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.FromString,
                 )
         self.EstimateSwapExactAmountOut = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateSwapExactAmountOut',
-                request_serializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateSwapExactAmountOut',
+                request_serializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.FromString,
                 )
         self.EstimateJoinExactAmountIn = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateJoinExactAmountIn',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateJoinExactAmountIn',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.FromString,
                 )
         self.EstimateJoinExactAmountOut = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateJoinExactAmountOut',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateJoinExactAmountOut',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.FromString,
                 )
         self.EstimateExitExactAmountIn = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateExitExactAmountIn',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateExitExactAmountIn',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.FromString,
                 )
         self.EstimateExitExactAmountOut = channel.unary_unary(
-                '/nibiru.dex.v1.Query/EstimateExitExactAmountOut',
-                request_serializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.SerializeToString,
-                response_deserializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.FromString,
+                '/nibiru.spot.v1.Query/EstimateExitExactAmountOut',
+                request_serializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.SerializeToString,
+                response_deserializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.FromString,
                 )
 
 
@@ -102,7 +102,7 @@ class QueryServicer(object):
     """
 
     def Params(self, request, context):
-        """Parameters of the dex module.
+        """Parameters of the spot module.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -224,87 +224,87 @@ def add_QueryServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Params': grpc.unary_unary_rpc_method_handler(
                     servicer.Params,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryParamsRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryParamsResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryParamsRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryParamsResponse.SerializeToString,
             ),
             'PoolNumber': grpc.unary_unary_rpc_method_handler(
                     servicer.PoolNumber,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolNumberRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryPoolNumberResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolNumberRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryPoolNumberResponse.SerializeToString,
             ),
             'Pool': grpc.unary_unary_rpc_method_handler(
                     servicer.Pool,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryPoolResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryPoolResponse.SerializeToString,
             ),
             'Pools': grpc.unary_unary_rpc_method_handler(
                     servicer.Pools,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolsRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryPoolsResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolsRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryPoolsResponse.SerializeToString,
             ),
             'PoolParams': grpc.unary_unary_rpc_method_handler(
                     servicer.PoolParams,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryPoolParamsRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryPoolParamsResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryPoolParamsRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryPoolParamsResponse.SerializeToString,
             ),
             'NumPools': grpc.unary_unary_rpc_method_handler(
                     servicer.NumPools,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryNumPoolsRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryNumPoolsResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryNumPoolsRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryNumPoolsResponse.SerializeToString,
             ),
             'TotalLiquidity': grpc.unary_unary_rpc_method_handler(
                     servicer.TotalLiquidity,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.SerializeToString,
             ),
             'TotalPoolLiquidity': grpc.unary_unary_rpc_method_handler(
                     servicer.TotalPoolLiquidity,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.SerializeToString,
             ),
             'TotalShares': grpc.unary_unary_rpc_method_handler(
                     servicer.TotalShares,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryTotalSharesRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryTotalSharesResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryTotalSharesRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryTotalSharesResponse.SerializeToString,
             ),
             'SpotPrice': grpc.unary_unary_rpc_method_handler(
                     servicer.SpotPrice,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QuerySpotPriceRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QuerySpotPriceResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QuerySpotPriceRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QuerySpotPriceResponse.SerializeToString,
             ),
             'EstimateSwapExactAmountIn': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateSwapExactAmountIn,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.SerializeToString,
             ),
             'EstimateSwapExactAmountOut': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateSwapExactAmountOut,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.SerializeToString,
             ),
             'EstimateJoinExactAmountIn': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateJoinExactAmountIn,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.SerializeToString,
             ),
             'EstimateJoinExactAmountOut': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateJoinExactAmountOut,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.SerializeToString,
             ),
             'EstimateExitExactAmountIn': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateExitExactAmountIn,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.SerializeToString,
             ),
             'EstimateExitExactAmountOut': grpc.unary_unary_rpc_method_handler(
                     servicer.EstimateExitExactAmountOut,
-                    request_deserializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.FromString,
-                    response_serializer=dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.SerializeToString,
+                    request_deserializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.FromString,
+                    response_serializer=spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'nibiru.dex.v1.Query', rpc_method_handlers)
+            'nibiru.spot.v1.Query', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -324,9 +324,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/Params',
-            dex_dot_v1_dot_query__pb2.QueryParamsRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryParamsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/Params',
+            spot_dot_v1_dot_query__pb2.QueryParamsRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryParamsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -341,9 +341,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/PoolNumber',
-            dex_dot_v1_dot_query__pb2.QueryPoolNumberRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryPoolNumberResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/PoolNumber',
+            spot_dot_v1_dot_query__pb2.QueryPoolNumberRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryPoolNumberResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -358,9 +358,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/Pool',
-            dex_dot_v1_dot_query__pb2.QueryPoolRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryPoolResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/Pool',
+            spot_dot_v1_dot_query__pb2.QueryPoolRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryPoolResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -375,9 +375,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/Pools',
-            dex_dot_v1_dot_query__pb2.QueryPoolsRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryPoolsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/Pools',
+            spot_dot_v1_dot_query__pb2.QueryPoolsRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryPoolsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -392,9 +392,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/PoolParams',
-            dex_dot_v1_dot_query__pb2.QueryPoolParamsRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryPoolParamsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/PoolParams',
+            spot_dot_v1_dot_query__pb2.QueryPoolParamsRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryPoolParamsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -409,9 +409,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/NumPools',
-            dex_dot_v1_dot_query__pb2.QueryNumPoolsRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryNumPoolsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/NumPools',
+            spot_dot_v1_dot_query__pb2.QueryNumPoolsRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryNumPoolsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -426,9 +426,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/TotalLiquidity',
-            dex_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/TotalLiquidity',
+            spot_dot_v1_dot_query__pb2.QueryTotalLiquidityRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryTotalLiquidityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -443,9 +443,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/TotalPoolLiquidity',
-            dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/TotalPoolLiquidity',
+            spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryTotalPoolLiquidityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -460,9 +460,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/TotalShares',
-            dex_dot_v1_dot_query__pb2.QueryTotalSharesRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryTotalSharesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/TotalShares',
+            spot_dot_v1_dot_query__pb2.QueryTotalSharesRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryTotalSharesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -477,9 +477,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/SpotPrice',
-            dex_dot_v1_dot_query__pb2.QuerySpotPriceRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QuerySpotPriceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/SpotPrice',
+            spot_dot_v1_dot_query__pb2.QuerySpotPriceRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QuerySpotPriceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -494,9 +494,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateSwapExactAmountIn',
-            dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateSwapExactAmountIn',
+            spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QuerySwapExactAmountInResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -511,9 +511,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateSwapExactAmountOut',
-            dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateSwapExactAmountOut',
+            spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QuerySwapExactAmountOutResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -528,9 +528,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateJoinExactAmountIn',
-            dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateJoinExactAmountIn',
+            spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryJoinExactAmountInResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -545,9 +545,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateJoinExactAmountOut',
-            dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateJoinExactAmountOut',
+            spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryJoinExactAmountOutResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -562,9 +562,9 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateExitExactAmountIn',
-            dex_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateExitExactAmountIn',
+            spot_dot_v1_dot_query__pb2.QueryExitExactAmountInRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryExitExactAmountInResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -579,8 +579,8 @@ class Query(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/nibiru.dex.v1.Query/EstimateExitExactAmountOut',
-            dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.SerializeToString,
-            dex_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/nibiru.spot.v1.Query/EstimateExitExactAmountOut',
+            spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutRequest.SerializeToString,
+            spot_dot_v1_dot_query__pb2.QueryExitExactAmountOutResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

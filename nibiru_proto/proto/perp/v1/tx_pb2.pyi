@@ -122,33 +122,9 @@ class MsgAddMarginResponse(google.protobuf.message.Message):
 global___MsgAddMarginResponse = MsgAddMarginResponse
 
 @typing_extensions.final
-class MsgLiquidate(google.protobuf.message.Message):
+class MsgLiquidateResponse(google.protobuf.message.Message):
     """-------------------------- Liquidate --------------------------"""
 
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SENDER_FIELD_NUMBER: builtins.int
-    PAIR_FIELD_NUMBER: builtins.int
-    TRADER_FIELD_NUMBER: builtins.int
-    sender: builtins.str
-    """Sender is the liquidator address"""
-    pair: builtins.str
-    """TokenPair is the identifier for the position's virtual pool"""
-    trader: builtins.str
-    """Trader is the address of the owner of the position"""
-    def __init__(
-        self,
-        *,
-        sender: builtins.str = ...,
-        pair: builtins.str = ...,
-        trader: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["pair", b"pair", "sender", b"sender", "trader", b"trader"]) -> None: ...
-
-global___MsgLiquidate = MsgLiquidate
-
-@typing_extensions.final
-class MsgLiquidateResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FEE_TO_LIQUIDATOR_FIELD_NUMBER: builtins.int

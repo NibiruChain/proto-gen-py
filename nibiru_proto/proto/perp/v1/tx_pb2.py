@@ -17,7 +17,7 @@ from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from perp.v1 import state_pb2 as perp_dot_v1_dot_state__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10perp/v1/tx.proto\x12\x0enibiru.perp.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\x1a\x14gogoproto/gogo.proto\x1a\x13perp/v1/state.proto\"\x9a\x01\n\x0fMsgRemoveMargin\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x46\n\x04pair\x18\x02 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12/\n\x06margin\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xc3\x01\n\x17MsgRemoveMarginResponse\x12\x33\n\nmargin_out\x18\x01 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12*\n\x08position\x18\x03 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\"\x97\x01\n\x0cMsgAddMargin\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x46\n\x04pair\x18\x02 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12/\n\x06margin\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\x8b\x01\n\x14MsgAddMarginResponse\x12G\n\x0f\x66unding_payment\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12*\n\x08position\x18\x02 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\"v\n\x0cMsgLiquidate\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x46\n\x04pair\x18\x02 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12\x0e\n\x06trader\x18\x03 \x01(\t\"\x97\x01\n\x14MsgLiquidateResponse\x12:\n\x11\x66\x65\x65_to_liquidator\x18\x01 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x43\n\x1a\x66\x65\x65_to_perp_ecosystem_fund\x18\x02 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xd9\x01\n\x11MsgMultiLiquidate\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12H\n\x0cliquidations\x18\x02 \x03(\x0b\x32\x32.nibiru.perp.v1.MsgMultiLiquidate.MultiLiquidation\x1aj\n\x10MultiLiquidation\x12\x46\n\x04pair\x18\x01 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12\x0e\n\x06trader\x18\x02 \x01(\t\"\xf0\x01\n\x19MsgMultiLiquidateResponse\x12_\n\x15liquidation_responses\x18\x01 \x03(\x0b\x32@.nibiru.perp.v1.MsgMultiLiquidateResponse.MultiLiquidateResponse\x1ar\n\x16MultiLiquidateResponse\x12\x0f\n\x05\x65rror\x18\x01 \x01(\tH\x00\x12;\n\x0bliquidation\x18\x02 \x01(\x0b\x32$.nibiru.perp.v1.MsgLiquidateResponseH\x00\x42\n\n\x08response\"\xec\x02\n\x0fMsgOpenPosition\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x46\n\x04pair\x18\x02 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\x12\"\n\x04side\x18\x03 \x01(\x0e\x32\x14.nibiru.perp.v1.Side\x12J\n\x12quote_asset_amount\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Int\xc8\xde\x1f\x00\x12@\n\x08leverage\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x62\x61se_asset_amount_limit\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Int\xc8\xde\x1f\x00\"\xd9\x04\n\x17MsgOpenPositionResponse\x12*\n\x08position\x18\x01 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\x12P\n\x18\x65xchanged_notional_value\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x65xchanged_position_size\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0crealized_pnl\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12L\n\x14unrealized_pnl_after\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0fmargin_to_vault\x18\x07 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12I\n\x11position_notional\x18\x08 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"j\n\x10MsgClosePosition\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x46\n\x04pair\x18\x02 \x01(\tB8\xda\xde\x1f\x30github.com/NibiruChain/nibiru/x/common.AssetPair\xc8\xde\x1f\x00\"\x96\x03\n\x18MsgClosePositionResponse\x12P\n\x18\x65xchanged_notional_value\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x65xchanged_position_size\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0crealized_pnl\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12H\n\x10margin_to_trader\x18\x07 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"p\n\x18MsgDonateToEcosystemFund\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x44\n\x08\x64onation\x18\x02 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x17\xf2\xde\x1f\x0fyaml:\"donation\"\xc8\xde\x1f\x00\"\"\n MsgDonateToEcosystemFundResponse2\x92\x07\n\x03Msg\x12|\n\x0cRemoveMargin\x12\x1f.nibiru.perp.v1.MsgRemoveMargin\x1a\'.nibiru.perp.v1.MsgRemoveMarginResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/nibiru/perp/remove_margin\x12p\n\tAddMargin\x12\x1c.nibiru.perp.v1.MsgAddMargin\x1a$.nibiru.perp.v1.MsgAddMarginResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x17/nibiru/perp/add_margin\x12o\n\tLiquidate\x12\x1c.nibiru.perp.v1.MsgLiquidate\x1a$.nibiru.perp.v1.MsgLiquidateResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x16/nibiru/perp/liquidate\x12\x83\x01\n\x0eMultiLiquidate\x12!.nibiru.perp.v1.MsgMultiLiquidate\x1a).nibiru.perp.v1.MsgMultiLiquidateResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x1b/nibiru/perp/multiliquidate\x12|\n\x0cOpenPosition\x12\x1f.nibiru.perp.v1.MsgOpenPosition\x1a\'.nibiru.perp.v1.MsgOpenPositionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/nibiru/perp/open_position\x12\x80\x01\n\rClosePosition\x12 .nibiru.perp.v1.MsgClosePosition\x1a(.nibiru.perp.v1.MsgClosePositionResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x1b/nibiru/perp/close_position\x12\xa2\x01\n\x15\x44onateToEcosystemFund\x12(.nibiru.perp.v1.MsgDonateToEcosystemFund\x1a\x30.nibiru.perp.v1.MsgDonateToEcosystemFundResponse\"-\x82\xd3\xe4\x93\x02\'\"%/nibiru/perp/donate_to_ecosystem_fundB,Z*github.com/NibiruChain/nibiru/x/perp/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10perp/v1/tx.proto\x12\x0enibiru.perp.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\x1a\x14gogoproto/gogo.proto\x1a\x13perp/v1/state.proto\"\x9b\x01\n\x0fMsgRemoveMargin\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12G\n\x04pair\x18\x02 \x01(\tB9\xda\xde\x1f\x31github.com/NibiruChain/nibiru/x/common/asset.Pair\xc8\xde\x1f\x00\x12/\n\x06margin\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xc3\x01\n\x17MsgRemoveMarginResponse\x12\x33\n\nmargin_out\x18\x01 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12*\n\x08position\x18\x03 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\"\x98\x01\n\x0cMsgAddMargin\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12G\n\x04pair\x18\x02 \x01(\tB9\xda\xde\x1f\x31github.com/NibiruChain/nibiru/x/common/asset.Pair\xc8\xde\x1f\x00\x12/\n\x06margin\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\x8b\x01\n\x14MsgAddMarginResponse\x12G\n\x0f\x66unding_payment\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12*\n\x08position\x18\x02 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\"\x97\x01\n\x14MsgLiquidateResponse\x12:\n\x11\x66\x65\x65_to_liquidator\x18\x01 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x43\n\x1a\x66\x65\x65_to_perp_ecosystem_fund\x18\x02 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xda\x01\n\x11MsgMultiLiquidate\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12H\n\x0cliquidations\x18\x02 \x03(\x0b\x32\x32.nibiru.perp.v1.MsgMultiLiquidate.MultiLiquidation\x1ak\n\x10MultiLiquidation\x12G\n\x04pair\x18\x01 \x01(\tB9\xda\xde\x1f\x31github.com/NibiruChain/nibiru/x/common/asset.Pair\xc8\xde\x1f\x00\x12\x0e\n\x06trader\x18\x02 \x01(\t\"\xf0\x01\n\x19MsgMultiLiquidateResponse\x12_\n\x15liquidation_responses\x18\x01 \x03(\x0b\x32@.nibiru.perp.v1.MsgMultiLiquidateResponse.MultiLiquidateResponse\x1ar\n\x16MultiLiquidateResponse\x12\x0f\n\x05\x65rror\x18\x01 \x01(\tH\x00\x12;\n\x0bliquidation\x18\x02 \x01(\x0b\x32$.nibiru.perp.v1.MsgLiquidateResponseH\x00\x42\n\n\x08response\"\xed\x02\n\x0fMsgOpenPosition\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12G\n\x04pair\x18\x02 \x01(\tB9\xda\xde\x1f\x31github.com/NibiruChain/nibiru/x/common/asset.Pair\xc8\xde\x1f\x00\x12\"\n\x04side\x18\x03 \x01(\x0e\x32\x14.nibiru.perp.v1.Side\x12J\n\x12quote_asset_amount\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Int\xc8\xde\x1f\x00\x12@\n\x08leverage\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x62\x61se_asset_amount_limit\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Int\xc8\xde\x1f\x00\"\xd9\x04\n\x17MsgOpenPositionResponse\x12*\n\x08position\x18\x01 \x01(\x0b\x32\x18.nibiru.perp.v1.Position\x12P\n\x18\x65xchanged_notional_value\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x65xchanged_position_size\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0crealized_pnl\x18\x05 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12L\n\x14unrealized_pnl_after\x18\x06 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0fmargin_to_vault\x18\x07 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12I\n\x11position_notional\x18\x08 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"k\n\x10MsgClosePosition\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12G\n\x04pair\x18\x02 \x01(\tB9\xda\xde\x1f\x31github.com/NibiruChain/nibiru/x/common/asset.Pair\xc8\xde\x1f\x00\"\x96\x03\n\x18MsgClosePositionResponse\x12P\n\x18\x65xchanged_notional_value\x18\x01 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12O\n\x17\x65xchanged_position_size\x18\x02 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12G\n\x0f\x66unding_payment\x18\x03 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12\x44\n\x0crealized_pnl\x18\x04 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\x12H\n\x10margin_to_trader\x18\x07 \x01(\tB.\xda\xde\x1f&github.com/cosmos/cosmos-sdk/types.Dec\xc8\xde\x1f\x00\"p\n\x18MsgDonateToEcosystemFund\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x44\n\x08\x64onation\x18\x02 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x17\xf2\xde\x1f\x0fyaml:\"donation\"\xc8\xde\x1f\x00\"\"\n MsgDonateToEcosystemFundResponse2\xa1\x06\n\x03Msg\x12|\n\x0cRemoveMargin\x12\x1f.nibiru.perp.v1.MsgRemoveMargin\x1a\'.nibiru.perp.v1.MsgRemoveMarginResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/nibiru/perp/remove_margin\x12p\n\tAddMargin\x12\x1c.nibiru.perp.v1.MsgAddMargin\x1a$.nibiru.perp.v1.MsgAddMarginResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x17/nibiru/perp/add_margin\x12\x83\x01\n\x0eMultiLiquidate\x12!.nibiru.perp.v1.MsgMultiLiquidate\x1a).nibiru.perp.v1.MsgMultiLiquidateResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x1b/nibiru/perp/multiliquidate\x12|\n\x0cOpenPosition\x12\x1f.nibiru.perp.v1.MsgOpenPosition\x1a\'.nibiru.perp.v1.MsgOpenPositionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/nibiru/perp/open_position\x12\x80\x01\n\rClosePosition\x12 .nibiru.perp.v1.MsgClosePosition\x1a(.nibiru.perp.v1.MsgClosePositionResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x1b/nibiru/perp/close_position\x12\xa2\x01\n\x15\x44onateToEcosystemFund\x12(.nibiru.perp.v1.MsgDonateToEcosystemFund\x1a\x30.nibiru.perp.v1.MsgDonateToEcosystemFundResponse\"-\x82\xd3\xe4\x93\x02\'\"%/nibiru/perp/donate_to_ecosystem_fundB,Z*github.com/NibiruChain/nibiru/x/perp/typesb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'perp.v1.tx_pb2', globals())
@@ -26,7 +26,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z*github.com/NibiruChain/nibiru/x/perp/types'
   _MSGREMOVEMARGIN.fields_by_name['pair']._options = None
-  _MSGREMOVEMARGIN.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _MSGREMOVEMARGIN.fields_by_name['pair']._serialized_options = b'\332\336\0371github.com/NibiruChain/nibiru/x/common/asset.Pair\310\336\037\000'
   _MSGREMOVEMARGIN.fields_by_name['margin']._options = None
   _MSGREMOVEMARGIN.fields_by_name['margin']._serialized_options = b'\310\336\037\000'
   _MSGREMOVEMARGINRESPONSE.fields_by_name['margin_out']._options = None
@@ -34,21 +34,19 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MSGREMOVEMARGINRESPONSE.fields_by_name['funding_payment']._options = None
   _MSGREMOVEMARGINRESPONSE.fields_by_name['funding_payment']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _MSGADDMARGIN.fields_by_name['pair']._options = None
-  _MSGADDMARGIN.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _MSGADDMARGIN.fields_by_name['pair']._serialized_options = b'\332\336\0371github.com/NibiruChain/nibiru/x/common/asset.Pair\310\336\037\000'
   _MSGADDMARGIN.fields_by_name['margin']._options = None
   _MSGADDMARGIN.fields_by_name['margin']._serialized_options = b'\310\336\037\000'
   _MSGADDMARGINRESPONSE.fields_by_name['funding_payment']._options = None
   _MSGADDMARGINRESPONSE.fields_by_name['funding_payment']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
-  _MSGLIQUIDATE.fields_by_name['pair']._options = None
-  _MSGLIQUIDATE.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
   _MSGLIQUIDATERESPONSE.fields_by_name['fee_to_liquidator']._options = None
   _MSGLIQUIDATERESPONSE.fields_by_name['fee_to_liquidator']._serialized_options = b'\310\336\037\000'
   _MSGLIQUIDATERESPONSE.fields_by_name['fee_to_perp_ecosystem_fund']._options = None
   _MSGLIQUIDATERESPONSE.fields_by_name['fee_to_perp_ecosystem_fund']._serialized_options = b'\310\336\037\000'
   _MSGMULTILIQUIDATE_MULTILIQUIDATION.fields_by_name['pair']._options = None
-  _MSGMULTILIQUIDATE_MULTILIQUIDATION.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _MSGMULTILIQUIDATE_MULTILIQUIDATION.fields_by_name['pair']._serialized_options = b'\332\336\0371github.com/NibiruChain/nibiru/x/common/asset.Pair\310\336\037\000'
   _MSGOPENPOSITION.fields_by_name['pair']._options = None
-  _MSGOPENPOSITION.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _MSGOPENPOSITION.fields_by_name['pair']._serialized_options = b'\332\336\0371github.com/NibiruChain/nibiru/x/common/asset.Pair\310\336\037\000'
   _MSGOPENPOSITION.fields_by_name['quote_asset_amount']._options = None
   _MSGOPENPOSITION.fields_by_name['quote_asset_amount']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Int\310\336\037\000'
   _MSGOPENPOSITION.fields_by_name['leverage']._options = None
@@ -70,7 +68,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MSGOPENPOSITIONRESPONSE.fields_by_name['position_notional']._options = None
   _MSGOPENPOSITIONRESPONSE.fields_by_name['position_notional']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _MSGCLOSEPOSITION.fields_by_name['pair']._options = None
-  _MSGCLOSEPOSITION.fields_by_name['pair']._serialized_options = b'\332\336\0370github.com/NibiruChain/nibiru/x/common.AssetPair\310\336\037\000'
+  _MSGCLOSEPOSITION.fields_by_name['pair']._serialized_options = b'\332\336\0371github.com/NibiruChain/nibiru/x/common/asset.Pair\310\336\037\000'
   _MSGCLOSEPOSITIONRESPONSE.fields_by_name['exchanged_notional_value']._options = None
   _MSGCLOSEPOSITIONRESPONSE.fields_by_name['exchanged_notional_value']._serialized_options = b'\332\336\037&github.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000'
   _MSGCLOSEPOSITIONRESPONSE.fields_by_name['exchanged_position_size']._options = None
@@ -87,8 +85,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MSG.methods_by_name['RemoveMargin']._serialized_options = b'\202\323\344\223\002\034\"\032/nibiru/perp/remove_margin'
   _MSG.methods_by_name['AddMargin']._options = None
   _MSG.methods_by_name['AddMargin']._serialized_options = b'\202\323\344\223\002\031\"\027/nibiru/perp/add_margin'
-  _MSG.methods_by_name['Liquidate']._options = None
-  _MSG.methods_by_name['Liquidate']._serialized_options = b'\202\323\344\223\002\030\"\026/nibiru/perp/liquidate'
   _MSG.methods_by_name['MultiLiquidate']._options = None
   _MSG.methods_by_name['MultiLiquidate']._serialized_options = b'\202\323\344\223\002\035\"\033/nibiru/perp/multiliquidate'
   _MSG.methods_by_name['OpenPosition']._options = None
@@ -98,37 +94,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MSG.methods_by_name['DonateToEcosystemFund']._options = None
   _MSG.methods_by_name['DonateToEcosystemFund']._serialized_options = b'\202\323\344\223\002\'\"%/nibiru/perp/donate_to_ecosystem_fund'
   _MSGREMOVEMARGIN._serialized_start=142
-  _MSGREMOVEMARGIN._serialized_end=296
-  _MSGREMOVEMARGINRESPONSE._serialized_start=299
-  _MSGREMOVEMARGINRESPONSE._serialized_end=494
-  _MSGADDMARGIN._serialized_start=497
-  _MSGADDMARGIN._serialized_end=648
-  _MSGADDMARGINRESPONSE._serialized_start=651
-  _MSGADDMARGINRESPONSE._serialized_end=790
-  _MSGLIQUIDATE._serialized_start=792
-  _MSGLIQUIDATE._serialized_end=910
-  _MSGLIQUIDATERESPONSE._serialized_start=913
-  _MSGLIQUIDATERESPONSE._serialized_end=1064
-  _MSGMULTILIQUIDATE._serialized_start=1067
-  _MSGMULTILIQUIDATE._serialized_end=1284
-  _MSGMULTILIQUIDATE_MULTILIQUIDATION._serialized_start=1178
-  _MSGMULTILIQUIDATE_MULTILIQUIDATION._serialized_end=1284
-  _MSGMULTILIQUIDATERESPONSE._serialized_start=1287
-  _MSGMULTILIQUIDATERESPONSE._serialized_end=1527
-  _MSGMULTILIQUIDATERESPONSE_MULTILIQUIDATERESPONSE._serialized_start=1413
-  _MSGMULTILIQUIDATERESPONSE_MULTILIQUIDATERESPONSE._serialized_end=1527
-  _MSGOPENPOSITION._serialized_start=1530
-  _MSGOPENPOSITION._serialized_end=1894
-  _MSGOPENPOSITIONRESPONSE._serialized_start=1897
-  _MSGOPENPOSITIONRESPONSE._serialized_end=2498
-  _MSGCLOSEPOSITION._serialized_start=2500
-  _MSGCLOSEPOSITION._serialized_end=2606
-  _MSGCLOSEPOSITIONRESPONSE._serialized_start=2609
-  _MSGCLOSEPOSITIONRESPONSE._serialized_end=3015
-  _MSGDONATETOECOSYSTEMFUND._serialized_start=3017
-  _MSGDONATETOECOSYSTEMFUND._serialized_end=3129
-  _MSGDONATETOECOSYSTEMFUNDRESPONSE._serialized_start=3131
-  _MSGDONATETOECOSYSTEMFUNDRESPONSE._serialized_end=3165
-  _MSG._serialized_start=3168
-  _MSG._serialized_end=4082
+  _MSGREMOVEMARGIN._serialized_end=297
+  _MSGREMOVEMARGINRESPONSE._serialized_start=300
+  _MSGREMOVEMARGINRESPONSE._serialized_end=495
+  _MSGADDMARGIN._serialized_start=498
+  _MSGADDMARGIN._serialized_end=650
+  _MSGADDMARGINRESPONSE._serialized_start=653
+  _MSGADDMARGINRESPONSE._serialized_end=792
+  _MSGLIQUIDATERESPONSE._serialized_start=795
+  _MSGLIQUIDATERESPONSE._serialized_end=946
+  _MSGMULTILIQUIDATE._serialized_start=949
+  _MSGMULTILIQUIDATE._serialized_end=1167
+  _MSGMULTILIQUIDATE_MULTILIQUIDATION._serialized_start=1060
+  _MSGMULTILIQUIDATE_MULTILIQUIDATION._serialized_end=1167
+  _MSGMULTILIQUIDATERESPONSE._serialized_start=1170
+  _MSGMULTILIQUIDATERESPONSE._serialized_end=1410
+  _MSGMULTILIQUIDATERESPONSE_MULTILIQUIDATERESPONSE._serialized_start=1296
+  _MSGMULTILIQUIDATERESPONSE_MULTILIQUIDATERESPONSE._serialized_end=1410
+  _MSGOPENPOSITION._serialized_start=1413
+  _MSGOPENPOSITION._serialized_end=1778
+  _MSGOPENPOSITIONRESPONSE._serialized_start=1781
+  _MSGOPENPOSITIONRESPONSE._serialized_end=2382
+  _MSGCLOSEPOSITION._serialized_start=2384
+  _MSGCLOSEPOSITION._serialized_end=2491
+  _MSGCLOSEPOSITIONRESPONSE._serialized_start=2494
+  _MSGCLOSEPOSITIONRESPONSE._serialized_end=2900
+  _MSGDONATETOECOSYSTEMFUND._serialized_start=2902
+  _MSGDONATETOECOSYSTEMFUND._serialized_end=3014
+  _MSGDONATETOECOSYSTEMFUNDRESPONSE._serialized_start=3016
+  _MSGDONATETOECOSYSTEMFUNDRESPONSE._serialized_end=3050
+  _MSG._serialized_start=3053
+  _MSG._serialized_end=3854
 # @@protoc_insertion_point(module_scope)

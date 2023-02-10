@@ -3,101 +3,101 @@
 isort:skip_file
 """
 import abc
-import dex.v1.query_pb2
 import grpc
+import spot.v1.query_pb2
 
 class QueryStub:
     """Query defines the gRPC querier service."""
 
     def __init__(self, channel: grpc.Channel) -> None: ...
     Params: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryParamsRequest,
-        dex.v1.query_pb2.QueryParamsResponse,
+        spot.v1.query_pb2.QueryParamsRequest,
+        spot.v1.query_pb2.QueryParamsResponse,
     ]
-    """Parameters of the dex module."""
+    """Parameters of the spot module."""
     PoolNumber: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryPoolNumberRequest,
-        dex.v1.query_pb2.QueryPoolNumberResponse,
+        spot.v1.query_pb2.QueryPoolNumberRequest,
+        spot.v1.query_pb2.QueryPoolNumberResponse,
     ]
     """Next available pool id number."""
     Pool: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryPoolRequest,
-        dex.v1.query_pb2.QueryPoolResponse,
+        spot.v1.query_pb2.QueryPoolRequest,
+        spot.v1.query_pb2.QueryPoolResponse,
     ]
     """Fetch a pool by id."""
     Pools: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryPoolsRequest,
-        dex.v1.query_pb2.QueryPoolsResponse,
+        spot.v1.query_pb2.QueryPoolsRequest,
+        spot.v1.query_pb2.QueryPoolsResponse,
     ]
     """Returns all pools."""
     PoolParams: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryPoolParamsRequest,
-        dex.v1.query_pb2.QueryPoolParamsResponse,
+        spot.v1.query_pb2.QueryPoolParamsRequest,
+        spot.v1.query_pb2.QueryPoolParamsResponse,
     ]
     """Parameters of a single pool."""
     NumPools: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryNumPoolsRequest,
-        dex.v1.query_pb2.QueryNumPoolsResponse,
+        spot.v1.query_pb2.QueryNumPoolsRequest,
+        spot.v1.query_pb2.QueryNumPoolsResponse,
     ]
     """Number of pools."""
     TotalLiquidity: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryTotalLiquidityRequest,
-        dex.v1.query_pb2.QueryTotalLiquidityResponse,
+        spot.v1.query_pb2.QueryTotalLiquidityRequest,
+        spot.v1.query_pb2.QueryTotalLiquidityResponse,
     ]
     """Total liquidity across all pools."""
     TotalPoolLiquidity: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryTotalPoolLiquidityRequest,
-        dex.v1.query_pb2.QueryTotalPoolLiquidityResponse,
+        spot.v1.query_pb2.QueryTotalPoolLiquidityRequest,
+        spot.v1.query_pb2.QueryTotalPoolLiquidityResponse,
     ]
     """Total liquidity in a single pool."""
     TotalShares: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryTotalSharesRequest,
-        dex.v1.query_pb2.QueryTotalSharesResponse,
+        spot.v1.query_pb2.QueryTotalSharesRequest,
+        spot.v1.query_pb2.QueryTotalSharesResponse,
     ]
     """Total shares in a single pool."""
     SpotPrice: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QuerySpotPriceRequest,
-        dex.v1.query_pb2.QuerySpotPriceResponse,
+        spot.v1.query_pb2.QuerySpotPriceRequest,
+        spot.v1.query_pb2.QuerySpotPriceResponse,
     ]
     """Instantaneous price of an asset in a pool."""
     EstimateSwapExactAmountIn: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QuerySwapExactAmountInRequest,
-        dex.v1.query_pb2.QuerySwapExactAmountInResponse,
+        spot.v1.query_pb2.QuerySwapExactAmountInRequest,
+        spot.v1.query_pb2.QuerySwapExactAmountInResponse,
     ]
     """Estimates the amount of assets returned given an exact amount of tokens to
     swap.
     """
     EstimateSwapExactAmountOut: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QuerySwapExactAmountOutRequest,
-        dex.v1.query_pb2.QuerySwapExactAmountOutResponse,
+        spot.v1.query_pb2.QuerySwapExactAmountOutRequest,
+        spot.v1.query_pb2.QuerySwapExactAmountOutResponse,
     ]
     """Estimates the amount of tokens required to return the exact amount of
     assets requested.
     """
     EstimateJoinExactAmountIn: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryJoinExactAmountInRequest,
-        dex.v1.query_pb2.QueryJoinExactAmountInResponse,
+        spot.v1.query_pb2.QueryJoinExactAmountInRequest,
+        spot.v1.query_pb2.QueryJoinExactAmountInResponse,
     ]
     """Estimates the amount of pool shares returned given an amount of tokens to
     join.
     """
     EstimateJoinExactAmountOut: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryJoinExactAmountOutRequest,
-        dex.v1.query_pb2.QueryJoinExactAmountOutResponse,
+        spot.v1.query_pb2.QueryJoinExactAmountOutRequest,
+        spot.v1.query_pb2.QueryJoinExactAmountOutResponse,
     ]
     """Estimates the amount of tokens required to obtain an exact amount of pool
     shares.
     """
     EstimateExitExactAmountIn: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryExitExactAmountInRequest,
-        dex.v1.query_pb2.QueryExitExactAmountInResponse,
+        spot.v1.query_pb2.QueryExitExactAmountInRequest,
+        spot.v1.query_pb2.QueryExitExactAmountInResponse,
     ]
     """Estimates the amount of tokens returned to the user given an exact amount
     of pool shares.
     """
     EstimateExitExactAmountOut: grpc.UnaryUnaryMultiCallable[
-        dex.v1.query_pb2.QueryExitExactAmountOutRequest,
-        dex.v1.query_pb2.QueryExitExactAmountOutResponse,
+        spot.v1.query_pb2.QueryExitExactAmountOutRequest,
+        spot.v1.query_pb2.QueryExitExactAmountOutResponse,
     ]
     """Estimates the amount of pool shares required to extract an exact amount of
     tokens from the pool.
@@ -109,124 +109,124 @@ class QueryServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def Params(
         self,
-        request: dex.v1.query_pb2.QueryParamsRequest,
+        request: spot.v1.query_pb2.QueryParamsRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryParamsResponse:
-        """Parameters of the dex module."""
+    ) -> spot.v1.query_pb2.QueryParamsResponse:
+        """Parameters of the spot module."""
     @abc.abstractmethod
     def PoolNumber(
         self,
-        request: dex.v1.query_pb2.QueryPoolNumberRequest,
+        request: spot.v1.query_pb2.QueryPoolNumberRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryPoolNumberResponse:
+    ) -> spot.v1.query_pb2.QueryPoolNumberResponse:
         """Next available pool id number."""
     @abc.abstractmethod
     def Pool(
         self,
-        request: dex.v1.query_pb2.QueryPoolRequest,
+        request: spot.v1.query_pb2.QueryPoolRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryPoolResponse:
+    ) -> spot.v1.query_pb2.QueryPoolResponse:
         """Fetch a pool by id."""
     @abc.abstractmethod
     def Pools(
         self,
-        request: dex.v1.query_pb2.QueryPoolsRequest,
+        request: spot.v1.query_pb2.QueryPoolsRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryPoolsResponse:
+    ) -> spot.v1.query_pb2.QueryPoolsResponse:
         """Returns all pools."""
     @abc.abstractmethod
     def PoolParams(
         self,
-        request: dex.v1.query_pb2.QueryPoolParamsRequest,
+        request: spot.v1.query_pb2.QueryPoolParamsRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryPoolParamsResponse:
+    ) -> spot.v1.query_pb2.QueryPoolParamsResponse:
         """Parameters of a single pool."""
     @abc.abstractmethod
     def NumPools(
         self,
-        request: dex.v1.query_pb2.QueryNumPoolsRequest,
+        request: spot.v1.query_pb2.QueryNumPoolsRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryNumPoolsResponse:
+    ) -> spot.v1.query_pb2.QueryNumPoolsResponse:
         """Number of pools."""
     @abc.abstractmethod
     def TotalLiquidity(
         self,
-        request: dex.v1.query_pb2.QueryTotalLiquidityRequest,
+        request: spot.v1.query_pb2.QueryTotalLiquidityRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryTotalLiquidityResponse:
+    ) -> spot.v1.query_pb2.QueryTotalLiquidityResponse:
         """Total liquidity across all pools."""
     @abc.abstractmethod
     def TotalPoolLiquidity(
         self,
-        request: dex.v1.query_pb2.QueryTotalPoolLiquidityRequest,
+        request: spot.v1.query_pb2.QueryTotalPoolLiquidityRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryTotalPoolLiquidityResponse:
+    ) -> spot.v1.query_pb2.QueryTotalPoolLiquidityResponse:
         """Total liquidity in a single pool."""
     @abc.abstractmethod
     def TotalShares(
         self,
-        request: dex.v1.query_pb2.QueryTotalSharesRequest,
+        request: spot.v1.query_pb2.QueryTotalSharesRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryTotalSharesResponse:
+    ) -> spot.v1.query_pb2.QueryTotalSharesResponse:
         """Total shares in a single pool."""
     @abc.abstractmethod
     def SpotPrice(
         self,
-        request: dex.v1.query_pb2.QuerySpotPriceRequest,
+        request: spot.v1.query_pb2.QuerySpotPriceRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QuerySpotPriceResponse:
+    ) -> spot.v1.query_pb2.QuerySpotPriceResponse:
         """Instantaneous price of an asset in a pool."""
     @abc.abstractmethod
     def EstimateSwapExactAmountIn(
         self,
-        request: dex.v1.query_pb2.QuerySwapExactAmountInRequest,
+        request: spot.v1.query_pb2.QuerySwapExactAmountInRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QuerySwapExactAmountInResponse:
+    ) -> spot.v1.query_pb2.QuerySwapExactAmountInResponse:
         """Estimates the amount of assets returned given an exact amount of tokens to
         swap.
         """
     @abc.abstractmethod
     def EstimateSwapExactAmountOut(
         self,
-        request: dex.v1.query_pb2.QuerySwapExactAmountOutRequest,
+        request: spot.v1.query_pb2.QuerySwapExactAmountOutRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QuerySwapExactAmountOutResponse:
+    ) -> spot.v1.query_pb2.QuerySwapExactAmountOutResponse:
         """Estimates the amount of tokens required to return the exact amount of
         assets requested.
         """
     @abc.abstractmethod
     def EstimateJoinExactAmountIn(
         self,
-        request: dex.v1.query_pb2.QueryJoinExactAmountInRequest,
+        request: spot.v1.query_pb2.QueryJoinExactAmountInRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryJoinExactAmountInResponse:
+    ) -> spot.v1.query_pb2.QueryJoinExactAmountInResponse:
         """Estimates the amount of pool shares returned given an amount of tokens to
         join.
         """
     @abc.abstractmethod
     def EstimateJoinExactAmountOut(
         self,
-        request: dex.v1.query_pb2.QueryJoinExactAmountOutRequest,
+        request: spot.v1.query_pb2.QueryJoinExactAmountOutRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryJoinExactAmountOutResponse:
+    ) -> spot.v1.query_pb2.QueryJoinExactAmountOutResponse:
         """Estimates the amount of tokens required to obtain an exact amount of pool
         shares.
         """
     @abc.abstractmethod
     def EstimateExitExactAmountIn(
         self,
-        request: dex.v1.query_pb2.QueryExitExactAmountInRequest,
+        request: spot.v1.query_pb2.QueryExitExactAmountInRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryExitExactAmountInResponse:
+    ) -> spot.v1.query_pb2.QueryExitExactAmountInResponse:
         """Estimates the amount of tokens returned to the user given an exact amount
         of pool shares.
         """
     @abc.abstractmethod
     def EstimateExitExactAmountOut(
         self,
-        request: dex.v1.query_pb2.QueryExitExactAmountOutRequest,
+        request: spot.v1.query_pb2.QueryExitExactAmountOutRequest,
         context: grpc.ServicerContext,
-    ) -> dex.v1.query_pb2.QueryExitExactAmountOutResponse:
+    ) -> spot.v1.query_pb2.QueryExitExactAmountOutResponse:
         """Estimates the amount of pool shares required to extract an exact amount of
         tokens from the pool.
         """
