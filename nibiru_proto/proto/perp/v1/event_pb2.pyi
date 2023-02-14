@@ -7,10 +7,12 @@ import collections.abc
 import cosmos.base.v1beta1.coin_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
+import typing
 
-if sys.version_info >= (3, 8):
+if sys.version_info >= (3, 10):
     import typing as typing_extensions
 else:
     import typing_extensions
@@ -270,6 +272,59 @@ class FundingRateChangedEvent(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["block_height", b"block_height", "block_time_ms", b"block_time_ms", "cumulative_premium_fraction", b"cumulative_premium_fraction", "index_price", b"index_price", "latest_funding_rate", b"latest_funding_rate", "latest_premium_fraction", b"latest_premium_fraction", "mark_price", b"mark_price", "pair", b"pair"]) -> None: ...
 
 global___FundingRateChangedEvent = FundingRateChangedEvent
+
+@typing_extensions.final
+class LiquidationFailedEvent(google.protobuf.message.Message):
+    """Emitted when liquidation fails."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _LiquidationFailedReason:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _LiquidationFailedReasonEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[LiquidationFailedEvent._LiquidationFailedReason.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        UNSPECIFIED: LiquidationFailedEvent._LiquidationFailedReason.ValueType  # 0
+        POSITION_HEALTHY: LiquidationFailedEvent._LiquidationFailedReason.ValueType  # 1
+        """the position is healthy and does not need to be liquidated."""
+        NONEXISTENT_PAIR: LiquidationFailedEvent._LiquidationFailedReason.ValueType  # 2
+        """the pair does not exist."""
+        NONEXISTENT_POSITION: LiquidationFailedEvent._LiquidationFailedReason.ValueType  # 3
+        """the position does not exist."""
+
+    class LiquidationFailedReason(_LiquidationFailedReason, metaclass=_LiquidationFailedReasonEnumTypeWrapper): ...
+    UNSPECIFIED: LiquidationFailedEvent.LiquidationFailedReason.ValueType  # 0
+    POSITION_HEALTHY: LiquidationFailedEvent.LiquidationFailedReason.ValueType  # 1
+    """the position is healthy and does not need to be liquidated."""
+    NONEXISTENT_PAIR: LiquidationFailedEvent.LiquidationFailedReason.ValueType  # 2
+    """the pair does not exist."""
+    NONEXISTENT_POSITION: LiquidationFailedEvent.LiquidationFailedReason.ValueType  # 3
+    """the position does not exist."""
+
+    PAIR_FIELD_NUMBER: builtins.int
+    TRADER_FIELD_NUMBER: builtins.int
+    LIQUIDATOR_FIELD_NUMBER: builtins.int
+    REASON_FIELD_NUMBER: builtins.int
+    pair: builtins.str
+    """The pair for which we are trying to liquidate."""
+    trader: builtins.str
+    """owner of the position."""
+    liquidator: builtins.str
+    """Address of the account that executed the tx."""
+    reason: global___LiquidationFailedEvent.LiquidationFailedReason.ValueType
+    """Reason for the liquidation failure."""
+    def __init__(
+        self,
+        *,
+        pair: builtins.str = ...,
+        trader: builtins.str = ...,
+        liquidator: builtins.str = ...,
+        reason: global___LiquidationFailedEvent.LiquidationFailedReason.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["liquidator", b"liquidator", "pair", b"pair", "reason", b"reason", "trader", b"trader"]) -> None: ...
+
+global___LiquidationFailedEvent = LiquidationFailedEvent
 
 @typing_extensions.final
 class MetricsEvent(google.protobuf.message.Message):

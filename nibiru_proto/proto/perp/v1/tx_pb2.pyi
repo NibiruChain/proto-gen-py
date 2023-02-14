@@ -122,34 +122,13 @@ class MsgAddMarginResponse(google.protobuf.message.Message):
 global___MsgAddMarginResponse = MsgAddMarginResponse
 
 @typing_extensions.final
-class MsgLiquidateResponse(google.protobuf.message.Message):
-    """-------------------------- Liquidate --------------------------"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FEE_TO_LIQUIDATOR_FIELD_NUMBER: builtins.int
-    FEE_TO_PERP_ECOSYSTEM_FUND_FIELD_NUMBER: builtins.int
-    @property
-    def fee_to_liquidator(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
-    @property
-    def fee_to_perp_ecosystem_fund(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
-    def __init__(
-        self,
-        *,
-        fee_to_liquidator: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
-        fee_to_perp_ecosystem_fund: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["fee_to_liquidator", b"fee_to_liquidator", "fee_to_perp_ecosystem_fund", b"fee_to_perp_ecosystem_fund"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fee_to_liquidator", b"fee_to_liquidator", "fee_to_perp_ecosystem_fund", b"fee_to_perp_ecosystem_fund"]) -> None: ...
-
-global___MsgLiquidateResponse = MsgLiquidateResponse
-
-@typing_extensions.final
 class MsgMultiLiquidate(google.protobuf.message.Message):
+    """-------------------------- Liquidation --------------------------"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing_extensions.final
-    class MultiLiquidation(google.protobuf.message.Message):
+    class Liquidation(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         PAIR_FIELD_NUMBER: builtins.int
@@ -168,12 +147,12 @@ class MsgMultiLiquidate(google.protobuf.message.Message):
     LIQUIDATIONS_FIELD_NUMBER: builtins.int
     sender: builtins.str
     @property
-    def liquidations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MsgMultiLiquidate.MultiLiquidation]: ...
+    def liquidations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MsgMultiLiquidate.Liquidation]: ...
     def __init__(
         self,
         *,
         sender: builtins.str = ...,
-        liquidations: collections.abc.Iterable[global___MsgMultiLiquidate.MultiLiquidation] | None = ...,
+        liquidations: collections.abc.Iterable[global___MsgMultiLiquidate.Liquidation] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["liquidations", b"liquidations", "sender", b"sender"]) -> None: ...
 
@@ -184,33 +163,40 @@ class MsgMultiLiquidateResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing_extensions.final
-    class MultiLiquidateResponse(google.protobuf.message.Message):
+    class LiquidationResponse(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        SUCCESS_FIELD_NUMBER: builtins.int
         ERROR_FIELD_NUMBER: builtins.int
-        LIQUIDATION_FIELD_NUMBER: builtins.int
+        LIQUIDATOR_FEE_FIELD_NUMBER: builtins.int
+        PERP_EF_FEE_FIELD_NUMBER: builtins.int
+        success: builtins.bool
         error: builtins.str
         @property
-        def liquidation(self) -> global___MsgLiquidateResponse: ...
+        def liquidator_fee(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
+        @property
+        def perp_ef_fee(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
+            """perp ecosystem fund"""
         def __init__(
             self,
             *,
+            success: builtins.bool = ...,
             error: builtins.str = ...,
-            liquidation: global___MsgLiquidateResponse | None = ...,
+            liquidator_fee: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+            perp_ef_fee: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["error", b"error", "liquidation", b"liquidation", "response", b"response"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["error", b"error", "liquidation", b"liquidation", "response", b"response"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing_extensions.Literal["response", b"response"]) -> typing_extensions.Literal["error", "liquidation"] | None: ...
+        def HasField(self, field_name: typing_extensions.Literal["liquidator_fee", b"liquidator_fee", "perp_ef_fee", b"perp_ef_fee"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["error", b"error", "liquidator_fee", b"liquidator_fee", "perp_ef_fee", b"perp_ef_fee", "success", b"success"]) -> None: ...
 
-    LIQUIDATION_RESPONSES_FIELD_NUMBER: builtins.int
+    LIQUIDATIONS_FIELD_NUMBER: builtins.int
     @property
-    def liquidation_responses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MsgMultiLiquidateResponse.MultiLiquidateResponse]: ...
+    def liquidations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MsgMultiLiquidateResponse.LiquidationResponse]: ...
     def __init__(
         self,
         *,
-        liquidation_responses: collections.abc.Iterable[global___MsgMultiLiquidateResponse.MultiLiquidateResponse] | None = ...,
+        liquidations: collections.abc.Iterable[global___MsgMultiLiquidateResponse.LiquidationResponse] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["liquidation_responses", b"liquidation_responses"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["liquidations", b"liquidations"]) -> None: ...
 
 global___MsgMultiLiquidateResponse = MsgMultiLiquidateResponse
 
