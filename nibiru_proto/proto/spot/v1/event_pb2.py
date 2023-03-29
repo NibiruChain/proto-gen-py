@@ -15,7 +15,7 @@ from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from cosmos.base.v1beta1 import coin_pb2 as cosmos_dot_base_dot_v1beta1_dot_coin__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13spot/v1/event.proto\x12\x0enibiru.spot.v1\x1a\x14gogoproto/gogo.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xd5\x01\n\x0f\x45ventPoolJoined\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x32\n\ttokens_in\x18\x03 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x38\n\x0fpool_shares_out\x18\x04 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x32\n\trem_coins\x18\x05 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"4\n\x10\x45ventPoolCreated\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\"\xa1\x01\n\x0f\x45ventPoolExited\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x37\n\x0epool_shares_in\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x33\n\ntokens_out\x18\x04 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\x9d\x01\n\x12\x45ventAssetsSwapped\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x31\n\x08token_in\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x32\n\ttoken_out\x18\x04 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x42,Z*github.com/NibiruChain/nibiru/x/spot/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13spot/v1/event.proto\x12\x0enibiru.spot.v1\x1a\x14gogoproto/gogo.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xd5\x01\n\x0f\x45ventPoolJoined\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x32\n\ttokens_in\x18\x03 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x38\n\x0fpool_shares_out\x18\x04 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x32\n\trem_coins\x18\x05 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"c\n\x10\x45ventPoolCreated\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12-\n\x04\x66\x65\x65s\x18\x03 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xd0\x01\n\x0f\x45ventPoolExited\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x37\n\x0epool_shares_in\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x33\n\ntokens_out\x18\x04 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12-\n\x04\x66\x65\x65s\x18\x05 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\"\xcb\x01\n\x12\x45ventAssetsSwapped\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07pool_id\x18\x02 \x01(\x04\x12\x31\n\x08token_in\x18\x03 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12\x32\n\ttoken_out\x18\x04 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x12,\n\x03\x66\x65\x65\x18\x05 \x01(\x0b\x32\x19.cosmos.base.v1beta1.CoinB\x04\xc8\xde\x1f\x00\x42,Z*github.com/NibiruChain/nibiru/x/spot/typesb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'spot.v1.event_pb2', globals())
@@ -29,20 +29,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EVENTPOOLJOINED.fields_by_name['pool_shares_out']._serialized_options = b'\310\336\037\000'
   _EVENTPOOLJOINED.fields_by_name['rem_coins']._options = None
   _EVENTPOOLJOINED.fields_by_name['rem_coins']._serialized_options = b'\310\336\037\000'
+  _EVENTPOOLCREATED.fields_by_name['fees']._options = None
+  _EVENTPOOLCREATED.fields_by_name['fees']._serialized_options = b'\310\336\037\000'
   _EVENTPOOLEXITED.fields_by_name['pool_shares_in']._options = None
   _EVENTPOOLEXITED.fields_by_name['pool_shares_in']._serialized_options = b'\310\336\037\000'
   _EVENTPOOLEXITED.fields_by_name['tokens_out']._options = None
   _EVENTPOOLEXITED.fields_by_name['tokens_out']._serialized_options = b'\310\336\037\000'
+  _EVENTPOOLEXITED.fields_by_name['fees']._options = None
+  _EVENTPOOLEXITED.fields_by_name['fees']._serialized_options = b'\310\336\037\000'
   _EVENTASSETSSWAPPED.fields_by_name['token_in']._options = None
   _EVENTASSETSSWAPPED.fields_by_name['token_in']._serialized_options = b'\310\336\037\000'
   _EVENTASSETSSWAPPED.fields_by_name['token_out']._options = None
   _EVENTASSETSSWAPPED.fields_by_name['token_out']._serialized_options = b'\310\336\037\000'
+  _EVENTASSETSSWAPPED.fields_by_name['fee']._options = None
+  _EVENTASSETSSWAPPED.fields_by_name['fee']._serialized_options = b'\310\336\037\000'
   _EVENTPOOLJOINED._serialized_start=94
   _EVENTPOOLJOINED._serialized_end=307
   _EVENTPOOLCREATED._serialized_start=309
-  _EVENTPOOLCREATED._serialized_end=361
-  _EVENTPOOLEXITED._serialized_start=364
-  _EVENTPOOLEXITED._serialized_end=525
-  _EVENTASSETSSWAPPED._serialized_start=528
-  _EVENTASSETSSWAPPED._serialized_end=685
+  _EVENTPOOLCREATED._serialized_end=408
+  _EVENTPOOLEXITED._serialized_start=411
+  _EVENTPOOLEXITED._serialized_end=619
+  _EVENTASSETSSWAPPED._serialized_start=622
+  _EVENTASSETSSWAPPED._serialized_end=825
 # @@protoc_insertion_point(module_scope)

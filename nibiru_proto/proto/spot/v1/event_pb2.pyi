@@ -54,15 +54,19 @@ class EventPoolCreated(google.protobuf.message.Message):
 
     CREATOR_FIELD_NUMBER: builtins.int
     POOL_ID_FIELD_NUMBER: builtins.int
+    FEES_FIELD_NUMBER: builtins.int
     creator: builtins.str
     pool_id: builtins.int
+    @property
+    def fees(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
     def __init__(
         self,
         *,
         creator: builtins.str = ...,
         pool_id: builtins.int = ...,
+        fees: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["creator", b"creator", "pool_id", b"pool_id"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["creator", b"creator", "fees", b"fees", "pool_id", b"pool_id"]) -> None: ...
 
 global___EventPoolCreated = EventPoolCreated
 
@@ -74,12 +78,15 @@ class EventPoolExited(google.protobuf.message.Message):
     POOL_ID_FIELD_NUMBER: builtins.int
     POOL_SHARES_IN_FIELD_NUMBER: builtins.int
     TOKENS_OUT_FIELD_NUMBER: builtins.int
+    FEES_FIELD_NUMBER: builtins.int
     address: builtins.str
     pool_id: builtins.int
     @property
     def pool_shares_in(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     @property
     def tokens_out(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
+    @property
+    def fees(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
     def __init__(
         self,
         *,
@@ -87,9 +94,10 @@ class EventPoolExited(google.protobuf.message.Message):
         pool_id: builtins.int = ...,
         pool_shares_in: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         tokens_out: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
+        fees: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pool_shares_in", b"pool_shares_in"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "pool_id", b"pool_id", "pool_shares_in", b"pool_shares_in", "tokens_out", b"tokens_out"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "fees", b"fees", "pool_id", b"pool_id", "pool_shares_in", b"pool_shares_in", "tokens_out", b"tokens_out"]) -> None: ...
 
 global___EventPoolExited = EventPoolExited
 
@@ -101,12 +109,15 @@ class EventAssetsSwapped(google.protobuf.message.Message):
     POOL_ID_FIELD_NUMBER: builtins.int
     TOKEN_IN_FIELD_NUMBER: builtins.int
     TOKEN_OUT_FIELD_NUMBER: builtins.int
+    FEE_FIELD_NUMBER: builtins.int
     address: builtins.str
     pool_id: builtins.int
     @property
     def token_in(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     @property
     def token_out(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
+    @property
+    def fee(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     def __init__(
         self,
         *,
@@ -114,8 +125,9 @@ class EventAssetsSwapped(google.protobuf.message.Message):
         pool_id: builtins.int = ...,
         token_in: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
         token_out: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        fee: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["token_in", b"token_in", "token_out", b"token_out"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "pool_id", b"pool_id", "token_in", b"token_in", "token_out", b"token_out"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["fee", b"fee", "token_in", b"token_in", "token_out", b"token_out"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "fee", b"fee", "pool_id", b"pool_id", "token_in", b"token_in", "token_out", b"token_out"]) -> None: ...
 
 global___EventAssetsSwapped = EventAssetsSwapped

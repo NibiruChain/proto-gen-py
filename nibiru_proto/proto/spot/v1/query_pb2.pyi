@@ -379,15 +379,19 @@ class QuerySwapExactAmountInResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TOKEN_OUT_FIELD_NUMBER: builtins.int
+    FEE_FIELD_NUMBER: builtins.int
     @property
     def token_out(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
+    @property
+    def fee(self) -> cosmos.base.v1beta1.coin_pb2.Coin: ...
     def __init__(
         self,
         *,
         token_out: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        fee: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["token_out", b"token_out"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["token_out", b"token_out"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["fee", b"fee", "token_out", b"token_out"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fee", b"fee", "token_out", b"token_out"]) -> None: ...
 
 global___QuerySwapExactAmountInResponse = QuerySwapExactAmountInResponse
 
@@ -524,15 +528,19 @@ class QueryExitExactAmountInResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TOKENS_OUT_FIELD_NUMBER: builtins.int
+    FEES_FIELD_NUMBER: builtins.int
     @property
     def tokens_out(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]:
         """coins obtained after exiting"""
+    @property
+    def fees(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[cosmos.base.v1beta1.coin_pb2.Coin]: ...
     def __init__(
         self,
         *,
         tokens_out: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
+        fees: collections.abc.Iterable[cosmos.base.v1beta1.coin_pb2.Coin] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["tokens_out", b"tokens_out"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fees", b"fees", "tokens_out", b"tokens_out"]) -> None: ...
 
 global___QueryExitExactAmountInResponse = QueryExitExactAmountInResponse
 
