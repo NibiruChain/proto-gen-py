@@ -77,6 +77,6 @@ This software is licensed under the MIT license. See [LICENSE](./LICENSE) for fu
 [pypi-image]: https://img.shields.io/pypi/v/nibiru-proto
 [pypi-url]: https://pypi.org/project/nibiru-proto/
 [discord-badge]: https://img.shields.io/badge/Nibiru%20Chain-%237289DA.svg?style=&logo=discord&logoColor=white
-[discord-url]: https://discord.gg/sgPw8ZYfpQ
+[discord-url]: https://discord.gg/nibirufi
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-link]: https://github.com/NibiruChain/sdk-proto-gen/blob/master/LICENSE
