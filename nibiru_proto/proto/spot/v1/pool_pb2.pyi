@@ -29,8 +29,10 @@ class _PoolTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     STABLESWAP: _PoolType.ValueType  # 1
 
 class PoolType(_PoolType, metaclass=_PoolTypeEnumTypeWrapper):
-    """- `balancer`: Balancer are pools defined by the equation xy=k, extended by the weighs introduced by Balancer.
-    - `stableswap`: Stableswap pools are defined by a combination of constant-product and constant-sum pool
+    """- `balancer`: Balancer are pools defined by the equation xy=k, extended by
+    the weighs introduced by Balancer.
+    - `stableswap`: Stableswap pools are defined by a combination of
+    constant-product and constant-sum pool
     """
 
 BALANCER: PoolType.ValueType  # 0
@@ -50,10 +52,11 @@ class PoolParams(google.protobuf.message.Message):
     swap_fee: builtins.str
     exit_fee: builtins.str
     A: builtins.str
-    """Amplification Parameter (A): Larger value of A make the curve better resemble a straight 
-    line in the center (when pool is near balance).  Highly volatile assets should use a lower value, while assets that 
-    are closer together may be best with a higher value.
-    This is only used if the pool_type is set to 1 (stableswap)
+    """Amplification Parameter (A): Larger value of A make the curve better
+    resemble a straight line in the center (when pool is near balance).  Highly
+    volatile assets should use a lower value, while assets that are closer
+    together may be best with a higher value. This is only used if the
+    pool_type is set to 1 (stableswap)
     """
     pool_type: global___PoolType.ValueType
     def __init__(

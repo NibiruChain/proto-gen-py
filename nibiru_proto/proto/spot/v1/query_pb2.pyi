@@ -307,8 +307,8 @@ global___QueryTotalSharesResponse = QueryTotalSharesResponse
 @typing_extensions.final
 class QuerySpotPriceRequest(google.protobuf.message.Message):
     """Returns the amount of tokenInDenom to produce 1 tokenOutDenom
-    For example, if the price of NIBI = 9.123 NUSD, then setting tokenInDenom=NUSD
-    and tokenOutDenom=NIBI would give "9.123".
+    For example, if the price of NIBI = 9.123 NUSD, then setting
+    tokenInDenom=NUSD and tokenOutDenom=NIBI would give "9.123".
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
