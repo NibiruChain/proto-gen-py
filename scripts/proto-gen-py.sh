@@ -88,6 +88,3 @@ echo "Complete - generated Python types from proto"
 # cleanup
 rm go.mod go.sum
 rm -rf nibiru/ proto/
-
-# poetry run python scripts/init-py.py
-# echo "Complete - converted types directories into packages"
