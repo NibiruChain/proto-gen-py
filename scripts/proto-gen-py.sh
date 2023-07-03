@@ -71,8 +71,6 @@ code_gen() {
   cd $NIBIRU_PATH
   go_get_from_cosmos
   dir_cosmos_sdk=$(go list -f '{{ .Dir }}' -m github.com/cosmos/cosmos-sdk)
-  dir_cosmos_proto=$(go list -f '{{ .Dir }}' -m github.com/cosmos/cosmos-proto)
-  dir_gogoproto=$(go list -f '{{ .Dir }}' -m github.com/cosmos/gogoproto)
 
   echo "grab all of the proto directories"
   cd $GEN_PY_REPO
@@ -80,8 +78,6 @@ code_gen() {
   proto_dirs=()
   proto_dirs+=("$dir_cosmos_sdk/proto")
   proto_dirs+=("$NIBIRU_PATH/proto")
-  # proto_dirs+=("$dir_cosmos_proto/proto")
-  # proto_dirs+=("$dir_gogoproto")
 
   echo "Proto Directories: "
   echo $proto_dirs
