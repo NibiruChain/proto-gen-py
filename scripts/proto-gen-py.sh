@@ -136,6 +136,8 @@ main() {
   final_cleanup
 
   poetry run pytest
+  poetry run python scripts/pkg_create_inits.py
+  poetry run pytest
 }
 
 if main; then 

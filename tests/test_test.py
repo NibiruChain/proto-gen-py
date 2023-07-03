@@ -1,6 +1,5 @@
 def test_pkg_import():
     import nibiru_proto
-
     print("nibiru_proto directory", dir(nibiru_proto))
 
     # imports for Nibi-Perps
@@ -11,8 +10,37 @@ def test_pkg_import():
     import nibiru_proto.nibiru.spot
     import nibiru_proto.nibiru.stablecoin
     import nibiru_proto.nibiru.sudo
-
     print("imports succeeded")
+
+
+def test_grpc_imports():
+    import nibiru_proto.nibiru.epochs.v1.state_pb2_grpc
+    import nibiru_proto.nibiru.epochs.v1.query_pb2_grpc
+    assert nibiru_proto.nibiru.epochs.v1.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.inflation.v1.query_pb2_grpc
+    import nibiru_proto.nibiru.inflation.v1.inflation_pb2_grpc
+    assert nibiru_proto.nibiru.inflation.v1.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.oracle.v1.query_pb2_grpc
+    import nibiru_proto.nibiru.oracle.v1.tx_pb2_grpc
+    assert nibiru_proto.nibiru.oracle.v1.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.perp.v2.tx_pb2_grpc
+    import nibiru_proto.nibiru.perp.v2.query_pb2_grpc
+    assert nibiru_proto.nibiru.perp.v2.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.spot.v1.tx_pb2_grpc
+    import nibiru_proto.nibiru.spot.v1.query_pb2_grpc
+    assert nibiru_proto.nibiru.spot.v1.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.stablecoin.v1.tx_pb2_grpc
+    import nibiru_proto.nibiru.stablecoin.v1.query_pb2_grpc
+    assert nibiru_proto.nibiru.stablecoin.v1.query_pb2_grpc.QueryStub
+
+    import nibiru_proto.nibiru.sudo.v1.tx_pb2_grpc
+    import nibiru_proto.nibiru.sudo.v1.query_pb2_grpc
+    assert nibiru_proto.nibiru.sudo.v1.query_pb2_grpc.QueryStub
 
 
 def test_cosmos_imports():
