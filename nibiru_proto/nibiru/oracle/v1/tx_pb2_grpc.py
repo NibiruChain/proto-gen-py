@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from nibiru.oracle.v1 import tx_pb2 as nibiru_dot_oracle_dot_v1_dot_tx__pb2
+from nibiru_proto.nibiru.oracle.v1 import tx_pb2 as nibiru_dot_oracle_dot_v1_dot_tx__pb2
 
 
 class MsgStub(object):

@@ -11,8 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from nibiru.spot.v1 import params_pb2 as nibiru_dot_spot_dot_v1_dot_params__pb2
-from nibiru.spot.v1 import pool_pb2 as nibiru_dot_spot_dot_v1_dot_pool__pb2
+from nibiru_proto.nibiru.spot.v1 import params_pb2 as nibiru_dot_spot_dot_v1_dot_params__pb2
+from nibiru_proto.nibiru.spot.v1 import pool_pb2 as nibiru_dot_spot_dot_v1_dot_pool__pb2
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 
 

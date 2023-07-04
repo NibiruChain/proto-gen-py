@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from nibiru.stablecoin.v1 import tx_pb2 as nibiru_dot_stablecoin_dot_v1_dot_tx__pb2
+from nibiru_proto.nibiru.stablecoin.v1 import tx_pb2 as nibiru_dot_stablecoin_dot_v1_dot_tx__pb2
 
 
 class MsgStub(object):

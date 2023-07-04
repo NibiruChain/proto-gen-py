@@ -120,6 +120,21 @@ final_cleanup() {
   rm -rf $GEN_PY_REPO/$PKG_DIR_NAME/proto
 }
 
+rewrite_misnamed_import() {
+  if [ ! find ]; then
+    echo "Please install find."
+    exit 1
+  fi 
+  if [ ! sed ]; then
+    echo "Please install sed."
+    exit 1
+  fi 
+
+  find . -name "*.py" -type f -exec sed -i 's/from nibiru\./from nibiru_proto.nibiru./g' {} \;
+
+  find . -name "*.py" -type f -exec sed -i 's/import nibiru\./import nibiru_proto.nibiru./g' {} \;
+}
+
 # ------------------------------------------------
 # __main__ : Start of script execution
 # ------------------------------------------------
@@ -135,8 +150,8 @@ main() {
 
   final_cleanup
 
-  poetry run pytest
   poetry run python scripts/pkg_create_inits.py
+  rewrite_misnamed_import
   poetry run pytest
 }
 

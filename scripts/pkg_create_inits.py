@@ -18,8 +18,14 @@ def create_init_file(root: str, dir_name: str, file_content: str) -> None:
 
 def create_init_files(root_dir_start: str, file_content: str) -> None:
     root_dir_start_init_path: str = os.path.join(root_dir_start, "__init__.py")
+    root_dir_start_content: str = ""
+    # root_dir_start_content: str = "\n".join([
+    #     "import os",
+    #     "import sys",
+    #     "sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))",
+    # ])
     create_init_file_at_path(
-        path=root_dir_start_init_path, file_content=file_content,
+        path=root_dir_start_init_path, file_content=root_dir_start_content,
     )
     assert os.path.exists(root_dir_start_init_path)
 

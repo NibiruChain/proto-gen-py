@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from nibiru.sudo.v1 import state_pb2 as nibiru_dot_sudo_dot_v1_dot_state__pb2
+from nibiru_proto.nibiru.sudo.v1 import state_pb2 as nibiru_dot_sudo_dot_v1_dot_state__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1anibiru/sudo/v1/query.proto\x12\x0enibiru.sudo.v1\x1a\x14gogoproto/gogo.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1anibiru/sudo/v1/state.proto\"\x15\n\x13QuerySudoersRequest\"O\n\x14QuerySudoersResponse\x12\x37\n\x07sudoers\x18\x01 \x01(\x0b\x32\x17.nibiru.sudo.v1.SudoersB\x04\xc8\xde\x1f\x00R\x07sudoers2\x80\x01\n\x05Query\x12w\n\x0cQuerySudoers\x12#.nibiru.sudo.v1.QuerySudoersRequest\x1a$.nibiru.sudo.v1.QuerySudoersResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/nibiru/sudo/sudoersB)Z\'github.com/NibiruChain/nibiru/x/sudo/pbb\x06proto3')

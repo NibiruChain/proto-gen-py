@@ -14,8 +14,8 @@ _sym_db = _symbol_database.Default()
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from cosmos.base.query.v1beta1 import pagination_pb2 as cosmos_dot_base_dot_query_dot_v1beta1_dot_pagination__pb2
-from nibiru.spot.v1 import params_pb2 as nibiru_dot_spot_dot_v1_dot_params__pb2
-from nibiru.spot.v1 import pool_pb2 as nibiru_dot_spot_dot_v1_dot_pool__pb2
+from nibiru_proto.nibiru.spot.v1 import params_pb2 as nibiru_dot_spot_dot_v1_dot_params__pb2
+from nibiru_proto.nibiru.spot.v1 import pool_pb2 as nibiru_dot_spot_dot_v1_dot_pool__pb2
 from cosmos.base.v1beta1 import coin_pb2 as cosmos_dot_base_dot_v1beta1_dot_coin__pb2
 
 

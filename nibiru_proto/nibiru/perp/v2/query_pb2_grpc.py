@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from nibiru.perp.v2 import query_pb2 as nibiru_dot_perp_dot_v2_dot_query__pb2
+from nibiru_proto.nibiru.perp.v2 import query_pb2 as nibiru_dot_perp_dot_v2_dot_query__pb2
 
 
 class QueryStub(object):

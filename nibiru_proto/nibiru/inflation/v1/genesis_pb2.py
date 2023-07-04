@@ -12,7 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
-from nibiru.inflation.v1 import inflation_pb2 as nibiru_dot_inflation_dot_v1_dot_inflation__pb2
+from nibiru_proto.nibiru.inflation.v1 import inflation_pb2 as nibiru_dot_inflation_dot_v1_dot_inflation__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!nibiru/inflation/v1/genesis.proto\x12\x13nibiru.inflation.v1\x1a\x14gogoproto/gogo.proto\x1a#nibiru/inflation/v1/inflation.proto\"\x88\x01\n\x0cGenesisState\x12\x39\n\x06params\x18\x01 \x01(\x0b\x32\x1b.nibiru.inflation.v1.ParamsB\x04\xc8\xde\x1f\x00R\x06params\x12\x16\n\x06period\x18\x02 \x01(\x04R\x06period\x12%\n\x0eskipped_epochs\x18\x03 \x01(\x04R\rskippedEpochs\"\xb6\x02\n\x06Params\x12+\n\x11inflation_enabled\x18\x01 \x01(\x08R\x10inflationEnabled\x12j\n\x17\x65xponential_calculation\x18\x02 \x01(\x0b\x32+.nibiru.inflation.v1.ExponentialCalculationB\x04\xc8\xde\x1f\x00R\x16\x65xponentialCalculation\x12g\n\x16inflation_distribution\x18\x03 \x01(\x0b\x32*.nibiru.inflation.v1.InflationDistributionB\x04\xc8\xde\x1f\x00R\x15inflationDistribution\x12*\n\x11\x65pochs_per_period\x18\x04 \x01(\x04R\x0f\x65pochsPerPeriodB1Z/github.com/NibiruChain/nibiru/x/inflation/typesb\x06proto3')

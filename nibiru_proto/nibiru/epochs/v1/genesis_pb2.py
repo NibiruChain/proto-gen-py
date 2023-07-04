@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from nibiru.epochs.v1 import state_pb2 as nibiru_dot_epochs_dot_v1_dot_state__pb2
+from nibiru_proto.nibiru.epochs.v1 import state_pb2 as nibiru_dot_epochs_dot_v1_dot_state__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1enibiru/epochs/v1/genesis.proto\x12\x10nibiru.epochs.v1\x1a\x14gogoproto/gogo.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cnibiru/epochs/v1/state.proto\"I\n\x0cGenesisState\x12\x39\n\x06\x65pochs\x18\x01 \x03(\x0b\x32\x1b.nibiru.epochs.v1.EpochInfoB\x04\xc8\xde\x1f\x00R\x06\x65pochsB.Z,github.com/NibiruChain/nibiru/x/epochs/typesb\x06proto3')
