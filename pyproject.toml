@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "nibiru-proto"
-version = "0.21.3b7"
+version = "0.21.7b1" 
+# nibiru commit: https://github.com/NibiruChain/nibiru/commit/27c75034a74e37adfc438c5cbc90588101d875c8
 description = "Nibiru Chain Python SDK"
 authors = ["Nibiru Chain <dev@nibiru.fi>"]
 packages = [{ include = "nibiru_proto" }]

@@ -25,14 +25,17 @@ def create_init_files(root_dir_start: str, file_content: str) -> None:
     #     "sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))",
     # ])
     create_init_file_at_path(
-        path=root_dir_start_init_path, file_content=root_dir_start_content,
+        path=root_dir_start_init_path,
+        file_content=root_dir_start_content,
     )
     assert os.path.exists(root_dir_start_init_path)
 
     for root, dirs, _files in os.walk(root_dir_start):
         for dir_name in dirs:
             create_init_file(
-                root=root, dir_name=dir_name, file_content=file_content,
+                root=root,
+                dir_name=dir_name,
+                file_content=file_content,
             )
 
 

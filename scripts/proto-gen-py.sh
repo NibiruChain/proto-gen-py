@@ -50,6 +50,24 @@ copy_nibiru_protobuf_from_local() {
   cp $NIBIRU_PATH/go.sum $GEN_PY_REPO/go.sum
 }
 
+create_py_typed_file() {
+  # A `py.typed` file should be included in any distribution at the root of the
+  # package whenever you want to signal that the package is "type hinted" or
+  # "type annotated", meaning that it supports type checking.
+  #
+  # This is part of PEP 561 -- Distributing and Packaging Type information See:
+  # https://peps.python.org/pep-0561/
+  #
+  # Without the `py.typed` file, a package is assumed not to be type-safe such
+  # that, even if the pacakge has type annotations, type checkers like mypy and
+  # most LSPs will ignore them when type checking other projects that use the
+  # package in question.
+  #
+  # The py.typed file itself can be empty; its presence is the important part.
+  cd $GEN_PY_REPO      # move to py-sdk
+  touch $GEN_PY_REPO/$PKG_DIR_NAME/py.typed
+}
+
 go_get_from_cosmos() {
   if ! grep "github.com/gogo/protobuf => github.com/regen-network/protobuf" go.mod &>/dev/null; then
     echo -e "\tPlease run this command from somewhere inside the cosmos-sdk folder."
@@ -149,6 +167,8 @@ main() {
   code_gen
 
   final_cleanup
+
+  create_py_typed_file 
 
   poetry run python scripts/pkg_create_inits.py
   rewrite_misnamed_import

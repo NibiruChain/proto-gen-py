@@ -40,6 +40,11 @@ class MsgStub(object):
                 request_serializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePosition.SerializeToString,
                 response_deserializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePositionResponse.FromString,
                 )
+        self.PartialClose = channel.unary_unary(
+                '/nibiru.perp.v2.Msg/PartialClose',
+                request_serializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialClose.SerializeToString,
+                response_deserializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialCloseResponse.FromString,
+                )
         self.DonateToEcosystemFund = channel.unary_unary(
                 '/nibiru.perp.v2.Msg/DonateToEcosystemFund',
                 request_serializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgDonateToEcosystemFund.SerializeToString,
@@ -81,6 +86,12 @@ class MsgServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PartialClose(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DonateToEcosystemFund(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -114,6 +125,11 @@ def add_MsgServicer_to_server(servicer, server):
                     servicer.ClosePosition,
                     request_deserializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePosition.FromString,
                     response_serializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePositionResponse.SerializeToString,
+            ),
+            'PartialClose': grpc.unary_unary_rpc_method_handler(
+                    servicer.PartialClose,
+                    request_deserializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialClose.FromString,
+                    response_serializer=nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialCloseResponse.SerializeToString,
             ),
             'DonateToEcosystemFund': grpc.unary_unary_rpc_method_handler(
                     servicer.DonateToEcosystemFund,
@@ -213,6 +229,23 @@ class Msg(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v2.Msg/ClosePosition',
             nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePosition.SerializeToString,
             nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgClosePositionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PartialClose(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.perp.v2.Msg/PartialClose',
+            nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialClose.SerializeToString,
+            nibiru_dot_perp_dot_v2_dot_tx__pb2.MsgPartialCloseResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
