@@ -1,13 +1,14 @@
 [tool.poetry]
 name = "nibiru-proto"
-version = "0.20.0-rc1"
+version = "0.21.7b1" 
+# nibiru commit: https://github.com/NibiruChain/nibiru/commit/27c75034a74e37adfc438c5cbc90588101d875c8
 description = "Nibiru Chain Python SDK"
 authors = ["Nibiru Chain <dev@nibiru.fi>"]
 packages = [{ include = "nibiru_proto" }]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 grpcio = "^1.51.1"
 grpcio-tools = "^1.51.1"
 protobuf = "^4.21.12"
@@ -19,6 +20,9 @@ asyncio = "^3.4.3"
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"
 pytest = "^7.1.2"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -35,3 +39,7 @@ extend-exclude = '''
   | nibiru_proto
 )$
 '''
+
+# [tool.poetry.scripts]
+# fmt = "black ."
+# lint-fix = "isort"
