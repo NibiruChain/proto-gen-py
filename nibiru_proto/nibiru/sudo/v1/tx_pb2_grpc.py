@@ -22,6 +22,11 @@ class MsgStub(object):
                 request_serializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoers.SerializeToString,
                 response_deserializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoersResponse.FromString,
                 )
+        self.ChangeRoot = channel.unary_unary(
+                '/nibiru.sudo.v1.Msg/ChangeRoot',
+                request_serializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRoot.SerializeToString,
+                response_deserializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRootResponse.FromString,
+                )
 
 
 class MsgServicer(object):
@@ -37,6 +42,12 @@ class MsgServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ChangeRoot(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MsgServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -44,6 +55,11 @@ def add_MsgServicer_to_server(servicer, server):
                     servicer.EditSudoers,
                     request_deserializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoers.FromString,
                     response_serializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoersResponse.SerializeToString,
+            ),
+            'ChangeRoot': grpc.unary_unary_rpc_method_handler(
+                    servicer.ChangeRoot,
+                    request_deserializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRoot.FromString,
+                    response_serializer=nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRootResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -72,5 +88,22 @@ class Msg(object):
         return grpc.experimental.unary_unary(request, target, '/nibiru.sudo.v1.Msg/EditSudoers',
             nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoers.SerializeToString,
             nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgEditSudoersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChangeRoot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/nibiru.sudo.v1.Msg/ChangeRoot',
+            nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRoot.SerializeToString,
+            nibiru_dot_sudo_dot_v1_dot_tx__pb2.MsgChangeRootResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

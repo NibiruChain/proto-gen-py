@@ -81,6 +81,7 @@ class Market(google.protobuf.message.Message):
     FUNDING_RATE_EPOCH_ID_FIELD_NUMBER: builtins.int
     TWAP_LOOKBACK_WINDOW_FIELD_NUMBER: builtins.int
     PREPAID_BAD_DEBT_FIELD_NUMBER: builtins.int
+    MAX_FUNDING_RATE_FIELD_NUMBER: builtins.int
     pair: builtins.str
     """the trading pair represented by this market
     always BASE:QUOTE, e.g. BTC:NUSD or ETH:NUSD
@@ -120,6 +121,11 @@ class Market(google.protobuf.message.Message):
     @property
     def prepaid_bad_debt(self) -> cosmos.base.v1beta1.coin_pb2.Coin:
         """the amount of collateral already credited from the ecosystem fund"""
+    max_funding_rate: builtins.str
+    """the maximum funding rate payment per epoch, this represents the maximum
+    amount of funding that can be paid out per epoch as a percentage of the
+    position size
+    """
     def __init__(
         self,
         *,
@@ -135,9 +141,10 @@ class Market(google.protobuf.message.Message):
         funding_rate_epoch_id: builtins.str = ...,
         twap_lookback_window: google.protobuf.duration_pb2.Duration | None = ...,
         prepaid_bad_debt: cosmos.base.v1beta1.coin_pb2.Coin | None = ...,
+        max_funding_rate: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["prepaid_bad_debt", b"prepaid_bad_debt", "twap_lookback_window", b"twap_lookback_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ecosystem_fund_fee_ratio", b"ecosystem_fund_fee_ratio", "enabled", b"enabled", "exchange_fee_ratio", b"exchange_fee_ratio", "funding_rate_epoch_id", b"funding_rate_epoch_id", "latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "liquidation_fee_ratio", b"liquidation_fee_ratio", "maintenance_margin_ratio", b"maintenance_margin_ratio", "max_leverage", b"max_leverage", "pair", b"pair", "partial_liquidation_ratio", b"partial_liquidation_ratio", "prepaid_bad_debt", b"prepaid_bad_debt", "twap_lookback_window", b"twap_lookback_window"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ecosystem_fund_fee_ratio", b"ecosystem_fund_fee_ratio", "enabled", b"enabled", "exchange_fee_ratio", b"exchange_fee_ratio", "funding_rate_epoch_id", b"funding_rate_epoch_id", "latest_cumulative_premium_fraction", b"latest_cumulative_premium_fraction", "liquidation_fee_ratio", b"liquidation_fee_ratio", "maintenance_margin_ratio", b"maintenance_margin_ratio", "max_funding_rate", b"max_funding_rate", "max_leverage", b"max_leverage", "pair", b"pair", "partial_liquidation_ratio", b"partial_liquidation_ratio", "prepaid_bad_debt", b"prepaid_bad_debt", "twap_lookback_window", b"twap_lookback_window"]) -> None: ...
 
 global___Market = Market
 

@@ -35,6 +35,8 @@ class PositionChangedEvent(google.protobuf.message.Message):
     BLOCK_HEIGHT_FIELD_NUMBER: builtins.int
     MARGIN_TO_USER_FIELD_NUMBER: builtins.int
     CHANGE_REASON_FIELD_NUMBER: builtins.int
+    EXCHANGED_SIZE_FIELD_NUMBER: builtins.int
+    EXCHANGED_NOTIONAL_FIELD_NUMBER: builtins.int
     @property
     def final_position(self) -> nibiru.perp.v2.state_pb2.Position: ...
     position_notional: builtins.str
@@ -75,6 +77,18 @@ class PositionChangedEvent(google.protobuf.message.Message):
     - CHANGE_REASON_OPEN_POSITION: A new position was opened.
     - CHANGE_REASON_CLOSE_POSITION: An existing position was closed.
     """
+    exchanged_size: builtins.str
+    """exchanged_size represent the change in size for an existing position
+    after the change. A positive value indicates that the position size
+    increased, while a negative value indicates that the position size
+    decreased.
+    """
+    exchanged_notional: builtins.str
+    """exchanged_notional represent the change in notional for an existing
+    position after the change. A positive value indicates that the position
+    notional increased, while a negative value indicates that the position
+    notional decreased.
+    """
     def __init__(
         self,
         *,
@@ -87,9 +101,11 @@ class PositionChangedEvent(google.protobuf.message.Message):
         block_height: builtins.int = ...,
         margin_to_user: builtins.str = ...,
         change_reason: builtins.str = ...,
+        exchanged_size: builtins.str = ...,
+        exchanged_notional: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "final_position", b"final_position", "transaction_fee", b"transaction_fee"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "block_height", b"block_height", "change_reason", b"change_reason", "final_position", b"final_position", "funding_payment", b"funding_payment", "margin_to_user", b"margin_to_user", "position_notional", b"position_notional", "realized_pnl", b"realized_pnl", "transaction_fee", b"transaction_fee"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bad_debt", b"bad_debt", "block_height", b"block_height", "change_reason", b"change_reason", "exchanged_notional", b"exchanged_notional", "exchanged_size", b"exchanged_size", "final_position", b"final_position", "funding_payment", b"funding_payment", "margin_to_user", b"margin_to_user", "position_notional", b"position_notional", "realized_pnl", b"realized_pnl", "transaction_fee", b"transaction_fee"]) -> None: ...
 
 global___PositionChangedEvent = PositionChangedEvent
 
