@@ -4,9 +4,8 @@ set -e pipefail # see https://stackoverflow.com/a/68465418/13305627
 
 # ------------------------------------------------ CONFIG
 PKG_DIR_NAME="nibiru_proto"
-nibiru_cosmos_sdk_version="v0.47.3"
-nibiru_chain_version="realu/python-protos"
-# nibiru_chain_version="v0.21.3"
+nibiru_cosmos_sdk_version="v0.47.4"
+nibiru_chain_version="v0.21.9"
 # ------------------------------------------------
 
 init_globals() {
@@ -109,6 +108,8 @@ code_gen() {
     # echo "$dir_cosmos_sdk"
     mkdir -p $PKG_PATH/${proto_dir}
 
+    echo "proto_dir: ${proto_dir}"
+
     echo "NIBIRU_PATH: $NIBIRU_PATH"
     local out_dir=$PKG_PATH
     echo "out_dir: $out_dir"
@@ -148,9 +149,9 @@ rewrite_misnamed_import() {
     exit 1
   fi 
 
-  find . -name "*.py" -type f -exec sed -i 's/from nibiru\./from nibiru_proto.nibiru./g' {} \;
+  find . -name "*.py" -type f -exec sed -i "" 's/from nibiru\./from nibiru_proto.nibiru./g' {} \;
 
-  find . -name "*.py" -type f -exec sed -i 's/import nibiru\./import nibiru_proto.nibiru./g' {} \;
+  find . -name "*.py" -type f -exec sed -i "" 's/import nibiru\./import nibiru_proto.nibiru./g' {} \;
 }
 
 # ------------------------------------------------

@@ -60,3 +60,40 @@ class MsgEditSudoersResponse(google.protobuf.message.Message):
     ) -> None: ...
 
 global___MsgEditSudoersResponse = MsgEditSudoersResponse
+
+@typing_extensions.final
+class MsgChangeRoot(google.protobuf.message.Message):
+    """-------------------------- ChangeRoot --------------------------
+
+    MsgChangeRoot: Msg to update the "Sudoers" state.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SENDER_FIELD_NUMBER: builtins.int
+    NEW_ROOT_FIELD_NUMBER: builtins.int
+    sender: builtins.str
+    """Sender: Address for the signer of the transaction."""
+    new_root: builtins.str
+    """NewRoot: New root address."""
+    def __init__(
+        self,
+        *,
+        sender: builtins.str = ...,
+        new_root: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["new_root", b"new_root", "sender", b"sender"]) -> None: ...
+
+global___MsgChangeRoot = MsgChangeRoot
+
+@typing_extensions.final
+class MsgChangeRootResponse(google.protobuf.message.Message):
+    """MsgChangeRootResponse indicates the successful execution of MsgChangeRoot."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___MsgChangeRootResponse = MsgChangeRootResponse
